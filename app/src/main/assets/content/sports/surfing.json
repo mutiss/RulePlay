@@ -1,0 +1,89 @@
+{
+  "id": "surfing",
+  "intro": "Competitive surfing is judged: in short heats, surfers ride as many waves as they like, and a panel of judges scores each ride from 0 to 10. Only each surfer's two best waves count. Because the ocean is unpredictable, wave selection and the right-of-way system — priority — are as important as manoeuvres. The International Surfing Association (ISA) governs Olympic surfing; the World Surf League (WSL) runs the professional tour.",
+  "inThirtySeconds": [
+    "Heats last around 20–35 minutes with two to four surfers.",
+    "Each wave is scored 0–10; your two best waves make your heat total out of 20.",
+    "The surfer with priority has the right to any wave they choose.",
+    "Dropping in on someone else's wave is interference and costs heavily."
+  ],
+  "objective": "Finish in the advancing positions of each heat by posting the highest two-wave total.",
+  "facts": {
+    "players": "Individual surfers in heats of 2–4",
+    "duration": "Heats of roughly 20–35 minutes",
+    "environment": "Ocean breaks (and some artificial wave pools)",
+    "equipment": ["Surfboard (shortboard or longboard)", "Leash", "Competition jersey (singlet)"]
+  },
+  "scoring": [
+    { "label": "Wave score", "value": "0–10", "detail": "Judges score each ride; the highest and lowest of five scores are discarded and the rest averaged." },
+    { "label": "Heat total", "value": "/20", "detail": "Sum of a surfer's two best wave scores." }
+  ],
+  "bodies": [
+    { "id": "isa", "name": "International Surfing Association", "acronym": "ISA", "scope": "World governing body; runs Olympic qualification", "url": "https://isasurf.org/" },
+    { "id": "wsl", "name": "World Surf League", "acronym": "WSL", "scope": "Professional championship tour", "url": "https://www.worldsurfleague.com/" }
+  ],
+  "rulebooks": [
+    { "id": "isa-rules", "title": "ISA Rule Book", "publisher": "isa", "url": "https://isasurf.org/", "checked": "2026-10-14" },
+    { "id": "wsl-rules", "title": "WSL Rule Book", "publisher": "wsl", "url": "https://www.worldsurfleague.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "judging", "title": "Judging", "summary": "How a ride is scored.",
+      "rules": [
+        { "id": "criteria", "title": "Judging criteria", "important": true,
+          "summary": "Judges reward commitment and difficulty, innovative and progressive manoeuvres, combinations of major manoeuvres, variety, and speed, power and flow.",
+          "body": "The emphasis of each criterion can change with the conditions: big, hollow waves favour tube rides, while softer waves reward aerial manoeuvres. A scale guides scores — for example 8.0–10.0 is 'excellent'.",
+          "related": ["two-best"] },
+        { "id": "two-best", "title": "Two best waves", "important": true,
+          "summary": "Surfers can ride many waves, but only their two highest scores count.",
+          "body": "This means a surfer behind can come back with one big score. Commentators talk about the 'needs' score — what a surfer must score to take the lead.",
+          "example": "Waves scored 7.5, 6.2 and 3.0 give a heat total of 13.70.",
+          "related": ["criteria"] }
+      ]
+    },
+    {
+      "id": "priority", "title": "Priority and interference", "summary": "The right of way in the water.",
+      "rules": [
+        { "id": "priority-rule", "title": "Priority", "important": true,
+          "summary": "In most heats, a priority order decides who may catch the next wave. The surfer with priority can take any wave; others may only paddle for it if the priority surfer doesn't.",
+          "body": "When a surfer catches a wave or paddles for one and misses, they drop to the lowest priority. Priority is signalled by coloured lights or discs on the beach.",
+          "related": ["interference"] },
+        { "id": "interference", "title": "Interference", "important": true,
+          "summary": "Hindering a surfer who has the right of way — for example dropping in on their wave — is an interference.",
+          "body": "The penalty typically reduces the offender's scores: one of their best two waves is halved or removed, depending on the rule book. Repeated interference can lead to disqualification from the heat.",
+          "related": ["priority-rule"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Drop-in", "description": "Taking off on a wave in front of a surfer with right of way.", "consequence": "Interference penalty", "severity": "MAJOR" },
+    { "name": "Paddling interference", "description": "Blocking another surfer's paddle for a wave.", "consequence": "Interference penalty", "severity": "MAJOR" },
+    { "name": "Exceeding wave limit", "description": "Riding more waves than allowed in the heat.", "consequence": "Penalty on scores", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Heat start", "description": "A horn and lights signal the start." },
+    { "title": "Wave selection", "description": "Surfers use priority to pick the best waves." },
+    { "title": "Last minutes", "description": "Trailing surfers chase the needed score." },
+    { "title": "Advance", "description": "Top finishers move to the next round." }
+  ],
+  "positions": [
+    { "name": "Regular foot", "role": "Rides with the left foot forward." },
+    { "name": "Goofy foot", "role": "Rides with the right foot forward." }
+  ],
+  "field": {
+    "name": "Competition area",
+    "dimensions": "A marked zone of the break, defined by flags on the beach",
+    "surface": "Ocean waves (beach, reef or point breaks)",
+    "notes": ["Priority display visible from the water", "Contest waiting periods allow organisers to pick the best swell"]
+  },
+  "glossary": [
+    { "term": "Barrel", "definition": "Riding inside the hollow curl of a wave." },
+    { "term": "Aerial", "definition": "Launching the board above the lip of the wave." },
+    { "term": "Line-up", "definition": "Where surfers wait for waves." },
+    { "term": "Drop-in", "definition": "Catching a wave in front of someone with right of way." }
+  ],
+  "funFacts": [
+    "Surfing made its Olympic debut at Tokyo 2020, held in 2021.",
+    "The Paris 2024 Olympic surfing event was held in Teahupo'o, Tahiti — about 15,000 km from Paris."
+  ]
+}

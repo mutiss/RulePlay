@@ -1,0 +1,142 @@
+{
+  "id": "american-football",
+  "language": "es",
+  "intro": "El fútbol americano es un juego de conquista de terreno a ráfagas cortas. El equipo atacante tiene cuatro intentos —downs— para avanzar diez yardas; si lo consigue, gana cuatro más. Cada jugada se detiene y se reanuda desde una línea de scrimmage, así que cada snap es una jugada ensayada. Esta ficha sigue las reglas de la NFL; el fútbol americano universitario y escolar usa reglamentos propios.",
+  "inThirtySeconds": [
+    "Cuatro downs para ganar diez yardas; si lo logras, la cuenta se reinicia.",
+    "Anota un touchdown (6) llevando o atrapando el balón en la zona de anotación.",
+    "Cada jugada empieza en la línea de scrimmage y acaba cuando el portador es derribado o un pase cae incompleto.",
+    "Las faltas se castigan haciendo retroceder o avanzar el balón un número de yardas."
+  ],
+  "objective": "Superar al rival con touchdowns, puntos extra, field goals y safeties durante cuatro cuartos.",
+  "facts": {
+    "players": "11 por equipo en el campo; unidades especializadas de ataque, defensa y equipos especiales",
+    "duration": "4 × 15 minutos (NFL), con muchas paradas de reloj",
+    "environment": "Campo de césped natural o artificial con zonas de anotación y postes",
+    "equipment": ["Balón ovalado de cuero", "Casco", "Hombreras"]
+  },
+  "scoring": [
+    { "label": "Touchdown", "value": "6", "detail": "Tener el balón dentro de la zona de anotación rival." },
+    { "label": "Punto extra", "value": "1", "detail": "Patada entre los postes tras un touchdown." },
+    { "label": "Conversión de dos puntos", "value": "2", "detail": "Volver a entrar en la zona de anotación corriendo o pasando desde cerca, tras un touchdown." },
+    { "label": "Field goal", "value": "3", "detail": "Patada entre los postes en una jugada normal." },
+    { "label": "Safety", "value": "2", "detail": "La defensa derriba al portador en su propia zona de anotación, entre otras situaciones." }
+  ],
+  "bodies": [
+    { "id": "nfl", "name": "National Football League", "acronym": "NFL", "scope": "Liga profesional; publica el reglamento de la NFL", "url": "https://operations.nfl.com/" }
+  ],
+  "rulebooks": [
+    { "id": "nfl-rulebook", "title": "Reglas oficiales de juego de la NFL", "publisher": "nfl", "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook", "edition": "Reglamento NFL 2026", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "downs", "title": "Downs y yardas",
+      "summary": "El sistema que estructura cada serie ofensiva.",
+      "rules": [
+        { "id": "four-downs", "title": "Cuatro downs para diez yardas", "important": true,
+          "summary": "El ataque tiene cuatro jugadas (downs) para avanzar al menos diez yardas desde donde empezó la serie.",
+          "body": "Si lo consigue, logra un nuevo «primer down» y cuatro intentos más. Si falla tras cuatro downs, el balón pasa al rival en ese punto; por eso en cuarto down los equipos suelen despejar o intentar un field goal en lugar de arriesgar.",
+          "example": "«Tercera y 4» significa que es el tercer intento y aún faltan 4 yardas para el primer down.",
+          "related": ["scrimmage", "punt"] },
+        { "id": "scrimmage", "title": "La línea de scrimmage", "important": true,
+          "summary": "Cada jugada empieza con el balón en el suelo en la línea de scrimmage; el center lo pasa hacia atrás para iniciarla.",
+          "body": "Antes del snap, los jugadores deben quedarse en su lado de la línea. Al menos siete atacantes deben estar en la línea. Una jugada termina cuando el portador es derribado (una rodilla o el cuerpo tocan el suelo tras un contacto), sale del campo, anota o un pase hacia delante toca el suelo.",
+          "related": ["four-downs", "false-start"] }
+      ]
+    },
+    {
+      "id": "passing", "title": "Pases y recepciones",
+      "summary": "Un pase hacia delante por jugada y qué es una recepción.",
+      "rules": [
+        { "id": "forward-pass-nfl", "title": "Un pase hacia delante por jugada", "important": true,
+          "summary": "El ataque puede lanzar un pase hacia delante por jugada, desde detrás de la línea de scrimmage.",
+          "body": "Los pases hacia atrás (laterales) están permitidos en cualquier momento. Un pase hacia delante incompleto detiene el reloj y la jugada; el balón vuelve al punto anterior y se gasta un down.",
+          "related": ["catch", "interference"] },
+        { "id": "catch", "title": "Qué es una recepción", "important": false,
+          "summary": "El receptor debe controlar el balón, apoyar ambos pies (u otra parte del cuerpo) dentro del campo y mantener el control lo suficiente para hacer un movimiento de juego.",
+          "body": "Si el receptor pierde el balón al caer al suelo antes de completar la recepción, es incompleto. Las reglas de recepción se han revisado varias veces; en jugadas dudosas se usa la repetición.",
+          "related": ["forward-pass-nfl"] },
+        { "id": "interference", "title": "Interferencia de pase", "important": false,
+          "summary": "Ni atacantes ni defensores pueden estorbar ilegalmente la opción del rival de atrapar un pase hacia delante una vez lanzado.",
+          "body": "En la NFL, la interferencia defensiva se castiga en el punto de la falta: el ataque obtiene un primer down donde ocurrió, lo que puede suponer decenas de yardas.",
+          "related": ["forward-pass-nfl"] }
+      ]
+    },
+    {
+      "id": "kicking", "title": "Jugadas de patada",
+      "summary": "Kick-offs, despejes y field goals.",
+      "rules": [
+        { "id": "kickoff", "title": "Kick-offs", "important": false,
+          "summary": "Cada parte y cada anotación (salvo algunas tras un safety) van seguidas de un kick-off al rival.",
+          "body": "La NFL ha cambiado mucho la formación del kick-off en las últimas temporadas para reducir los choques a gran velocidad; consulta el reglamento vigente para la colocación de los jugadores y las reglas de touchback.",
+          "related": ["punt"] },
+        { "id": "punt", "title": "Despejes (punts)", "important": false,
+          "summary": "En cuarto down, el ataque suele despejar el balón para hacer retroceder al rival.",
+          "body": "El equipo receptor puede devolver el despeje o pedir una recepción libre (fair catch) para atraparlo sin ser placado.",
+          "related": ["four-downs"] },
+        { "id": "field-goal", "title": "Field goals", "important": false,
+          "summary": "Una patada desde el suelo (sujeta por un compañero) que pasa entre los postes y por encima del larguero vale 3 puntos.",
+          "body": "Un field goal fallado da el balón al rival en el punto de la patada (o en la yarda 20 si está más atrás).",
+          "related": ["four-downs"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Castigos",
+      "summary": "Yardas perdidas o ganadas por las faltas.",
+      "rules": [
+        { "id": "false-start", "title": "Salida en falso y fuera de lugar", "important": false,
+          "summary": "Moverse antes del snap (ataque) o cruzar antes de tiempo la línea de scrimmage (defensa) cuesta 5 yardas.",
+          "body": "Son faltas «antes del snap»: la jugada se detiene en el acto o la falta se aplica después.",
+          "related": ["scrimmage"] },
+        { "id": "holding", "title": "Sujetar (holding)", "important": false,
+          "summary": "Agarrar o frenar a un rival que no es el portador del balón es holding.",
+          "body": "El holding ofensivo suele costar 10 yardas; el defensivo, 5 yardas y primer down automático.",
+          "related": ["personal-fouls"] },
+        { "id": "personal-fouls", "title": "Faltas personales", "important": false,
+          "summary": "La rudeza innecesaria, el golpe ilegal al quarterback y los golpes ilegales a la cabeza cuestan 15 yardas.",
+          "body": "Las reglas de seguridad protegen a quarterbacks, receptores y pateadores en posiciones indefensas. Las faltas flagrantes también pueden suponer la expulsión.",
+          "related": ["holding"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Salida en falso", "description": "Un atacante se mueve antes del snap.", "consequence": "Castigo de 5 yardas", "severity": "MINOR" },
+    { "name": "Holding ofensivo", "description": "Frenar ilegalmente a un defensor.", "consequence": "Castigo de 10 yardas", "severity": "MINOR" },
+    { "name": "Interferencia defensiva de pase", "description": "Contacto ilegal con un receptor con el balón en el aire.", "consequence": "Balón en el punto de la falta y primer down", "severity": "MAJOR" },
+    { "name": "Golpe ilegal al quarterback", "description": "Golpe ilegal al quarterback tras el lanzamiento.", "consequence": "15 yardas y primer down automático", "severity": "MAJOR" },
+    { "name": "Rudeza innecesaria / golpe flagrante", "description": "Contacto peligroso, especialmente en la cabeza.", "consequence": "15 yardas; posible expulsión", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Sorteo y kick-off", "description": "El sorteo decide quién recibe el kick-off inicial." },
+    { "title": "Series ofensivas", "description": "El ataque intenta encadenar primeros downs y anotar." },
+    { "title": "Cambio de posesión", "description": "Tras una anotación, un despeje, una pérdida o un cuarto down fallido, ataca el otro equipo." },
+    { "title": "Aviso de dos minutos", "description": "Parada automática cerca del final de cada parte en la NFL." },
+    { "title": "Prórroga", "description": "Los empates van a un periodo extra con las reglas de posesión de la NFL." }
+  ],
+  "positions": [
+    { "name": "Quarterback", "role": "Recibe el snap y dirige el ataque, normalmente pasando." },
+    { "name": "Running back", "role": "Lleva el balón en las jugadas de carrera y bloquea." },
+    { "name": "Receptores y tight end", "role": "Atrapan pases; los tight ends también bloquean." },
+    { "name": "Línea ofensiva", "role": "Cinco bloqueadores que protegen al quarterback y abren huecos." },
+    { "name": "Línea defensiva y linebackers", "role": "Frenan la carrera y presionan al quarterback." },
+    { "name": "Cornerbacks y safeties", "role": "Cubren a los receptores y defienden los pases." },
+    { "name": "Pateador y despejador", "role": "Especialistas en field goals, kick-offs y despejes." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "120 × 53⅓ yardas (campo de 100 yardas más dos zonas de anotación de 10)",
+    "surface": "Césped natural o artificial",
+    "notes": ["Líneas cada 5 yardas, numeradas cada 10", "Postes al fondo de cada zona de anotación", "Las marcas de hash sitúan el balón entre jugadas"]
+  },
+  "glossary": [
+    { "term": "Snap", "definition": "El center pasa el balón hacia atrás para iniciar la jugada." },
+    { "term": "Sack (captura)", "definition": "Derribar al quarterback detrás de la línea de scrimmage antes de que pase." },
+    { "term": "Intercepción", "definition": "Un defensor atrapa un pase dirigido al ataque." },
+    { "term": "Fumble", "definition": "El portador pierde el balón; cualquiera de los dos equipos puede recuperarlo." },
+    { "term": "Zona roja", "definition": "La zona dentro de la yarda 20 del rival." }
+  ],
+  "funFacts": [
+    "El apodo «gridiron» viene de las primeras marcas del campo, que formaban una cuadrícula.",
+    "Walter Camp introdujo la línea de scrimmage y el sistema de downs a principios de la década de 1880."
+  ]
+}

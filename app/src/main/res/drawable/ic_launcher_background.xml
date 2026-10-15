@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="108dp"
+    android:height="108dp"
+    android:viewportWidth="108"
+    android:viewportHeight="108">
+    <path android:fillColor="#0A0F1F" android:pathData="M0,0h108v108h-108z" />
+    <!-- Faint centre circle and halfway line, like a pitch seen from above. -->
+    <path
+        android:strokeColor="#26C6FF3D"
+        android:strokeWidth="1.2"
+        android:fillColor="#00000000"
+        android:pathData="M54,54m-36,0a36,36 0,1 1,72 0a36,36 0,1 1,-72 0" />
+    <path
+        android:strokeColor="#1AC6FF3D"
+        android:strokeWidth="1.2"
+        android:pathData="M0,54H108" />
+</vector>

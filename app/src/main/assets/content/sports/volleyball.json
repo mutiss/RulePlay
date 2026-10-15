@@ -1,0 +1,132 @@
+{
+  "id": "volleyball",
+  "intro": "Two teams of six face each other across a high net and try to ground the ball in the opponent's court. Each side may touch the ball up to three times to set up an attack, and every rally scores a point. The rules are maintained by the FIVB, which also governs beach volleyball under a separate rulebook.",
+  "inThirtySeconds": [
+    "Every rally wins a point, whoever served.",
+    "Up to three touches per side, and no player may touch the ball twice in a row.",
+    "Sets go to 25 (win by 2); the deciding fifth set goes to 15.",
+    "Players rotate clockwise each time their team wins back the serve."
+  ],
+  "objective": "Win three sets by making the ball land in the opponent's court, or forcing them into an error.",
+  "facts": {
+    "players": "6 per team on court, plus a libero",
+    "duration": "Best of 5 sets (no game clock)",
+    "environment": "Indoor court",
+    "equipment": ["Ball", "Net 2.43 m (men) / 2.24 m (women)", "Antennae marking the crossing space"]
+  },
+  "scoring": [
+    { "label": "Rally point", "value": "1", "detail": "Every rally gives one point to the team that wins it." },
+    { "label": "Set", "value": "25", "detail": "First to 25 with a two-point lead (sets 1–4)." },
+    { "label": "Fifth set", "value": "15", "detail": "The deciding set is played to 15, again with a two-point lead." }
+  ],
+  "bodies": [
+    { "id": "fivb", "name": "Fédération Internationale de Volleyball", "acronym": "FIVB", "scope": "World governing body for volleyball and beach volleyball", "url": "https://www.fivb.com/" }
+  ],
+  "rulebooks": [
+    { "id": "fivb-rules", "title": "FIVB Official Volleyball Rules", "publisher": "fivb", "url": "https://www.fivb.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Points and sets",
+      "summary": "Rally scoring and how a match is won.",
+      "rules": [
+        { "id": "rally-point", "title": "Rally-point scoring", "important": true,
+          "summary": "The team that wins the rally scores a point — it doesn't matter who served.",
+          "body": "If the receiving team wins the rally, it scores the point and wins the right to serve, which triggers a rotation. A set is won at 25 points with a two-point lead; there is no cap, so sets can run to 30–28 or beyond.",
+          "related": ["rotation", "match"] },
+        { "id": "match", "title": "Winning the match", "important": false,
+          "summary": "The first team to win three sets wins the match; a fifth set, if needed, goes to 15.",
+          "body": "Teams change court after each set, and in the fifth set they also change when the leading team reaches 8 points.",
+          "related": ["rally-point"] }
+      ]
+    },
+    {
+      "id": "touches", "title": "Playing the ball",
+      "summary": "Three touches, clean contacts and the block.",
+      "rules": [
+        { "id": "three-touches", "title": "Three touches", "important": true,
+          "summary": "A team may touch the ball at most three times before sending it back over the net.",
+          "body": "The classic sequence is pass (dig), set and attack (spike). A touch by the blockers does not count as one of the three, so a team can block and still have three more touches.",
+          "example": "A ball deflects off a blocker's hands: the blocking team still has three touches available.",
+          "related": ["double-contact", "block"] },
+        { "id": "double-contact", "title": "Double contact and catching", "important": true,
+          "summary": "No player may hit the ball twice in a row, and the ball must be hit, not caught or thrown.",
+          "body": "Exceptions: a blocker may touch the ball again right after blocking, and during the first team contact the ball may touch several parts of a player's body in a single action. Holding or carrying the ball is a 'catch' fault.",
+          "related": ["three-touches"] },
+        { "id": "block", "title": "Blocking", "important": false,
+          "summary": "Only front-row players may block, reaching above the net to stop an attack.",
+          "body": "Blockers may reach over the net provided they do not interfere with the opponents before or during their attack. Back-row players and the libero may not complete a block.",
+          "related": ["three-touches", "back-row-attack"] }
+      ]
+    },
+    {
+      "id": "rotation", "title": "Rotation and positions",
+      "summary": "Why players move around the court.",
+      "rules": [
+        { "id": "rotation", "title": "Rotation", "important": true,
+          "summary": "When a team wins back the serve, its players rotate one position clockwise.",
+          "body": "At the moment of service, players must be in their rotational order — front row ahead of their corresponding back-row player and in the correct left-to-right order. After the serve they may move anywhere. Being out of position is a fault.",
+          "related": ["rally-point", "back-row-attack"] },
+        { "id": "back-row-attack", "title": "Back-row attack", "important": false,
+          "summary": "A back-row player may not attack a ball above the top of the net from inside the front zone (in front of the 3 m line).",
+          "body": "Back-row players can still attack by jumping from behind the attack line — the 'pipe' attack. The landing point does not matter, only the take-off.",
+          "related": ["libero", "rotation"] },
+        { "id": "libero", "title": "The libero", "important": false,
+          "summary": "A defensive specialist in a contrasting shirt who can replace any back-row player without counting as a substitution.",
+          "body": "The libero may not attack a ball that is entirely above the net, block, or attempt to block. If the libero uses an overhand finger pass from in front of the attack line, a teammate may not attack that ball above the net.",
+          "related": ["back-row-attack"] }
+      ]
+    },
+    {
+      "id": "net", "title": "At the net",
+      "summary": "Net touches and the centre line.",
+      "rules": [
+        { "id": "net-touch", "title": "Touching the net", "important": false,
+          "summary": "Touching the net between the antennae during the action of playing the ball is a fault.",
+          "body": "Contact with the net outside the antennae, or incidental contact that does not interfere with play, is not a fault. The ball itself may touch the net, including on the serve.",
+          "related": ["centre-line"] },
+        { "id": "centre-line", "title": "The centre line", "important": false,
+          "summary": "You may cross the centre line with a foot or hand if part of it stays on or above the line.",
+          "body": "Fully crossing into the opponents' court with a foot or hand, or touching their court with any other body part in a way that interferes with them, is a fault.",
+          "related": ["net-touch"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Four hits", "description": "A team touches the ball four times.", "consequence": "Point to the opponent", "severity": "MINOR" },
+    { "name": "Double contact", "description": "The same player touches the ball twice consecutively.", "consequence": "Point to the opponent", "severity": "MINOR" },
+    { "name": "Net fault", "description": "Touching the net between the antennae while playing the ball.", "consequence": "Point to the opponent", "severity": "MINOR" },
+    { "name": "Rotation fault", "description": "Players out of order at the moment of service.", "consequence": "Point to the opponent, positions corrected", "severity": "MINOR" },
+    { "name": "Misconduct", "description": "Rude, offensive or aggressive behaviour.", "consequence": "Penalty, expulsion or disqualification", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Serve", "description": "The server has 8 seconds after the whistle to serve from behind the end line." },
+    { "title": "Pass, set, attack", "description": "The receiving team builds its attack with up to three touches." },
+    { "title": "Defence and block", "description": "The opponents block at the net and dig attacks in the back court." },
+    { "title": "Point and rotation", "description": "A point is scored; a side-out triggers a rotation." }
+  ],
+  "positions": [
+    { "name": "Setter", "role": "Takes the second touch and distributes attacks — the playmaker." },
+    { "name": "Outside hitter", "role": "Attacks from the left and passes in serve receive." },
+    { "name": "Opposite", "role": "Attacks from the right, often the main scorer." },
+    { "name": "Middle blocker", "role": "Blocks in the centre and runs quick attacks." },
+    { "name": "Libero", "role": "Back-row specialist for passing and digging." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "18 m × 9 m, split into two 9 × 9 m halves",
+    "surface": "Wood or synthetic (indoor)",
+    "notes": ["Attack line 3 m from the centre line", "Net height 2.43 m (men) / 2.24 m (women)", "Antennae mark the crossing space above each sideline"]
+  },
+  "glossary": [
+    { "term": "Dig", "definition": "Passing a hard-driven attack, usually low to the floor." },
+    { "term": "Kill", "definition": "An attack that directly wins the point." },
+    { "term": "Side-out", "definition": "Winning a rally while receiving, which earns the serve." },
+    { "term": "Ace", "definition": "A serve that scores directly." },
+    { "term": "Pipe", "definition": "A back-row attack from the middle of the court." }
+  ],
+  "funFacts": [
+    "Volleyball was invented in 1895 by William G. Morgan as a less strenuous alternative to basketball.",
+    "Rally-point scoring replaced side-out scoring in international volleyball in 1999."
+  ]
+}

@@ -1,0 +1,97 @@
+{
+  "id": "archery",
+  "language": "es",
+  "intro": "El tiro con arco de diana pide una sola cosa: meter las flechas lo más cerca posible del centro, una y otra vez, bajo presión y con viento. En la élite hay dos tipos principales de arco —el recurvo olímpico y el compuesto, con poleas y disparador—, cada uno con sus distancias y su formato de enfrentamiento. World Archery publica el reglamento.",
+  "inThirtySeconds": [
+    "La diana tiene diez zonas de puntuación; el centro dorado vale 10.",
+    "Una flecha que toca una línea se lleva el valor más alto.",
+    "En recurvo se compite por sets: ganar un set da 2 puntos; el primero en llegar a 6 gana.",
+    "En compuesto se suman todas las flechas: gana el total más alto."
+  ],
+  "objective": "Puntuar más que el rival en las eliminatorias, tras una ronda de clasificación que fija el orden.",
+  "facts": {
+    "players": "Individual, por equipos y equipos mixtos",
+    "duration": "Enfrentamientos de pocos minutos; rondas de clasificación de 72 flechas",
+    "environment": "Campo al aire libre (en sala en invierno)",
+    "equipment": ["Arco recurvo o compuesto", "Flechas", "Dactilera o disparador", "Visor y estabilizadores"]
+  },
+  "scoring": [
+    { "label": "Valor de la zona", "value": "1–10", "detail": "Diez anillos concéntricos; la zona dorada interior es el 10." },
+    { "label": "Punto de set (recurvo)", "value": "2 / 1", "detail": "2 puntos por ganar un set de 3 flechas, 1 para cada uno si hay empate." },
+    { "label": "Total (compuesto)", "value": "150", "detail": "Puntuación máxima en un enfrentamiento de compuesto de 15 flechas." }
+  ],
+  "variants": [
+    { "id": "recurve", "name": "Recurvo", "description": "El arco olímpico, a 70 m sobre una diana de 122 cm, con enfrentamientos por sets.", "body": "wa-arch" },
+    { "id": "compound", "name": "Compuesto", "description": "Arco con poleas y disparador mecánico, a 50 m sobre una diana de 80 cm, con puntuación acumulada.", "body": "wa-arch" }
+  ],
+  "bodies": [
+    { "id": "wa-arch", "name": "World Archery", "acronym": null, "scope": "Federación internacional de tiro con arco", "url": "https://www.worldarchery.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wa-rulebook", "title": "Reglamento de World Archery", "publisher": "wa-arch", "url": "https://www.worldarchery.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Puntuar las flechas", "summary": "Anillos, líneas y la X.",
+      "rules": [
+        { "id": "line-cutter", "title": "La línea puntúa alto", "important": true,
+          "summary": "Si el astil de una flecha toca la línea entre dos anillos, puntúa el valor más alto.",
+          "body": "Los jueces confirman las puntuaciones en la diana. El anillo «X», dentro del 10, sirve para desempatar en las rondas de clasificación. En compuesto, solo el anillo interior más pequeño cuenta como 10.",
+          "example": "Una flecha toca la línea entre el 9 y el 10: vale 10.",
+          "related": ["shoot-off"] },
+        { "id": "time-limit", "title": "Límite de tiempo", "important": false,
+          "summary": "Los arqueros deben tirar dentro de un tiempo límite; en los enfrentamientos individuales alternan flechas con un tiempo corto para cada una.",
+          "body": "Luces y relojes con cuenta atrás muestran el tiempo. Una flecha tirada después de la señal puntúa cero.",
+          "related": ["line-cutter"] }
+      ]
+    },
+    {
+      "id": "matches", "title": "Formatos de enfrentamiento", "summary": "Sets en recurvo, totales en compuesto.",
+      "rules": [
+        { "id": "set-system", "title": "El sistema de sets", "important": true, "variants": ["recurve"],
+          "summary": "Cada set son tres flechas. El total más alto gana el set y 2 puntos; el empate da 1 a cada uno. El primero en llegar a 6 gana.",
+          "body": "Como cada set reinicia la cuenta, una mala flecha cuesta como mucho un set, lo que mantiene la tensión hasta el final.",
+          "example": "Set 1: 28 a 27 (2-0). Set 2: 27 a 27 (3-1). Set 3: 26 a 29 (3-3)…",
+          "related": ["shoot-off"] },
+        { "id": "cumulative", "title": "Puntuación acumulada", "important": true, "variants": ["compound"],
+          "summary": "Los enfrentamientos de compuesto son cinco tandas de tres flechas; se suman todas las puntuaciones.",
+          "body": "Con los mejores arqueros encadenando dieces, un solo 9 puede decidir el enfrentamiento.",
+          "related": ["shoot-off"] },
+        { "id": "shoot-off", "title": "Flecha de desempate", "important": false,
+          "summary": "Si hay empate, cada arquero tira una flecha; gana la puntuación más alta o, si coincide, la flecha más cercana al centro.",
+          "body": "Los jueces miden la distancia al centro cuando ambas flechas puntúan lo mismo.",
+          "related": ["set-system", "cumulative"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Tirar fuera de tiempo", "description": "Soltar la flecha pasado el tiempo límite.", "consequence": "Se pierde la flecha de mayor valor de la tanda", "severity": "MINOR" },
+    { "name": "Tirar fuera de turno", "description": "Tirar cuando le toca al rival.", "consequence": "La flecha puntúa cero", "severity": "MINOR" },
+    { "name": "Conducta insegura", "description": "Tensar el arco en una dirección peligrosa.", "consequence": "Avisos y posible descalificación", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Ronda de clasificación", "description": "72 flechas deciden el orden." },
+    { "title": "Eliminatorias", "description": "Enfrentamientos directos hasta la final." },
+    { "title": "Finales", "description": "Flechas alternas en un escenario central." }
+  ],
+  "positions": [
+    { "name": "Arquero de recurvo", "role": "Tira con los dedos y un clicker para medir la suelta." },
+    { "name": "Arquero de compuesto", "role": "Usa un disparador mecánico y un visor con lupa." }
+  ],
+  "field": {
+    "name": "Campo de tiro",
+    "dimensions": "Recurvo: 70 m; compuesto: 50 m",
+    "surface": "Campo de césped llano con parapetos",
+    "notes": ["Diana de recurvo: 122 cm, con el 10 de 12,2 cm", "Banderolas de viento sobre cada diana"]
+  },
+  "glossary": [
+    { "term": "Tanda", "definition": "Grupo de flechas que se tiran antes de puntuar (tres en los enfrentamientos)." },
+    { "term": "X", "definition": "El anillo más interior del 10, usado para desempatar." },
+    { "term": "Clicker", "definition": "Dispositivo que hace clic al llegar a la apertura completa." },
+    { "term": "Disparador", "definition": "Gatillo mecánico usado en compuesto." }
+  ],
+  "funFacts": [
+    "El 10 de una diana de recurvo a 70 m tiene más o menos el tamaño de un CD.",
+    "Corea del Sur ha ganado todos los títulos olímpicos de tiro con arco por equipos femenino desde que se creó la prueba en 1988."
+  ]
+}

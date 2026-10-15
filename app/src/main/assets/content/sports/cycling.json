@@ -1,0 +1,108 @@
+{
+  "id": "cycling",
+  "intro": "Competitive cycling ranges from one-day classics and three-week Grand Tours on the road to explosive sprints on a banked indoor track. Riders race as teams, sheltering in each other's slipstream to save energy, and tactics matter as much as legs. The Union Cycliste Internationale (UCI) publishes the regulations for every discipline.",
+  "inThirtySeconds": [
+    "On the road, first across the line wins the stage — but stage races are won on total time.",
+    "Riding in another rider's slipstream (drafting) saves a lot of energy and is legal in road races.",
+    "Riders finishing together in a bunch get the same time.",
+    "Time trials are raced alone against the clock — no drafting."
+  ],
+  "objective": "Cross the finish line first in a one-day race, or have the lowest cumulative time across all stages of a stage race.",
+  "facts": {
+    "players": "Individuals within teams (road teams of up to eight in Grand Tours)",
+    "duration": "From under a minute (track sprints) to 3 weeks (Grand Tours)",
+    "environment": "Roads, velodromes, mountain-bike trails and BMX tracks",
+    "equipment": ["Bike meeting UCI technical rules", "Helmet", "Team radio (road)", "Timing transponder"]
+  },
+  "scoring": [
+    { "label": "General classification", "value": "Time", "detail": "The sum of each rider's stage times, minus any time bonuses." },
+    { "label": "Points classification", "value": "Points", "detail": "Awarded for placings at finishes and intermediate sprints." },
+    { "label": "Mountains classification", "value": "Points", "detail": "Awarded for reaching the top of categorised climbs first." }
+  ],
+  "variants": [
+    { "id": "road", "name": "Road", "description": "One-day races and multi-day stage races on public roads.", "body": "uci" },
+    { "id": "track", "name": "Track", "description": "Races on a banked oval velodrome with fixed-gear bikes and no brakes.", "body": "uci" }
+  ],
+  "bodies": [
+    { "id": "uci", "name": "Union Cycliste Internationale", "acronym": "UCI", "scope": "World governing body for cycling", "url": "https://www.uci.org/" }
+  ],
+  "rulebooks": [
+    { "id": "uci-regs", "title": "UCI Cycling Regulations", "publisher": "uci", "url": "https://www.uci.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "stage-races", "title": "Stage races", "summary": "How a Grand Tour is won.",
+      "rules": [
+        { "id": "gc", "title": "General classification", "important": true, "variants": ["road"],
+          "summary": "The overall winner is the rider with the lowest total time after all stages.",
+          "body": "This is why a rider can win a Grand Tour without winning a stage: consistent finishes and strong time trials add up. Leaders of classifications wear distinctive jerseys, such as the yellow jersey at the Tour de France.",
+          "example": "A rider finishes every mountain stage within seconds of the winners and gains a minute in the time trial: they can take the overall title without a single stage win.",
+          "related": ["same-time", "time-trial"] },
+        { "id": "same-time", "title": "Same time for the bunch", "important": false, "variants": ["road"],
+          "summary": "Riders who finish together in a group are given the same time as the first rider in that group.",
+          "body": "Gaps appear only when there is a visible split in the group. To protect overall contenders from crashes in chaotic sprints, riders delayed by an incident close to the finish of flat stages are credited with the time of their group.",
+          "related": ["gc"] },
+        { "id": "time-cut", "title": "Time cut", "important": false, "variants": ["road"],
+          "summary": "Riders who finish too far behind the stage winner can be eliminated.",
+          "body": "The cut-off is a percentage of the winner's time, depending on the stage's difficulty and speed. Jury decisions occasionally relax it if a large group misses it.",
+          "related": ["gc"] }
+      ]
+    },
+    {
+      "id": "racing", "title": "Racing rules", "summary": "Drafting, time trials and conduct.",
+      "rules": [
+        { "id": "drafting", "title": "Drafting and team tactics", "important": true, "variants": ["road"],
+          "summary": "In road races, riders may shelter behind others to save energy; teammates work to protect their leader.",
+          "body": "Domestiques fetch bottles, chase breakaways and lead out sprinters. Pushing or pulling other riders, or holding onto team cars, is forbidden.",
+          "related": ["time-trial"] },
+        { "id": "time-trial", "title": "Time trials", "important": false, "variants": ["road", "track"],
+          "summary": "Riders start at intervals and race alone against the clock; drafting behind other riders is not allowed.",
+          "body": "Specialised aerodynamic bikes and positions are permitted within UCI technical limits. Team time trials see a team ride together, timed on a specified finisher.",
+          "related": ["gc"] },
+        { "id": "track-sprint", "title": "Track sprint", "important": false, "variants": ["track"],
+          "summary": "Two or three riders race over three laps; only the final 200 m is timed, so the early laps are a tactical game of cat and mouse.",
+          "body": "Riders must not cross into an opponent's path in the final straight, and the sprinter's lane on the inside of the track has strict rules about overtaking.",
+          "related": ["keirin"] },
+        { "id": "keirin", "title": "Keirin", "important": false, "variants": ["track"],
+          "summary": "Riders follow a motorised pacer that gradually speeds up and pulls off with laps to go, leaving a flat-out sprint.",
+          "body": "Overtaking the pacer before it leaves the track leads to relegation or disqualification. The event originated in Japan.",
+          "related": ["track-sprint"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Irregular sprinting", "description": "Deviating from your line to block or endanger others.", "consequence": "Relegation, points and time penalties", "severity": "MAJOR" },
+    { "name": "Holding onto a vehicle", "description": "Getting a tow from a team car or motorbike.", "consequence": "Fines, time penalties or disqualification", "severity": "MAJOR" },
+    { "name": "Littering outside zones", "description": "Discarding bottles or wrappers outside designated areas.", "consequence": "Fines and penalties", "severity": "MINOR" },
+    { "name": "Technical fraud", "description": "Illegal equipment such as hidden motors.", "consequence": "Disqualification and lengthy suspension", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Neutral start", "description": "The peloton rolls out behind the race director before the flag drops." },
+    { "title": "Breakaway", "description": "A small group escapes; the peloton controls the gap." },
+    { "title": "Climbs and sprints", "description": "Intermediate points and mountain summits shape the jerseys." },
+    { "title": "Finale", "description": "Lead-out trains or attacks on the final climb decide the stage." }
+  ],
+  "positions": [
+    { "name": "Team leader", "role": "The rider aiming for the overall or race win." },
+    { "name": "Domestique", "role": "Support rider who works for the leader." },
+    { "name": "Sprinter", "role": "Specialist in fast, flat finishes." },
+    { "name": "Climber", "role": "Light rider who excels in the mountains." },
+    { "name": "Rouleur", "role": "Powerful rider for flat terrain and time trials." }
+  ],
+  "field": {
+    "name": "Road course / velodrome",
+    "dimensions": "Road stages often 150–250 km; Olympic velodromes are typically 250 m laps",
+    "surface": "Tarmac (and sometimes cobbles or gravel); wooden track in velodromes",
+    "notes": ["Velodromes have steeply banked bends", "Feed zones and finish-line timing on the road"]
+  },
+  "glossary": [
+    { "term": "Peloton", "definition": "The main group of riders." },
+    { "term": "Echelon", "definition": "A diagonal line of riders sheltering from a crosswind." },
+    { "term": "Lead-out", "definition": "Teammates setting a high pace to launch their sprinter." },
+    { "term": "Lanterne rouge", "definition": "The last rider in the general classification." }
+  ],
+  "funFacts": [
+    "The first Tour de France, in 1903, had only six stages — some longer than 400 km.",
+    "A rider in a large peloton can save a significant share of their energy compared with riding alone."
+  ]
+}

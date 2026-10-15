@@ -1,0 +1,282 @@
+<resources>
+    <string name="brand_tagline">Cada deporte. Cada regla.</string>
+
+    <string name="nav_discover">Descubrir</string>
+    <string name="nav_explore">Explorar</string>
+    <string name="nav_library">Biblioteca</string>
+    <string name="nav_settings">Ajustes</string>
+
+    <string name="action_back">Atrás</string>
+    <string name="action_clear">Borrar</string>
+    <string name="action_clear_all">Borrar todo</string>
+    <string name="action_clear_filters">Quitar filtros</string>
+    <string name="action_explore_sports">Explorar deportes</string>
+    <string name="action_know_the_rules">Conoce las reglas</string>
+    <string name="action_next">Siguiente</string>
+    <string name="action_open_official_source">Abrir fuente oficial</string>
+    <string name="action_open_sport">Abrir %1$s</string>
+    <string name="action_open_website">Abrir sitio web</string>
+    <string name="action_remove">Quitar</string>
+    <string name="action_retry">Reintentar</string>
+    <string name="action_save_rule">Guardar regla</string>
+    <string name="action_unsave_rule">Quitar regla de la biblioteca</string>
+    <string name="action_save_sport">Guardar %1$s</string>
+    <string name="action_unsave_sport">Quitar %1$s de la biblioteca</string>
+    <string name="action_see_all">Ver todo</string>
+    <string name="action_show_all_terms">Ver los %1$d términos</string>
+    <string name="action_show_less">Ver menos términos</string>
+    <string name="action_skip">Saltar</string>
+    <string name="action_start_exploring">Empezar a explorar</string>
+    <string name="action_surprise_me">Sorpréndeme</string>
+    <string name="action_surprise_again">Otro</string>
+    <string name="action_undo">Deshacer</string>
+
+    <string name="state_saved">Guardado</string>
+    <string name="state_not_saved">No guardado</string>
+    <string name="state_expanded">Desplegado</string>
+    <string name="state_collapsed">Plegado</string>
+    <string name="state_loading">Cargando</string>
+    <string name="error_title">Algo ha fallado</string>
+    <string name="error_content">No se pudo cargar la enciclopedia. Reinicia la aplicación.</string>
+
+    <string name="label_editorial_summary">Resumen editorial</string>
+    <string name="label_example">Ejemplo</string>
+    <string name="label_hidden_gem">Joya oculta</string>
+    <string name="label_key_rule">Regla clave</string>
+    <string name="label_language">Idioma</string>
+    <string name="label_link_checked">Enlace comprobado el %1$s</string>
+    <string name="label_link_unverified">Enlace sin verificar</string>
+    <string name="label_note">Nota</string>
+    <string name="label_related_rules">Reglas relacionadas</string>
+    <string name="severity_minor">Leve</string>
+    <string name="severity_major">Grave</string>
+    <string name="severity_severe">Muy grave</string>
+
+    <string name="onboarding_1_title">Cada deporte.</string>
+    <string name="onboarding_1_body">De la final del Mundial a un partido de kabaddi en un pueblo: descubre cómo juega el mundo.</string>
+    <string name="onboarding_2_title">Cada regla.</string>
+    <string name="onboarding_2_body">Reglamentos divididos en capítulos, reglas clave y ejemplos reales. Sin muros de texto.</string>
+    <string name="onboarding_3_title">Un solo lugar.</string>
+    <string name="onboarding_3_body">Busca, guarda y explora sin conexión. Entra por el pádel, quédate por el curling.</string>
+    <string name="onboarding_page">Página %1$d de %2$d</string>
+
+    <string name="discover_sport_of_the_day">Deporte del día</string>
+    <string name="discover_headline_1">Cada deporte tiene una historia.</string>
+    <string name="discover_headline_2">Conoce las reglas.</string>
+    <string name="discover_popular">Lo más popular</string>
+    <string name="discover_popular_overline">Los grandes</string>
+    <string name="discover_categories">Elige tu terreno</string>
+    <string name="discover_categories_overline">Explora por categoría</string>
+    <string name="discover_hidden_gems">Joyas ocultas</string>
+    <string name="discover_hidden_gems_overline">Fuera de lo habitual</string>
+    <string name="discover_because_you_read">Porque leíste sobre %1$s</string>
+    <string name="discover_because_overline">Sigue explorando</string>
+    <string name="discover_recent">Vistos recientemente</string>
+    <string name="discover_recent_overline">Continúa donde lo dejaste</string>
+    <string name="discover_surprise_overline">¿Te pica la curiosidad?</string>
+    <string name="discover_surprise_title">Descubre un deporte al azar</string>
+    <string name="discover_surprise_body">Deja que RulePlay elija algo que probablemente nunca hayas jugado. Los deportes menos conocidos salen más a menudo.</string>
+    <string name="discover_library_title">Tu biblioteca</string>
+    <string name="discover_library_empty">Guarda deportes y reglas para encontrarlos aquí</string>
+    <string name="discover_footer_note">Las reglas de RulePlay son resúmenes editoriales pensados para leerse con facilidad. Para competición, consulta siempre el reglamento oficial. Versión del contenido %1$s.</string>
+
+    <string name="search_open">Buscar deportes y reglas</string>
+    <string name="search_prefix">Buscar</string>
+    <string name="search_hint_default">deportes y reglas</string>
+    <string name="search_placeholder">Deportes, reglas, términos…</string>
+    <string name="search_recent">Búsquedas recientes</string>
+    <string name="search_remove_recent">Quitar %1$s de las búsquedas recientes</string>
+    <string name="search_try">Prueba a buscar</string>
+    <string name="search_browse_categories">Explorar categorías</string>
+    <string name="search_suggested">Quizá no los conozcas</string>
+    <string name="search_searching">Buscando…</string>
+    <string name="search_no_results_short">Sin coincidencias</string>
+    <string name="search_no_results_title">Nada para «%1$s»</string>
+    <string name="search_no_results_body">Prueba con el nombre de un deporte, una regla como «fuera de juego» o un término como «tie-break». La búsqueda cubre nombres, nombres alternativos, categorías, títulos y texto de las reglas, y glosarios.</string>
+    <string name="search_section_sports">Deportes</string>
+    <string name="search_section_rules">Reglas</string>
+    <string name="search_section_terms">Términos</string>
+    <string name="search_also_known_as">También conocido como %1$s</string>
+    <string-array name="search_hints">
+        <item>«fuera de juego»</item>
+        <item>pádel</item>
+        <item>«la cocina»</item>
+        <item>kabaddi</item>
+        <item>«tie-break»</item>
+        <item>«golden score»</item>
+    </string-array>
+    <string-array name="search_try_terms">
+        <item>fuera de juego</item>
+        <item>tie-break</item>
+        <item>cocina</item>
+        <item>ippon</item>
+        <item>icing</item>
+        <item>LBW</item>
+        <item>reloj de posesión</item>
+        <item>melé</item>
+    </string-array>
+
+    <string name="explore_title">Explorar</string>
+    <string name="explore_overline">La enciclopedia</string>
+    <string name="explore_filter_placeholder">Filtrar deportes</string>
+    <string name="explore_all">Todos</string>
+    <string name="explore_favorites_only">Mostrar solo deportes guardados</string>
+    <string name="explore_empty_title">Ningún deporte coincide</string>
+    <string name="explore_empty_body">Prueba otra categoría u otra palabra. También funcionan nombres alternativos como «soccer» o «ping-pong».</string>
+    <string name="explore_empty_favorites_title">No hay deportes guardados aquí</string>
+    <string name="explore_empty_favorites_body">Toca el corazón de cualquier deporte para tenerlo a mano.</string>
+    <string name="sort_curated">Selección</string>
+    <string name="sort_popular">Populares</string>
+    <string name="sort_az">A–Z</string>
+
+    <string name="detail_tab_overview">Resumen</string>
+    <string name="detail_tab_rules">Reglas</string>
+    <string name="detail_tab_fouls">Faltas</string>
+    <string name="detail_tab_flow">Desarrollo</string>
+    <string name="detail_tab_positions">Posiciones</string>
+    <string name="detail_tab_field">Campo</string>
+    <string name="detail_tab_sources">Fuentes</string>
+    <string name="detail_art_description">Ilustración original de %1$s</string>
+    <string name="detail_thirty_seconds">El juego en 30 segundos</string>
+    <string name="detail_objective">Objetivo</string>
+    <string name="detail_players">Jugadores</string>
+    <string name="detail_duration">Duración</string>
+    <string name="detail_environment">Se juega en</string>
+    <string name="detail_equipment">Material</string>
+    <string name="detail_rule_set">Reglamento</string>
+    <string name="detail_scoring">Puntuación</string>
+    <string name="detail_essential_rules">Reglas esenciales</string>
+    <string name="detail_essential_overline">Empieza aquí</string>
+    <string name="detail_open_reader">Abrir el lector de reglas</string>
+    <string name="detail_fouls">Faltas e infracciones</string>
+    <string name="detail_fouls_overline">Lo que no se debe hacer</string>
+    <string name="detail_flow">Cómo se desarrolla un partido</string>
+    <string name="detail_flow_overline">Desarrollo</string>
+    <string name="detail_positions">Posiciones y funciones</string>
+    <string name="detail_positions_overline">Quién hace qué</string>
+    <string name="detail_field">El terreno de juego</string>
+    <string name="detail_field_overline">Dónde se juega</string>
+    <string name="detail_diagram_note">Diagrama ilustrativo, no a escala.</string>
+    <string name="detail_glossary">Habla su idioma</string>
+    <string name="detail_glossary_overline">Glosario</string>
+    <string name="detail_did_you_know">¿Sabías que…?</string>
+    <string name="detail_sources">Fuentes y reglamentos</string>
+    <string name="detail_sources_overline">Reglamentos oficiales</string>
+    <string name="detail_sources_disclaimer">Las reglas de esta página son resúmenes en lenguaje sencillo redactados por RulePlay, no el texto oficial. Las referencias (como «Law 11») solo aparecen cuando coinciden con la numeración oficial. Para arbitrar o competir, usa el reglamento vigente del organismo rector.</string>
+    <string name="detail_governing_bodies">Organismos rectores</string>
+    <string name="detail_cover_photo">Foto de portada</string>
+    <string name="photo_credit_by">Foto: %1$s</string>
+    <string name="action_open_photo_source">Abrir la fuente y la licencia de la foto</string>
+    <string name="sources_photos">Fotos de portada</string>
+    <string name="detail_related">Si te gusta %1$s, prueba…</string>
+    <string name="detail_related_overline">Sigue explorando</string>
+    <string name="detail_fallback_language">Esta ficha aún no está traducida, así que se muestra en inglés.</string>
+    <string name="detail_not_found_title">Deporte no encontrado</string>
+    <string name="detail_not_found_body">Puede que esta ficha se haya eliminado o renombrado en una actualización.</string>
+
+    <string name="reader_overline">Lector de reglas</string>
+    <string name="reader_title">Las reglas de %1$s</string>
+    <string name="reader_chapter">Capítulo %1$d</string>
+    <string name="reader_chapter_of">Capítulo %1$d de %2$d</string>
+    <string name="reader_contents">Índice</string>
+    <string name="reader_text_size">Cambiar tamaño del texto</string>
+    <string name="reader_expand_all">Desplegar todas las reglas</string>
+    <string name="reader_collapse_all">Plegar todas las reglas</string>
+    <string name="reader_disclaimer">Cada tarjeta empieza con la regla en una frase. Tócala para leer la explicación completa y un ejemplo.</string>
+    <string name="reader_source_title">Fuente y atribución</string>
+    <string name="reader_source_rulebook">Reglamento oficial</string>
+    <string name="reader_source_publisher">Publicado por</string>
+    <string name="reader_source_edition">Edición</string>
+    <string name="reader_source_edition_unknown">No especificada: consulta la edición vigente con el editor</string>
+    <string name="reader_source_none">Aún no hay un reglamento oficial enlazado para este deporte.</string>
+
+    <string name="library_title">Biblioteca</string>
+    <string name="library_overline">Guardado por ti</string>
+    <string name="library_subtitle">Tus deportes y reglas marcadas, disponibles sin conexión.</string>
+    <string name="library_tab_sports">Deportes · %1$d</string>
+    <string name="library_tab_rules">Reglas · %1$d</string>
+    <string name="library_empty_sports_title">Aún no has guardado deportes</string>
+    <string name="library_empty_sports_body">Toca el corazón de cualquier deporte para crear tu estantería.</string>
+    <string name="library_empty_rules_title">Aún no has marcado reglas</string>
+    <string name="library_empty_rules_body">Abre una tarjeta de regla y toca el marcador para guardarla.</string>
+    <string name="library_removed">Se quitó «%1$s»</string>
+    <string name="library_remove_item">Quitar %1$s</string>
+
+    <string name="settings_title">Ajustes</string>
+    <string name="settings_overline">A tu manera</string>
+    <string name="settings_appearance">Apariencia</string>
+    <string name="settings_theme">Tema</string>
+    <string name="settings_theme_body">RulePlay está pensado primero en oscuro</string>
+    <string name="theme_system">Sistema</string>
+    <string name="theme_dark">Oscuro</string>
+    <string name="theme_light">Claro</string>
+    <string name="settings_language">Idioma</string>
+    <string name="settings_language_body">Las reglas están disponibles en español e inglés</string>
+    <string name="language_system">Predeterminado del sistema</string>
+    <string name="settings_reading">Lectura</string>
+    <string name="settings_reader_size">Tamaño del texto en el lector</string>
+    <string name="settings_reader_size_body">Se aplica al lector de reglas</string>
+    <string name="settings_accessibility">Accesibilidad</string>
+    <string name="settings_reduce_motion">Reducir movimiento</string>
+    <string name="settings_reduce_motion_body">Sustituye transiciones y paralaje por cambios instantáneos. También respeta el ajuste del sistema «Quitar animaciones».</string>
+    <string name="settings_about">Acerca de</string>
+    <string name="settings_about_body">RulePlay es una enciclopedia de reglas deportivas pensada para que cualquier juego resulte cercano. El contenido viene incluido en la app y funciona sin conexión.</string>
+    <string name="settings_sources">Fuentes y agradecimientos</string>
+    <string name="settings_sources_body">Organismos rectores, política de contenido y licencias</string>
+    <string name="settings_replay_onboarding">Ver la introducción de nuevo</string>
+    <string name="settings_replay_onboarding_body">Aparecerá la próxima vez que abras RulePlay</string>
+    <string name="settings_content_version">Versión del contenido</string>
+    <string name="settings_catalog">Catálogo</string>
+    <string name="settings_catalog_value">%1$d deportes · %2$d reglas</string>
+    <string name="settings_app_version">Versión de la app</string>
+
+    <string name="sources_title">Fuentes</string>
+    <string name="sources_policy">RulePlay resume con sus propias palabras las reglas de cada deporte. Los resúmenes no son texto oficial ni están respaldados por ninguna federación. Enlazamos a cada organismo rector para que puedas leer el reglamento oficial vigente, y solo mostramos un número de regla cuando coincide con la numeración oficial.</string>
+    <string name="sources_links_checked">%1$d de %2$d enlaces a reglamentos se comprobaron como accesibles en la fecha indicada junto a cada uno. Las federaciones actualizan sus documentos con frecuencia, así que las ediciones pueden cambiar.</string>
+    <string name="sources_governing_bodies">Organismos rectores citados</string>
+    <string name="sources_acknowledgements">Agradecimientos</string>
+    <string name="sources_fonts">Tipografías: Bebas Neue (Dharma Type) e Inter (Rasmus Andersson), ambas con licencia SIL Open Font License 1.1.</string>
+    <string name="sources_art">Las fotos de portada proceden de Wikimedia Commons con la licencia indicada en cada una (Creative Commons o dominio público); se han recortado, redimensionado y retocado de color. Los deportes sin foto usan ilustraciones originales que RulePlay genera en el dispositivo. No se usan imágenes de federaciones.</string>
+    <string name="sources_trademarks">Los nombres de competiciones, ligas y organizaciones son marcas de sus respectivos titulares y se usan solo a efectos de identificación.</string>
+
+    <plurals name="sports_count">
+        <item quantity="one">%1$d deporte</item>
+        <item quantity="many">%1$d deportes</item>
+        <item quantity="other">%1$d deportes</item>
+    </plurals>
+    <plurals name="rules_count">
+        <item quantity="one">%1$d regla</item>
+        <item quantity="many">%1$d reglas</item>
+        <item quantity="other">%1$d reglas</item>
+    </plurals>
+    <plurals name="chapters_count">
+        <item quantity="one">%1$d capítulo</item>
+        <item quantity="many">%1$d capítulos</item>
+        <item quantity="other">%1$d capítulos</item>
+    </plurals>
+    <plurals name="saved_items">
+        <item quantity="one">%1$d elemento guardado</item>
+        <item quantity="many">%1$d elementos guardados</item>
+        <item quantity="other">%1$d elementos guardados</item>
+    </plurals>
+    <plurals name="discover_catalog_summary">
+        <item quantity="one">%1$d deporte en %2$d categorías, explicado en lenguaje sencillo. Funciona sin conexión.</item>
+        <item quantity="many">%1$d deportes en %2$d categorías, explicados en lenguaje sencillo. Funciona sin conexión.</item>
+        <item quantity="other">%1$d deportes en %2$d categorías, explicados en lenguaje sencillo. Funciona sin conexión.</item>
+    </plurals>
+    <plurals name="explore_subtitle">
+        <item quantity="one">%1$d deporte y sumando</item>
+        <item quantity="many">%1$d deportes y sumando</item>
+        <item quantity="other">%1$d deportes y sumando</item>
+    </plurals>
+    <plurals name="search_results_count">
+        <item quantity="one">%1$d resultado</item>
+        <item quantity="many">%1$d resultados</item>
+        <item quantity="other">%1$d resultados</item>
+    </plurals>
+    <plurals name="library_hint">
+        <item quantity="one">Desliza a la izquierda para quitar un elemento.</item>
+        <item quantity="many">Desliza a la izquierda para quitar un elemento.</item>
+        <item quantity="other">Desliza a la izquierda para quitar un elemento.</item>
+    </plurals>
+</resources>

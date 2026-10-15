@@ -1,0 +1,111 @@
+{
+  "id": "judo",
+  "intro": "Judo, 'the gentle way', was founded by Jigoro Kano in Tokyo in 1882. Two athletes in jackets (judogi) grip each other and try to throw their opponent cleanly onto their back, or control them on the ground with hold-downs, strangles and armlocks. A single perfect technique — ippon — ends the contest instantly. The International Judo Federation (IJF) publishes the Sport and Organisation Rules.",
+  "inThirtySeconds": [
+    "Throw your opponent largely on their back with force, speed and control for ippon — instant win.",
+    "A less complete throw scores waza-ari; two waza-ari make ippon.",
+    "On the ground, pin for 20 seconds, or make them submit to a strangle or armlock.",
+    "Passivity and illegal grips earn shido penalties; the third shido loses the contest."
+  ],
+  "objective": "Score ippon, or lead on scores when time runs out. Ties go to golden score.",
+  "facts": {
+    "players": "1 v 1, by weight category",
+    "duration": "4 minutes (senior), then unlimited golden score if tied",
+    "environment": "Tatami mat",
+    "equipment": ["Judogi (white or blue)", "Belt"]
+  },
+  "scoring": [
+    { "label": "Ippon", "value": "Win", "detail": "A full throw, a 20-second hold-down, or a submission." },
+    { "label": "Waza-ari", "value": "½", "detail": "A throw lacking one element of ippon, or a 10-second hold-down. Two waza-ari equal ippon." },
+    { "label": "Shido", "value": "Penalty", "detail": "Minor infringement. Three shido mean defeat (hansoku-make)." }
+  ],
+  "bodies": [
+    { "id": "ijf", "name": "International Judo Federation", "acronym": "IJF", "scope": "World governing body; publishes the IJF Sport and Organisation Rules", "url": "https://www.ijf.org/documents" }
+  ],
+  "rulebooks": [
+    { "id": "ijf-rules", "title": "IJF Sport and Organisation Rules", "publisher": "ijf", "url": "https://www.ijf.org/documents", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scores", "title": "Scoring",
+      "summary": "Ippon, waza-ari and golden score.",
+      "rules": [
+        { "id": "ippon", "title": "Ippon", "important": true,
+          "summary": "A throw that lands the opponent largely on their back with considerable force, speed and control wins the contest immediately.",
+          "body": "Ippon can also be scored by holding the opponent down for 20 seconds, or when they submit to a strangle or armlock by tapping twice or saying 'maitta'. A referee's announcement of ippon ends the contest.",
+          "example": "A clean shoulder throw (seoi-nage) slams the opponent flat on their back: ippon, contest over.",
+          "related": ["waza-ari", "osaekomi"] },
+        { "id": "waza-ari", "title": "Waza-ari", "important": true,
+          "summary": "A throw that is missing one of the elements of ippon scores waza-ari. Two waza-ari add up to ippon.",
+          "body": "A hold-down of 10 seconds or more but less than 20 also scores waza-ari. At the end of regular time the athlete with the higher score wins.",
+          "related": ["ippon", "golden-score"] },
+        { "id": "golden-score", "title": "Golden score", "important": false,
+          "summary": "If scores are level after regular time, the contest continues with no time limit; the first score or penalty difference decides it.",
+          "body": "Scores from regular time carry over. In golden score, the contest ends when one athlete scores, or when a penalty is given.",
+          "related": ["waza-ari", "shido"] }
+      ]
+    },
+    {
+      "id": "ground", "title": "Groundwork (ne-waza)",
+      "summary": "Pins, strangles and armlocks.",
+      "rules": [
+        { "id": "osaekomi", "title": "Hold-downs (osaekomi)", "important": true,
+          "summary": "Controlling an opponent on their back, while not being trapped between their legs, starts the osaekomi clock.",
+          "body": "Held for 20 seconds, it scores ippon; 10 seconds scores waza-ari. If the person underneath escapes or wraps their legs around one of the holder's legs, the referee calls 'toketa' and the clock stops.",
+          "related": ["submissions", "ippon"] },
+        { "id": "submissions", "title": "Strangles and armlocks", "important": false,
+          "summary": "Strangles (shime-waza) and armlocks (kansetsu-waza) win by ippon when the opponent submits or the referee stops the contest.",
+          "body": "Only armlocks applied to the elbow joint are allowed. Neck locks, spinal locks and attacks on other joints are forbidden. These techniques are restricted for younger age groups.",
+          "related": ["osaekomi"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Penalties",
+      "summary": "Shido and hansoku-make.",
+      "rules": [
+        { "id": "shido", "title": "Shido", "important": true,
+          "summary": "Minor infringements — such as passivity, avoiding grips, false attacks or stepping out — earn a shido.",
+          "body": "Shido do not give the opponent a score, but the third shido results in hansoku-make: defeat. Breaking grips with two hands and adopting excessively defensive postures are also penalised.",
+          "related": ["hansoku-make", "golden-score"] },
+        { "id": "hansoku-make", "title": "Hansoku-make", "important": false,
+          "summary": "Serious infringements, or three shido, lead to disqualification from the contest.",
+          "body": "Examples include diving head-first into the mat while throwing, dangerous actions that endanger the opponent's neck or spine, and acting against the spirit of judo. A direct hansoku-make for a serious act can also bar the athlete from the rest of the event.",
+          "related": ["shido"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Passivity", "description": "Not attacking or avoiding grips.", "consequence": "Shido", "severity": "MINOR" },
+    { "name": "False attack", "description": "An attack made only to look active, with no intention to throw.", "consequence": "Shido", "severity": "MINOR" },
+    { "name": "Head-first diving", "description": "Driving the head into the mat when attacking or defending.", "consequence": "Hansoku-make", "severity": "SEVERE" },
+    { "name": "Illegal joint lock", "description": "Locking any joint other than the elbow.", "consequence": "Hansoku-make", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Bow", "description": "Athletes bow on entering the mat and to each other." },
+    { "title": "Hajime", "description": "The referee calls 'hajime' to begin; athletes fight for grips (kumikata)." },
+    { "title": "Matte", "description": "The referee stops action with 'matte', for example when athletes leave the area." },
+    { "title": "Sore-made", "description": "The referee ends the contest; athletes bow again." }
+  ],
+  "positions": [
+    { "name": "Tori", "role": "The person performing a technique." },
+    { "name": "Uke", "role": "The person receiving the technique." },
+    { "name": "Referee and judges", "role": "One referee on the mat, supported by video review (Care System)." }
+  ],
+  "field": {
+    "name": "Competition area",
+    "dimensions": "Contest area roughly 8 × 8 m to 10 × 10 m, plus a surrounding safety area",
+    "surface": "Tatami mats",
+    "notes": ["Contest and safety areas are different colours", "Athletes wear white and blue judogi to be told apart"]
+  },
+  "glossary": [
+    { "term": "Hajime", "definition": "'Begin'." },
+    { "term": "Matte", "definition": "'Wait' — the referee stops the action." },
+    { "term": "Kumikata", "definition": "Gripping." },
+    { "term": "Seoi-nage", "definition": "A shoulder throw." },
+    { "term": "Uchi-mata", "definition": "An inner-thigh throw." }
+  ],
+  "funFacts": [
+    "Judo became an Olympic sport at the 1964 Tokyo Games.",
+    "Blue judogi were introduced to help spectators and officials tell athletes apart."
+  ]
+}

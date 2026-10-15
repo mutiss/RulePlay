@@ -1,0 +1,104 @@
+{
+  "id": "hurling",
+  "intro": "Hurling is an ancient Irish field game played with an ash stick (the hurley or camán) and a small leather ball (the sliotar). Players strike the sliotar huge distances through the air, catch it in their hand and race along balancing it on the hurley. Goals can be scored under the crossbar or points over it. The Gaelic Athletic Association (GAA) runs the game; the women's equivalent is camogie.",
+  "inThirtySeconds": [
+    "Under the crossbar into the net: a goal, worth 3 points.",
+    "Over the bar between the posts: a point.",
+    "You may catch the sliotar, but carry it in the hand for no more than four steps.",
+    "To run further, balance or bounce it on the hurley — the 'solo run'."
+  ],
+  "objective": "Outscore the opponent with goals and points; scores are written like 2–15 (2 goals, 15 points = 21).",
+  "facts": {
+    "players": "15 per team",
+    "duration": "2 × 35 minutes (senior inter-county)",
+    "environment": "Large grass pitch with H-shaped goals",
+    "equipment": ["Hurley (camán)", "Sliotar (leather ball)", "Helmet with face guard"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "3", "detail": "Sliotar enters the net under the crossbar." },
+    { "label": "Point", "value": "1", "detail": "Sliotar passes over the crossbar between the posts." }
+  ],
+  "bodies": [
+    { "id": "gaa", "name": "Gaelic Athletic Association", "acronym": "GAA", "scope": "Governing body for hurling and Gaelic football", "url": "https://www.gaa.ie/" }
+  ],
+  "rulebooks": [
+    { "id": "gaa-guide", "title": "GAA Official Guide (Playing Rules)", "publisher": "gaa", "url": "https://www.gaa.ie/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "handling", "title": "Handling the sliotar", "summary": "Hands, hurley and steps.",
+      "rules": [
+        { "id": "four-steps", "title": "Four steps in hand", "important": true,
+          "summary": "A player may catch the sliotar and carry it in the hand for no more than four steps.",
+          "body": "After that, the player must strike it, hand-pass it, or play it onto the hurley. The ball may be returned to the hand only a limited number of times during a run before it must be released.",
+          "related": ["solo", "pick-up"] },
+        { "id": "solo", "title": "The solo run", "important": false,
+          "summary": "Players run with the sliotar balanced or bouncing on the bas (the flat end) of the hurley.",
+          "body": "There's no limit to how far you can carry it on the hurley — making the solo run one of hurling's signature skills.",
+          "related": ["four-steps"] },
+        { "id": "pick-up", "title": "No picking up off the ground", "important": false,
+          "summary": "The sliotar may not be picked up directly from the ground with the hand; it must be lifted with the hurley.",
+          "body": "Players flick the ball up with the hurley ('jab lift' or 'roll lift') before catching it.",
+          "related": ["four-steps"] }
+      ]
+    },
+    {
+      "id": "scoring-h", "title": "Scoring and restarts", "summary": "Goals, points and puck-outs.",
+      "rules": [
+        { "id": "goal-point", "title": "Goals and points", "important": true,
+          "summary": "Into the net under the bar: a goal (3). Over the bar between the posts: a point (1).",
+          "body": "The total is written goals–points, so 1–20 (23) beats 3–12 (21). A goal may not be thrown or hand-passed into the net. Competitions occasionally trial scoring changes, so check the current GAA rules.",
+          "example": "A team scores 2 goals and 18 points: '2–18', a total of 24.",
+          "related": ["puck-out"] },
+        { "id": "puck-out", "title": "Puck-outs and frees", "important": false,
+          "summary": "After a score or a wide, the goalkeeper restarts with a puck-out from the small rectangle; fouls give a free puck.",
+          "body": "Free-takers strike from the ground using a lift and strike. A '65' (from the 65 m line) is awarded when the defending team plays the ball over its own end line.",
+          "related": ["goal-point"] }
+      ]
+    },
+    {
+      "id": "contact-h", "title": "Contact", "summary": "Shoulders yes, hurleys no.",
+      "rules": [
+        { "id": "contact-h", "title": "Fair and foul contact", "important": false,
+          "summary": "Shoulder-to-shoulder contact is allowed when contesting the ball; striking, pulling or tripping an opponent is a foul.",
+          "body": "Dangerous use of the hurley (high swings, striking the hand) is severely punished. Referees use yellow, black and red cards depending on the offence.",
+          "related": ["puck-out"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Overcarrying", "description": "More than four steps with the sliotar in hand.", "consequence": "Free to the opponents", "severity": "MINOR" },
+    { "name": "Picking up off the ground", "description": "Lifting the ball with the hand.", "consequence": "Free to the opponents", "severity": "MINOR" },
+    { "name": "Pulling across", "description": "Swinging the hurley into an opponent.", "consequence": "Free and card", "severity": "MAJOR" },
+    { "name": "Striking", "description": "Deliberately hitting an opponent.", "consequence": "Red card", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Throw-in", "description": "The referee throws the sliotar in between midfielders." },
+    { "title": "End-to-end play", "description": "Long strikes, high catches and solo runs." },
+    { "title": "Half-time", "description": "Teams change ends." },
+    { "title": "Full-time", "description": "Draws may go to extra time or replays depending on the competition." }
+  ],
+  "positions": [
+    { "name": "Goalkeeper", "role": "Guards the net and takes puck-outs." },
+    { "name": "Full-back line and half-back line", "role": "Six defenders." },
+    { "name": "Midfield", "role": "Two players covering the whole pitch." },
+    { "name": "Half-forward line and full-forward line", "role": "Six attackers aiming for goals and points." }
+  ],
+  "field": {
+    "name": "Pitch",
+    "dimensions": "130–145 m long × 80–90 m wide",
+    "surface": "Grass",
+    "notes": ["Same pitch and goals as Gaelic football", "Lines at 13 m, 20 m and 65 m"]
+  },
+  "glossary": [
+    { "term": "Sliotar", "definition": "The hurling ball." },
+    { "term": "Camán (hurley)", "definition": "The ash stick." },
+    { "term": "Bas", "definition": "The flat striking end of the hurley." },
+    { "term": "Puck-out", "definition": "The goalkeeper's restart." },
+    { "term": "Camogie", "definition": "The women's version of hurling." }
+  ],
+  "funFacts": [
+    "Hurling is recognised by UNESCO as part of the Intangible Cultural Heritage of Humanity.",
+    "Inter-county hurlers are amateurs, despite crowds of more than 80,000 at Croke Park."
+  ]
+}

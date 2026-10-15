@@ -1,0 +1,157 @@
+{
+  "id": "cricket",
+  "intro": "Two teams of eleven take turns to bat and bowl. The batting side scores runs by hitting the ball and running between two wickets 22 yards apart, while the fielding side tries to get ten batters out. Cricket comes in very different formats — from five-day Test matches to three-hour T20 games — but all are played under the Laws of Cricket, written by the Marylebone Cricket Club (MCC), with the ICC setting international playing conditions.",
+  "inThirtySeconds": [
+    "One team bats, the other bowls and fields; then they swap.",
+    "Batters score runs by running between the wickets, or with boundaries worth 4 or 6.",
+    "Bowlers deliver overs of six balls, trying to get batters out — bowled, caught, LBW and more.",
+    "An innings ends when ten batters are out or the overs run out."
+  ],
+  "objective": "Score more runs than the opponent. In Test cricket you must also bowl the opponent out twice to win, or the match is drawn.",
+  "facts": {
+    "players": "11 per team",
+    "duration": "T20: ~3 hours · ODI: ~7–8 hours · Test: up to 5 days",
+    "environment": "Large grass oval with a central 22-yard pitch",
+    "equipment": ["Bat", "Hard leather ball", "Two sets of stumps and bails", "Pads, gloves and helmet"]
+  },
+  "scoring": [
+    { "label": "Runs", "value": "1+", "detail": "Each time the batters cross and reach the opposite crease." },
+    { "label": "Four", "value": "4", "detail": "The ball crosses the boundary after touching the ground." },
+    { "label": "Six", "value": "6", "detail": "The ball clears the boundary without bouncing." },
+    { "label": "Extras", "value": "1+", "detail": "Runs from no-balls, wides, byes and leg byes, added to the team total." }
+  ],
+  "variants": [
+    { "id": "test", "name": "Test", "description": "Two innings per side over up to five days, with no limit on overs. A match can be won, lost, drawn or (rarely) tied.", "body": "icc" },
+    { "id": "odi", "name": "ODI", "description": "One Day International: one innings per side of up to 50 overs.", "body": "icc" },
+    { "id": "t20", "name": "T20", "description": "Twenty20: one innings per side of up to 20 overs — the fastest international format.", "body": "icc" }
+  ],
+  "bodies": [
+    { "id": "mcc", "name": "Marylebone Cricket Club", "acronym": "MCC", "scope": "Custodian of the Laws of Cricket", "url": "https://www.lords.org/mcc/about-the-laws-of-cricket" },
+    { "id": "icc", "name": "International Cricket Council", "acronym": "ICC", "scope": "World governing body; sets international playing conditions", "url": "https://www.icc-cricket.com/" }
+  ],
+  "rulebooks": [
+    { "id": "mcc-laws", "title": "The Laws of Cricket", "publisher": "mcc", "url": "https://www.lords.org/mcc/about-the-laws-of-cricket", "checked": "2026-10-14" },
+    { "id": "icc-conditions", "title": "ICC Playing Conditions (per format)", "publisher": "icc", "url": "https://www.icc-cricket.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "format", "title": "Innings, overs and formats",
+      "summary": "How a match is structured in each format.",
+      "rules": [
+        { "id": "over", "title": "The over", "important": true,
+          "summary": "An over is six legal deliveries bowled by one bowler from one end.",
+          "body": "After each over, bowling switches to the other end and a different bowler must take over — no bowler may bowl two overs in a row. No-balls and wides do not count as legal deliveries, so they must be re-bowled.",
+          "related": ["no-ball", "wide"] },
+        { "id": "test-format", "title": "Test matches", "important": false, "variants": ["test"],
+          "summary": "Each side bats twice, with no limit on overs, over up to five days.",
+          "body": "To win, a team must dismiss the opponents twice and score more runs. If time runs out before that, the match is drawn — even if one side is far ahead. A team well ahead after the first innings may ask the opponents to bat again immediately (the follow-on).",
+          "related": ["over"] },
+        { "id": "limited-overs", "title": "Limited-overs cricket", "important": false, "variants": ["odi", "t20"],
+          "summary": "Each side has one innings, limited to 50 overs (ODI) or 20 overs (T20).",
+          "body": "There are limits on how many overs each bowler may deliver, and fielding restrictions ('powerplays') at set stages keep most fielders inside a circle to encourage attacking batting. Matches always produce a result unless weather intervenes; ties may be decided by a Super Over.",
+          "related": ["over", "free-hit"] }
+      ]
+    },
+    {
+      "id": "dismissals", "title": "Getting out",
+      "summary": "The most common ways a batter is dismissed.",
+      "rules": [
+        { "id": "bowled", "ref": "Law 32", "title": "Bowled", "important": true,
+          "summary": "The batter is out if the bowler's delivery hits the stumps and dislodges a bail.",
+          "body": "It does not matter if the ball first touched the bat or the batter's body. It is not 'bowled' if the delivery was a no-ball.",
+          "related": ["lbw"] },
+        { "id": "caught", "ref": "Law 33", "title": "Caught", "important": true,
+          "summary": "Out if a fielder catches the ball after it has touched the bat (or the glove holding it) before it hits the ground.",
+          "body": "The fielder must have full control of the ball and their own movement. A catch taken by a fielder touching the boundary rope counts as a six instead.",
+          "related": ["bowled"] },
+        { "id": "lbw", "ref": "Law 36", "title": "Leg before wicket (LBW)", "important": true,
+          "summary": "Out if the ball would have hit the stumps but was stopped by the batter's body rather than the bat — subject to several conditions.",
+          "body": "The ball must not pitch outside the line of leg stump. If the batter was hit outside the line of off stump, they are only out if they were not attempting to play a shot. The umpire must judge that the ball would have gone on to hit the stumps. In international cricket, the Decision Review System (DRS) uses ball-tracking to review LBW decisions.",
+          "example": "A ball pitches in line, hits the batter's pad in front of middle stump while he leaves it, and was heading for the stumps: out LBW.",
+          "related": ["bowled", "drs"] },
+        { "id": "run-out", "ref": "Law 38", "title": "Run out", "important": false,
+          "summary": "A batter is run out if, while running, the fielders break the wicket before the batter's bat or body is grounded behind the crease.",
+          "body": "Either batter can be run out, at either end. It is also possible to be run out when not attempting a run, if the batter is out of the crease and the ball is in play.",
+          "related": ["stumped"] },
+        { "id": "stumped", "ref": "Law 39", "title": "Stumped", "important": false,
+          "summary": "The wicket-keeper breaks the wicket while the batter is out of the crease, not attempting a run.",
+          "body": "Stumpings usually happen when a batter dances down the pitch to a spin bowler and misses the ball.",
+          "related": ["run-out"] }
+      ]
+    },
+    {
+      "id": "deliveries", "title": "Legal deliveries",
+      "summary": "No-balls, wides and free hits.",
+      "rules": [
+        { "id": "no-ball", "ref": "Law 21", "title": "No-ball", "important": true,
+          "summary": "A delivery is a no-ball if the bowler oversteps the crease, bowls with an illegal action, or delivers a dangerous full toss above waist height.",
+          "body": "The batting side gets an extra run, the ball must be re-bowled, and the batter cannot be out by most methods (run out is still possible). Front-foot no-balls are among the most common: some part of the front foot must land behind the popping crease.",
+          "related": ["free-hit", "wide"] },
+        { "id": "wide", "ref": "Law 22", "title": "Wide", "important": false,
+          "summary": "A delivery is a wide if it is too far from the batter for them to hit it with a normal shot.",
+          "body": "An extra run is added and the ball is re-bowled. Limited-overs playing conditions interpret wides more strictly than Test cricket, especially on the leg side.",
+          "related": ["no-ball"] },
+        { "id": "free-hit", "title": "Free hit", "important": false, "variants": ["odi", "t20"],
+          "summary": "In limited-overs internationals, the delivery after a no-ball is a free hit: the batter cannot be out by most methods.",
+          "body": "The fielding side may not change its field for the free hit unless the batters have changed ends. Batters typically try to hit it for a boundary.",
+          "related": ["no-ball"] },
+        { "id": "drs", "title": "Decision Review System", "important": false,
+          "summary": "In international cricket, each team may ask for umpire decisions to be reviewed with technology.",
+          "body": "Teams have a limited number of unsuccessful reviews per innings. Ball-tracking, edge detection and replays are used; for LBW, close calls are 'umpire's call' and the original decision stands.",
+          "related": ["lbw"] }
+      ]
+    },
+    {
+      "id": "runs", "title": "Scoring runs",
+      "summary": "Running, boundaries and extras.",
+      "rules": [
+        { "id": "running", "title": "Running between the wickets", "important": false,
+          "summary": "Batters score a run each time both cross and ground their bat behind the opposite popping crease.",
+          "body": "If a batter fails to ground the bat or body behind the crease when turning for another run, it is a 'short run' and is not counted.",
+          "related": ["run-out", "boundary"] },
+        { "id": "boundary", "ref": "Law 19", "title": "Boundaries", "important": false,
+          "summary": "The ball reaching the boundary along the ground scores 4; clearing it on the full scores 6.",
+          "body": "The boundary is marked by a rope or line around the field. A fielder who catches the ball while touching the boundary concedes six runs rather than taking a catch.",
+          "related": ["caught"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "No-ball", "description": "Overstepping or a dangerous/illegal delivery.", "consequence": "Extra run, re-bowl (free hit in limited-overs internationals)", "severity": "MINOR" },
+    { "name": "Wide", "description": "Delivery out of the batter's reach.", "consequence": "Extra run, re-bowl", "severity": "MINOR" },
+    { "name": "Ball tampering", "description": "Illegally changing the condition of the ball.", "consequence": "5-run penalty and disciplinary action", "severity": "SEVERE" },
+    { "name": "Fielder obstruction / fake fielding", "description": "Deliberately distracting or deceiving the batters.", "consequence": "5 penalty runs to the batting side", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "The toss", "description": "The winning captain chooses to bat or bowl first." },
+    { "title": "First innings", "description": "One side bats until ten wickets fall or overs run out." },
+    { "title": "The chase", "description": "The other side bats, aiming to pass the target." },
+    { "title": "Result", "description": "Win by runs (team batting first) or by wickets (chasing team). Tests may also end in a draw." }
+  ],
+  "positions": [
+    { "name": "Batters", "role": "Two at a time at the crease, scoring runs and protecting their wicket." },
+    { "name": "Bowlers", "role": "Fast, medium or spin bowlers who deliver the ball." },
+    { "name": "Wicket-keeper", "role": "Gloved fielder behind the stumps who catches edges and stumps batters." },
+    { "name": "Fielders", "role": "Placed by the captain in positions such as slip, gully, point and mid-on." },
+    { "name": "Captain", "role": "Sets the field, rotates the bowlers and makes tactical decisions." }
+  ],
+  "field": {
+    "name": "Ground and pitch",
+    "dimensions": "Pitch: 22 yards (20.12 m) long; oval playing area with varying boundary sizes",
+    "surface": "Natural grass; the central pitch is closely mown and rolled",
+    "notes": ["Popping crease 4 ft (1.22 m) in front of the stumps", "Stumps: three, with two bails on top", "Inner circle marks fielding restrictions in limited-overs matches"]
+  },
+  "glossary": [
+    { "term": "Over", "definition": "Six legal deliveries from one bowler." },
+    { "term": "Maiden", "definition": "An over in which no runs are scored off the bat." },
+    { "term": "Duck", "definition": "Getting out without scoring." },
+    { "term": "Century", "definition": "A batter's score of 100 runs or more." },
+    { "term": "LBW", "definition": "Leg before wicket — out because the body blocked a ball heading for the stumps." },
+    { "term": "Yorker", "definition": "A delivery aimed to land at the batter's feet." },
+    { "term": "Follow-on", "definition": "In Tests, making the team that is well behind bat again immediately." }
+  ],
+  "funFacts": [
+    "The 1939 “timeless Test” in Durban was played over nine days — and still ended in a draw because the England team had to catch their ship home.",
+    "MCC has been the custodian of the Laws of Cricket since 1787."
+  ]
+}

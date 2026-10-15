@@ -1,0 +1,129 @@
+{
+  "id": "golf",
+  "language": "es",
+  "intro": "El golf consiste en llevar una bola desde el lugar de salida hasta un pequeño hoyo con los menos golpes posibles, a lo largo de dieciocho hoyos de terreno variado. En la mayoría de campos no hay árbitro: se espera que los jugadores apliquen las Reglas ellos mismos, con honestidad. Las Reglas de Golf las redactan conjuntamente The R&A y la USGA.",
+  "inThirtySeconds": [
+    "Completa cada hoyo con los menos golpes posibles; en juego por golpes gana quien menos suma.",
+    "Juega la bola como repose: no mejores tu lie ni tu línea de juego.",
+    "Bola fuera de límites o perdida: un golpe de penalización y vuelve a jugar desde donde golpeaste.",
+    "Puedes llevar como máximo 14 palos."
+  ],
+  "objective": "Hacer menos golpes en la vuelta (juego por golpes) o ganar más hoyos que el rival (juego por hoyos).",
+  "facts": {
+    "players": "Individual (o parejas y equipos en algunos formatos)",
+    "duration": "18 hoyos, normalmente 4–5 horas",
+    "environment": "Campo al aire libre: salidas, calles, rough, búnkeres, áreas de penalización y greens",
+    "equipment": ["Hasta 14 palos", "Bola", "Tee", "Medidor de distancias opcional"]
+  },
+  "scoring": [
+    { "label": "Par", "value": "3–5", "detail": "Los golpes que se espera que necesite un buen jugador en un hoyo." },
+    { "label": "Birdie / bogey", "value": "−1 / +1", "detail": "Un golpe por debajo o por encima del par en un hoyo." },
+    { "label": "Golpe de penalización", "value": "+1 o +2", "detail": "Se suma al resultado por infracciones o por aliviarse con penalización." }
+  ],
+  "variants": [
+    { "id": "stroke", "name": "Por golpes", "description": "Cuenta cada golpe; gana el resultado total más bajo de la(s) vuelta(s).", "body": "randa" },
+    { "id": "match", "name": "Por hoyos", "description": "Los jugadores compiten hoyo a hoyo; gana quien gane más hoyos.", "body": "randa" }
+  ],
+  "bodies": [
+    { "id": "randa", "name": "The R&A", "acronym": "R&A", "scope": "Coautor de las Reglas de Golf (fuera de EE. UU. y México)", "url": "https://www.randa.org/" },
+    { "id": "usga", "name": "United States Golf Association", "acronym": "USGA", "scope": "Coautor de las Reglas de Golf (EE. UU. y México)", "url": null }
+  ],
+  "rulebooks": [
+    { "id": "rules-of-golf", "title": "Reglas de Golf", "publisher": "randa", "url": "https://www.randa.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "principles", "title": "Principios básicos",
+      "summary": "El espíritu del juego y tu equipamiento.",
+      "rules": [
+        { "id": "play-as-lies", "ref": "Regla 9", "title": "Juega la bola como repose", "important": true,
+          "summary": "Debes jugar la bola desde donde se ha detenido, sin mejorar las condiciones que afectan a tu golpe.",
+          "body": "No puedes aplastar el terreno detrás de la bola, doblar ramas ni quitar arena para mejorar el lie, la zona de stance o swing, ni la línea de juego. Si mueves tu bola en reposo, normalmente debes reponerla, a menudo con un golpe de penalización.",
+          "example": "Un jugador rompe una ramita que le molesta en el backswing: dos golpes de penalización en juego por golpes (pérdida del hoyo en juego por hoyos).",
+          "related": ["unplayable", "fourteen-clubs"] },
+        { "id": "fourteen-clubs", "title": "Catorce palos como máximo", "important": false,
+          "summary": "Un jugador puede empezar la vuelta con 14 palos como máximo.",
+          "body": "Los palos deben cumplir las normas de equipamiento. Llevar demasiados palos supone una penalización por cada hoyo en que se cometió la infracción, hasta un máximo.",
+          "related": ["play-as-lies"] }
+      ]
+    },
+    {
+      "id": "relief", "title": "Problemas y alivios",
+      "summary": "Qué hacer cuando las cosas se complican.",
+      "rules": [
+        { "id": "ob-lost", "ref": "Regla 18", "title": "Fuera de límites y bola perdida", "important": true,
+          "summary": "Si tu bola está fuera de límites, o no la encuentras en tres minutos, suma un golpe de penalización y vuelve a jugar desde donde hiciste el golpe anterior.",
+          "body": "Esto se llama «golpe y distancia». Para ahorrar tiempo, puedes jugar una bola provisional si crees que la primera puede estar perdida o fuera de límites. Muchos comités también adoptan una regla local para el juego general que permite dropar cerca de donde se perdió la bola, con dos golpes de penalización.",
+          "example": "Tu golpe de salida vuela por encima de la valla de límite: un golpe de penalización, y tu siguiente golpe desde el tee es el tercero.",
+          "related": ["unplayable", "penalty-area"] },
+        { "id": "penalty-area", "ref": "Regla 17", "title": "Áreas de penalización", "important": false,
+          "summary": "Los obstáculos de agua y otras áreas de penalización se marcan en rojo o amarillo. Puedes jugar la bola como repose o aliviarte con un golpe de penalización.",
+          "body": "Las opciones incluyen golpe y distancia y dropar hacia atrás en la línea que une el hoyo con el punto por donde la bola cruzó el borde. Las áreas rojas permiten además dropar a dos palos de donde cruzó la bola.",
+          "related": ["ob-lost"] },
+        { "id": "unplayable", "ref": "Regla 19", "title": "Bola injugable", "important": false,
+          "summary": "Puedes declarar tu bola injugable en cualquier lugar salvo en un área de penalización, y aliviarte con un golpe de penalización.",
+          "body": "Las opciones son golpe y distancia, alivio hacia atrás en la línea o dropar a dos palos. En un búnker hay opciones extra, como dropar fuera del búnker con dos golpes de penalización.",
+          "related": ["play-as-lies", "ob-lost"] }
+      ]
+    },
+    {
+      "id": "green", "title": "En el green",
+      "summary": "Reglas del putt.",
+      "rules": [
+        { "id": "putting-green", "ref": "Regla 13", "title": "El green", "important": false,
+          "summary": "En el green puedes marcar, levantar y limpiar tu bola, y reparar casi cualquier daño, como piques y marcas de clavos.",
+          "body": "Puedes patear con la bandera en el hoyo o quitada: tú eliges. Si tu bola golpea una bandera desatendida en el hoyo, no hay penalización.",
+          "related": ["play-as-lies"] }
+      ]
+    },
+    {
+      "id": "formats", "title": "Juego por golpes y por hoyos",
+      "summary": "Dos formas de ganar.",
+      "rules": [
+        { "id": "stroke-play", "title": "Juego por golpes", "important": false, "variants": ["stroke"],
+          "summary": "Cuenta cada golpe y cada penalización; gana el total más bajo. Hay que embocar en todos los hoyos.",
+          "body": "La mayoría de penalizaciones en juego por golpes son de dos golpes. El jugador es responsable de firmar una tarjeta correcta.",
+          "related": ["match-play"] },
+        { "id": "match-play", "title": "Juego por hoyos", "important": false, "variants": ["match"],
+          "summary": "Cada hoyo es un duelo; el resultado más bajo gana el hoyo y el partido se gana al ir por delante en más hoyos de los que quedan.",
+          "body": "Los jugadores pueden conceder un golpe, un hoyo o el partido. La penalización general en juego por hoyos es la pérdida del hoyo.",
+          "related": ["stroke-play"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Mejorar el lie", "description": "Aplastar, doblar o romper cosas para favorecer tu golpe.", "consequence": "Penalización general (2 golpes / pérdida del hoyo)", "severity": "MAJOR" },
+    { "name": "Fuera de límites", "description": "La bola se detiene más allá del límite.", "consequence": "Golpe y distancia (1 golpe)", "severity": "MINOR" },
+    { "name": "Jugar una bola equivocada", "description": "Golpear una bola que no es la tuya.", "consequence": "Penalización general y corregir el error", "severity": "MAJOR" },
+    { "name": "Firmar una tarjeta incorrecta", "description": "Entregar un resultado más bajo del realmente hecho.", "consequence": "Descalificación", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Golpe de salida", "description": "Cada hoyo empieza desde el lugar de salida." },
+    { "title": "Aproximación", "description": "Golpes desde la calle hacia el green." },
+    { "title": "Juego corto", "description": "Chips, approaches y golpes de búnker cerca del green." },
+    { "title": "Putt", "description": "Hacer rodar la bola hasta el hoyo de 108 mm." },
+    { "title": "Tarjeta", "description": "Al final de la vuelta se comprueban y firman los resultados." }
+  ],
+  "positions": [
+    { "name": "Jugador", "role": "Responsable de aplicar las Reglas y llevar su resultado." },
+    { "name": "Caddie", "role": "Lleva los palos y aconseja; el jugador es penalizado por las infracciones del caddie." },
+    { "name": "Marcador", "role": "Anota el resultado del jugador en el juego por golpes." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "Normalmente 18 hoyos repartidos en varios kilómetros; par habitual de 70–72",
+    "surface": "Césped segado a distintas alturas, búnkeres de arena y agua",
+    "notes": ["Diámetro del hoyo: 108 mm (4,25 pulgadas)", "Las estacas blancas marcan el fuera de límites; las rojas y amarillas, las áreas de penalización"]
+  },
+  "glossary": [
+    { "term": "Par", "definition": "Los golpes previstos para un hoyo." },
+    { "term": "Eagle", "definition": "Dos golpes bajo par en un hoyo." },
+    { "term": "Bola provisional", "definition": "Segunda bola jugada por si la primera está perdida o fuera de límites." },
+    { "term": "Golpe y distancia", "definition": "Volver a jugar desde el punto anterior con un golpe de penalización." },
+    { "term": "Dropar", "definition": "Soltar la bola desde la altura de la rodilla para aliviarse." }
+  ],
+  "funFacts": [
+    "En el Old Course de St Andrews se juega al golf desde hace unos 600 años.",
+    "Desde 2019, los jugadores pueden patear con la bandera puesta en el hoyo."
+  ]
+}

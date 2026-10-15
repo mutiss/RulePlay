@@ -1,0 +1,94 @@
+{
+  "id": "curling",
+  "intro": "Curling is played on a long sheet of pebbled ice. Two teams of four slide heavy granite stones towards a target called the house, and teammates sweep the ice in front of the moving stone to change its speed and curl. Often called 'chess on ice', each end is a strategic puzzle. World Curling publishes the rules of curling and competition.",
+  "inThirtySeconds": [
+    "Each team throws eight stones per end, alternating throws.",
+    "Only one team scores in each end: a point for every stone closer to the centre than the opponent's best.",
+    "Sweeping makes a stone travel further and curl less.",
+    "Ten ends make a game (eight in many events)."
+  ],
+  "objective": "Score more points than the opponent by getting stones closest to the centre of the house.",
+  "facts": {
+    "players": "4 per team (mixed doubles: 2)",
+    "duration": "8 or 10 ends, roughly 2–3 hours",
+    "environment": "Indoor curling sheet with pebbled ice",
+    "equipment": ["Granite stones of nearly 20 kg", "Brooms", "Curling shoes with a slider sole"]
+  },
+  "scoring": [
+    { "label": "Point", "value": "1", "detail": "For each stone closer to the button than the opponent's closest stone." },
+    { "label": "Blank end", "value": "0", "detail": "No stones in the house: no score, and the team with hammer keeps it." }
+  ],
+  "bodies": [
+    { "id": "wcf", "name": "World Curling", "acronym": null, "scope": "World governing body; publishes the Rules of Curling", "url": "https://worldcurling.org/rules/" }
+  ],
+  "rulebooks": [
+    { "id": "wc-rules", "title": "The Rules of Curling and Rules of Competition", "publisher": "wcf", "url": "https://worldcurling.org/rules/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Ends and scoring", "summary": "How points are counted.",
+      "rules": [
+        { "id": "end-scoring", "title": "Scoring an end", "important": true,
+          "summary": "After all 16 stones are thrown, the team with the stone closest to the button scores one point for each of its stones closer than the opponent's best.",
+          "body": "Only stones in the house (the circles) count. Officials use a measuring device when it's too close to call by eye.",
+          "example": "Red has stones 1st and 2nd closest, yellow has 3rd: red scores two.",
+          "related": ["hammer"] },
+        { "id": "hammer", "title": "The hammer", "important": true,
+          "summary": "The team that throws the last stone of an end has the 'hammer' — a big advantage.",
+          "body": "The team that scores in an end gives up the hammer to the opponent for the next end. Teams with hammer often try to score two or more, and may 'blank' an end on purpose to keep the hammer.",
+          "related": ["end-scoring", "free-guard"] }
+      ]
+    },
+    {
+      "id": "delivery", "title": "Delivery and sweeping", "summary": "Throwing and sweeping the stone.",
+      "rules": [
+        { "id": "hog-line", "title": "Releasing before the hog line", "important": false,
+          "summary": "The thrower must release the stone before it reaches the near hog line.",
+          "body": "Electronic handles in top events detect late releases. A stone that doesn't fully cross the far hog line is removed from play, unless it hit another stone.",
+          "related": ["sweeping"] },
+        { "id": "sweeping", "title": "Sweeping", "important": true,
+          "summary": "Sweeping in front of a moving stone briefly warms the ice, reducing friction so the stone goes further and straighter.",
+          "body": "Either team may sweep any stone once it passes the tee line, but only the delivering team may sweep it before then. Touching a moving stone with a broom or body ('burning' it) is an infringement.",
+          "related": ["hog-line"] },
+        { "id": "free-guard", "title": "Free guard zone", "important": false,
+          "summary": "Early in each end, guard stones in front of the house cannot be knocked out of play by the opponents.",
+          "body": "This rule (the 'five-rock rule' in four-player curling) protects guards for the first stones of the end, encouraging aggressive, high-scoring play.",
+          "related": ["hammer"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Hog-line violation", "description": "Releasing the stone after the hog line.", "consequence": "Stone removed from play", "severity": "MINOR" },
+    { "name": "Burned stone", "description": "Touching a moving stone.", "consequence": "Stone removed or restored at the non-offending team's choice", "severity": "MINOR" },
+    { "name": "Free guard zone violation", "description": "Removing a protected guard too early.", "consequence": "Stones replaced; thrown stone removed", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Hammer", "description": "The first-end hammer is decided by a pre-game draw to the button." },
+    { "title": "Ends", "description": "Teams alternate 16 stones per end." },
+    { "title": "Strategy", "description": "Guards, draws, takeouts and freezes." },
+    { "title": "Concession", "description": "Teams often concede ('shake hands') when the game is out of reach." }
+  ],
+  "positions": [
+    { "name": "Lead", "role": "Throws the first two stones, usually guards and draws." },
+    { "name": "Second", "role": "Throws stones three and four; powerful sweeper and takeout thrower." },
+    { "name": "Third (vice-skip)", "role": "Throws stones five and six and holds the broom for the skip." },
+    { "name": "Skip", "role": "Team captain; calls the strategy and throws the last stones." }
+  ],
+  "field": {
+    "name": "Sheet",
+    "dimensions": "About 45 m long and 5 m wide",
+    "surface": "Pebbled ice — tiny frozen droplets that create the curl",
+    "notes": ["House: 12-foot circle with the button at the centre", "Hog lines 6.4 m from each tee line"]
+  },
+  "glossary": [
+    { "term": "House", "definition": "The target circles." },
+    { "term": "Button", "definition": "The centre of the house." },
+    { "term": "Hammer", "definition": "Last stone of the end." },
+    { "term": "Takeout", "definition": "A throw that knocks another stone out of play." },
+    { "term": "Freeze", "definition": "A stone that stops touching another stone, hard to remove." }
+  ],
+  "funFacts": [
+    "Many Olympic curling stones are made from granite quarried on Ailsa Craig, an island off Scotland.",
+    "A curling stone turns only a few times over the length of the sheet, yet curls more than a metre."
+  ]
+}

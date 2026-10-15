@@ -1,0 +1,108 @@
+{
+  "id": "kabaddi",
+  "language": "es",
+  "intro": "El kabaddi es un deporte de equipo y de contacto del subcontinente indio que mezcla el pillapilla con la lucha. Un jugador —el atacante— cruza al campo rival, intenta tocar a los defensores y volver a cruzar la línea central, mientras los defensores intentan impedir que regrese. Tradicionalmente los atacantes repiten «kabaddi, kabaddi» en una sola respiración; las ligas profesionales modernas usan un reloj de incursión. Esta ficha resume el kabaddi estándar (en pista), tal como se juega a nivel internacional y en las ligas profesionales.",
+  "inThirtySeconds": [
+    "Los equipos se turnan para mandar a un atacante al campo rival.",
+    "El atacante suma un punto por cada defensor que toca, si consigue volver a cruzar la línea central.",
+    "Los defensores puntúan si impiden que el atacante regrese (un placaje).",
+    "Los jugadores eliminados salen de la pista y vuelven cuando su equipo puntúa."
+  ],
+  "objective": "Anotar más puntos que el rival con incursiones, placajes y eliminaciones totales.",
+  "facts": {
+    "players": "7 por equipo en pista, con suplentes",
+    "duration": "Normalmente 2 × 20 minutos (hombres adultos)",
+    "environment": "Tapiz cubierto (tradicionalmente, tierra)",
+    "equipment": ["Pista de tapiz con líneas marcadas", "Equipación"]
+  },
+  "scoring": [
+    { "label": "Punto de toque", "value": "1 cada uno", "detail": "Por cada defensor que el atacante toca antes de volver a salvo." },
+    { "label": "Punto de bonus", "value": "1", "detail": "El atacante cruza con un pie la línea de bonus mientras hay suficientes defensores en pista." },
+    { "label": "Punto de placaje", "value": "1", "detail": "Los defensores impiden que el atacante regrese." },
+    { "label": "Eliminación total", "value": "+2", "detail": "Bonificación por eliminar a todo el equipo rival." }
+  ],
+  "bodies": [
+    { "id": "ikf", "name": "Federación Internacional de Kabaddi", "acronym": "IKF", "scope": "Federación internacional del kabaddi estándar", "url": null },
+    { "id": "pkl", "name": "Pro Kabaddi League", "acronym": "PKL", "scope": "Liga profesional de la India con reglas de juego propias", "url": "https://www.prokabaddi.com/" }
+  ],
+  "rulebooks": [
+    { "id": "ikf-rules", "title": "Reglas del kabaddi estándar (IKF)", "publisher": "ikf", "url": null, "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "raid", "title": "La incursión", "summary": "Cómo ataca un atacante.",
+      "rules": [
+        { "id": "raid-basics", "title": "Atacar", "important": true,
+          "summary": "El atacante cruza la línea central hacia el campo rival, intenta tocar a uno o más defensores y debe volver a cruzar la línea central para puntuar.",
+          "body": "Tradicionalmente el atacante debe repetir «kabaddi» en una sola respiración durante toda la incursión (el «cant»); si pierde el cant, queda eliminado. Las ligas profesionales dan en cambio 30 segundos para completar la incursión. Cada equipo manda atacantes de forma alterna.",
+          "example": "Un atacante toca a dos defensores con un toque de pie y se lanza de vuelta sobre la línea central: dos puntos, y ambos defensores quedan eliminados.",
+          "related": ["baulk-line", "tackle"] },
+        { "id": "baulk-line", "title": "Línea de baulk y línea de bonus", "important": false,
+          "summary": "El atacante debe cruzar la línea de baulk del campo rival para que la incursión cuente; cruzar la línea de bonus, más lejana, puede dar un punto extra.",
+          "body": "Si el atacante vuelve sin cruzar la línea de baulk ni tocar a ningún defensor, la incursión no es válida. El punto de bonus solo se aplica con un número mínimo de defensores en pista (normalmente seis).",
+          "related": ["raid-basics"] },
+        { "id": "do-or-die", "title": "Incursión de «ahora o nunca»", "important": false,
+          "summary": "En las ligas profesionales, tras dos incursiones vacías seguidas, la tercera del equipo debe puntuar o el atacante queda eliminado.",
+          "body": "Esta regla impide que los equipos jueguen sobre seguro con incursiones vacías y crea momentos de mucha presión.",
+          "related": ["raid-basics"] }
+      ]
+    },
+    {
+      "id": "defence", "title": "Defensa", "summary": "Placajes y eliminaciones.",
+      "rules": [
+        { "id": "tackle", "title": "El placaje", "important": true,
+          "summary": "Los defensores suman un punto si sujetan al atacante e impiden que vuelva a su campo.",
+          "body": "Los defensores pueden sujetar al atacante por el tronco y las extremidades, pero no por el pelo ni la ropa, ni con agarres peligrosos como sujetar el cuello. Un placaje con tres defensores o menos en pista da un punto extra de «súper placaje».",
+          "related": ["raid-basics", "revival"] },
+        { "id": "revival", "title": "Eliminación y reincorporación", "important": true,
+          "summary": "Los jugadores eliminados salen de la pista; cada punto de su equipo hace volver a uno, en el orden en que salieron.",
+          "body": "Si un equipo pierde a todos sus jugadores, el rival suma un bonus de «eliminación total» y todo el equipo vuelve. Este sistema hace que el número de jugadores en pista cambie constantemente.",
+          "related": ["tackle"] }
+      ]
+    },
+    {
+      "id": "court-rules", "title": "Pista y conducta", "summary": "Límites y lobbies.",
+      "rules": [
+        { "id": "lobby", "title": "Límites y el lobby", "important": false,
+          "summary": "Los jugadores que salen de los límites quedan eliminados; las franjas laterales («lobby») solo forman parte de la pista una vez que hay contacto en una incursión.",
+          "body": "Un defensor que saca al atacante fuera de los límites sin un placaje legal puede darle el punto al atacante.",
+          "related": ["tackle"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Perder el cant / tiempo de incursión", "description": "El atacante deja de repetir o supera el reloj de incursión.", "consequence": "Atacante eliminado", "severity": "MINOR" },
+    { "name": "Salir de los límites", "description": "Abandonar el área de juego sin que haya habido contacto.", "consequence": "Jugador eliminado", "severity": "MINOR" },
+    { "name": "Agarre ilegal", "description": "Sujetar por el pelo, la ropa o el cuello.", "consequence": "Punto para el atacante y posible tarjeta", "severity": "MAJOR" },
+    { "name": "Conducta incorrecta", "description": "Comportamiento antideportivo.", "consequence": "Tarjeta verde, amarilla o roja", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Sorteo", "description": "El ganador elige campo o primera incursión." },
+    { "title": "Incursiones alternas", "description": "Los equipos mandan atacantes uno tras otro." },
+    { "title": "Descanso", "description": "Los equipos cambian de campo." },
+    { "title": "Últimas incursiones", "description": "Los cambios tácticos y las incursiones de «ahora o nunca» deciden los partidos ajustados." }
+  ],
+  "positions": [
+    { "name": "Atacante", "role": "Jugador que entra en el campo rival." },
+    { "name": "Defensores de esquina", "role": "Especialistas en los extremos de la cadena defensiva." },
+    { "name": "Defensores de cobertura", "role": "Defensores interiores que apoyan los placajes." },
+    { "name": "Polivalente", "role": "Jugador que ataca y defiende." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "Unos 13 × 10 m para hombres (más pequeña para mujeres y juveniles)",
+    "surface": "Tapiz sintético (tradicionalmente, tierra)",
+    "notes": ["La línea central divide la pista", "Línea de baulk y línea de bonus en cada mitad", "Franjas de lobby a los lados"]
+  },
+  "glossary": [
+    { "term": "Atacante (raider)", "definition": "El jugador que ataca." },
+    { "term": "Cant", "definition": "La repetición continua de «kabaddi» durante una incursión." },
+    { "term": "Súper placaje", "definition": "Placaje hecho cuando quedan tres defensores o menos." },
+    { "term": "Eliminación total", "definition": "Eliminar a todos los jugadores del equipo rival." },
+    { "term": "Toque de pie", "definition": "Toque rápido a un defensor con la pierna extendida." }
+  ],
+  "funFacts": [
+    "El kabaddi se juega en los Juegos Asiáticos desde 1990.",
+    "La Pro Kabaddi League, lanzada en 2014, convirtió este deporte en un gran evento televisivo en la India."
+  ]
+}

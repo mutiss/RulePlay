@@ -1,0 +1,108 @@
+{
+  "id": "field-hockey",
+  "intro": "Two teams of eleven use hooked sticks to drive a hard ball into the opponents' goal. Only the flat face of the stick may touch the ball, goals can only be scored from inside the shooting circle, and set-piece penalty corners are a major source of goals. The International Hockey Federation (FIH) publishes the Rules of Hockey.",
+  "inThirtySeconds": [
+    "Score only with a shot touched by an attacker inside the shooting circle.",
+    "Play the ball with the flat side of the stick — never with the rounded back or your feet.",
+    "No offside: attackers can wait anywhere.",
+    "Defensive fouls in or near the circle give penalty corners."
+  ],
+  "objective": "Score more goals than the opponent in four 15-minute quarters.",
+  "facts": {
+    "players": "11 per team (10 + goalkeeper), unlimited rolling substitutions",
+    "duration": "4 × 15 minutes",
+    "environment": "Artificial turf pitch, often watered",
+    "equipment": ["Stick with a flat face", "Hard plastic ball", "Shin guards and mouthguard", "Goalkeeper kit"]
+  },
+  "scoring": [
+    { "label": "Field goal", "value": "1", "detail": "Ball played by an attacker inside the circle and crossing the goal line." },
+    { "label": "Penalty corner goal", "value": "1", "detail": "Goal from the set piece after a defensive foul." },
+    { "label": "Penalty stroke", "value": "1", "detail": "A one-on-one shot against the goalkeeper from the penalty spot." }
+  ],
+  "bodies": [
+    { "id": "fih", "name": "International Hockey Federation", "acronym": "FIH", "scope": "World governing body; publishes the Rules of Hockey", "url": "https://www.fih.hockey/" }
+  ],
+  "rulebooks": [
+    { "id": "fih-rules", "title": "FIH Rules of Hockey", "publisher": "fih", "url": "https://www.fih.hockey/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "playing", "title": "Playing the ball", "summary": "The stick, the feet and the circle.",
+      "rules": [
+        { "id": "flat-side", "title": "Flat side only", "important": true,
+          "summary": "Players may only play the ball with the flat face and edges of the stick, not the rounded back.",
+          "body": "This is why players turn their stick over to play on the 'reverse' side. Using the back of the stick gives the opponents a free hit.",
+          "related": ["feet"] },
+        { "id": "feet", "title": "No feet", "important": false,
+          "summary": "Field players must not stop, kick or propel the ball with any part of the body.",
+          "body": "It is only an offence if the player gains an advantage or moved deliberately into the ball's path. Goalkeepers may use their body inside their own circle.",
+          "related": ["flat-side"] },
+        { "id": "circle", "title": "Scoring from the circle", "important": true,
+          "summary": "A goal only counts if the ball was played by an attacker inside the shooting circle and wasn't played outside the circle afterwards.",
+          "body": "The circle is a D-shaped area extending 14.63 m (16 yards) from the goal. A spectacular shot from outside does not count unless deflected by an attacker inside the circle.",
+          "example": "A powerful hit from just outside the circle flies into the net untouched: no goal, it's a restart for the defence.",
+          "related": ["penalty-corner"] }
+      ]
+    },
+    {
+      "id": "setpieces", "title": "Set pieces", "summary": "Free hits, penalty corners and penalty strokes.",
+      "rules": [
+        { "id": "free-hit", "title": "Free hits and self-pass", "important": false,
+          "summary": "Fouls give a free hit; opponents must be 5 m away, and the taker may dribble it themselves (self-pass).",
+          "body": "Free hits to attackers inside the 23 m area have special rules: the ball must travel 5 m or be touched by a defender before entering the circle.",
+          "related": ["penalty-corner"] },
+        { "id": "penalty-corner", "title": "Penalty corner", "important": true,
+          "summary": "Awarded for defensive fouls inside the circle (that don't prevent a likely goal) or deliberate fouls in the defending 23 m area.",
+          "body": "An attacker pushes the ball from the back line, 10 m from the goal post. Five defenders, including the goalkeeper, start behind the goal line; the rest wait beyond the halfway line. Attackers must stop the ball outside the circle before shooting, and the first shot, if a hit, must not cross the goal line above backboard height.",
+          "related": ["circle", "penalty-stroke"] },
+        { "id": "penalty-stroke", "title": "Penalty stroke", "important": false,
+          "summary": "Awarded when a foul prevents a probable goal, or for deliberate fouls in the circle against a player with the ball.",
+          "body": "Taken from the spot 6.4 m in front of the goal: one attacker against the goalkeeper on the line, with one push or flick.",
+          "related": ["penalty-corner"] }
+      ]
+    },
+    {
+      "id": "discipline", "title": "Cards", "summary": "Temporary suspensions.",
+      "rules": [
+        { "id": "cards-hockey", "title": "Green, yellow and red cards", "important": false,
+          "summary": "Green card: 2-minute suspension. Yellow card: at least 5 minutes. Red card: permanent.",
+          "body": "Dangerous play with raised balls or swinging sticks, and misconduct, are the most common reasons. Suspended players' teams play short.",
+          "related": ["free-hit"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Back stick", "description": "Playing the ball with the rounded back of the stick.", "consequence": "Free hit", "severity": "MINOR" },
+    { "name": "Foot foul", "description": "Ball deliberately or advantageously played with the body.", "consequence": "Free hit (penalty corner in the circle)", "severity": "MINOR" },
+    { "name": "Obstruction", "description": "Shielding the ball with the body or stick to block a tackle.", "consequence": "Free hit", "severity": "MINOR" },
+    { "name": "Dangerous play", "description": "Raised ball or stick endangering others.", "consequence": "Free hit, cards", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Centre pass", "description": "Each quarter and each goal restarts with a pass from the centre." },
+    { "title": "Quarters", "description": "Four 15-minute quarters with short breaks and a half-time interval." },
+    { "title": "Penalty corners", "description": "Rehearsed set pieces with drag flicks and deflections." },
+    { "title": "Shoot-out", "description": "Knockout matches level after time go to a one-on-one shoot-out." }
+  ],
+  "positions": [
+    { "name": "Goalkeeper", "role": "Fully padded; may use the body to save inside the circle." },
+    { "name": "Defenders", "role": "Protect the circle and run penalty-corner defence." },
+    { "name": "Midfielders", "role": "Link play and cover huge distances." },
+    { "name": "Forwards", "role": "Score from inside the circle and win penalty corners." }
+  ],
+  "field": {
+    "name": "Pitch",
+    "dimensions": "91.4 m × 55 m",
+    "surface": "Artificial turf (water-based at top level)",
+    "notes": ["Shooting circles 14.63 m from the goal", "23 m lines", "Goal: 3.66 m wide × 2.14 m high"]
+  },
+  "glossary": [
+    { "term": "Drag flick", "definition": "A powerful scooping shot used at penalty corners." },
+    { "term": "Circle", "definition": "The D-shaped scoring area." },
+    { "term": "Reverse stick", "definition": "Playing with the stick turned over, on the left side." },
+    { "term": "Self-pass", "definition": "Taking a free hit by dribbling the ball yourself." }
+  ],
+  "funFacts": [
+    "Field hockey's quarters replaced two halves in international play in 2014.",
+    "India and Pakistan dominated Olympic men's hockey for decades; India won eight golds."
+  ]
+}

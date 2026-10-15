@@ -1,0 +1,113 @@
+{
+  "id": "pickleball",
+  "intro": "Pickleball combines elements of tennis, badminton and table tennis on a small court with solid paddles and a perforated plastic ball. Two clever rules define it: the two-bounce rule slows down the start of every point, and the non-volley zone — 'the kitchen' — stops players smashing everything at the net. This entry follows the USA Pickleball rulebook, the most widely used reference.",
+  "inThirtySeconds": [
+    "Serve underhand, diagonally, past the kitchen line.",
+    "The serve and the return must each bounce before they are hit (the two-bounce rule).",
+    "You can't volley while standing in the kitchen — the 7 ft zone next to the net.",
+    "Traditional games go to 11, win by 2, and only the serving side scores."
+  ],
+  "objective": "Win rallies until you reach 11 points (or the format's target) with a two-point lead.",
+  "facts": {
+    "players": "1 v 1 or 2 v 2 (doubles is most common)",
+    "duration": "Games to 11 (no clock)",
+    "environment": "Indoor or outdoor hard court",
+    "equipment": ["Solid paddle", "Perforated plastic ball", "Net 34 in at the centre"]
+  },
+  "scoring": [
+    { "label": "Point", "value": "1", "detail": "In traditional side-out scoring, only the serving side can score." },
+    { "label": "Game", "value": "11", "detail": "Usually to 11, win by 2; tournaments may play to 15 or 21." },
+    { "label": "Score call", "value": "3 numbers", "detail": "In doubles: serving team's score, receiving team's score, and server number (1 or 2)." }
+  ],
+  "bodies": [
+    { "id": "usap", "name": "USA Pickleball", "acronym": null, "scope": "US national governing body; publishes the Official Rulebook", "url": "https://usapickleball.org/what-is-pickleball/official-rules/" }
+  ],
+  "rulebooks": [
+    { "id": "usap-rulebook", "title": "USA Pickleball Official Rulebook", "publisher": "usap", "url": "https://usapickleball.org/what-is-pickleball/official-rules/", "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "serve", "title": "Serving",
+      "summary": "Underhand and diagonal.",
+      "rules": [
+        { "id": "serve-pb", "title": "The underhand serve", "important": true,
+          "summary": "The serve is hit with an upward, underhand motion, contacting the ball below the waist, and travels diagonally into the opposite service court.",
+          "body": "At least one foot must be behind the baseline, and the serve must clear the non-volley zone, including its line. A 'drop serve', where the ball is dropped and hit after it bounces, is also allowed under current rules. The server gets one attempt.",
+          "related": ["two-bounce", "side-out"] },
+        { "id": "side-out", "title": "Side-out scoring", "important": true,
+          "summary": "Only the serving side scores points. In doubles both partners serve before the serve passes to the opponents.",
+          "body": "At the start of each game, only one player of the first serving team serves before a side-out, which is why the first score call is '0–0–2'. Some competitions use rally scoring instead, where every rally earns a point.",
+          "example": "Score called '5–3–1': the serving team has 5, the receivers have 3, and the first server is serving.",
+          "related": ["serve-pb"] }
+      ]
+    },
+    {
+      "id": "bounce", "title": "The two-bounce rule",
+      "summary": "Why every point starts from the baseline.",
+      "rules": [
+        { "id": "two-bounce", "title": "Let the first two shots bounce", "important": true,
+          "summary": "The receiving team must let the serve bounce before returning it, and the serving team must let the return bounce before hitting it.",
+          "body": "After those two bounces, either side may volley or play off the bounce. The rule stops the serving team from rushing the net and makes points longer. Breaking it is a fault.",
+          "example": "The server's partner volleys the return of serve out of the air: fault, side-out or point to the receivers.",
+          "related": ["kitchen"] }
+      ]
+    },
+    {
+      "id": "kitchen", "title": "The kitchen",
+      "summary": "The non-volley zone next to the net.",
+      "rules": [
+        { "id": "kitchen", "title": "No volleys in the non-volley zone", "important": true,
+          "summary": "You may not volley the ball while touching the non-volley zone or its line.",
+          "body": "The restriction also applies to your momentum: if you volley outside the zone and your follow-through carries you into it — even after the ball is dead — it is a fault. You may enter the kitchen at any time to play a ball that has bounced.",
+          "example": "A player hits a volley with both feet behind the line, then stumbles and touches the kitchen line: fault.",
+          "related": ["two-bounce", "dink"] },
+        { "id": "dink", "title": "Dinking", "important": false,
+          "summary": "Soft shots that drop into the opponent's kitchen ('dinks') are a core tactic.",
+          "body": "Because opponents can't volley a dink from inside the kitchen, they must let it bounce, which keeps rallies patient until someone hits a ball high enough to attack.",
+          "related": ["kitchen"] }
+      ]
+    },
+    {
+      "id": "faults", "title": "Faults",
+      "summary": "Common ways to lose the rally.",
+      "rules": [
+        { "id": "faults-pb", "title": "General faults", "important": false,
+          "summary": "Hitting the ball out of bounds or into the net, a volley from the kitchen, or a two-bounce violation ends the rally.",
+          "body": "Lines are in, except the kitchen line on the serve, where touching it makes the serve a fault. Touching the net or posts with your body, paddle or clothing while the ball is in play is also a fault.",
+          "related": ["kitchen", "two-bounce"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Kitchen violation", "description": "Volleying while touching the non-volley zone.", "consequence": "Fault", "severity": "MINOR" },
+    { "name": "Two-bounce violation", "description": "Volleying the serve or the return of serve.", "consequence": "Fault", "severity": "MINOR" },
+    { "name": "Short serve", "description": "Serve lands in the kitchen or on its line.", "consequence": "Fault", "severity": "MINOR" },
+    { "name": "Technical warning", "description": "Unsporting behaviour in sanctioned play.", "consequence": "Warning, then point penalties", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Serve", "description": "Diagonal, underhand, deep." },
+    { "title": "Return and third shot", "description": "Both must bounce; the third shot is often a soft 'drop' into the kitchen." },
+    { "title": "At the net", "description": "Players move up to the kitchen line and trade dinks and volleys." },
+    { "title": "Side-out", "description": "When the serving side loses rallies, the serve passes to the opponents." }
+  ],
+  "positions": [
+    { "name": "Server", "role": "Starts each rally from behind the baseline." },
+    { "name": "Partner at the kitchen line", "role": "Moves forward to control the net once the return has bounced." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "20 ft × 44 ft (6.1 m × 13.4 m), for singles and doubles",
+    "surface": "Hard court (acrylic, concrete or asphalt)",
+    "notes": ["Non-volley zone: 7 ft on each side of the net", "Net: 36 in at the sidelines, 34 in at the centre"]
+  },
+  "glossary": [
+    { "term": "Kitchen", "definition": "The non-volley zone next to the net." },
+    { "term": "Dink", "definition": "A soft shot landing in the opponent's kitchen." },
+    { "term": "Third-shot drop", "definition": "A soft shot after the return, used to reach the net safely." },
+    { "term": "Erne", "definition": "Leaping around the kitchen post to volley from outside the court." }
+  ],
+  "funFacts": [
+    "Pickleball was invented in 1965 on Bainbridge Island, near Seattle, by three fathers improvising a game for their families.",
+    "Whether the name came from a 'pickle boat' crew or a family dog called Pickles is still debated."
+  ]
+}

@@ -1,0 +1,105 @@
+{
+  "id": "wrestling",
+  "intro": "Wrestling is one of the oldest sports in the world: two athletes try to take each other down, expose the opponent's back to the mat and ultimately pin both shoulders for a fall. Olympic wrestling has two styles — freestyle, where legs can be attacked, and Greco-Roman, where all holds must be above the waist. United World Wrestling (UWW) publishes the international rules.",
+  "inThirtySeconds": [
+    "Pin both of your opponent's shoulders to the mat for a fall — instant victory.",
+    "Score points with takedowns, exposures and pushing your opponent out.",
+    "A big enough points lead ends the bout early (technical superiority).",
+    "Greco-Roman: no attacking the legs and no using your legs to trip."
+  ],
+  "objective": "Win by fall, by technical superiority, or by points after two 3-minute periods.",
+  "facts": {
+    "players": "1 v 1, by weight category",
+    "duration": "2 × 3 minutes with a 30-second break",
+    "environment": "Circular mat",
+    "equipment": ["Singlet (red or blue)", "Wrestling shoes", "Optional ear guards"]
+  },
+  "scoring": [
+    { "label": "Takedown", "value": "2+", "detail": "Taking the opponent down to the mat under control; more for high-amplitude throws." },
+    { "label": "Exposure", "value": "2", "detail": "Turning the opponent's back towards the mat (danger position)." },
+    { "label": "Step out", "value": "1", "detail": "The opponent steps out of the protection area." },
+    { "label": "Fall", "value": "Win", "detail": "Both shoulders held to the mat." }
+  ],
+  "variants": [
+    { "id": "freestyle", "name": "Freestyle", "description": "Holds anywhere on the body, including leg attacks.", "body": "uww" },
+    { "id": "greco", "name": "Greco-Roman", "description": "Holds only above the waist; legs can't be used to attack or trip.", "body": "uww" }
+  ],
+  "bodies": [
+    { "id": "uww", "name": "United World Wrestling", "acronym": "UWW", "scope": "International federation for wrestling", "url": "https://uww.org/" }
+  ],
+  "rulebooks": [
+    { "id": "uww-rules", "title": "UWW International Wrestling Rules", "publisher": "uww", "url": "https://uww.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "winning", "title": "Ways to win", "summary": "Fall, technical superiority and points.",
+      "rules": [
+        { "id": "fall", "title": "The fall (pin)", "important": true,
+          "summary": "Holding both of the opponent's shoulders on the mat long enough for the referee to confirm control ends the bout.",
+          "body": "A fall wins regardless of the score. The referee slaps the mat to confirm it.",
+          "related": ["tech-sup"] },
+        { "id": "tech-sup", "title": "Technical superiority", "important": true,
+          "summary": "A large enough points lead stops the bout early: 10 points in freestyle and 8 in Greco-Roman.",
+          "body": "If neither wrestler reaches a fall or technical superiority, the winner is the one with more points. Ties are broken by the highest-value hold, fewest cautions, and the last point scored.",
+          "related": ["fall", "points-w"] }
+      ]
+    },
+    {
+      "id": "points-ch", "title": "Scoring", "summary": "Takedowns, exposures and step-outs.",
+      "rules": [
+        { "id": "points-w", "title": "Takedowns and exposure", "important": true,
+          "summary": "A takedown scores 2 points or more; turning an opponent's back towards the mat scores 2 (the 'gut wrench' is a classic way).",
+          "body": "Big throws that carry the opponent through the air directly into danger position can score 4 or 5 points.",
+          "related": ["tech-sup"] },
+        { "id": "passivity", "title": "Passivity", "important": false,
+          "summary": "A wrestler who avoids wrestling can be called passive, giving the opponent a chance to score.",
+          "body": "In freestyle, the passive wrestler gets a 30-second activity period; if they don't score, the opponent gets a point. In Greco-Roman, passivity can give the opponent a point and the choice to restart in the par terre (ground) position.",
+          "related": ["points-w"] }
+      ]
+    },
+    {
+      "id": "styles", "title": "The two styles", "summary": "What changes between freestyle and Greco-Roman.",
+      "rules": [
+        { "id": "greco-rule", "title": "Greco-Roman: above the waist", "important": true, "variants": ["greco"],
+          "summary": "It is forbidden to grab the opponent's legs or use your own legs to trip, lift or apply holds.",
+          "body": "This makes Greco-Roman a game of upper-body clinches, arm drags and dramatic lifts and throws.",
+          "related": ["freestyle-rule"] },
+        { "id": "freestyle-rule", "title": "Freestyle: legs are fair game", "important": false, "variants": ["freestyle"],
+          "summary": "Wrestlers may attack the legs with shots, single-leg and double-leg takedowns.",
+          "body": "Freestyle is the style practised by women in the Olympics, and by men alongside Greco-Roman.",
+          "related": ["greco-rule"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Fleeing the hold or mat", "description": "Avoiding contact or stepping out to escape.", "consequence": "Caution and points to the opponent", "severity": "MAJOR" },
+    { "name": "Illegal hold", "description": "Dangerous holds such as neck cranks or twisting joints.", "consequence": "Caution and points; possible disqualification", "severity": "SEVERE" },
+    { "name": "Leg foul (Greco)", "description": "Using or attacking the legs in Greco-Roman.", "consequence": "Caution and points to the opponent", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Weigh-in", "description": "Wrestlers make weight before competition." },
+    { "title": "First period", "description": "Three minutes from the standing position." },
+    { "title": "Break", "description": "30 seconds of coaching." },
+    { "title": "Second period", "description": "Three minutes; the referee raises the winner's hand." }
+  ],
+  "positions": [
+    { "name": "Red corner", "role": "Wears red singlet." },
+    { "name": "Blue corner", "role": "Wears blue singlet." }
+  ],
+  "field": {
+    "name": "Mat",
+    "dimensions": "9 m diameter wrestling area, plus a protection zone",
+    "surface": "Padded mat",
+    "notes": ["Central circle for restarts", "Red passivity zone near the edge"]
+  },
+  "glossary": [
+    { "term": "Takedown", "definition": "Bringing the opponent to the mat from standing." },
+    { "term": "Gut wrench", "definition": "Turning an opponent over from the ground." },
+    { "term": "Par terre", "definition": "Restart with one wrestler on hands and knees." },
+    { "term": "Fall", "definition": "Pinning both shoulders — a win." }
+  ],
+  "funFacts": [
+    "Wrestling was introduced to the ancient Olympic Games in 708 BC.",
+    "Women's freestyle wrestling joined the Olympic programme in 2004."
+  ]
+}

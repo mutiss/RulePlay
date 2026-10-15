@@ -1,0 +1,117 @@
+{
+  "id": "ice-hockey",
+  "intro": "Two teams of six skate at high speed, using sticks to shoot a hard rubber puck into the opponents' net. Players change on the fly every minute or so, body checking is part of the men's game, and penalties send players to the box, giving the other team a power play. The IIHF governs international hockey; the NHL has its own rulebook.",
+  "inThirtySeconds": [
+    "Score by getting the puck completely over the goal line into the net.",
+    "Offside: attackers can't enter the attacking zone ahead of the puck.",
+    "Icing: shooting the puck from your half all the way past the opponents' goal line, untouched, brings a face-off back in your zone.",
+    "Penalties put players in the box for 2 or 5 minutes; their team plays short-handed."
+  ],
+  "objective": "Score more goals than the opponent in three 20-minute periods.",
+  "facts": {
+    "players": "6 per team on ice (5 skaters + goaltender), with frequent line changes",
+    "duration": "3 × 20 minutes of stop-time",
+    "environment": "Indoor ice rink surrounded by boards and glass",
+    "equipment": ["Skates", "Stick", "Puck", "Helmet and full protective equipment", "Goaltender pads and mask"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "The whole puck crosses the goal line between the posts and under the crossbar." },
+    { "label": "Shootout goal", "value": "Decider", "detail": "In some competitions, a shootout decides tied games; the winner gets one extra goal on the final score." }
+  ],
+  "variants": [
+    { "id": "iihf", "name": "IIHF", "description": "International rules for World Championships and the Olympics.", "body": "iihf" },
+    { "id": "nhl", "name": "NHL", "description": "The National Hockey League's own rulebook, with its own overtime and rink specifications.", "body": "nhl" }
+  ],
+  "bodies": [
+    { "id": "iihf", "name": "International Ice Hockey Federation", "acronym": "IIHF", "scope": "World governing body; publishes the IIHF Official Rule Book", "url": "https://www.iihf.com/" },
+    { "id": "nhl", "name": "National Hockey League", "acronym": "NHL", "scope": "North American professional league", "url": "https://www.nhl.com/" }
+  ],
+  "rulebooks": [
+    { "id": "iihf-rulebook", "title": "IIHF Official Rule Book", "publisher": "iihf", "variant": "iihf", "url": "https://www.iihf.com/", "checked": null },
+    { "id": "nhl-rulebook", "title": "Official NHL Rules", "publisher": "nhl", "variant": "nhl", "url": "https://www.nhl.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "lines", "title": "Offside and icing", "summary": "The two rules that shape every rush.",
+      "rules": [
+        { "id": "offside-ice", "title": "Offside", "important": true,
+          "summary": "An attacking player is offside if both skates are completely over the opponents' blue line before the puck crosses it.",
+          "body": "The position of the skates, not the stick, matters. Play stops for a face-off outside the zone. Under delayed offside, the attackers can 'tag up' by all leaving the zone before play is stopped.",
+          "example": "A forward glides across the blue line a stride before his teammate carries the puck in: offside, face-off in the neutral zone.",
+          "related": ["icing"] },
+        { "id": "icing", "title": "Icing", "important": true,
+          "summary": "If a team shoots the puck from its own side of the centre red line all the way across the opponents' goal line, untouched, it is icing.",
+          "body": "Play restarts with a face-off in the offending team's defensive zone, and the team that iced the puck cannot change players. A short-handed team (killing a penalty) is allowed to ice the puck. Both the IIHF and NHL use hybrid icing, where the linesman judges a race for the puck to decide whether to call it.",
+          "related": ["offside-ice", "minor-penalty"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Penalties", "summary": "The penalty box and power plays.",
+      "rules": [
+        { "id": "minor-penalty", "title": "Minor penalties", "important": true,
+          "summary": "Infractions such as tripping, hooking, slashing, holding and high-sticking usually cost 2 minutes in the penalty box.",
+          "body": "The opponents play with an extra skater — a power play. If they score during a minor penalty, the penalised player may return immediately. A double minor (4 minutes) is often given for high-sticking that draws blood.",
+          "related": ["major-penalty"] },
+        { "id": "major-penalty", "title": "Major penalties and misconducts", "important": false,
+          "summary": "Serious infractions — such as fighting or injurious hits — bring 5-minute majors, served in full even if goals are scored.",
+          "body": "Misconduct penalties (10 minutes) remove a player but not a skater from the ice; game misconducts and match penalties eject the player.",
+          "related": ["minor-penalty", "checking"] },
+        { "id": "checking", "title": "Body checking", "important": false,
+          "summary": "In men's hockey, using the hip or shoulder to check an opponent who has the puck is legal; checks to the head, from behind or into the boards dangerously are not.",
+          "body": "Body checking is prohibited in women's hockey under IIHF rules and in many youth levels.",
+          "related": ["major-penalty"] }
+      ]
+    },
+    {
+      "id": "goals", "title": "Goals and overtime", "summary": "What counts and how ties are broken.",
+      "rules": [
+        { "id": "goal-ice", "title": "Disallowed goals", "important": false,
+          "summary": "A goal is disallowed if the puck is deliberately kicked in, batted in with a high stick, or if an attacker interferes with the goaltender.",
+          "body": "Video review is used for close calls on whether the puck crossed the line, and coaches can challenge for offside or goaltender interference.",
+          "related": ["overtime-nhl", "overtime-iihf"] },
+        { "id": "overtime-nhl", "title": "NHL overtime", "important": false, "variants": ["nhl"],
+          "summary": "Tied regular-season games go to 5 minutes of 3-on-3 sudden-death overtime, then a shootout.",
+          "body": "In the playoffs, overtime is 5-on-5 with full 20-minute periods until someone scores.",
+          "related": ["goal-ice"] },
+        { "id": "overtime-iihf", "title": "IIHF overtime", "important": false, "variants": ["iihf"],
+          "summary": "Tied games go to sudden-death overtime, and in many stages a game-winning shot shootout.",
+          "body": "The length and format of overtime depend on the tournament stage; medal games use longer overtime periods.",
+          "related": ["goal-ice"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Tripping / hooking / slashing", "description": "Using the stick to impede an opponent.", "consequence": "2-minute minor", "severity": "MINOR" },
+    { "name": "High-sticking", "description": "Contacting an opponent with the stick above the shoulders.", "consequence": "2 or 4 minutes", "severity": "MAJOR" },
+    { "name": "Boarding / checking from behind", "description": "Dangerous checks into the boards.", "consequence": "Minor or major plus misconduct", "severity": "SEVERE" },
+    { "name": "Fighting", "description": "Dropping the gloves to fight.", "consequence": "Major penalty (ejection under IIHF rules)", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Opening face-off", "description": "The referee drops the puck at centre ice." },
+    { "title": "Shifts", "description": "Lines change every 40–60 seconds, often on the fly." },
+    { "title": "Intermissions", "description": "Breaks between periods; teams change ends." },
+    { "title": "Empty net", "description": "Late in games, trailing teams pull the goaltender for an extra attacker." }
+  ],
+  "positions": [
+    { "name": "Centre", "role": "Takes face-offs and links defence and attack." },
+    { "name": "Wingers", "role": "Left and right wings, mainly attackers." },
+    { "name": "Defencemen", "role": "Two players protecting their zone and starting rushes." },
+    { "name": "Goaltender", "role": "Stops shots; heavily padded." }
+  ],
+  "field": {
+    "name": "Rink",
+    "dimensions": "NHL: 200 ft × 85 ft (about 61 × 26 m); IIHF rinks may be wider",
+    "surface": "Ice, enclosed by boards and glass",
+    "notes": ["Red centre line and two blue lines", "Five face-off circles", "Goal: 6 ft × 4 ft (1.83 × 1.22 m)"]
+  },
+  "glossary": [
+    { "term": "Power play", "definition": "Playing with more skaters than the opponent because of a penalty." },
+    { "term": "Hat-trick", "definition": "Three goals by one player in a game." },
+    { "term": "Face-off", "definition": "The puck drop that restarts play." },
+    { "term": "Five-hole", "definition": "The gap between a goaltender's legs." }
+  ],
+  "funFacts": [
+    "The first organised indoor game is generally dated to Montreal in 1875.",
+    "A hockey puck is frozen before games so it bounces less."
+  ]
+}

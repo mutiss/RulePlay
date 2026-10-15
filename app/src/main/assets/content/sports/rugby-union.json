@@ -1,0 +1,138 @@
+{
+  "id": "rugby-union",
+  "intro": "Fifteen players a side carry, kick and pass an oval ball to ground it over the opponents' try line. The ball may only be passed backwards, so territory is won by running, kicking and the collective shove of rucks, mauls and scrums. World Rugby publishes the Laws of the Game.",
+  "inThirtySeconds": [
+    "Score a try (5 points) by grounding the ball over the opponents' goal line.",
+    "Pass only backwards or sideways; knocking the ball forward is a knock-on.",
+    "Tackled players must release the ball, and contests for it form rucks and mauls.",
+    "Minor infringements give a scrum; more serious ones a penalty, which may be kicked at goal."
+  ],
+  "objective": "Score more points than the opponent through tries, conversions, penalty goals and drop goals.",
+  "facts": {
+    "players": "15 per team, with replacements (up to 8 in elite matches)",
+    "duration": "2 × 40 minutes",
+    "environment": "Grass or artificial pitch with H-shaped posts",
+    "equipment": ["Oval ball", "Gum shield", "Boots", "Optional padded headgear"]
+  },
+  "scoring": [
+    { "label": "Try", "value": "5", "detail": "Grounding the ball on or over the opponents' goal line." },
+    { "label": "Conversion", "value": "2", "detail": "Kick at goal after a try, taken in line with where the try was scored." },
+    { "label": "Penalty goal", "value": "3", "detail": "Place kick or drop kick at goal from a penalty." },
+    { "label": "Drop goal", "value": "3", "detail": "A drop kick over the crossbar in open play." },
+    { "label": "Penalty try", "value": "7", "detail": "Awarded when foul play prevents a probable try; no conversion is taken." }
+  ],
+  "bodies": [
+    { "id": "worldrugby", "name": "World Rugby", "acronym": null, "scope": "World governing body; publishes the Laws of the Game", "url": "https://passport.world.rugby/laws-of-the-game/" }
+  ],
+  "rulebooks": [
+    { "id": "wr-laws", "title": "World Rugby Laws of the Game", "publisher": "worldrugby", "url": "https://passport.world.rugby/laws-of-the-game/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Moving the ball",
+      "summary": "Passing, knock-ons and kicking.",
+      "rules": [
+        { "id": "forward-pass", "title": "No forward passes", "important": true,
+          "summary": "The ball may be passed sideways or backwards, never forwards.",
+          "body": "Referees judge the direction of the pass relative to the passer's hands rather than the ground, because a moving player can release a backward pass that still drifts forwards. A forward pass gives the opponents a scrum.",
+          "related": ["knock-on"] },
+        { "id": "knock-on", "title": "Knock-on", "important": true,
+          "summary": "If a player loses the ball and it goes forward, or hits it forward with the hand or arm, it is a knock-on.",
+          "body": "An unintentional knock-on is punished with a scrum to the opponents. Deliberately knocking the ball forward — for example to stop a pass — is a penalty and can lead to a yellow card. Charging down a kick is not a knock-on.",
+          "example": "A winger fumbles a high ball and it bounces forwards off his chest and hands: knock-on, scrum to the other side.",
+          "related": ["forward-pass", "scrum"] },
+        { "id": "kicking", "title": "Kicking and kicking into touch", "important": false,
+          "summary": "Any player may kick the ball forward; teammates in front of the kicker are offside until put onside.",
+          "body": "A penalty kicked into touch gives the kicking team the throw at the lineout. In general play, a kick that goes into touch on the full from outside the kicker's own 22 m area brings the lineout back level with where it was kicked.",
+          "related": ["lineout", "offside"] }
+      ]
+    },
+    {
+      "id": "contact", "title": "Tackles, rucks and mauls",
+      "summary": "The contest for the ball after contact.",
+      "rules": [
+        { "id": "tackle", "title": "The tackle", "important": true,
+          "summary": "A tackle happens when the ball carrier is held and brought to ground. The tackled player must pass or release the ball immediately.",
+          "body": "The tackler must release the tackled player and roll away. Tackles must be below the line of the shoulders; high tackles, tip tackles and dangerous charges are foul play and can bring yellow or red cards.",
+          "related": ["ruck", "foul-play"] },
+        { "id": "ruck", "title": "The ruck", "important": true,
+          "summary": "A ruck forms when the ball is on the ground and at least one player from each team, on their feet, bind over it.",
+          "body": "Players may not handle the ball in a ruck — they must use their feet to 'ruck' it back. Arriving players must enter from behind the hindmost foot of their team (through 'the gate') and must stay on their feet. Players not in the ruck must stay behind the offside line it creates.",
+          "example": "A flanker dives over the top of a ruck to slow the ball: penalty for going off his feet.",
+          "related": ["tackle", "maul", "offside"] },
+        { "id": "maul", "title": "The maul", "important": false,
+          "summary": "A maul forms when the ball carrier is held up by an opponent and a teammate binds on — all on their feet.",
+          "body": "The maul can be driven forward. It ends when the ball is out, it goes to ground, or it stops moving and the ball is not used. Driving mauls from lineouts are a major source of tries.",
+          "related": ["ruck", "lineout"] }
+      ]
+    },
+    {
+      "id": "set-piece", "title": "Set pieces",
+      "summary": "Scrums and lineouts restart play.",
+      "rules": [
+        { "id": "scrum", "title": "The scrum", "important": false,
+          "summary": "Eight forwards from each team bind together and push, while the ball is fed into the tunnel between the front rows.",
+          "body": "Scrums restart play after minor infringements such as a knock-on or forward pass. The scrum-half feeds the ball straight down the middle and the hookers strike for it. Collapsing the scrum, or not pushing straight, is penalised.",
+          "related": ["knock-on"] },
+        { "id": "lineout", "title": "The lineout", "important": false,
+          "summary": "When the ball goes into touch, players form two lines and the ball is thrown in straight between them.",
+          "body": "Jumpers may be lifted by teammates to catch the throw. The throw must be straight; otherwise the opponents may choose a lineout or a scrum.",
+          "related": ["kicking", "maul"] }
+      ]
+    },
+    {
+      "id": "discipline", "title": "Offside and discipline",
+      "summary": "Where you may stand, and what happens when you cross the line.",
+      "rules": [
+        { "id": "offside", "title": "Offside in general play", "important": true,
+          "summary": "A player in front of a teammate who last played the ball is offside and must not take part in play.",
+          "body": "Rucks, mauls, scrums and lineouts create their own offside lines that all players not involved must stay behind. An offside player can be put onside by the actions of teammates or opponents, for example when the kicker runs past them.",
+          "related": ["ruck", "kicking"] },
+        { "id": "foul-play", "title": "Foul play and cards", "important": true,
+          "summary": "Dangerous play is punished with penalties, a yellow card (10 minutes in the sin bin) or a red card.",
+          "body": "Head contact is treated particularly seriously, with referees using a framework that considers the degree of danger and any mitigation. Some competitions have trialled a 20-minute red card after which a replacement may come on; check the competition's regulations.",
+          "related": ["tackle"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Knock-on / forward pass", "description": "The ball travels forward from the hands.", "consequence": "Scrum to the opponents", "severity": "MINOR" },
+    { "name": "Offside", "description": "Taking part in play from in front of the ball or the relevant offside line.", "consequence": "Penalty kick", "severity": "MAJOR" },
+    { "name": "Not releasing", "description": "Tackled player or tackler holds on after the tackle.", "consequence": "Penalty kick", "severity": "MAJOR" },
+    { "name": "Collapsing the maul or scrum", "description": "Deliberately bringing it to the ground.", "consequence": "Penalty kick", "severity": "MAJOR" },
+    { "name": "High tackle / dangerous play", "description": "Contact above the shoulders or other reckless acts.", "consequence": "Penalty and yellow or red card", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Kick-off", "description": "A drop kick from the centre must travel at least 10 m." },
+    { "title": "Phases", "description": "Teams carry, tackle and recycle the ball through rucks and mauls." },
+    { "title": "Set pieces", "description": "Scrums and lineouts restart play after stoppages." },
+    { "title": "Points", "description": "After a score, the team that conceded restarts play with a drop kick from halfway." },
+    { "title": "Full-time", "description": "After 80 minutes, play continues until the ball next goes dead." }
+  ],
+  "positions": [
+    { "name": "Props and hooker (1–3)", "role": "Front row: anchor the scrum; the hooker throws in at lineouts." },
+    { "name": "Locks (4–5)", "role": "Tall second-rowers who win lineouts and power the scrum." },
+    { "name": "Back row (6–8)", "role": "Flankers and number 8: tacklers and ball carriers who contest the breakdown." },
+    { "name": "Scrum-half (9)", "role": "Links forwards and backs, passing from rucks and scrums." },
+    { "name": "Fly-half (10)", "role": "Main decision-maker; kicks and directs the attack." },
+    { "name": "Centres (12–13)", "role": "Midfield runners and tacklers." },
+    { "name": "Wings and full-back (11, 14, 15)", "role": "Finishers and last line of defence." }
+  ],
+  "field": {
+    "name": "Pitch",
+    "dimensions": "Up to 100 m between try lines × up to 70 m wide, plus in-goal areas",
+    "surface": "Grass or approved artificial turf",
+    "notes": ["Posts: H-shaped, 5.6 m apart with crossbar at 3 m", "22 m lines and 10 m lines across the field", "In-goal area between 6 m and 22 m deep"]
+  },
+  "glossary": [
+    { "term": "Breakdown", "definition": "The contest for the ball after a tackle." },
+    { "term": "Sin bin", "definition": "Ten-minute temporary suspension after a yellow card." },
+    { "term": "Advantage", "definition": "Play continues after an infringement if the non-offending team benefits." },
+    { "term": "Turnover", "definition": "Winning possession from the opponents, often at a ruck." },
+    { "term": "Grubber", "definition": "A low kick that rolls and bounces along the ground." }
+  ],
+  "funFacts": [
+    "Rugby's origin story — William Webb Ellis picking up the ball at Rugby School in 1823 — is a legend with little evidence behind it, yet the World Cup trophy bears his name.",
+    "A try is so called because originally it scored nothing; it only earned a 'try' at kicking a goal."
+  ]
+}

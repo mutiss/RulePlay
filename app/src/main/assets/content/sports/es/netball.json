@@ -1,0 +1,106 @@
+{
+  "id": "netball",
+  "language": "es",
+  "intro": "El netball es un juego de pases rápidos que disputan dos equipos de siete, muy popular en la Commonwealth. No se bota ni se corre con el balón: hay tres segundos para pasar o tirar, y reglas estrictas de pies. Cada jugadora lleva un peto con letras que indican su posición y solo puede entrar en ciertos tercios de la pista. World Netball publica las Reglas del Netball.",
+  "inThirtySeconds": [
+    "Solo la Tiradora (GS) y la Atacante de Gol (GA) pueden anotar, desde dentro del área de tiro.",
+    "No se bota ni se corre con el balón; hay que soltarlo en 3 segundos.",
+    "Cada posición solo puede entrar en zonas concretas de la pista.",
+    "Las defensoras deben estar a 0,9 m de la jugadora con el balón."
+  ],
+  "objective": "Marcar más goles que el rival lanzando el balón a través de un aro sin tablero.",
+  "facts": {
+    "players": "7 por equipo",
+    "duration": "4 × 15 minutos",
+    "environment": "Pista dura cubierta o al aire libre",
+    "equipment": ["Balón (talla 5)", "Dos aros a 3,05 m sin tablero", "Petos de posición"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "1", "detail": "Un tiro de GS o GA desde dentro del área que pasa por el aro." },
+    { "label": "Super Shot", "value": "2", "detail": "Algunas ligas (como la Super Netball australiana) dan 2 puntos por los tiros desde la parte exterior del área en los minutos finales de cada cuarto." }
+  ],
+  "bodies": [
+    { "id": "worldnetball", "name": "World Netball", "acronym": null, "scope": "Federación internacional; publica las Reglas del Netball", "url": "https://netball.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wn-rules", "title": "Reglas del Netball de World Netball", "publisher": "worldnetball", "url": "https://netball.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Manejar el balón", "summary": "Tres segundos y juego de pies.",
+      "rules": [
+        { "id": "three-seconds-nb", "title": "Tres segundos", "important": true,
+          "summary": "Una jugadora debe pasar o tirar en los tres segundos siguientes a recibir el balón.",
+          "body": "No se puede botar, botar el balón para una misma ni lanzarlo al aire y volver a cogerlo antes de que lo toque otra jugadora.",
+          "related": ["footwork"] },
+        { "id": "footwork", "title": "Juego de pies", "important": true,
+          "summary": "Tras recibir, el primer pie que se apoya es el pie de apoyo. Puedes pivotar sobre él, pero si lo levantas debes soltar el balón antes de que vuelva a tocar el suelo.",
+          "body": "Si una jugadora cae con los dos pies a la vez, puede elegir cuál es el pie de apoyo. Arrastrar o deslizar el pie de apoyo es una infracción de pies que da un pase libre al rival.",
+          "example": "Una Centro recibe sobre el pie izquierdo, da un paso con el derecho, levanta el izquierdo y lo vuelve a apoyar antes de pasar: infracción, pase libre para el otro equipo.",
+          "related": ["three-seconds-nb"] }
+      ]
+    },
+    {
+      "id": "zones", "title": "Posiciones y zonas", "summary": "Dónde puede ir cada peto.",
+      "rules": [
+        { "id": "areas", "title": "Zonas de juego", "important": true,
+          "summary": "La pista se divide en tercios. Cada posición está limitada a ciertas zonas; pisar una que no le corresponde es fuera de juego.",
+          "body": "Por ejemplo, la Tiradora solo puede jugar en el tercio de ataque y el área de tiro, mientras que la Centro puede ir a cualquier parte salvo las dos áreas de tiro. El fuera de juego da un pase libre al rival.",
+          "related": ["shooting"] },
+        { "id": "shooting", "title": "Quién puede tirar", "important": false,
+          "summary": "Solo la Tiradora (GS) y la Atacante de Gol (GA) pueden anotar, y solo desde dentro del área de tiro.",
+          "body": "Si cualquier otra jugadora lanza el balón a través del aro, o el tiro se hace desde fuera del área, no hay gol.",
+          "related": ["areas"] }
+      ]
+    },
+    {
+      "id": "defence-nb", "title": "Defender", "summary": "Obstrucción y contacto.",
+      "rules": [
+        { "id": "obstruction", "title": "Obstrucción: 0,9 metros", "important": true,
+          "summary": "Una defensora que intenta interceptar o defender el balón debe estar al menos a 0,9 m (3 pies) del pie de apoyo de la jugadora con el balón.",
+          "body": "Más cerca, la defensora puede quedarse quieta, pero no intentar defender con los brazos levantados. Las infracciones se castigan con un pase de penalización (o pase o tiro de penalización dentro del área), y la infractora debe quedarse junto a la lanzadora sin participar hasta que se suelte el balón.",
+          "related": ["contact-nb"] },
+        { "id": "contact-nb", "title": "Contacto", "important": false,
+          "summary": "El netball es oficialmente sin contacto: no se puede empujar, agarrar, zancadillear ni quitar el balón de las manos a una rival.",
+          "body": "El contacto que interfiere en el juego de una rival da una penalización al otro equipo; el contacto repetido o peligroso puede suponer avisos, suspensiones o expulsión.",
+          "related": ["obstruction"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Juego de pies", "description": "Volver a apoyar el pie de apoyo con el balón en las manos.", "consequence": "Pase libre", "severity": "MINOR" },
+    { "name": "Balón retenido", "description": "Sujetar el balón más de 3 segundos.", "consequence": "Pase libre", "severity": "MINOR" },
+    { "name": "Fuera de juego", "description": "Entrar en una zona no permitida para tu posición.", "consequence": "Pase libre", "severity": "MINOR" },
+    { "name": "Obstrucción / contacto", "description": "Defender demasiado cerca o con contacto.", "consequence": "Pase de penalización (o pase o tiro en el área)", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Pase central", "description": "El juego empieza y se reanuda tras cada gol con un pase central, alternando entre equipos." },
+    { "title": "Ataque por tercios", "description": "Pases cortos y rápidos llevan el balón hasta las tiradoras." },
+    { "title": "Cuartos", "description": "Cuatro cuartos de 15 minutos; los equipos cambian de campo." }
+  ],
+  "positions": [
+    { "name": "Tiradora (GS)", "role": "Principal anotadora; solo tercio de ataque y área." },
+    { "name": "Atacante de Gol (GA)", "role": "Tiradora y asistente; dos tercios de ataque." },
+    { "name": "Ala de Ataque (WA)", "role": "Alimenta el área; dos tercios de ataque, sin el área." },
+    { "name": "Centro (C)", "role": "Une el juego; toda la pista salvo las áreas." },
+    { "name": "Ala de Defensa (WD)", "role": "Marca a la WA; dos tercios de defensa, sin el área." },
+    { "name": "Defensa de Gol (GD)", "role": "Marca a la GA; dos tercios de defensa y área." },
+    { "name": "Portera (GK)", "role": "Marca a la GS; solo tercio de defensa y área." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "30,5 × 15,25 m, dividida en tercios",
+    "surface": "Pista dura",
+    "notes": ["Áreas de tiro: 4,9 m de radio", "Aro a 3,05 m, sin tablero", "Círculo central para el pase central"]
+  },
+  "glossary": [
+    { "term": "Pie de apoyo", "definition": "El primer pie que se apoya tras recibir." },
+    { "term": "Pase de penalización", "definition": "Pase libre en el que la infractora debe quedar fuera del juego." },
+    { "term": "Asistencia", "definition": "Pase al interior del área de tiro." },
+    { "term": "Rebote", "definition": "Recuperar un tiro fallado." }
+  ],
+  "funFacts": [
+    "El netball nació en Inglaterra en la década de 1890 a partir de las primeras versiones del baloncesto femenino.",
+    "Australia y Nueva Zelanda han dominado la Copa del Mundo de Netball."
+  ]
+}

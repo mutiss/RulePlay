@@ -1,0 +1,109 @@
+{
+  "id": "cycling",
+  "language": "es",
+  "intro": "El ciclismo de competición va de las clásicas de un día y las grandes vueltas de tres semanas en carretera a los sprints explosivos en un velódromo peraltado. Los corredores compiten en equipo, protegiéndose a rueda unos de otros para ahorrar energía, y la táctica importa tanto como las piernas. La Unión Ciclista Internacional (UCI) publica el reglamento de todas las disciplinas.",
+  "inThirtySeconds": [
+    "En carretera, el primero en cruzar la meta gana la etapa, pero las vueltas se ganan por tiempo total.",
+    "Ir a rueda de otro corredor ahorra mucha energía y es legal en las carreras en línea.",
+    "Los corredores que llegan juntos en un grupo reciben el mismo tiempo.",
+    "Las contrarrelojes se corren en solitario contra el reloj: sin ir a rueda."
+  ],
+  "objective": "Cruzar primero la meta en una carrera de un día, o tener el menor tiempo acumulado en todas las etapas de una vuelta.",
+  "facts": {
+    "players": "Individuos dentro de equipos (hasta ocho por equipo en las grandes vueltas)",
+    "duration": "Desde menos de un minuto (sprints en pista) hasta 3 semanas (grandes vueltas)",
+    "environment": "Carreteras, velódromos, circuitos de BTT y pistas de BMX",
+    "equipment": ["Bicicleta conforme a las normas técnicas UCI", "Casco", "Radio de equipo (carretera)", "Transpondedor de cronometraje"]
+  },
+  "scoring": [
+    { "label": "General", "value": "Tiempo", "detail": "La suma de los tiempos de cada etapa de un corredor, menos las bonificaciones." },
+    { "label": "Clasificación por puntos", "value": "Puntos", "detail": "Se otorgan por los puestos en meta y en los sprints intermedios." },
+    { "label": "Clasificación de la montaña", "value": "Puntos", "detail": "Se otorgan por coronar primero los puertos puntuables." }
+  ],
+  "variants": [
+    { "id": "road", "name": "Carretera", "description": "Carreras de un día y vueltas por etapas en vías públicas.", "body": "uci" },
+    { "id": "track", "name": "Pista", "description": "Carreras en un velódromo ovalado peraltado con bicicletas de piñón fijo y sin frenos.", "body": "uci" }
+  ],
+  "bodies": [
+    { "id": "uci", "name": "Unión Ciclista Internacional", "acronym": "UCI", "scope": "Organismo rector mundial del ciclismo", "url": "https://www.uci.org/" }
+  ],
+  "rulebooks": [
+    { "id": "uci-regs", "title": "Reglamento del Deporte Ciclista de la UCI", "publisher": "uci", "url": "https://www.uci.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "stage-races", "title": "Vueltas por etapas", "summary": "Cómo se gana una gran vuelta.",
+      "rules": [
+        { "id": "gc", "title": "Clasificación general", "important": true, "variants": ["road"],
+          "summary": "El ganador final es el corredor con menos tiempo total tras todas las etapas.",
+          "body": "Por eso se puede ganar una gran vuelta sin ganar ninguna etapa: la regularidad y unas buenas contrarrelojes suman. Los líderes de cada clasificación llevan maillots distintivos, como el maillot amarillo del Tour de Francia.",
+          "example": "Un corredor llega a pocos segundos de los ganadores en cada etapa de montaña y gana un minuto en la contrarreloj: puede llevarse la general sin una sola victoria de etapa.",
+          "related": ["same-time", "time-trial"] },
+        { "id": "same-time", "title": "Mismo tiempo para el grupo", "important": false, "variants": ["road"],
+          "summary": "Los corredores que llegan juntos en un grupo reciben el tiempo del primero de ese grupo.",
+          "body": "Solo hay diferencias cuando se produce un corte visible en el grupo. Para proteger a los candidatos a la general de las caídas en los sprints caóticos, a los corredores retrasados por un incidente cerca de la meta en etapas llanas se les da el tiempo de su grupo.",
+          "related": ["gc"] },
+        { "id": "time-cut", "title": "Fuera de control", "important": false, "variants": ["road"],
+          "summary": "Los corredores que llegan demasiado lejos del ganador de la etapa pueden quedar eliminados.",
+          "body": "El límite es un porcentaje del tiempo del ganador, según la dificultad y la velocidad de la etapa. El jurado a veces lo flexibiliza si queda fuera un grupo grande.",
+          "related": ["gc"] }
+      ]
+    },
+    {
+      "id": "racing", "title": "Reglas de carrera", "summary": "Ir a rueda, contrarrelojes y conducta.",
+      "rules": [
+        { "id": "drafting", "title": "Ir a rueda y táctica de equipo", "important": true, "variants": ["road"],
+          "summary": "En las carreras en línea, los corredores pueden resguardarse detrás de otros para ahorrar energía; los compañeros trabajan para proteger a su líder.",
+          "body": "Los gregarios llevan bidones, persiguen las escapadas y lanzan a los velocistas. Empujar o tirar de otros corredores, o agarrarse a los coches de equipo, está prohibido.",
+          "related": ["time-trial"] },
+        { "id": "time-trial", "title": "Contrarrelojes", "important": false, "variants": ["road", "track"],
+          "summary": "Los corredores salen a intervalos y compiten solos contra el reloj; ir a rueda de otros no está permitido.",
+          "body": "Se permiten bicicletas y posiciones aerodinámicas especiales dentro de los límites técnicos de la UCI. En la contrarreloj por equipos, el equipo rueda junto y el tiempo se toma a un corredor determinado.",
+          "related": ["gc"] },
+        { "id": "track-sprint", "title": "Velocidad en pista", "important": false, "variants": ["track"],
+          "summary": "Dos o tres corredores compiten a tres vueltas; solo se cronometran los últimos 200 m, así que las primeras vueltas son un juego táctico del gato y el ratón.",
+          "body": "Los corredores no pueden invadir la trayectoria del rival en la recta final, y la calle de velocistas en el interior de la pista tiene normas estrictas para adelantar.",
+          "related": ["keirin"] },
+        { "id": "keirin", "title": "Keirin", "important": false, "variants": ["track"],
+          "summary": "Los corredores siguen a una moto lanzadora que acelera poco a poco y se retira a falta de unas vueltas, dando paso a un sprint a muerte.",
+          "body": "Adelantar a la moto antes de que salga de la pista supone el descenso de puesto o la descalificación. La prueba nació en Japón.",
+          "related": ["track-sprint"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Sprint irregular", "description": "Desviarse de la trayectoria para bloquear o poner en peligro a otros.", "consequence": "Descenso de puesto, penalización de puntos y tiempo", "severity": "MAJOR" },
+    { "name": "Agarrarse a un vehículo", "description": "Ir remolcado por un coche de equipo o una moto.", "consequence": "Multas, penalización de tiempo o descalificación", "severity": "MAJOR" },
+    { "name": "Tirar residuos fuera de zona", "description": "Tirar bidones o envoltorios fuera de las zonas señaladas.", "consequence": "Multas y sanciones", "severity": "MINOR" },
+    { "name": "Fraude tecnológico", "description": "Material ilegal, como motores ocultos.", "consequence": "Descalificación y larga suspensión", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Salida neutralizada", "description": "El pelotón rueda tras el director de carrera hasta que se baja la bandera." },
+    { "title": "Escapada", "description": "Un pequeño grupo se escapa; el pelotón controla la diferencia." },
+    { "title": "Puertos y sprints", "description": "Los sprints intermedios y las cimas deciden los maillots." },
+    { "title": "Final", "description": "Los trenes de lanzamiento o los ataques en el último puerto deciden la etapa." }
+  ],
+  "positions": [
+    { "name": "Líder del equipo", "role": "El corredor que aspira a la general o a la victoria." },
+    { "name": "Gregario", "role": "Corredor de apoyo que trabaja para el líder." },
+    { "name": "Velocista", "role": "Especialista en llegadas rápidas y llanas." },
+    { "name": "Escalador", "role": "Corredor ligero que brilla en la montaña." },
+    { "name": "Rodador", "role": "Corredor potente en el llano y en las contrarrelojes." }
+  ],
+  "field": {
+    "name": "Recorrido / velódromo",
+    "dimensions": "Etapas de carretera a menudo de 150–250 km; los velódromos olímpicos suelen tener cuerdas de 250 m",
+    "surface": "Asfalto (y a veces adoquines o tierra); madera en los velódromos",
+    "notes": ["Los velódromos tienen curvas muy peraltadas", "Zonas de avituallamiento y cronometraje en meta en carretera"]
+  },
+  "glossary": [
+    { "term": "Pelotón", "definition": "El grupo principal de corredores." },
+    { "term": "Abanico", "definition": "Fila en diagonal de corredores protegiéndose del viento lateral." },
+    { "term": "Lanzamiento", "definition": "Compañeros que imponen un ritmo alto para lanzar a su velocista." },
+    { "term": "Farolillo rojo", "definition": "El último corredor de la clasificación general." }
+  ],
+  "funFacts": [
+    "El primer Tour de Francia, en 1903, tuvo solo seis etapas, algunas de más de 400 km.",
+    "Un corredor dentro de un pelotón grande puede ahorrar una parte importante de su energía respecto a rodar solo."
+  ]
+}

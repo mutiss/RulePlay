@@ -1,0 +1,105 @@
+{
+  "id": "hurling",
+  "language": "es",
+  "intro": "El hurling es un antiguo juego de campo irlandés que se juega con un stick de fresno (el hurley o camán) y una pequeña bola de cuero (el sliotar). Los jugadores golpean el sliotar a enormes distancias, lo atrapan con la mano y corren con él en equilibrio sobre el hurley. Se puede marcar gol bajo el larguero o punto por encima. La Asociación Atlética Gaélica (GAA) organiza el juego; su equivalente femenino es el camogie.",
+  "inThirtySeconds": [
+    "Bajo el larguero y dentro de la red: gol, que vale 3 puntos.",
+    "Por encima del larguero entre los postes: un punto.",
+    "Puedes atrapar el sliotar, pero no llevarlo en la mano más de cuatro pasos.",
+    "Para avanzar más, llévalo en equilibrio o botando sobre el hurley: el «solo»."
+  ],
+  "objective": "Superar al rival con goles y puntos; los marcadores se escriben como 2–15 (2 goles y 15 puntos = 21).",
+  "facts": {
+    "players": "15 por equipo",
+    "duration": "2 × 35 minutos (sénior entre condados)",
+    "environment": "Gran campo de hierba con porterías en forma de H",
+    "equipment": ["Hurley (camán)", "Sliotar (bola de cuero)", "Casco con protector facial"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "3", "detail": "El sliotar entra en la red por debajo del larguero." },
+    { "label": "Punto", "value": "1", "detail": "El sliotar pasa por encima del larguero entre los postes." }
+  ],
+  "bodies": [
+    { "id": "gaa", "name": "Asociación Atlética Gaélica", "acronym": "GAA", "scope": "Organismo rector del hurling y el fútbol gaélico", "url": "https://www.gaa.ie/" }
+  ],
+  "rulebooks": [
+    { "id": "gaa-guide", "title": "Guía Oficial de la GAA (reglas de juego)", "publisher": "gaa", "url": "https://www.gaa.ie/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "handling", "title": "Manejar el sliotar", "summary": "Manos, hurley y pasos.",
+      "rules": [
+        { "id": "four-steps", "title": "Cuatro pasos con la bola en la mano", "important": true,
+          "summary": "Un jugador puede atrapar el sliotar y llevarlo en la mano como máximo cuatro pasos.",
+          "body": "Después debe golpearlo, pasarlo con la mano o ponerlo sobre el hurley. Durante una carrera, la bola solo puede volver a la mano un número limitado de veces antes de soltarla.",
+          "related": ["solo", "pick-up"] },
+        { "id": "solo", "title": "El solo", "important": false,
+          "summary": "Los jugadores corren con el sliotar en equilibrio o botando sobre el bas (el extremo plano) del hurley.",
+          "body": "No hay límite de distancia llevándolo sobre el hurley, lo que convierte el solo en una de las habilidades más características del hurling.",
+          "related": ["four-steps"] },
+        { "id": "pick-up", "title": "No se recoge del suelo con la mano", "important": false,
+          "summary": "El sliotar no puede recogerse directamente del suelo con la mano; hay que levantarlo con el hurley.",
+          "body": "Los jugadores lo levantan con un toque del hurley («jab lift» o «roll lift») antes de atraparlo.",
+          "related": ["four-steps"] }
+      ]
+    },
+    {
+      "id": "scoring-h", "title": "Puntuación y reanudaciones", "summary": "Goles, puntos y saques de portería.",
+      "rules": [
+        { "id": "goal-point", "title": "Goles y puntos", "important": true,
+          "summary": "A la red bajo el larguero: gol (3). Por encima del larguero entre los postes: punto (1).",
+          "body": "El total se escribe goles–puntos, así que 1–20 (23) gana a 3–12 (21). No se puede marcar gol lanzando o pasando el sliotar con la mano. Las competiciones a veces prueban cambios en la puntuación, así que consulta las reglas vigentes de la GAA.",
+          "example": "Un equipo marca 2 goles y 18 puntos: «2–18», un total de 24.",
+          "related": ["puck-out"] },
+        { "id": "puck-out", "title": "Saques de portería y tiros libres", "important": false,
+          "summary": "Tras una anotación o un tiro fuera, el portero reanuda con un saque desde el área pequeña; las faltas dan un tiro libre.",
+          "body": "Los lanzadores de faltas golpean desde el suelo levantando y golpeando el sliotar. Se concede un «65» (desde la línea de 65 m) cuando el equipo defensor manda la bola por su propia línea de fondo.",
+          "related": ["goal-point"] }
+      ]
+    },
+    {
+      "id": "contact-h", "title": "Contacto", "summary": "Hombros sí, hurleys no.",
+      "rules": [
+        { "id": "contact-h", "title": "Contacto legal e ilegal", "important": false,
+          "summary": "La carga hombro con hombro está permitida al disputar la bola; golpear, tirar o zancadillear al rival es falta.",
+          "body": "El uso peligroso del hurley (golpes altos, golpear la mano) se castiga con dureza. Los árbitros usan tarjetas amarilla, negra y roja según la infracción.",
+          "related": ["puck-out"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Exceso de pasos", "description": "Más de cuatro pasos con el sliotar en la mano.", "consequence": "Tiro libre para el rival", "severity": "MINOR" },
+    { "name": "Recoger del suelo", "description": "Levantar la bola con la mano.", "consequence": "Tiro libre para el rival", "severity": "MINOR" },
+    { "name": "Golpear con el hurley", "description": "Mover el hurley contra un rival.", "consequence": "Tiro libre y tarjeta", "severity": "MAJOR" },
+    { "name": "Agresión", "description": "Golpear deliberadamente a un rival.", "consequence": "Tarjeta roja", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Lanzamiento inicial", "description": "El árbitro lanza el sliotar entre los centrocampistas." },
+    { "title": "Juego de ida y vuelta", "description": "Golpes largos, atrapadas altas y solos." },
+    { "title": "Descanso", "description": "Los equipos cambian de campo." },
+    { "title": "Final", "description": "Los empates pueden ir a prórroga o a repetición según la competición." }
+  ],
+  "positions": [
+    { "name": "Portero", "role": "Defiende la red y hace los saques de portería." },
+    { "name": "Línea de defensas y de medios defensivos", "role": "Seis defensores." },
+    { "name": "Centrocampistas", "role": "Dos jugadores que cubren todo el campo." },
+    { "name": "Línea de medios atacantes y de delanteros", "role": "Seis atacantes que buscan goles y puntos." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "130–145 m de largo × 80–90 m de ancho",
+    "surface": "Hierba",
+    "notes": ["Mismo campo y porterías que el fútbol gaélico", "Líneas a 13, 20 y 65 m"]
+  },
+  "glossary": [
+    { "term": "Sliotar", "definition": "La bola del hurling." },
+    { "term": "Camán (hurley)", "definition": "El stick de fresno." },
+    { "term": "Bas", "definition": "El extremo plano de golpeo del hurley." },
+    { "term": "Saque de portería (puck-out)", "definition": "La reanudación del portero." },
+    { "term": "Camogie", "definition": "La versión femenina del hurling." }
+  ],
+  "funFacts": [
+    "La UNESCO reconoce el hurling como parte del Patrimonio Cultural Inmaterial de la Humanidad.",
+    "Los jugadores de hurling entre condados son amateurs, pese a jugar ante más de 80 000 personas en Croke Park."
+  ]
+}

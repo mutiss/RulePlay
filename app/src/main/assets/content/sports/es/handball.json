@@ -1,0 +1,121 @@
+{
+  "id": "handball",
+  "language": "es",
+  "intro": "Dos equipos de siete se pasan un balón con las manos e intentan lanzarlo a la portería rival. Rápido y físico, el balonmano gira en torno a una línea sagrada: el área de 6 metros, en la que solo puede entrar el portero. Los atacantes la superan saltando desde fuera y lanzando antes de caer. La Federación Internacional de Balonmano (IHF) publica las Reglas de Juego.",
+  "inThirtySeconds": [
+    "Pasa, bota y lanza con las manos: de la rodilla para abajo no se puede tocar.",
+    "Como máximo 3 pasos o 3 segundos con el balón.",
+    "Solo el portero puede estar en el área de 6 m, pero puedes saltar sobre ella para lanzar.",
+    "Las faltas se castigan con golpes francos, siete metros y exclusiones de 2 minutos."
+  ],
+  "objective": "Marcar más goles que el rival en dos tiempos de 30 minutos.",
+  "facts": {
+    "players": "7 por equipo en pista (6 + portero); cambios ilimitados en movimiento",
+    "duration": "2 × 30 minutos",
+    "environment": "Pista cubierta",
+    "equipment": ["Balón (talla según edad y categoría)", "Dos porterías de 3 m × 2 m"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "1", "detail": "El balón entero cruza la línea de gol entre los postes y bajo el larguero." },
+    { "label": "Empate", "value": "—", "detail": "Si hace falta un ganador: prórroga (2 × 5 minutos), quizá una segunda, y después lanzamientos de 7 metros." }
+  ],
+  "bodies": [
+    { "id": "ihf", "name": "Federación Internacional de Balonmano", "acronym": "IHF", "scope": "Organismo rector mundial; publica las Reglas de Juego", "url": "https://www.ihf.info/" }
+  ],
+  "rulebooks": [
+    { "id": "ihf-rules", "title": "Reglas de Juego de la IHF (balonmano en pista)", "publisher": "ihf", "url": "https://www.ihf.info/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Manejar el balón",
+      "summary": "Pasos, segundos y bote.",
+      "rules": [
+        { "id": "steps", "title": "Tres pasos", "important": true,
+          "summary": "Un jugador con el balón en la mano puede dar como máximo tres pasos.",
+          "body": "Después debe pasar, lanzar o empezar a botar. Tras un bote puede dar otros tres pasos al volver a coger el balón, pero no puede botar, coger y volver a botar (dobles).",
+          "related": ["seconds"] },
+        { "id": "seconds", "title": "Tres segundos", "important": false,
+          "summary": "Un jugador puede sujetar el balón como máximo tres segundos, aunque esté parado.",
+          "body": "Así el balón no deja de moverse. Infringir el límite de pasos o de tiempo se castiga con golpe franco para el rival.",
+          "related": ["steps", "passive"] },
+        { "id": "legs", "title": "Nada de pies por debajo de la rodilla", "important": false,
+          "summary": "Los jugadores de campo no pueden tocar el balón deliberadamente con las piernas por debajo de la rodilla.",
+          "body": "El contacto accidental, como un balón lanzado contra la pierna de un jugador, no se sanciona. Los porteros pueden usar cualquier parte del cuerpo para parar dentro de su área.",
+          "related": ["goal-area"] }
+      ]
+    },
+    {
+      "id": "area", "title": "El área de portería",
+      "summary": "La zona de 6 metros que da forma a todo el juego.",
+      "rules": [
+        { "id": "goal-area", "title": "Solo el portero", "important": true,
+          "summary": "Solo el portero puede estar en el área de portería, delimitada por la línea de 6 m.",
+          "body": "Un atacante que pisa la línea o el área con el balón lo pierde. Un defensor que entra en el área para sacar ventaja concede un golpe franco, o un 7 metros si destruye una ocasión clara de gol. Sí se puede estar en el aire sobre el área: un lanzador que bate desde fuera y suelta el balón antes de caer ha marcado legalmente.",
+          "example": "Una extremo salta desde la esquina, cae dentro del área después de soltar el balón y marca: el gol vale.",
+          "related": ["seven-metre", "legs"] },
+        { "id": "goalkeeper", "title": "Límites del portero", "important": false,
+          "summary": "El portero puede salir del área para participar, pero entonces debe seguir las reglas de un jugador de campo.",
+          "body": "El portero no puede salir del área con el balón controlado, ni tocar desde dentro un balón que esté parado o rodando fuera. Los equipos a veces cambian al portero por un jugador de campo más para atacar con siete.",
+          "related": ["goal-area"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Faltas y sanciones",
+      "summary": "Golpes francos, 7 metros, exclusiones y tarjetas.",
+      "rules": [
+        { "id": "contact", "title": "Contacto permitido y prohibido", "important": true,
+          "summary": "Los defensores pueden bloquear al rival con el tronco y los brazos flexionados, pero no agarrar, empujar, golpear ni zancadillear.",
+          "body": "Arrebatar el balón de las manos del rival y poner en peligro al adversario, sobre todo en la cabeza o el cuello, está prohibido. Las sanciones son progresivas: amonestación (tarjeta amarilla), exclusiones de 2 minutos y descalificación (tarjeta roja) por infracciones graves o una tercera exclusión.",
+          "related": ["suspension", "seven-metre"] },
+        { "id": "seven-metre", "title": "El lanzamiento de 7 metros", "important": true,
+          "summary": "El penalti del balonmano: se concede cuando se destruye ilegalmente una ocasión clara de gol en cualquier parte de la pista.",
+          "body": "El lanzador no puede pisar ni sobrepasar la línea de 7 m antes de que el balón salga de su mano, y el portero debe estar al menos a 3 m de esa línea (marcada con una línea corta a 4 m). El resto de jugadores se sitúa fuera de la línea de golpe franco.",
+          "related": ["contact", "goal-area"] },
+        { "id": "suspension", "title": "Exclusiones de dos minutos", "important": true,
+          "summary": "El jugador excluido sale de la pista dos minutos y su equipo juega con uno menos.",
+          "body": "La tercera exclusión de un jugador supone su descalificación automática. El equipo de un jugador descalificado también debe jugar dos minutos con uno menos antes de que pueda entrar un sustituto.",
+          "related": ["contact"] },
+        { "id": "passive", "title": "Juego pasivo", "important": false,
+          "summary": "Los equipos deben buscar el gol; mantener el balón sin atacar provoca un aviso y después un golpe franco.",
+          "body": "Cuando los árbitros no ven intención de atacar, levantan un brazo como aviso. A partir de ahí, el equipo atacante dispone de un número limitado de pases para lanzar o pierde la posesión.",
+          "related": ["seconds"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Pasos", "description": "Más de tres pasos con el balón en la mano.", "consequence": "Golpe franco para el rival", "severity": "MINOR" },
+    { "name": "Invasión del área", "description": "El atacante pisa el área con el balón.", "consequence": "Posesión para el rival", "severity": "MINOR" },
+    { "name": "Contacto ilegal", "description": "Agarrar, empujar o golpear a un rival.", "consequence": "Golpe franco, más tarjeta o exclusión si se repite o es peligroso", "severity": "MAJOR" },
+    { "name": "Destruir una ocasión clara", "description": "Acción ilegal que impide una ocasión evidente de gol.", "consequence": "Lanzamiento de 7 metros", "severity": "MAJOR" },
+    { "name": "Falta peligrosa", "description": "Contacto que pone en peligro la salud del rival, sobre todo en la cabeza.", "consequence": "Descalificación (tarjeta roja)", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saque de centro", "description": "El juego empieza desde el centro de la pista." },
+    { "title": "Ataques", "description": "Los equipos atacan en torno a la línea de 9 m y lanzan por encima o alrededor de la defensa." },
+    { "title": "Contraataques", "description": "Tras una parada o una pérdida, los equipos corren para marcar goles rápidos." },
+    { "title": "Descanso", "description": "Los equipos cambian de campo a los 30 minutos." },
+    { "title": "Final", "description": "Gana el que más marca; las eliminatorias van a prórroga y 7 metros." }
+  ],
+  "positions": [
+    { "name": "Portero", "role": "Defiende la portería y lanza los contraataques." },
+    { "name": "Primera línea", "role": "Lateral izquierdo, central y lateral derecho lanzan desde lejos y organizan el ataque." },
+    { "name": "Extremos", "role": "Jugadores rápidos en las bandas que lanzan desde ángulos cerrados." },
+    { "name": "Pivote", "role": "Jugador que pelea entre los defensores sobre la línea de 6 m." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "40 m × 20 m",
+    "surface": "Suelo deportivo de interior",
+    "notes": ["Línea de área: a 6 m de la portería", "Línea de golpe franco (discontinua): 9 m", "Línea de 7 metros para los penaltis", "Portería: 3 m de ancho × 2 m de alto"]
+  },
+  "glossary": [
+    { "term": "Pivote", "definition": "Atacante que juega entre los defensores sobre la línea de 6 m." },
+    { "term": "Kempa", "definition": "Un «alley-oop»: pase atrapado en el aire sobre el área y lanzado antes de caer." },
+    { "term": "Juego pasivo", "definition": "Mantener la posesión sin una intención clara de marcar." },
+    { "term": "Portería vacía", "definition": "Sustituir al portero por un séptimo jugador de campo." }
+  ],
+  "funFacts": [
+    "El balonmano a campo abierto, con 11 jugadores, fue olímpico en 1936 antes de que se impusiera el juego en pista con siete.",
+    "La jugada «Kempa» debe su nombre al jugador alemán Bernhard Kempa."
+  ]
+}

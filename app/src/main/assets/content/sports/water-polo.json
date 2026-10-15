@@ -1,0 +1,98 @@
+{
+  "id": "water-polo",
+  "intro": "Water polo is a team ball game played in a deep pool: seven players a side swim, pass and shoot at goals floating at each end. Field players may only handle the ball with one hand, may not touch the bottom, and must tread water for the entire match — usually with the 'eggbeater' kick. World Aquatics publishes the water polo rules.",
+  "inThirtySeconds": [
+    "Score by throwing the ball into the opponents' goal.",
+    "Field players use only one hand on the ball and may not stand on the bottom.",
+    "A possession clock forces attacks to shoot quickly.",
+    "Major fouls send a player out for 20 seconds — three of those and they're out for the game."
+  ],
+  "objective": "Score more goals than the opponent in four quarters.",
+  "facts": {
+    "players": "7 per team in the water (6 + goalkeeper)",
+    "duration": "4 × 8 minutes of stop-time",
+    "environment": "Deep swimming pool",
+    "equipment": ["Water polo ball", "Numbered caps with ear guards", "Floating goals"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "The whole ball crosses the goal line between the posts and under the crossbar." },
+    { "label": "Penalty", "value": "1", "detail": "A direct shot from 5 m, awarded for fouls preventing a probable goal." }
+  ],
+  "bodies": [
+    { "id": "wa-wp", "name": "World Aquatics", "acronym": null, "scope": "World governing body for water polo", "url": "https://www.worldaquatics.com/" }
+  ],
+  "rulebooks": [
+    { "id": "wa-wp-rules", "title": "World Aquatics Water Polo Rules", "publisher": "wa-wp", "url": "https://www.worldaquatics.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Handling the ball", "summary": "One hand, no bottom, no sinking.",
+      "rules": [
+        { "id": "one-hand", "title": "One hand only", "important": true,
+          "summary": "Field players may touch the ball with only one hand at a time; goalkeepers may use both inside their area.",
+          "body": "Players may also dribble the ball by swimming with it in front of their head. Holding the ball underwater when tackled is an ordinary foul.",
+          "related": ["no-bottom"] },
+        { "id": "no-bottom", "title": "Don't touch the bottom", "important": false,
+          "summary": "Players may not stand on or push off the bottom of the pool to gain an advantage.",
+          "body": "Competition pools are deep enough to make this difficult, which is why players tread water throughout using the eggbeater kick.",
+          "related": ["one-hand"] },
+        { "id": "possession", "title": "Possession clock", "important": false,
+          "summary": "A team must shoot within the possession time limit shown on the clock above each goal.",
+          "body": "The clock resets after a shot hits the goal or the goalkeeper, after an exclusion, and in other situations defined in the rules. A reduced reset applies after some restarts.",
+          "related": ["exclusion"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Fouls", "summary": "Ordinary fouls, exclusions and penalties.",
+      "rules": [
+        { "id": "ordinary", "title": "Ordinary fouls", "important": false,
+          "summary": "Minor fouls such as impeding an opponent without the ball are punished with a free throw.",
+          "body": "The free throw must be taken without delay. In a crowded game, ordinary fouls are constant and are part of the defensive tactics.",
+          "related": ["exclusion"] },
+        { "id": "exclusion", "title": "Exclusion fouls", "important": true,
+          "summary": "Holding, sinking or pulling back a player who is not holding the ball, and other major fouls, exclude the offender for 20 seconds.",
+          "body": "The attacking team gets a 'man-up' (6 v 5) power play. A player who commits three personal fouls (exclusions or penalties) must leave the game permanently, and a substitute may take their place after the exclusion time.",
+          "example": "A defender pulls back an attacker who is swimming into position: exclusion, 20 seconds out; the attackers set up a 6-on-5.",
+          "related": ["penalty-wp", "ordinary"] },
+        { "id": "penalty-wp", "title": "Penalty throw", "important": false,
+          "summary": "A foul inside the 5 m area that prevents a probable goal gives a penalty throw from the 5 m line.",
+          "body": "The shooter must throw in one continuous motion; only the goalkeeper may defend.",
+          "related": ["exclusion"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Ordinary foul", "description": "Impeding, two-handed ball contact, holding the ball under water.", "consequence": "Free throw", "severity": "MINOR" },
+    { "name": "Exclusion foul", "description": "Holding, sinking or pulling back a player.", "consequence": "20-second exclusion", "severity": "MAJOR" },
+    { "name": "Penalty foul", "description": "Preventing a probable goal inside 5 m.", "consequence": "Penalty throw", "severity": "MAJOR" },
+    { "name": "Brutality", "description": "Violent acts such as striking an opponent.", "consequence": "Exclusion for the rest of the game, plus penalty", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Sprint", "description": "Each quarter starts with a swim-off to the ball at the halfway line." },
+    { "title": "Attacks", "description": "Set offence around the centre-forward in front of goal." },
+    { "title": "Man-up", "description": "Power plays after exclusions are key scoring chances." },
+    { "title": "Penalties", "description": "Tied knockout games can go to a penalty shoot-out." }
+  ],
+  "positions": [
+    { "name": "Goalkeeper", "role": "Defends a 3 m wide goal, using both hands." },
+    { "name": "Centre-forward (hole set)", "role": "Battles for position in front of goal." },
+    { "name": "Drivers", "role": "Fast swimmers who attack and shoot from the perimeter." },
+    { "name": "Centre-back", "role": "Defends the centre-forward." }
+  ],
+  "field": {
+    "name": "Field of play",
+    "dimensions": "Up to 30 m × 20 m (men) / 25 m × 20 m (women), at least 2 m deep",
+    "surface": "Water",
+    "notes": ["2 m and 5 m lines marked on the side", "Goal: 3 m wide, 0.9 m above the water"]
+  },
+  "glossary": [
+    { "term": "Eggbeater", "definition": "The circular treading kick that keeps players high in the water." },
+    { "term": "Man-up", "definition": "A power play after an exclusion." },
+    { "term": "Hole set", "definition": "The centre-forward position." },
+    { "term": "Lob", "definition": "A high, arching shot over the goalkeeper." }
+  ],
+  "funFacts": [
+    "Water polo was the first team sport added to the modern Olympics, in 1900.",
+    "Hungary is the most successful nation in Olympic water polo history."
+  ]
+}

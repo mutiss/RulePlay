@@ -1,0 +1,117 @@
+{
+  "id": "athletics",
+  "language": "es",
+  "intro": "El atletismo reúne carreras, saltos y lanzamientos: las competiciones más antiguas que existen. Las pruebas de pista son carreras; las de campo se ganan con el lanzamiento o el salto más largo, o con el listón más alto. La ruta, la marcha y las pruebas combinadas como el decatlón completan la familia. World Athletics publica el Reglamento.",
+  "inThirtySeconds": [
+    "En pista gana el primero que cruza la meta (con el tronco).",
+    "Una salida nula y estás descalificado.",
+    "En saltos horizontales y lanzamientos cuenta tu mejor intento válido.",
+    "En altura y pértiga, tres nulos seguidos y quedas eliminado."
+  ],
+  "objective": "Correr más rápido, saltar más lejos o más alto, o lanzar más lejos que nadie.",
+  "facts": {
+    "players": "Pruebas individuales y relevos de 4",
+    "duration": "Desde menos de 10 segundos (100 m) hasta horas (maratón, marcha)",
+    "environment": "Pista de 400 m, zonas de concursos y carretera",
+    "equipment": ["Zapatillas de clavos", "Tacos de salida", "Vallas", "Testigos", "Peso, disco, martillo y jabalina", "Pértigas y colchonetas"]
+  },
+  "scoring": [
+    { "label": "Tiempo", "value": "0,01 s", "detail": "Cronometraje totalmente automático; las carreras se deciden por el tronco al cruzar la meta." },
+    { "label": "Distancia / altura", "value": "1 cm", "detail": "Los concursos se miden al centímetro." },
+    { "label": "Pruebas combinadas", "value": "Puntos", "detail": "Los resultados del decatlón y el heptatlón se convierten en puntos con tablas de puntuación." }
+  ],
+  "bodies": [
+    { "id": "wa-ath", "name": "World Athletics", "acronym": null, "scope": "Organismo rector mundial; publica el Reglamento", "url": "https://worldathletics.org/about-iaaf/documents/book-of-rules" }
+  ],
+  "rulebooks": [
+    { "id": "wa-book", "title": "Reglamento de World Athletics", "publisher": "wa-ath", "url": "https://worldathletics.org/about-iaaf/documents/book-of-rules", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "track", "title": "Pruebas de pista",
+      "summary": "Salidas, calles y llegadas.",
+      "rules": [
+        { "id": "false-start-ath", "title": "Salidas nulas", "important": true,
+          "summary": "En la mayoría de pruebas, el atleta responsable de una salida nula queda descalificado.",
+          "body": "En las pruebas de velocidad, los tacos detectan el tiempo de reacción; reaccionar en menos de 0,100 segundos tras el disparo se considera salida nula, porque se entiende que un humano no puede reaccionar tan rápido al sonido. Las pruebas combinadas tienen su propia norma.",
+          "example": "Los tacos de un velocista registran una reacción de 0,087 s: salida nula y descalificación.",
+          "related": ["lanes", "finish"] },
+        { "id": "lanes", "title": "Calles", "important": false,
+          "summary": "Las carreras de hasta 400 m se corren entera por calles; en los 800 m los atletas pueden ir a la cuerda tras la primera curva.",
+          "body": "En las curvas se escalonan las salidas para que todos recorran la misma distancia. Pisar o sobrepasar la línea interior de la calle puede suponer la descalificación. Las carreras más largas salen desde una línea curva y no se corren por calles.",
+          "related": ["false-start-ath"] },
+        { "id": "finish", "title": "La llegada", "important": true,
+          "summary": "Los atletas se clasifican según el orden en que su tronco —no la cabeza, los brazos ni las piernas— alcanza la línea de meta.",
+          "body": "La foto finish resuelve las llegadas ajustadas. Por eso los velocistas se lanzan en la meta.",
+          "related": ["false-start-ath"] },
+        { "id": "relays", "title": "Relevos", "important": false,
+          "summary": "El testigo debe pasarse dentro de la zona de transferencia de 30 m.",
+          "body": "Lo que cuenta es la posición del testigo, no la de los corredores. Que se caiga el testigo no supone descalificación si lo recoge quien lo dejó caer, pero pasarlo fuera de la zona sí.",
+          "related": ["lanes"] },
+        { "id": "hurdles", "title": "Vallas", "important": false,
+          "summary": "Derribar vallas está permitido, pero no hacerlo a propósito ni pasar la pierna de ataque por el lateral en lugar de por encima.",
+          "body": "Las vallas cortas son 100 m (mujeres) y 110 m (hombres); los 400 m vallas se corren por calles con diez obstáculos.",
+          "related": ["lanes"] }
+      ]
+    },
+    {
+      "id": "jumps", "title": "Saltos",
+      "summary": "Saltos verticales y horizontales.",
+      "rules": [
+        { "id": "vertical", "title": "Altura y pértiga", "important": true,
+          "summary": "Los atletas quedan eliminados tras tres nulos consecutivos, en cualquier combinación de alturas.",
+          "body": "Los atletas pueden elegir cuándo entrar en el concurso y pasar alturas. Los empates se resuelven por menos nulos en la altura del empate y, después, por menos nulos en total. Los saltadores de altura deben batir con un solo pie.",
+          "related": ["horizontal"] },
+        { "id": "horizontal", "title": "Longitud y triple salto", "important": false,
+          "summary": "Un salto es nulo si el pie de batida del atleta sobrepasa la línea de batida.",
+          "body": "Los saltos se miden desde la línea de batida hasta la marca más cercana en la arena. En las grandes competiciones, los atletas tienen tres intentos y los ocho mejores, tres más. Con viento a favor superior a 2,0 m/s, la marca no vale para récords.",
+          "related": ["vertical"] }
+      ]
+    },
+    {
+      "id": "throws", "title": "Lanzamientos",
+      "summary": "Círculos, pasillos y sectores.",
+      "rules": [
+        { "id": "sector", "title": "Caer dentro del sector", "important": true,
+          "summary": "Para que un lanzamiento sea válido, el artefacto debe caer dentro de las líneas del sector y el atleta debe salir correctamente del círculo o el pasillo.",
+          "body": "En peso, disco y martillo se lanza desde un círculo y no se puede tocar la parte superior del borde ni el suelo de fuera; después hay que salir por la mitad trasera una vez que el artefacto ha caído. En jabalina, no se puede sobrepasar el arco del final del pasillo.",
+          "related": ["horizontal"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Salida nula", "description": "Salir de los tacos antes del disparo (o con una reacción inferior a 0,100 s).", "consequence": "Descalificación", "severity": "SEVERE" },
+    { "name": "Invasión de calle", "description": "Pisar la línea de la calle o por dentro de ella en las curvas.", "consequence": "Posible descalificación", "severity": "MAJOR" },
+    { "name": "Nulo", "description": "Pisar la tabla, salir del círculo o caer fuera del sector.", "consequence": "Intento no medido", "severity": "MINOR" },
+    { "name": "Obstrucción", "description": "Empujar o estorbar a otro atleta.", "consequence": "Descalificación", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Rondas", "description": "Series y semifinales reducen el grupo para las finales de pista." },
+    { "title": "Calificación", "description": "En concursos hay que lograr una marca mínima o estar entre los mejores." },
+    { "title": "Final", "description": "Medallas por tiempo, distancia o altura." },
+    { "title": "Récords", "description": "Antes de homologar un récord se comprueban el viento, el cronometraje y el control antidopaje." }
+  ],
+  "positions": [
+    { "name": "Velocista", "role": "100 m a 400 m." },
+    { "name": "Mediofondo y fondo", "role": "800 m a 10 000 m y más." },
+    { "name": "Saltador", "role": "Altura, pértiga, longitud y triple." },
+    { "name": "Lanzador", "role": "Peso, disco, martillo y jabalina." },
+    { "name": "Atleta de combinadas", "role": "Decatlón (10 pruebas) o heptatlón (7)." }
+  ],
+  "field": {
+    "name": "Estadio",
+    "dimensions": "Pista ovalada de 400 m (calle interior), normalmente con 8 o 9 calles de 1,22 m",
+    "surface": "Pista sintética; interior de césped o sintético",
+    "notes": ["Los concursos se celebran en el interior y en sectores en abanico", "Ría en el circuito de obstáculos"]
+  },
+  "glossary": [
+    { "term": "Escalonado", "definition": "Posiciones de salida desplazadas en las curvas." },
+    { "term": "Lanzarse en meta", "definition": "Inclinar el tronco en la meta para llegar antes." },
+    { "term": "MMP", "definition": "Mejor marca personal." },
+    { "term": "Desempate por nulos", "definition": "Desempate por número de nulos en los saltos verticales." }
+  ],
+  "funFacts": [
+    "La primera prueba olímpica documentada, en el 776 a. C., fue una carrera de unos 192 m llamada estadio.",
+    "La distancia del maratón, 42,195 km, se fijó tras los Juegos de Londres 1908."
+  ]
+}

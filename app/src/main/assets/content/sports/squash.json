@@ -1,0 +1,87 @@
+{
+  "id": "squash",
+  "intro": "Squash is played by two players in a four-walled court, hitting a small hollow rubber ball against the front wall. Because both players share the same space, the rules on interference — 'let' and 'stroke' — are central to the game. World Squash publishes the Rules of Singles Squash.",
+  "inThirtySeconds": [
+    "Hit the ball to the front wall above the tin before it bounces twice on the floor.",
+    "Every rally scores a point; games go to 11, win by 2.",
+    "Matches are usually best of five games.",
+    "Get in your opponent's way and they may win the rally on a 'stroke'."
+  ],
+  "objective": "Win three games before your opponent.",
+  "facts": {
+    "players": "1 v 1 (doubles exists on wider courts)",
+    "duration": "Best of 5 games to 11",
+    "environment": "Enclosed indoor court with four walls",
+    "equipment": ["Racket", "Small rubber ball (double-yellow dot for elite play)", "Protective eyewear (often mandatory for juniors)"]
+  },
+  "scoring": [
+    { "label": "Point", "value": "1", "detail": "Point-a-rally scoring: every rally wins a point." },
+    { "label": "Game", "value": "11", "detail": "First to 11; at 10–10 a two-point lead is needed." }
+  ],
+  "bodies": [
+    { "id": "worldsquash", "name": "World Squash", "acronym": null, "scope": "World governing body; publishes the Rules of Squash", "url": "https://www.worldsquash.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "ws-squash-rules", "title": "World Squash Rules of Singles Squash", "publisher": "worldsquash", "url": "https://www.worldsquash.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "rally", "title": "The rally", "summary": "Serving and good returns.",
+      "rules": [
+        { "id": "serve-sq", "title": "The serve", "important": false,
+          "summary": "With one foot in the service box, the server hits the ball onto the front wall between the service line and the out line, so it lands in the opposite back quarter of the court.",
+          "body": "The ball may hit the side wall after the front wall. The server alternates boxes while holding serve; the receiver may volley the serve.",
+          "related": ["good-return-sq"] },
+        { "id": "good-return-sq", "title": "A good return", "important": true,
+          "summary": "Hit the ball before it bounces twice so that it reaches the front wall above the tin, directly or via the side or back walls, without going out.",
+          "body": "The tin is a metal strip along the bottom of the front wall; hitting it loses the rally. The ball is out if it hits the out-lines or above them on any wall.",
+          "related": ["serve-sq", "let-stroke"] }
+      ]
+    },
+    {
+      "id": "interference", "title": "Let or stroke", "summary": "When players get in each other's way.",
+      "rules": [
+        { "id": "clear-ball", "title": "Give your opponent access", "important": true,
+          "summary": "After hitting, you must make every effort to let your opponent reach the ball, see it, swing and hit it to any part of the front wall.",
+          "body": "Players appeal by saying 'let please'. The referee then decides between a let, a stroke or no let.",
+          "related": ["let-stroke"] },
+        { "id": "let-stroke", "title": "Let, stroke or no let", "important": true,
+          "summary": "Let: the rally is replayed. Stroke: the player who was impeded wins the rally. No let: the rally stands.",
+          "body": "A stroke is given when the opponent didn't make every effort to clear, or when the impeded player would have hit a winning return. No let is given if the player could not have reached the ball or didn't make every effort to play it.",
+          "example": "Your opponent stands in the line of your straight drive to the front wall: stroke to you.",
+          "related": ["clear-ball"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Tin", "description": "Ball hits the tin.", "consequence": "Rally lost", "severity": "MINOR" },
+    { "name": "Out", "description": "Ball hits on or above the out-line.", "consequence": "Rally lost", "severity": "MINOR" },
+    { "name": "Interference", "description": "Not clearing for the opponent.", "consequence": "Let or stroke", "severity": "MINOR" },
+    { "name": "Dangerous play", "description": "Excessive swing or hitting an opponent.", "consequence": "Conduct warning, stroke, game or match", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Warm-up", "description": "Five minutes, swapping sides halfway." },
+    { "title": "Games", "description": "Point-a-rally to 11 with short breaks between games." },
+    { "title": "The T", "description": "Players fight to control the central 'T' position." }
+  ],
+  "positions": [
+    { "name": "Player in front", "role": "Must clear after hitting." },
+    { "name": "Player behind", "role": "Has the right to direct access to the ball." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "9.75 m × 6.4 m",
+    "surface": "Sprung wooden floor, plaster or glass walls",
+    "notes": ["Out-line on the front wall at 4.57 m", "Service line at 1.78 m", "Glass courts allow spectators on all sides"]
+  },
+  "glossary": [
+    { "term": "The T", "definition": "The central junction of the court's floor lines." },
+    { "term": "Boast", "definition": "A shot hit onto the side wall before the front wall." },
+    { "term": "Drop shot", "definition": "A soft shot that dies near the front wall." },
+    { "term": "Nick", "definition": "Where the wall meets the floor — a shot landing there is unplayable." }
+  ],
+  "funFacts": [
+    "Squash grew out of rackets at Harrow School around 1830, where pupils found a softer, 'squashable' ball made the game slower and more varied.",
+    "Squash will make its Olympic debut at Los Angeles 2028."
+  ]
+}

@@ -1,0 +1,95 @@
+{
+  "id": "snooker",
+  "language": "es",
+  "intro": "El snooker se juega en una gran mesa cubierta de paño con quince bolas rojas, seis bolas de color y una bola blanca. Los jugadores alternan meter una roja y luego un color para construir «tacadas» de puntos, y cuando no pueden anotar dejan «snookers» que obligan al rival a cometer faltas. La WPBSA publica las Reglas Oficiales del Snooker y el Billar Inglés.",
+  "inThirtySeconds": [
+    "Mete una roja, luego un color, luego una roja… hasta que no queden rojas.",
+    "Las rojas valen 1; los colores, de 2 (amarilla) a 7 (negra). Los colores vuelven a su sitio mientras quedan rojas.",
+    "Después se meten los colores en orden: amarilla, verde, marrón, azul, rosa y negra.",
+    "Las faltas dan al rival al menos 4 puntos."
+  ],
+  "objective": "Anotar más puntos que el rival en cada frame y ganar los frames necesarios.",
+  "facts": {
+    "players": "1 contra 1",
+    "duration": "Frames de unos 15–30 minutos; partidos al mejor de un número de frames",
+    "environment": "Mesa de snooker de tamaño completo (12 × 6 pies)",
+    "equipment": ["Taco", "22 bolas", "Tiza", "Puentes y alargaderas"]
+  },
+  "scoring": [
+    { "label": "Roja", "value": "1", "detail": "Quince rojas en la mesa al empezar." },
+    { "label": "Colores", "value": "2–7", "detail": "Amarilla 2, verde 3, marrón 4, azul 5, rosa 6, negra 7." },
+    { "label": "Tacada máxima", "value": "147", "detail": "Las 15 rojas con 15 negras, y después todos los colores." },
+    { "label": "Falta", "value": "4–7", "detail": "Puntos para el rival: al menos 4, o el valor de la bola implicada si es mayor." }
+  ],
+  "bodies": [
+    { "id": "wpbsa", "name": "World Professional Billiards and Snooker Association", "acronym": "WPBSA", "scope": "Organismo rector; publica las Reglas Oficiales", "url": "https://www.wpbsa.com/rules/" }
+  ],
+  "rulebooks": [
+    { "id": "wpbsa-rules", "title": "Reglas Oficiales del Snooker y el Billar Inglés", "publisher": "wpbsa", "url": "https://www.wpbsa.com/rules/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "frame", "title": "Jugar un frame", "summary": "Rojas, colores y el orden de juego.",
+      "rules": [
+        { "id": "red-colour", "title": "Roja y después color", "important": true,
+          "summary": "Mientras quedan rojas, el jugador debe meter primero una roja, después nombrar y meter un color, y luego otra roja.",
+          "body": "Los colores metidos vuelven a su punto mientras queden rojas. Una entrada (tacada) termina cuando el jugador falla o comete falta. Cuando no quedan rojas, los colores se meten por orden de valor y ya no se reponen.",
+          "example": "Roja (1), negra (7), roja (1), rosa (6): una tacada de 15 de momento.",
+          "related": ["foul-snooker", "snookered"] },
+        { "id": "maximum", "title": "La tacada máxima", "important": false,
+          "summary": "Quince rojas, cada una seguida de la negra, y después los seis colores dan 147.",
+          "body": "Solo se puede superar 147 cuando una falta del rival deja una «bola libre».",
+          "related": ["red-colour"] }
+      ]
+    },
+    {
+      "id": "fouls-sn", "title": "Faltas y snookers", "summary": "Cómo se regalan puntos.",
+      "rules": [
+        { "id": "foul-snooker", "title": "Faltas", "important": true,
+          "summary": "Fallar la bola que hay que tocar primero, meter la blanca, tocar primero una bola equivocada o tocar bolas con algo que no sea la punta del taco son faltas.",
+          "body": "El rival recibe al menos 4 puntos, o más si hay una bola de más valor implicada. Tras una falta, el rival puede jugar o pedir al infractor que juegue otra vez desde la misma posición.",
+          "related": ["snookered", "miss"] },
+        { "id": "snookered", "title": "Snookers", "important": true,
+          "summary": "Un jugador está «snookerado» cuando no puede tocar directamente la bola que debe tocar porque otras bolas se lo impiden.",
+          "body": "Dejar snookers es una táctica clave cuando vas por detrás: el rival puede cometer falta al intentar salir, regalando puntos. Si una falta deja snookerado al siguiente jugador, este recibe una «bola libre»: puede nombrar cualquier bola y jugarla como si fuera la bola en juego.",
+          "related": ["foul-snooker"] },
+        { "id": "miss", "title": "La regla del fallo (miss)", "important": false,
+          "summary": "Si el árbitro considera que el jugador no hizo un intento suficiente de tocar la bola en juego, señala «falta y fallo», y el rival puede pedir que se repongan las bolas.",
+          "body": "Esta regla impide que los jugadores fallen a propósito para dejar en apuros al rival.",
+          "related": ["foul-snooker"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Meter la blanca", "description": "La bola blanca entra en una tronera.", "consequence": "4+ puntos para el rival; bola en mano en la D", "severity": "MINOR" },
+    { "name": "Tocar una bola equivocada", "description": "Primer contacto con una bola que no es la bola en juego.", "consequence": "4+ puntos para el rival", "severity": "MINOR" },
+    { "name": "Falta y fallo", "description": "Intento insuficiente de tocar la bola en juego.", "consequence": "Puntos y opción de reponer las bolas", "severity": "MAJOR" },
+    { "name": "Tacada empujada", "description": "La punta del taco sigue en contacto con la blanca cuando esta golpea otra bola.", "consequence": "4+ puntos para el rival", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Salida", "description": "Desde la D, el jugador que abre golpea el triángulo de rojas." },
+    { "title": "Juego de seguridad", "description": "Los jugadores dejan la blanca en posiciones difíciles." },
+    { "title": "Tacadas", "description": "Entradas de puntos alternando roja y color." },
+    { "title": "Colores", "description": "El frame suele decidirse en los últimos colores." }
+  ],
+  "positions": [
+    { "name": "Jugador en la mesa", "role": "Juega hasta que falla o comete falta." },
+    { "name": "Árbitro", "role": "Repone los colores, señala las faltas y mantiene el orden." }
+  ],
+  "field": {
+    "name": "Mesa",
+    "dimensions": "Superficie de juego de unos 3,57 × 1,78 m (mesa de 12 × 6 pies)",
+    "surface": "Paño verde sobre pizarra",
+    "notes": ["Seis troneras", "Línea de cabaña y la «D»", "Un punto para cada color"]
+  },
+  "glossary": [
+    { "term": "Tacada", "definition": "Puntos anotados en una misma entrada a la mesa." },
+    { "term": "Centenaria", "definition": "Una tacada de 100 o más." },
+    { "term": "Seguridad", "definition": "Golpe defensivo para no dejar nada al rival." },
+    { "term": "Bola libre", "definition": "Nombrar cualquier bola tras quedar snookerado por una falta." }
+  ],
+  "funFacts": [
+    "Según la tradición, el snooker lo idearon oficiales del ejército británico en Jabalpur (India) en 1875.",
+    "La primera tacada máxima de 147 hecha en televisión fue de Steve Davis, en 1982."
+  ]
+}

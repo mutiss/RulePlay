@@ -1,0 +1,158 @@
+{
+  "id": "cricket",
+  "language": "es",
+  "intro": "Dos equipos de once se turnan para batear y lanzar. El equipo que batea suma carreras golpeando la bola y corriendo entre dos wickets separados 22 yardas, mientras el equipo que lanza intenta eliminar a diez bateadores. El críquet tiene formatos muy distintos —de los Test de cinco días a los T20 de tres horas—, pero todos se juegan con las Leyes del Críquet, redactadas por el Marylebone Cricket Club (MCC), y con las condiciones de juego internacionales que fija la ICC.",
+  "inThirtySeconds": [
+    "Un equipo batea y el otro lanza y defiende; después se intercambian.",
+    "Los bateadores suman carreras corriendo entre los wickets, o con golpes a la valla de 4 o 6.",
+    "Los lanzadores hacen overs de seis bolas intentando eliminar al bateador: bowled, caught, LBW y más.",
+    "Una entrada termina cuando caen diez bateadores o se acaban los overs."
+  ],
+  "objective": "Anotar más carreras que el rival. En los Test, además, hay que eliminar dos veces al rival para ganar; si no, el partido es empate.",
+  "facts": {
+    "players": "11 por equipo",
+    "duration": "T20: ~3 horas · ODI: ~7–8 horas · Test: hasta 5 días",
+    "environment": "Gran óvalo de césped con un pitch central de 22 yardas",
+    "equipment": ["Bate", "Bola dura de cuero", "Dos juegos de stumps y bails", "Espinilleras, guantes y casco"]
+  },
+  "scoring": [
+    { "label": "Carreras", "value": "1+", "detail": "Cada vez que los bateadores se cruzan y llegan al pliegue contrario." },
+    { "label": "Cuatro", "value": "4", "detail": "La bola llega a la valla tras tocar el suelo." },
+    { "label": "Seis", "value": "6", "detail": "La bola supera la valla sin botar." },
+    { "label": "Extras", "value": "1+", "detail": "Carreras por no-balls, wides, byes y leg byes, sumadas al total del equipo." }
+  ],
+  "variants": [
+    { "id": "test", "name": "Test", "description": "Dos entradas por equipo durante hasta cinco días, sin límite de overs. Se puede ganar, perder, empatar a carreras (rarísimo) o acabar en tablas.", "body": "icc" },
+    { "id": "odi", "name": "ODI", "description": "One Day International: una entrada por equipo de hasta 50 overs.", "body": "icc" },
+    { "id": "t20", "name": "T20", "description": "Twenty20: una entrada por equipo de hasta 20 overs, el formato internacional más rápido.", "body": "icc" }
+  ],
+  "bodies": [
+    { "id": "mcc", "name": "Marylebone Cricket Club", "acronym": "MCC", "scope": "Custodio de las Leyes del Críquet", "url": "https://www.lords.org/mcc/about-the-laws-of-cricket" },
+    { "id": "icc", "name": "International Cricket Council", "acronym": "ICC", "scope": "Organismo rector mundial; fija las condiciones de juego internacionales", "url": "https://www.icc-cricket.com/" }
+  ],
+  "rulebooks": [
+    { "id": "mcc-laws", "title": "Las Leyes del Críquet", "publisher": "mcc", "url": "https://www.lords.org/mcc/about-the-laws-of-cricket", "checked": "2026-10-14" },
+    { "id": "icc-conditions", "title": "Condiciones de juego de la ICC (por formato)", "publisher": "icc", "url": "https://www.icc-cricket.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "format", "title": "Entradas, overs y formatos",
+      "summary": "Cómo se estructura un partido en cada formato.",
+      "rules": [
+        { "id": "over", "title": "El over", "important": true,
+          "summary": "Un over son seis lanzamientos legales de un mismo lanzador desde un mismo extremo.",
+          "body": "Tras cada over, se lanza desde el otro extremo y debe hacerlo otro lanzador: nadie puede lanzar dos overs seguidos. Los no-balls y los wides no cuentan como lanzamientos legales, así que hay que repetirlos.",
+          "related": ["no-ball", "wide"] },
+        { "id": "test-format", "title": "Partidos Test", "important": false, "variants": ["test"],
+          "summary": "Cada equipo batea dos veces, sin límite de overs, durante un máximo de cinco días.",
+          "body": "Para ganar, un equipo debe eliminar dos veces al rival y anotar más carreras. Si se acaba el tiempo antes, el partido termina en tablas, aunque un equipo vaya muy por delante. Un equipo con mucha ventaja tras la primera entrada puede obligar al rival a batear de nuevo inmediatamente (follow-on).",
+          "related": ["over"] },
+        { "id": "limited-overs", "title": "Críquet de overs limitados", "important": false, "variants": ["odi", "t20"],
+          "summary": "Cada equipo tiene una entrada, limitada a 50 overs (ODI) o 20 overs (T20).",
+          "body": "Hay un límite de overs por lanzador y restricciones de colocación (powerplays) en ciertos tramos que obligan a la mayoría de defensores a quedarse dentro de un círculo para favorecer el bateo agresivo. Los partidos siempre acaban con resultado salvo que intervenga el tiempo; los empates pueden decidirse con un Super Over.",
+          "related": ["over", "free-hit"] }
+      ]
+    },
+    {
+      "id": "dismissals", "title": "Eliminaciones",
+      "summary": "Las formas más habituales de eliminar a un bateador.",
+      "rules": [
+        { "id": "bowled", "ref": "Ley 32", "title": "Bowled", "important": true,
+          "summary": "El bateador queda eliminado si el lanzamiento golpea los stumps y hace caer un bail.",
+          "body": "Da igual que la bola haya tocado antes el bate o el cuerpo del bateador. No es bowled si el lanzamiento era un no-ball.",
+          "related": ["lbw"] },
+        { "id": "caught", "ref": "Ley 33", "title": "Caught (atrapada)", "important": true,
+          "summary": "Eliminado si un defensor atrapa la bola tras tocar el bate (o el guante que lo sujeta) antes de que toque el suelo.",
+          "body": "El defensor debe tener pleno control de la bola y de su propio movimiento. Una atrapada hecha por un defensor que toca la cuerda de la valla cuenta como seis.",
+          "related": ["bowled"] },
+        { "id": "lbw", "ref": "Ley 36", "title": "Leg before wicket (LBW)", "important": true,
+          "summary": "Eliminado si la bola habría golpeado los stumps pero la detuvo el cuerpo del bateador y no el bate, con varias condiciones.",
+          "body": "La bola no puede botar fuera de la línea del stump de pierna. Si el impacto se produce fuera de la línea del stump de off, solo es eliminación si el bateador no intentaba golpear. El árbitro debe considerar que la bola iba a golpear los stumps. En el críquet internacional, el sistema de revisión (DRS) usa el seguimiento de la bola para revisar los LBW.",
+          "example": "Una bola bota en línea, golpea la espinillera del bateador delante del stump central mientras la deja pasar y se dirigía a los stumps: eliminado LBW.",
+          "related": ["bowled", "drs"] },
+        { "id": "run-out", "ref": "Ley 38", "title": "Run out", "important": false,
+          "summary": "Un bateador es eliminado run out si, mientras corre, los defensores derriban el wicket antes de que su bate o su cuerpo esté apoyado detrás del pliegue.",
+          "body": "Puede caer cualquiera de los dos bateadores, en cualquier extremo. También se puede ser eliminado run out sin intentar una carrera, si el bateador está fuera del pliegue y la bola está en juego.",
+          "related": ["stumped"] },
+        { "id": "stumped", "ref": "Ley 39", "title": "Stumped", "important": false,
+          "summary": "El wicket-keeper derriba el wicket mientras el bateador está fuera del pliegue sin intentar una carrera.",
+          "body": "Suele ocurrir cuando un bateador avanza por el pitch contra un lanzador de efecto y falla la bola.",
+          "related": ["run-out"] }
+      ]
+    },
+    {
+      "id": "deliveries", "title": "Lanzamientos legales",
+      "summary": "No-balls, wides y free hits.",
+      "rules": [
+        { "id": "no-ball", "ref": "Ley 21", "title": "No-ball", "important": true,
+          "summary": "Un lanzamiento es no-ball si el lanzador pisa más allá del pliegue, lanza con una acción ilegal o lanza una bola peligrosa sin bote por encima de la cintura.",
+          "body": "El equipo que batea suma una carrera extra, el lanzamiento se repite y el bateador no puede ser eliminado de la mayoría de formas (el run out sigue siendo posible). Los no-balls de pie delantero son de los más comunes: parte del pie delantero debe caer detrás del pliegue de bateo.",
+          "related": ["free-hit", "wide"] },
+        { "id": "wide", "ref": "Ley 22", "title": "Wide", "important": false,
+          "summary": "Un lanzamiento es wide si va tan lejos del bateador que no puede golpearlo con un golpe normal.",
+          "body": "Se suma una carrera extra y se repite el lanzamiento. Las condiciones de overs limitados interpretan los wides con más rigor que en los Test, sobre todo por el lado de pierna.",
+          "related": ["no-ball"] },
+        { "id": "free-hit", "title": "Free hit", "important": false, "variants": ["odi", "t20"],
+          "summary": "En los internacionales de overs limitados, el lanzamiento tras un no-ball es un free hit: el bateador no puede ser eliminado de la mayoría de formas.",
+          "body": "El equipo que lanza no puede cambiar su colocación para el free hit salvo que los bateadores hayan cambiado de extremo. Los bateadores suelen intentar mandarlo a la valla.",
+          "related": ["no-ball"] },
+        { "id": "drs", "title": "Sistema de revisión (DRS)", "important": false,
+          "summary": "En el críquet internacional, cada equipo puede pedir que se revisen las decisiones arbitrales con tecnología.",
+          "body": "Los equipos tienen un número limitado de revisiones fallidas por entrada. Se usan el seguimiento de la bola, la detección de roces y las repeticiones; en los LBW, los casos muy ajustados son «umpire's call» y se mantiene la decisión original.",
+          "related": ["lbw"] }
+      ]
+    },
+    {
+      "id": "runs", "title": "Anotar carreras",
+      "summary": "Correr, valla y extras.",
+      "rules": [
+        { "id": "running", "title": "Correr entre wickets", "important": false,
+          "summary": "Los bateadores suman una carrera cada vez que ambos se cruzan y apoyan el bate detrás del pliegue de bateo contrario.",
+          "body": "Si un bateador no apoya el bate o el cuerpo detrás del pliegue al girar para otra carrera, es una «carrera corta» y no cuenta.",
+          "related": ["run-out", "boundary"] },
+        { "id": "boundary", "ref": "Ley 19", "title": "La valla", "important": false,
+          "summary": "La bola que llega a la valla rodando vale 4; la que la supera sin botar vale 6.",
+          "body": "La valla se marca con una cuerda o una línea alrededor del campo. Un defensor que atrapa la bola tocando la valla concede seis carreras en lugar de eliminar al bateador.",
+          "related": ["caught"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "No-ball", "description": "Pisar más allá del pliegue o un lanzamiento peligroso o ilegal.", "consequence": "Carrera extra y repetición (free hit en internacionales de overs limitados)", "severity": "MINOR" },
+    { "name": "Wide", "description": "Lanzamiento fuera del alcance del bateador.", "consequence": "Carrera extra y repetición", "severity": "MINOR" },
+    { "name": "Manipular la bola", "description": "Alterar ilegalmente el estado de la bola.", "consequence": "5 carreras de penalización y medidas disciplinarias", "severity": "SEVERE" },
+    { "name": "Obstrucción o finta del defensor", "description": "Distraer o engañar deliberadamente a los bateadores.", "consequence": "5 carreras de penalización para el equipo que batea", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "El sorteo", "description": "El capitán que gana elige batear o lanzar primero." },
+    { "title": "Primera entrada", "description": "Un equipo batea hasta que caen diez wickets o se acaban los overs." },
+    { "title": "La persecución", "description": "El otro equipo batea para superar el objetivo." },
+    { "title": "Resultado", "description": "Se gana por carreras (equipo que batea primero) o por wickets (el que persigue). Los Test también pueden acabar en tablas." }
+  ],
+  "positions": [
+    { "name": "Bateadores", "role": "Dos a la vez en el pitch, anotando carreras y protegiendo su wicket." },
+    { "name": "Lanzadores", "role": "Lanzadores rápidos, medios o de efecto que entregan la bola." },
+    { "name": "Wicket-keeper", "role": "Defensor con guantes tras los stumps que atrapa los roces y elimina stumped." },
+    { "name": "Defensores", "role": "Colocados por el capitán en posiciones como slip, gully, point o mid-on." },
+    { "name": "Capitán", "role": "Coloca la defensa, rota a los lanzadores y toma las decisiones tácticas." }
+  ],
+  "field": {
+    "name": "Campo y pitch",
+    "dimensions": "Pitch: 22 yardas (20,12 m) de largo; área de juego ovalada con vallas de tamaño variable",
+    "surface": "Césped natural; el pitch central está muy segado y apisonado",
+    "notes": ["Pliegue de bateo a 4 pies (1,22 m) delante de los stumps", "Stumps: tres, con dos bails encima", "El círculo interior marca las restricciones de colocación en overs limitados"]
+  },
+  "glossary": [
+    { "term": "Over", "definition": "Seis lanzamientos legales de un mismo lanzador." },
+    { "term": "Maiden", "definition": "Over en el que no se anota ninguna carrera con el bate." },
+    { "term": "Duck", "definition": "Ser eliminado sin anotar." },
+    { "term": "Century", "definition": "Cien carreras o más de un mismo bateador." },
+    { "term": "LBW", "definition": "Leg before wicket: eliminado porque el cuerpo detuvo una bola que iba a los stumps." },
+    { "term": "Yorker", "definition": "Lanzamiento que busca botar justo a los pies del bateador." },
+    { "term": "Follow-on", "definition": "En los Test, obligar al equipo muy rezagado a batear otra vez inmediatamente." }
+  ],
+  "funFacts": [
+    "El «Test eterno» de 1939 en Durban se jugó durante nueve días y aun así acabó en tablas porque el equipo inglés tenía que coger el barco de vuelta.",
+    "El MCC es el custodio de las Leyes del Críquet desde 1787."
+  ]
+}

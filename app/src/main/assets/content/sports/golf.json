@@ -1,0 +1,128 @@
+{
+  "id": "golf",
+  "intro": "Golf asks players to get a ball from the teeing area into a small hole in as few strokes as possible, across eighteen holes of varied terrain. There is no referee on most courses: players are expected to apply the Rules themselves, honestly. The Rules of Golf are written jointly by The R&A and the USGA.",
+  "inThirtySeconds": [
+    "Complete each hole in as few strokes as possible; fewest total strokes wins in stroke play.",
+    "Play the ball as it lies — don't improve your lie or line.",
+    "Out of bounds or lost ball: one penalty stroke and replay from where you last hit.",
+    "You may carry up to 14 clubs."
+  ],
+  "objective": "Take the fewest strokes over the round (stroke play), or win more holes than your opponent (match play).",
+  "facts": {
+    "players": "Individual (or pairs and teams in some formats)",
+    "duration": "18 holes, usually 4–5 hours",
+    "environment": "Outdoor course: tees, fairways, rough, bunkers, penalty areas and greens",
+    "equipment": ["Up to 14 clubs", "Ball", "Tee", "Optional distance-measuring device"]
+  },
+  "scoring": [
+    { "label": "Par", "value": "3–5", "detail": "The expected number of strokes for a skilled player on a hole." },
+    { "label": "Birdie / bogey", "value": "−1 / +1", "detail": "One stroke under or over par on a hole." },
+    { "label": "Penalty stroke", "value": "+1 or +2", "detail": "Added to your score for breaches or relief under penalty." }
+  ],
+  "variants": [
+    { "id": "stroke", "name": "Stroke play", "description": "Every stroke counts; the lowest total score over the round(s) wins.", "body": "randa" },
+    { "id": "match", "name": "Match play", "description": "Players compete hole by hole; the player who wins more holes wins the match.", "body": "randa" }
+  ],
+  "bodies": [
+    { "id": "randa", "name": "The R&A", "acronym": "R&A", "scope": "Co-author of the Rules of Golf (outside the USA and Mexico)", "url": "https://www.randa.org/" },
+    { "id": "usga", "name": "United States Golf Association", "acronym": "USGA", "scope": "Co-author of the Rules of Golf (USA and Mexico)", "url": null }
+  ],
+  "rulebooks": [
+    { "id": "rules-of-golf", "title": "The Rules of Golf", "publisher": "randa", "url": "https://www.randa.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "principles", "title": "Core principles",
+      "summary": "The spirit of the game and your equipment.",
+      "rules": [
+        { "id": "play-as-lies", "ref": "Rule 9", "title": "Play the ball as it lies", "important": true,
+          "summary": "You must play the ball from where it comes to rest, without improving the conditions affecting your stroke.",
+          "body": "You may not press down the ground behind the ball, bend branches out of the way or remove sand to improve your lie, area of intended stance or swing, or line of play. If your ball at rest is moved by you, it generally must be replaced, often with a penalty stroke.",
+          "example": "A player breaks off a twig that interferes with the backswing: two-stroke penalty in stroke play (loss of hole in match play).",
+          "related": ["unplayable", "fourteen-clubs"] },
+        { "id": "fourteen-clubs", "title": "Fourteen clubs maximum", "important": false,
+          "summary": "A player may start a round with no more than 14 clubs.",
+          "body": "Clubs must conform to equipment standards. Carrying too many clubs brings a penalty for each hole where the breach occurred, up to a maximum.",
+          "related": ["play-as-lies"] }
+      ]
+    },
+    {
+      "id": "relief", "title": "Trouble and relief",
+      "summary": "What to do when things go wrong.",
+      "rules": [
+        { "id": "ob-lost", "ref": "Rule 18", "title": "Out of bounds and lost ball", "important": true,
+          "summary": "If your ball is out of bounds, or not found within three minutes, take a one-stroke penalty and play again from where you hit the previous stroke.",
+          "body": "This is called 'stroke and distance'. To save time, you can play a provisional ball if you think your first ball might be lost or out of bounds. Many committees also adopt a local rule for general play allowing a drop near where the ball was lost, for a two-stroke penalty.",
+          "example": "Your tee shot sails over the boundary fence: one penalty stroke, and your next shot from the tee is your third.",
+          "related": ["unplayable", "penalty-area"] },
+        { "id": "penalty-area", "ref": "Rule 17", "title": "Penalty areas", "important": false,
+          "summary": "Water hazards and other penalty areas are marked red or yellow. You may play the ball as it lies or take relief for one penalty stroke.",
+          "body": "Relief options include stroke and distance and dropping back on a line from the hole through the point where the ball crossed the edge. Red penalty areas also allow a drop within two club-lengths of where the ball crossed.",
+          "related": ["ob-lost"] },
+        { "id": "unplayable", "ref": "Rule 19", "title": "Unplayable ball", "important": false,
+          "summary": "You may declare your ball unplayable anywhere except in a penalty area, and take relief for one penalty stroke.",
+          "body": "Options are stroke and distance, back-on-the-line relief, or a drop within two club-lengths. In a bunker, extra options apply, including dropping outside the bunker for two penalty strokes.",
+          "related": ["play-as-lies", "ob-lost"] }
+      ]
+    },
+    {
+      "id": "green", "title": "On the green",
+      "summary": "Putting rules.",
+      "rules": [
+        { "id": "putting-green", "ref": "Rule 13", "title": "The putting green", "important": false,
+          "summary": "On the green you may mark, lift and clean your ball, and repair most damage such as pitch marks and spike marks.",
+          "body": "You may putt with the flagstick in the hole or removed — the choice is yours. If your ball hits an unattended flagstick in the hole, there is no penalty.",
+          "related": ["play-as-lies"] }
+      ]
+    },
+    {
+      "id": "formats", "title": "Stroke play and match play",
+      "summary": "Two ways to win.",
+      "rules": [
+        { "id": "stroke-play", "title": "Stroke play", "important": false, "variants": ["stroke"],
+          "summary": "Count every stroke and penalty; the lowest total wins. You must hole out on every hole.",
+          "body": "Most penalties in stroke play are two strokes for general breaches. Players are responsible for signing a correct scorecard.",
+          "related": ["match-play"] },
+        { "id": "match-play", "title": "Match play", "important": false, "variants": ["match"],
+          "summary": "Each hole is a separate contest; the lower score wins the hole and the match is won by leading by more holes than remain.",
+          "body": "Players may concede a stroke, a hole or the match. The general penalty in match play is loss of the hole.",
+          "related": ["stroke-play"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Improving the lie", "description": "Pressing down, bending or breaking things to help your stroke.", "consequence": "General penalty (2 strokes / loss of hole)", "severity": "MAJOR" },
+    { "name": "Out of bounds", "description": "Ball comes to rest beyond the boundary.", "consequence": "Stroke and distance (1 stroke)", "severity": "MINOR" },
+    { "name": "Playing a wrong ball", "description": "Making a stroke at a ball that is not yours.", "consequence": "General penalty, then correct the mistake", "severity": "MAJOR" },
+    { "name": "Signing a wrong scorecard", "description": "Returning a score lower than actually taken.", "consequence": "Disqualification", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Tee shot", "description": "Each hole starts from the teeing area." },
+    { "title": "Approach", "description": "Fairway and approach shots towards the green." },
+    { "title": "Short game", "description": "Chips, pitches and bunker shots around the green." },
+    { "title": "Putting", "description": "Rolling the ball into the 108 mm hole." },
+    { "title": "Scorecard", "description": "Scores are checked and signed at the end of the round." }
+  ],
+  "positions": [
+    { "name": "Player", "role": "Responsible for applying the Rules and keeping score." },
+    { "name": "Caddie", "role": "Carries clubs and gives advice; the player is penalised for the caddie's breaches." },
+    { "name": "Marker", "role": "Records the player's score in stroke play." }
+  ],
+  "field": {
+    "name": "Course",
+    "dimensions": "Usually 18 holes over several kilometres; par typically 70–72",
+    "surface": "Mown grass of varying heights, sand bunkers and water",
+    "notes": ["Hole diameter: 108 mm (4.25 in)", "White stakes mark out of bounds; red and yellow mark penalty areas"]
+  },
+  "glossary": [
+    { "term": "Par", "definition": "The expected number of strokes for a hole." },
+    { "term": "Eagle", "definition": "Two strokes under par on a hole." },
+    { "term": "Provisional ball", "definition": "A second ball played in case the first is lost or out of bounds." },
+    { "term": "Stroke and distance", "definition": "Replaying from the previous spot with a one-stroke penalty." },
+    { "term": "Drop", "definition": "Releasing the ball from knee height to take relief." }
+  ],
+  "funFacts": [
+    "The Old Course at St Andrews has hosted golf for around 600 years.",
+    "Since 2019, players may putt with the flagstick left in the hole."
+  ]
+}

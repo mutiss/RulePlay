@@ -1,0 +1,105 @@
+{
+  "id": "badminton",
+  "language": "es",
+  "intro": "Los jugadores usan raquetas ligeras para golpear un volante de plumas por encima de una red alta, intentando que caiga en el campo rival. Como el volante frena muy rápido, el bádminton mezcla remates fulgurantes con un juego de red delicadísimo. Cada jugada da un punto, y las Reglas del Bádminton las mantiene la Federación Mundial de Bádminton (BWF).",
+  "inThirtySeconds": [
+    "Gana la jugada y sumas un punto, haya sacado quien haya sacado.",
+    "Los juegos van a 21 puntos (con dos de ventaja, máximo 30); al mejor de tres juegos.",
+    "El saque se hace por abajo, por debajo de una altura fija, en diagonal.",
+    "El volante nunca puede botar: hay que devolverlo en el aire."
+  ],
+  "objective": "Ganar dos juegos haciendo que el volante caiga en el campo rival o forzando su falta.",
+  "facts": {
+    "players": "1 contra 1 o 2 contra 2 (incluido dobles mixto)",
+    "duration": "Al mejor de 3 juegos a 21 (sin reloj)",
+    "environment": "Pista cubierta (las corrientes de aire afectan al volante)",
+    "equipment": ["Raqueta", "Volante de plumas o sintético", "Red de 1,524 m en el centro"]
+  },
+  "scoring": [
+    { "label": "Punto directo", "value": "1", "detail": "Quien gana cada jugada suma un punto y saca a continuación." },
+    { "label": "Juego", "value": "21", "detail": "Primero a 21 con dos de ventaja; con 29-29, el siguiente punto gana 30-29." },
+    { "label": "Partido", "value": "2", "detail": "Al mejor de tres juegos." }
+  ],
+  "bodies": [
+    { "id": "bwf", "name": "Federación Mundial de Bádminton", "acronym": "BWF", "scope": "Organismo rector mundial; publica las Reglas del Bádminton", "url": "https://corporate.bwfbadminton.com/statutes/" }
+  ],
+  "rulebooks": [
+    { "id": "bwf-laws", "title": "Estatutos de la BWF — Reglas del Bádminton", "publisher": "bwf", "url": "https://corporate.bwfbadminton.com/statutes/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Puntuación",
+      "summary": "Puntos por jugada, juegos e intervalos.",
+      "rules": [
+        { "id": "rally-scoring", "title": "Puntuación directa a 21", "important": true,
+          "summary": "Cada jugada da un punto; el primer lado en llegar a 21 con dos de ventaja gana el juego.",
+          "body": "Si se llega a 20-20, se sigue hasta que alguien saque dos de ventaja. Con 29-29, quien gane el punto 30 gana el juego. Hay un intervalo de 60 segundos cuando el marcador del que va ganando llega a 11, y de dos minutos entre juegos.",
+          "related": ["serve-court"] },
+        { "id": "ends", "title": "Cambio de campo", "important": false,
+          "summary": "Los jugadores cambian de campo tras cada juego y, en el tercer juego decisivo, cuando el que va ganando llega a 11.",
+          "body": "Así se compensan la luz, las corrientes de aire y otras condiciones que afectan al vuelo del volante.",
+          "related": ["rally-scoring"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "El saque",
+      "summary": "El saque, muy controlado, del bádminton.",
+      "rules": [
+        { "id": "serve-height", "title": "Por abajo y por debajo de una altura fija", "important": true,
+          "summary": "En el momento del golpe, todo el volante debe estar por debajo de 1,15 m del suelo.",
+          "body": "El saque se golpea por abajo y viaja en diagonal al cuadro de saque rival. Los pies del sacador y del restador deben estar en contacto con el suelo y dentro de sus cuadros hasta que se golpee el saque. Cualquier pausa una vez iniciado el movimiento de saque es falta.",
+          "related": ["serve-court"] },
+        { "id": "serve-court", "title": "Desde qué lado se saca", "important": false,
+          "summary": "En individuales, se saca desde la derecha con marcador par y desde la izquierda con marcador impar.",
+          "body": "En dobles se aplica la misma regla par/impar al marcador del lado que saca, y los compañeros solo cambian de cuadro cuando ganan un punto con su saque. La pareja receptora no cambia de posición.",
+          "related": ["serve-height", "rally-scoring"] }
+      ]
+    },
+    {
+      "id": "faults", "title": "Faltas durante el juego",
+      "summary": "Qué te hace perder una jugada.",
+      "rules": [
+        { "id": "land", "title": "Dentro o fuera", "important": true,
+          "summary": "El volante es bueno si cae sobre las líneas o dentro de ellas; es malo si cae fuera o toca el techo, las paredes o a una persona fuera de la pista.",
+          "body": "En individuales se usa la pista larga y estrecha; en dobles, todo el ancho, pero un área de saque más corta al fondo.",
+          "related": ["net-fault"] },
+        { "id": "net-fault", "title": "Faltas de red y de cuerpo", "important": false,
+          "summary": "Es falta tocar la red, invadir el campo rival, golpear el volante antes de que cruce la red o golpearlo dos veces seguidas.",
+          "body": "Un jugador puede acompañar el golpe por encima de la red tras golpear en su lado, siempre que no la toque. Que el volante toque el cuerpo o la ropa de un jugador también es falta.",
+          "related": ["land"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Falta de saque", "description": "Sacar por encima del límite de 1,15 m o levantar un pie del suelo.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Tocar la red", "description": "La raqueta, el cuerpo o la ropa tocan la red.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Obstrucción", "description": "Impedir que el rival haga un golpe legal cerca de la red.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Conducta incorrecta", "description": "Retrasar el juego o comportamiento antideportivo.", "consequence": "Aviso, falta o descalificación", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Sorteo", "description": "El ganador elige sacar, restar o campo." },
+    { "title": "Jugadas", "description": "Despejes, dejadas, drives y remates hasta una falta." },
+    { "title": "Intervalo en el 11", "description": "60 segundos de descanso y consejos." },
+    { "title": "Juego decisivo", "description": "Si van 1-1 en juegos, decide un tercero." }
+  ],
+  "positions": [
+    { "name": "Jugador delantero (dobles)", "role": "Caza en la red con interceptaciones rápidas." },
+    { "name": "Jugador trasero (dobles)", "role": "Ataca con remates desde el fondo de la pista." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "13,40 m × 6,10 m (dobles); 5,18 m de ancho en individuales",
+    "surface": "Tapiz sintético sobre madera",
+    "notes": ["Red: 1,524 m en el centro y 1,55 m en los postes", "Línea de saque corto a 1,98 m de la red"]
+  },
+  "glossary": [
+    { "term": "Despeje (clear)", "definition": "Golpe alto y profundo al fondo del campo rival." },
+    { "term": "Dejada", "definition": "Golpe suave que cae justo detrás de la red." },
+    { "term": "Remate (smash)", "definition": "Golpe de ataque potente y descendente por encima de la cabeza." },
+    { "term": "Let", "definition": "Jugada que se repite, por ejemplo tras una interrupción imprevista." }
+  ],
+  "funFacts": [
+    "El bádminton toma su nombre de Badminton House, en Gloucestershire (Inglaterra).",
+    "Los volantes de competición se fabrican tradicionalmente con 16 plumas de ganso o de pato."
+  ]
+}

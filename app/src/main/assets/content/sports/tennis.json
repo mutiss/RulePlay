@@ -1,0 +1,132 @@
+{
+  "id": "tennis",
+  "intro": "Players hit a ball over a net with rackets, trying to land it inside the opponent's court so it can't be returned. Points build into games, games into sets and sets into a match — a nested scoring system that makes every point matter differently. The Rules of Tennis are maintained by the International Tennis Federation (ITF).",
+  "inThirtySeconds": [
+    "Win a point when your opponent fails to return the ball into your court before its second bounce.",
+    "Points go 15, 30, 40, game — at 40–40 (deuce) you need two points in a row.",
+    "Six games win a set (by two); at 6–6 most sets are decided by a tie-break.",
+    "The server gets two attempts; a let that clips the net and lands in is replayed."
+  ],
+  "objective": "Win the required number of sets — usually two of three, or three of five at men's Grand Slams.",
+  "facts": {
+    "players": "1 v 1 (singles) or 2 v 2 (doubles)",
+    "duration": "No clock — best of 3 or 5 sets",
+    "environment": "Outdoor or indoor court: grass, clay or hard",
+    "equipment": ["Racket", "Felt-covered ball", "Net 0.914 m high at the centre"]
+  },
+  "scoring": [
+    { "label": "Point", "value": "15·30·40", "detail": "The first three points of a game are called 15, 30 and 40; zero is 'love'." },
+    { "label": "Game", "value": "4+", "detail": "Win four points with a two-point margin. From 40–40 (deuce), win two in a row." },
+    { "label": "Set", "value": "6+", "detail": "Win six games with a two-game margin, or the tie-break at 6–6." }
+  ],
+  "variants": [
+    { "id": "singles", "name": "Singles", "description": "One player per side using the narrower singles court.", "body": "itf" },
+    { "id": "doubles", "name": "Doubles", "description": "Two players per side; the court's outer alleys come into play after the serve.", "body": "itf" }
+  ],
+  "bodies": [
+    { "id": "itf", "name": "International Tennis Federation", "acronym": "ITF", "scope": "World governing body; publishes the Rules of Tennis", "url": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/" }
+  ],
+  "rulebooks": [
+    { "id": "itf-rules", "title": "ITF Rules of Tennis", "publisher": "itf", "url": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "How scoring works",
+      "summary": "Points, games, sets and the tie-break.",
+      "rules": [
+        { "id": "game-score", "title": "Scoring a game", "important": true,
+          "summary": "Points are counted love, 15, 30, 40, game. At 40–40 the score is 'deuce'.",
+          "body": "From deuce, the player who wins the next point has 'advantage'. If they win the following point too they take the game; if they lose it, the score returns to deuce. Some formats, such as many doubles events, use 'no-ad' scoring where the point at deuce decides the game.",
+          "example": "Server leads 40–30 and loses the point: deuce. Server wins the next: advantage server. Server loses the next: back to deuce.",
+          "related": ["set-score", "tie-break"] },
+        { "id": "set-score", "title": "Winning a set", "important": true,
+          "summary": "The first player to win six games with a two-game lead wins the set.",
+          "body": "At 5–5 a player needs to reach 7–5. At 6–6, most competitions play a tie-break. Players change ends after the first, third and every following odd game of each set.",
+          "related": ["tie-break", "game-score"] },
+        { "id": "tie-break", "title": "The tie-break", "important": true,
+          "summary": "At 6–6, the first to 7 points with a two-point lead wins the set 7–6.",
+          "body": "Points are counted 1, 2, 3… The player due to serve serves the first point; after that, serve alternates every two points. Players change ends every six points. Many tournaments, including the Grand Slams, now play a deciding-set tie-break to 10 points at 6–6.",
+          "example": "At 6–6 in the tie-break, play continues until someone leads by two — 8–6, 9–7, 12–10…",
+          "related": ["set-score", "serve"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "Serving",
+      "summary": "How a point starts, faults and lets.",
+      "rules": [
+        { "id": "serve", "title": "The serve", "important": true,
+          "summary": "The server stands behind the baseline and hits the ball diagonally into the opponent's service box.",
+          "body": "Serves alternate from the right-hand side (deuce court) and the left-hand side (advantage court) for each point. The server has two attempts: a missed first serve is a 'fault', and two faults in a row is a 'double fault', losing the point. The server must not touch the baseline or the court inside it before hitting the ball (a foot fault).",
+          "related": ["let", "tie-break"] },
+        { "id": "let", "title": "Let", "important": false,
+          "summary": "A serve that touches the net and then lands in the correct service box is a let and is replayed.",
+          "body": "A let on the serve does not cancel a previous fault — the server simply retakes that serve. A let can also be called if play is interrupted, for example by a ball rolling onto the court, in which case the whole point is replayed.",
+          "related": ["serve"] }
+      ]
+    },
+    {
+      "id": "rally", "title": "During the rally",
+      "summary": "In or out, bounces and how points are lost.",
+      "rules": [
+        { "id": "in-out", "title": "In or out", "important": true,
+          "summary": "A ball that touches any part of the line is in.",
+          "body": "Lines belong to the court they enclose. Where electronic line calling (such as Hawk-Eye) is used, it decides; in some events players can challenge a limited number of calls.",
+          "example": "A ball lands with only its outer fluff brushing the baseline: it is in.",
+          "related": ["lose-point"] },
+        { "id": "lose-point", "title": "Ways to lose a point", "important": true,
+          "summary": "You lose the point if the ball bounces twice on your side, or if you hit it into the net or out.",
+          "body": "You also lose the point if the ball touches you or your clothing, if you or your racket touch the net while the ball is in play, if you hit the ball before it has crossed the net, or if you deliberately hit it twice. A volley — hitting the ball before it bounces — is allowed anywhere on your side except on the serve return.",
+          "related": ["in-out"] }
+      ]
+    },
+    {
+      "id": "doubles", "title": "Doubles",
+      "summary": "What changes when four players share the court.",
+      "rules": [
+        { "id": "doubles-court", "title": "The doubles alleys", "important": false, "variants": ["doubles"],
+          "summary": "After the serve, the wider doubles court is in play, including the side alleys.",
+          "body": "Serves must still land in the normal service box. Once the return has been hit, the outer sidelines mark the boundary of the court.",
+          "related": ["doubles-order"] },
+        { "id": "doubles-order", "title": "Serving and receiving order", "important": false, "variants": ["doubles"],
+          "summary": "Each team decides who serves first; serve then rotates between all four players game by game.",
+          "body": "Receivers choose a side (deuce or advantage) at the start of each set and keep it for the whole set. Partners can stand anywhere, which is why the 'I-formation' and other tactics exist.",
+          "related": ["serve", "doubles-court"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Double fault", "description": "Missing both service attempts.", "consequence": "Point to the receiver", "severity": "MINOR" },
+    { "name": "Foot fault", "description": "Touching the baseline or court before striking the serve.", "consequence": "Counts as a fault", "severity": "MINOR" },
+    { "name": "Touching the net", "description": "Player, racket or clothing touches the net while the ball is in play.", "consequence": "Point lost", "severity": "MINOR" },
+    { "name": "Code violation", "description": "Unsportsmanlike conduct such as racket abuse or time violations, under tournament codes of conduct.", "consequence": "Warning, then point and game penalties", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Warm-up and toss", "description": "The toss winner chooses to serve, receive or pick an end." },
+    { "title": "Games", "description": "Serve alternates each game; players change ends after odd-numbered games." },
+    { "title": "Sets", "description": "First to six games with a two-game lead, or the tie-break at 6–6." },
+    { "title": "Match point", "description": "The match ends when a player wins the required number of sets." }
+  ],
+  "positions": [
+    { "name": "Server", "role": "Starts each point from behind the baseline." },
+    { "name": "Receiver", "role": "Returns serve; may stand anywhere on their side." },
+    { "name": "Net player (doubles)", "role": "Partner positioned near the net to volley and intercept." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "23.77 m long; 8.23 m wide (singles) or 10.97 m (doubles)",
+    "surface": "Grass, clay, hard (acrylic) or carpet",
+    "notes": ["Net height: 0.914 m at the centre, 1.07 m at the posts", "Service boxes extend 6.40 m from the net", "Surface strongly affects ball speed and bounce"]
+  },
+  "glossary": [
+    { "term": "Love", "definition": "Zero, in tennis scoring." },
+    { "term": "Deuce", "definition": "40–40 in a game; two consecutive points are needed to win." },
+    { "term": "Break", "definition": "Winning a game while your opponent is serving." },
+    { "term": "Ace", "definition": "A legal serve the receiver fails to touch." },
+    { "term": "Tie-break", "definition": "A points race to 7 (or 10) used to decide a set at 6–6." },
+    { "term": "Volley", "definition": "Hitting the ball before it bounces." }
+  ],
+  "funFacts": [
+    "Nobody knows for certain why tennis counts 15, 30, 40 — one popular theory points to the quarters of a clock face.",
+    "Wimbledon is the only Grand Slam still played on grass."
+  ]
+}

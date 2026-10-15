@@ -1,0 +1,113 @@
+{
+  "id": "fencing",
+  "intro": "Fencing is combat with blades on a long, narrow strip called the piste. Electronic scoring registers each hit (a 'touch'), but the three weapons — foil, épée and sabre — have their own target areas and, crucially, their own logic for who scores when both fencers hit at once. The Fédération Internationale d'Escrime (FIE) publishes the rules.",
+  "inThirtySeconds": [
+    "Hit your opponent's valid target with your weapon before they hit you.",
+    "Foil and sabre use 'right of way': the fencer who attacked first gets the point.",
+    "In épée, the whole body is target and simultaneous hits score for both.",
+    "Elimination bouts go to 15 touches, in three periods of three minutes."
+  ],
+  "objective": "Reach the required number of touches first (15 in direct elimination), or lead when time expires.",
+  "facts": {
+    "players": "1 v 1 (also team relays)",
+    "duration": "3 × 3 minutes to 15 touches (pools: 3 minutes to 5)",
+    "environment": "Indoor piste, about 14 m long",
+    "equipment": ["Foil, épée or sabre", "Mask", "Jacket and protective underplastron", "Body wires and electric scoring"]
+  },
+  "scoring": [
+    { "label": "Touch", "value": "1", "detail": "A valid hit on the target area registered by the scoring apparatus." },
+    { "label": "Double touch", "value": "1 + 1", "detail": "In épée only, both fencers score if they hit within a fraction of a second." },
+    { "label": "Bout", "value": "15", "detail": "Direct-elimination bouts are won by the first to 15 touches." }
+  ],
+  "variants": [
+    { "id": "foil", "name": "Foil", "description": "Thrusting weapon; target is the torso. Right of way applies.", "body": "fie" },
+    { "id": "epee", "name": "Épée", "description": "Thrusting weapon; the whole body is target and there is no right of way.", "body": "fie" },
+    { "id": "sabre", "name": "Sabre", "description": "Cutting and thrusting weapon; target is everything above the waist. Right of way applies.", "body": "fie" }
+  ],
+  "bodies": [
+    { "id": "fie", "name": "Fédération Internationale d'Escrime", "acronym": "FIE", "scope": "International fencing federation", "url": "https://fie.org/" }
+  ],
+  "rulebooks": [
+    { "id": "fie-rules", "title": "FIE Rules (Technical, Material and Organisation)", "publisher": "fie", "url": "https://fie.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "targets", "title": "Weapons and targets",
+      "summary": "Each weapon has its own target and way of hitting.",
+      "rules": [
+        { "id": "foil-target", "title": "Foil: the torso", "important": true, "variants": ["foil"],
+          "summary": "Only hits with the point on the torso (front and back) count. Arms, legs and most of the head are off-target.",
+          "body": "An off-target hit lights a white lamp and stops the action, but no touch is awarded. The target is covered by a conductive jacket (lamé) so valid hits light a coloured lamp.",
+          "related": ["right-of-way"] },
+        { "id": "epee-target", "title": "Épée: the whole body", "important": true, "variants": ["epee"],
+          "summary": "Hits with the point anywhere on the body, from mask to foot, are valid.",
+          "body": "There is no right of way. If both fencers hit within the machine's lockout time (a fraction of a second), both score a touch.",
+          "example": "Both fencers land at almost the same instant — one on the hand, one on the foot: double touch, one point each.",
+          "related": ["foil-target"] },
+        { "id": "sabre-target", "title": "Sabre: above the waist", "important": true, "variants": ["sabre"],
+          "summary": "Hits with the edge or point anywhere above the waist — including head and arms, but not the hands — are valid.",
+          "body": "Sabre is the fastest weapon. Fencers may not cross their feet when advancing, which rules out the running 'flèche' attack used in the other weapons.",
+          "related": ["right-of-way"] }
+      ]
+    },
+    {
+      "id": "priority", "title": "Right of way",
+      "summary": "Who scores when both lights go on.",
+      "rules": [
+        { "id": "right-of-way", "title": "Priority to the attacker", "important": true, "variants": ["foil", "sabre"],
+          "summary": "When both fencers hit, the touch goes to the one who established the attack first.",
+          "body": "An attack is the first offensive action made by extending the arm and threatening the target. The defender gains priority by parrying (deflecting the blade) and then hitting back — the riposte. If the attacker misses or is parried, priority switches. The referee analyses each phrase and explains the decision with hand signals.",
+          "example": "Fencer A lunges with the arm extended; fencer B hits at the same time without parrying: point to A.",
+          "related": ["foil-target", "sabre-target"] }
+      ]
+    },
+    {
+      "id": "piste", "title": "The piste and the bout",
+      "summary": "Boundaries, time and penalties.",
+      "rules": [
+        { "id": "boundaries", "title": "Leaving the piste", "important": false,
+          "summary": "Stepping off the back of the piste with both feet gives a touch to the opponent; stepping off the side leads to a penalty of ground.",
+          "body": "The piste is about 14 m long and 1.5–2 m wide. Warning lines near each end tell fencers they are close to the rear limit.",
+          "related": ["cards"] },
+        { "id": "cards", "title": "Yellow, red and black cards", "important": false,
+          "summary": "Infringements are punished with a yellow card (warning), red card (a touch to the opponent) or black card (exclusion).",
+          "body": "Typical offences include covering the target, turning the back, corps-à-corps in foil and sabre, or disrupting order. Non-combativity — a long period without fencing — can also be penalised.",
+          "related": ["boundaries"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Covering the target", "description": "Using the free arm or another body part to protect the valid target.", "consequence": "Yellow, then red card", "severity": "MINOR" },
+    { "name": "Corps-à-corps", "description": "Body contact in foil or sabre.", "consequence": "Halt; card if deliberate", "severity": "MINOR" },
+    { "name": "Crossing the rear limit", "description": "Both feet over the end line.", "consequence": "Touch to the opponent", "severity": "MINOR" },
+    { "name": "Brutality or fraud", "description": "Violent hits or tampered equipment.", "consequence": "Black card (exclusion)", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Salute", "description": "Fencers salute each other and the referee before putting on masks." },
+    { "title": "En garde, prêts, allez", "description": "The referee starts each action from the en-garde lines." },
+    { "title": "Halt and decision", "description": "After each hit, the referee stops play and awards the touch." },
+    { "title": "Handshake", "description": "Fencers remove masks and shake hands at the end — failing to do so is penalised." }
+  ],
+  "positions": [
+    { "name": "Fencer on the right", "role": "Wears the green light on the scoring box." },
+    { "name": "Fencer on the left", "role": "Wears the red light on the scoring box." },
+    { "name": "Referee (president)", "role": "Starts and stops the action and awards touches." }
+  ],
+  "field": {
+    "name": "Piste",
+    "dimensions": "About 14 m long × 1.5–2 m wide, with run-off at each end",
+    "surface": "Conductive metal or mesh strip",
+    "notes": ["Centre line, en-garde lines 2 m from it", "Warning zones before each rear limit"]
+  },
+  "glossary": [
+    { "term": "Touch (touché)", "definition": "A valid hit." },
+    { "term": "Parry", "definition": "Deflecting the opponent's blade." },
+    { "term": "Riposte", "definition": "The counter-attack after a successful parry." },
+    { "term": "Lunge", "definition": "The classic extending attack step." },
+    { "term": "Flèche", "definition": "A running attack, banned in sabre." }
+  ],
+  "funFacts": [
+    "Fencing has featured at every modern Olympic Games since 1896.",
+    "Electric scoring arrived in épée in the 1930s, foil in the 1950s and sabre only in 1988."
+  ]
+}

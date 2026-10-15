@@ -1,0 +1,114 @@
+{
+  "id": "rugby-league",
+  "intro": "Rugby league split from rugby union in 1895 and evolved into a faster, more structured game. Thirteen players a side have six tackles to move the ball upfield and score; after the sixth, possession passes to the opponents. Contested rucks are replaced by the quick 'play-the-ball', which keeps the game flowing. The International Rugby League (IRL) governs the sport worldwide.",
+  "inThirtySeconds": [
+    "Score a try (4 points) by grounding the ball over the opponents' try line.",
+    "Each team gets six tackles per possession, usually kicking on the last one.",
+    "After a tackle, the player gets up and rolls the ball back with the foot — the play-the-ball.",
+    "Like union, passes must go backwards."
+  ],
+  "objective": "Outscore the opponent with tries, conversions, penalty goals and drop goals over 80 minutes.",
+  "facts": {
+    "players": "13 per team, plus interchange players",
+    "duration": "2 × 40 minutes",
+    "environment": "Grass or artificial pitch with H-shaped posts",
+    "equipment": ["Oval ball", "Gum shield", "Boots"]
+  },
+  "scoring": [
+    { "label": "Try", "value": "4", "detail": "Grounding the ball on or over the opponents' try line." },
+    { "label": "Conversion", "value": "2", "detail": "Kick at goal after a try." },
+    { "label": "Penalty goal", "value": "2", "detail": "Kick at goal awarded after an infringement." },
+    { "label": "Drop goal", "value": "1", "detail": "A drop kick over the crossbar in open play (also called a field goal)." }
+  ],
+  "bodies": [
+    { "id": "irl", "name": "International Rugby League", "acronym": "IRL", "scope": "World governing body for rugby league", "url": "https://www.intrl.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "irl-laws", "title": "International Rugby League Laws of the Game", "publisher": "irl", "url": "https://www.intrl.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "sets", "title": "Six tackles",
+      "summary": "Possession is rationed — use it well.",
+      "rules": [
+        { "id": "six-tackles", "title": "The six-tackle set", "important": true,
+          "summary": "A team in possession may be tackled five times; on the sixth tackle, the ball is handed over to the opponents.",
+          "body": "Because of this, teams usually run the ball for five tackles and kick on the last ('last-tackle option') to gain territory or chase a try. If the defending team touches the ball in certain ways, or gives away an infringement, the attacking team may get a fresh set of six.",
+          "example": "On tackle five a halfback kicks high towards the corner, hoping a winger can catch it and score before the defenders.",
+          "related": ["play-the-ball", "kicking-league"] },
+        { "id": "play-the-ball", "title": "The play-the-ball", "important": true,
+          "summary": "After being tackled, the player stands up, places the ball on the ground and rolls it backwards with the foot to a teammate.",
+          "body": "One or two defenders ('markers') may stand directly opposite; the rest of the defence must retreat a set distance (usually 10 m) until the ball is played. This is what makes rugby league fast and continuous.",
+          "related": ["six-tackles", "offside-league"] }
+      ]
+    },
+    {
+      "id": "play", "title": "General play",
+      "summary": "Passing, offside and kicking.",
+      "rules": [
+        { "id": "forward-pass-league", "title": "Backward passes only", "important": false,
+          "summary": "Passes must not travel forward; a forward pass or knock-on usually results in a scrum to the opponents.",
+          "body": "Scrums in rugby league are a restart rather than a contest of strength, and some competitions replace them with a simple handover in certain situations.",
+          "related": ["six-tackles"] },
+        { "id": "offside-league", "title": "Offside at the play-the-ball", "important": false,
+          "summary": "Defenders must retreat the required distance and may not move up before the ball is played.",
+          "body": "Being offside, interfering with the play-the-ball, or holding a tackled player down too long gives the attacking team a penalty — and often a new set of six.",
+          "related": ["play-the-ball"] },
+        { "id": "kicking-league", "title": "40/20 and kicking for touch", "important": false,
+          "summary": "A kick from inside your own half that bounces into touch inside the opponents' 20 m area earns a reward, under current international laws and major leagues.",
+          "body": "This '40/20' kick rewards accurate tactical kicking. Exact rules (whether you win the feed at a scrum or restart with a tap) vary between competitions, so check the competition's current laws.",
+          "related": ["six-tackles"] }
+      ]
+    },
+    {
+      "id": "discipline", "title": "Discipline",
+      "summary": "Penalties, sin bin and send-offs.",
+      "rules": [
+        { "id": "penalties-league", "title": "Penalties", "important": false,
+          "summary": "For a penalty, the team can kick for goal (2 points), kick for touch, or tap and run.",
+          "body": "Kicking for touch gives the team the restart near where the ball went out and a fresh set of tackles.",
+          "related": ["offside-league"] },
+        { "id": "cards-league", "title": "Sin bin and send-offs", "important": false,
+          "summary": "Foul play can earn a 10-minute sin bin or a send-off for the rest of the match.",
+          "body": "High tackles, shoulder charges and dangerous throws are common reasons. Competitions also review incidents afterwards and can suspend players.",
+          "related": ["penalties-league"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Knock-on / forward pass", "description": "The ball goes forward from the hands.", "consequence": "Scrum or handover to opponents", "severity": "MINOR" },
+    { "name": "Offside", "description": "Defender not back the required distance at the play-the-ball.", "consequence": "Penalty", "severity": "MAJOR" },
+    { "name": "Holding down", "description": "Slowing the tackled player from getting up.", "consequence": "Penalty", "severity": "MAJOR" },
+    { "name": "High tackle", "description": "Contact with the head or neck.", "consequence": "Penalty, sin bin or send-off", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Kick-off", "description": "Each half begins with a place kick from halfway." },
+    { "title": "Sets of six", "description": "Teams take turns attacking in sets of six tackles." },
+    { "title": "Last-tackle kicks", "description": "Kicks to gain territory or force a goal-line drop-out." },
+    { "title": "Full-time", "description": "In some competitions, tied games go to golden-point extra time." }
+  ],
+  "positions": [
+    { "name": "Fullback (1)", "role": "Last defender and counter-attacking runner." },
+    { "name": "Wings and centres (2–5)", "role": "Outside backs who finish attacks and defend the edges." },
+    { "name": "Stand-off and scrum-half (6–7)", "role": "The 'halves': playmakers and main kickers." },
+    { "name": "Props (8, 10)", "role": "Big forwards who carry hard up the middle." },
+    { "name": "Hooker (9)", "role": "Distributes from the play-the-ball, like a dummy-half." },
+    { "name": "Second row and loose forward (11–13)", "role": "Mobile forwards who tackle and run edge lines." }
+  ],
+  "field": {
+    "name": "Pitch",
+    "dimensions": "100 m between try lines × about 68 m wide, plus in-goal areas",
+    "surface": "Grass or approved artificial turf",
+    "notes": ["Lines every 10 m across the field", "H-shaped posts"]
+  },
+  "glossary": [
+    { "term": "Dummy-half", "definition": "The player who picks up the ball from the play-the-ball." },
+    { "term": "Set", "definition": "A team's run of six tackles." },
+    { "term": "Golden point", "definition": "Extra time in which the first score wins." },
+    { "term": "Drop-out", "definition": "A restart kick from the goal line or the 20 m line." }
+  ],
+  "funFacts": [
+    "The 1895 split was largely about money: northern English clubs wanted to compensate working players for lost wages.",
+    "State of Origin, played between Queensland and New South Wales, is one of Australia's biggest sporting events."
+  ]
+}

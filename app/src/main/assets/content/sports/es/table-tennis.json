@@ -1,0 +1,114 @@
+{
+  "id": "table-tennis",
+  "language": "es",
+  "intro": "Dos o cuatro jugadores se pasan una pelota ligera de 40 mm por encima de una mesa dividida por una red baja. Las distancias cortas y los efectos extremos lo convierten en uno de los deportes de reflejos más rápidos que existen. Los juegos son cortos —a 11— y el saque tiene reglas precisas para que nadie pueda esconder el efecto. La Federación Internacional de Tenis de Mesa (ITTF) publica las Reglas del Tenis de Mesa.",
+  "inThirtySeconds": [
+    "Cada jugada da un punto; un juego va a 11, con dos de ventaja.",
+    "El saque cambia cada dos puntos (cada punto a partir del 10-10).",
+    "Lanza la pelota al menos 16 cm desde la palma abierta y haz que bote una vez en cada campo.",
+    "Devuelve la pelota tras un bote en tu campo para que caiga en el del rival."
+  ],
+  "objective": "Ganar la mayoría de juegos: al mejor de cinco o de siete.",
+  "facts": {
+    "players": "1 contra 1 o 2 contra 2",
+    "duration": "Al mejor de 5 o 7 juegos a 11",
+    "environment": "Pabellón cubierto",
+    "equipment": ["Pala con goma en ambas caras (una roja y otra negra u otro color homologado)", "Pelota de plástico de 40 mm", "Mesa y red"]
+  },
+  "scoring": [
+    { "label": "Punto", "value": "1", "detail": "Cada jugada da un punto, haya sacado quien haya sacado." },
+    { "label": "Juego", "value": "11", "detail": "Primero a 11 puntos con dos de ventaja." },
+    { "label": "Partido", "value": "3 o 4", "detail": "Ganar tres juegos (al mejor de cinco) o cuatro (al mejor de siete)." }
+  ],
+  "bodies": [
+    { "id": "ittf", "name": "Federación Internacional de Tenis de Mesa", "acronym": "ITTF", "scope": "Organismo rector mundial; publica el Manual y las Reglas de la ITTF", "url": "https://www.ittf.com/handbook/" }
+  ],
+  "rulebooks": [
+    { "id": "ittf-handbook", "title": "Manual de la ITTF — Reglas del Tenis de Mesa", "publisher": "ittf", "url": "https://www.ittf.com/handbook/", "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Puntos y juegos",
+      "summary": "Juegos cortos y cambios de saque rápidos.",
+      "rules": [
+        { "id": "eleven", "title": "Juegos a 11", "important": true,
+          "summary": "Gana el juego el primer jugador que llega a 11 puntos con al menos dos de ventaja.",
+          "body": "Con 10-10 se sigue hasta que alguien saque dos de ventaja. Los jugadores cambian de lado tras cada juego, y en el último juego posible del partido cuando uno llega a 5 puntos.",
+          "related": ["serve-rotation"] },
+        { "id": "serve-rotation", "title": "Saque cada dos puntos", "important": true,
+          "summary": "El derecho a sacar pasa al otro jugador cada dos puntos.",
+          "body": "A partir del 10-10, el saque se alterna tras cada punto. En dobles, el orden de saque rota entre los cuatro jugadores.",
+          "related": ["eleven", "serve-rules"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "El saque",
+      "summary": "Reglas pensadas para que los saques sean justos y visibles.",
+      "rules": [
+        { "id": "serve-rules", "title": "Un saque legal", "important": true,
+          "summary": "Apoya la pelota en la palma abierta y plana, lánzala casi en vertical al menos 16 cm y golpéala mientras cae, de modo que bote una vez en cada lado de la red.",
+          "body": "Durante todo el saque la pelota debe estar por encima del nivel de la mesa y detrás de la línea de fondo del sacador, y no puede quedar oculta al restador por ninguna parte del cuerpo o la ropa del sacador o de su compañero. Los árbitros pueden avisar y después señalar falta en los saques dudosos.",
+          "example": "Un jugador lanza la pelota apenas unos centímetros antes de golpearla: lanzamiento ilegal, punto para el restador.",
+          "related": ["let-tt", "doubles-serve"] },
+        { "id": "let-tt", "title": "Let", "important": false,
+          "summary": "Si el saque toca el conjunto de la red y después cae correctamente, es let y se repite.",
+          "body": "También se puede señalar let si el juego se ve alterado por algo ajeno a los jugadores. Un let no cuenta como punto.",
+          "related": ["serve-rules"] },
+        { "id": "doubles-serve", "title": "El saque en dobles", "important": false,
+          "summary": "En dobles, el saque debe ir de la mitad derecha del sacador a la mitad derecha del restador.",
+          "body": "Tras el saque, los compañeros deben golpear la pelota alternativamente: si un jugador golpea dos veces seguidas, pierden el punto.",
+          "related": ["serve-rules"] }
+      ]
+    },
+    {
+      "id": "rally", "title": "Durante el punto",
+      "summary": "Devoluciones buenas y cómo se pierden los puntos.",
+      "rules": [
+        { "id": "good-return", "title": "Una devolución buena", "important": true,
+          "summary": "Después de que la pelota bote una vez en tu campo, golpéala para que pase por encima o alrededor de la red y caiga en el campo rival.",
+          "body": "Una pelota que toca el borde superior de la mesa es buena (un «canto»); una que toca el lateral de la mesa no. Golpear la pelota antes de que bote en tu campo sobre la superficie de juego te hace perder el punto.",
+          "related": ["lose-point-tt"] },
+        { "id": "lose-point-tt", "title": "Perder un punto", "important": false,
+          "summary": "Pierdes el punto si fallas la devolución, tocas la red, mueves la mesa o tocas la superficie de juego con la mano libre.",
+          "body": "Golpear la pelota con la mano que sujeta la pala, por debajo de la muñeca, cuenta como parte de la pala; con otras partes del cuerpo, no.",
+          "related": ["good-return", "expedite"] },
+        { "id": "expedite", "title": "Sistema de aceleración", "important": false,
+          "summary": "Si un juego no ha terminado tras 10 minutos (salvo que ambos tengan al menos 9 puntos), se aplican reglas especiales para acelerarlo.",
+          "body": "Los jugadores sacan alternativamente en cada punto, y si el restador hace 13 devoluciones buenas en una jugada, gana el punto. Rara vez hace falta, pero evita jugadas defensivas interminables.",
+          "related": ["lose-point-tt"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Saque ilegal", "description": "Lanzamiento bajo, pelota oculta o golpe por debajo de la mesa.", "consequence": "Punto para el restador (tras aviso en casos dudosos)", "severity": "MINOR" },
+    { "name": "Mano libre en la mesa", "description": "Tocar la superficie de juego con la mano que no sujeta la pala.", "consequence": "Punto perdido", "severity": "MINOR" },
+    { "name": "Obstrucción / volea", "description": "Golpear la pelota sobre la mesa antes de que bote en tu campo.", "consequence": "Punto perdido", "severity": "MINOR" },
+    { "name": "Mal comportamiento", "description": "Conducta antideportiva, como maltratar la pala.", "consequence": "Amarilla y después puntos de penalización (amarilla-roja)", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Calentamiento", "description": "Dos minutos de práctica en la mesa del partido." },
+    { "title": "Juegos", "description": "Juegos cortos a 11 con cambios de saque rápidos." },
+    { "title": "Pausas", "description": "Hasta un minuto entre juegos; un tiempo muerto por jugador o pareja en el partido." },
+    { "title": "Juego decisivo", "description": "Los jugadores cambian de lado cuando alguien llega a 5 puntos." }
+  ],
+  "positions": [
+    { "name": "Atacante", "role": "Juega cerca de la mesa con liftados y drives con mucho efecto liftado." },
+    { "name": "Defensor", "role": "Juega lejos y devuelve los ataques con mucho efecto cortado." }
+  ],
+  "field": {
+    "name": "Mesa",
+    "dimensions": "2,74 m × 1,525 m, con la superficie a 76 cm del suelo",
+    "surface": "Mesa oscura y mate (normalmente azul o verde) con líneas blancas",
+    "notes": ["Altura de la red: 15,25 cm", "La línea central divide cada mitad para los saques de dobles", "Diámetro de la pelota: 40 mm"]
+  },
+  "glossary": [
+    { "term": "Liftado (loop)", "definition": "Golpe con mucho efecto liftado que cae en picado sobre la mesa." },
+    { "term": "Cortado", "definition": "Golpe defensivo con efecto hacia atrás." },
+    { "term": "Canto", "definition": "Devolución que toca el borde superior de la mesa: es buena." },
+    { "term": "Agarre de lapicero", "definition": "Forma de coger la pala como si fuera un lápiz." }
+  ],
+  "funFacts": [
+    "El nombre «ping-pong» fue una marca registrada, una de las razones por las que los organismos del deporte usan «tenis de mesa».",
+    "Los juegos solían ir a 21 puntos; el cambio a 11 llegó en 2001."
+  ]
+}

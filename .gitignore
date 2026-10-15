@@ -1,0 +1,59 @@
+# ---- Build outputs (Gradle / Kotlin / NDK) ----
+.gradle/
+build/
+.kotlin/
+.externalNativeBuild
+.cxx
+/captures
+*.apk
+*.aab
+*.ap_
+*.dex
+output-metadata.json
+mapping.txt
+
+# ---- Local machine config ----
+local.properties
+*.log
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# ---- Android Studio / IntelliJ (per-user files; shared config stays committed) ----
+*.iml
+/.idea/caches
+/.idea/libraries
+/.idea/modules.xml
+/.idea/workspace.xml
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+/.idea/deploymentTargetSelector.xml
+/.idea/deploymentTargetDropDown.xml
+/.idea/shelf/
+/.idea/dictionaries/
+/.idea/tasks.xml
+/.idea/usage.statistics.xml
+/.idea/androidTestResultsUserPreferences.xml
+/.idea/studiobot.xml
+
+# ---- Secrets & signing (keys live in ../RulePlay-keys, never in this repo) ----
+*.jks
+*.keystore
+keystore.properties
+signing.properties
+google-services.json
+GoogleService-Info.plist
+*service-account*.json
+play-store-credentials*.json
+.env
+.env.*
+*.pem
+*.p12
+*.key
+
+# ---- Privacy-policy site (deployed separately to Vercel) ----
+/store/privacy-policy/
+
+# ---- Web tooling ----
+.vercel/
+node_modules/

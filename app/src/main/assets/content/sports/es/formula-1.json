@@ -1,0 +1,119 @@
+{
+  "id": "formula-1",
+  "language": "es",
+  "intro": "La Fórmula 1 es el campeonato de monoplazas más alto de la FIA: los equipos diseñan y construyen sus propios coches dentro de un reglamento técnico estricto y compiten en circuitos de todo el mundo. Cada Gran Premio combina entrenamientos, clasificación y carrera, y los puntos se acumulan en dos títulos: el de Pilotos y el de Constructores. La FIA publica los reglamentos deportivo, técnico y financiero; 2026 supuso un gran cambio con nuevas unidades de potencia y nuevas normas de chasis.",
+  "inThirtySeconds": [
+    "La clasificación decide la parrilla: la vuelta más rápida sale desde la pole.",
+    "Puntúan los diez primeros, de 25 por la victoria a 1 por el décimo puesto.",
+    "En carrera en seco, cada coche debe usar al menos dos compuestos de neumático distintos.",
+    "Las banderas, el coche de seguridad y las sanciones de los comisarios mantienen la carrera segura y justa."
+  ],
+  "objective": "Sumar más puntos que nadie a lo largo de la temporada, tanto el piloto como el equipo.",
+  "facts": {
+    "players": "Dos pilotos por equipo",
+    "duration": "Carrera de unos 305 km (Mónaco, menos), con un máximo de 2 horas en pista",
+    "environment": "Circuitos permanentes y urbanos de todo el mundo",
+    "equipment": ["Monoplaza", "Unidad de potencia híbrida", "Neumáticos Pirelli", "Casco, HANS y mono ignífugo"]
+  },
+  "scoring": [
+    { "label": "Victoria", "value": "25", "detail": "Puntos para los diez primeros: 25, 18, 15, 12, 10, 8, 6, 4, 2 y 1." },
+    { "label": "Sprint", "value": "8", "detail": "En los fines de semana con sprint, una carrera más corta da puntos a los ocho primeros (de 8 a 1)." },
+    { "label": "Constructores", "value": "Σ", "detail": "El total del equipo es la suma de los puntos de sus dos pilotos." }
+  ],
+  "bodies": [
+    { "id": "fia", "name": "Federación Internacional del Automóvil", "acronym": "FIA", "scope": "Organismo rector; publica los reglamentos de la F1", "url": "https://www.fia.com/regulation/category/110" },
+    { "id": "f1", "name": "Formula 1", "acronym": "F1", "scope": "Titular de los derechos comerciales y organizador del campeonato", "url": "https://www.formula1.com/" }
+  ],
+  "rulebooks": [
+    { "id": "fia-f1-regs", "title": "Reglamentos Deportivo y Técnico de la Fórmula 1 de la FIA", "publisher": "fia", "url": "https://www.fia.com/regulation/category/110", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "weekend", "title": "El fin de semana de carrera", "summary": "Entrenamientos, clasificación y carrera.",
+      "rules": [
+        { "id": "qualifying", "title": "Clasificación eliminatoria", "important": true,
+          "summary": "La clasificación tiene tres sesiones: Q1, Q2 y Q3. Los coches más lentos quedan eliminados tras Q1 y Q2; los diez mejores luchan por la pole en Q3.",
+          "body": "La parrilla sigue el orden de la clasificación, ajustado por las posibles sanciones. Un piloto que no marque un tiempo dentro del 107 % del más rápido de Q1 puede necesitar permiso de los comisarios para salir.",
+          "related": ["grid-penalties", "points"] },
+        { "id": "sprint", "title": "Fines de semana con sprint", "important": false,
+          "summary": "En algunos eventos, antes del Gran Premio se disputan una clasificación al sprint y una carrera corta de unos 100 km.",
+          "body": "El sprint da puntos a los ocho primeros. No decide la parrilla de la carrera principal, que tiene su propia clasificación.",
+          "related": ["points"] },
+        { "id": "points", "title": "Puntos y campeonatos", "important": true,
+          "summary": "Los diez primeros de la carrera suman 25, 18, 15, 12, 10, 8, 6, 4, 2 y 1 puntos.",
+          "body": "Hay dos campeonatos: pilotos y constructores. Si una carrera se detiene antes de tiempo y no se reanuda, se pueden dar puntos reducidos según la distancia completada.",
+          "related": ["qualifying", "sprint"] }
+      ]
+    },
+    {
+      "id": "racing", "title": "Durante la carrera", "summary": "Neumáticos, paradas y seguridad.",
+      "rules": [
+        { "id": "tyres", "title": "Normas de neumáticos", "important": true,
+          "summary": "En carrera en seco, cada piloto debe usar al menos dos compuestos de seco distintos, lo que obliga a hacer al menos una parada.",
+          "body": "Pirelli designa tres compuestos de seco por evento (duro, medio y blando). Si se usan intermedios o de lluvia por el agua, la norma de los dos compuestos deja de aplicarse.",
+          "example": "Un piloto sale con medios y cambia a duros: requisito cumplido. Acabar con el compuesto de salida sin haber cambiado le costaría una sanción.",
+          "related": ["pit-stops"] },
+        { "id": "pit-stops", "title": "Paradas y pit lane", "important": false,
+          "summary": "En el pit lane hay un límite de velocidad; soltar un coche de forma insegura en la trayectoria de otro se sanciona.",
+          "body": "Los mecánicos pueden cambiar las cuatro ruedas en un par de segundos. Los equipos eligen el momento de la parada con criterio táctico: el «undercut» consiste en parar antes para ganar tiempo con neumáticos nuevos.",
+          "related": ["tyres", "safety-car"] },
+        { "id": "safety-car", "title": "Coche de seguridad y bandera roja", "important": true,
+          "summary": "Tras un incidente, el coche de seguridad o el coche de seguridad virtual ralentizan a los pilotos; una bandera roja detiene la sesión.",
+          "body": "Con coche de seguridad está prohibido adelantar y los coches se agrupan tras él. Con el virtual, los pilotos deben respetar un tiempo mínimo en cada sector. Una bandera roja manda a todos al pit lane.",
+          "related": ["flags"] }
+      ]
+    },
+    {
+      "id": "conduct", "title": "Banderas y sanciones", "summary": "Señales y comisarios.",
+      "rules": [
+        { "id": "flags", "title": "Banderas", "important": false,
+          "summary": "Amarilla: peligro, reduce y no adelantes. Azul: deja pasar al coche más rápido que te va a doblar. Roja: sesión detenida. A cuadros: final.",
+          "body": "La bandera blanca y negra en diagonal es un aviso por conducta antideportiva, y la negra descalifica al piloto. Las banderas se complementan con paneles luminosos y avisos en el volante.",
+          "related": ["safety-car", "penalties"] },
+        { "id": "penalties", "title": "Sanciones de los comisarios", "important": false,
+          "summary": "Los comisarios pueden imponer sanciones de tiempo (5 o 10 segundos), drive-through, stop-and-go, pérdida de posiciones en parrilla y puntos de penalización.",
+          "body": "Infracciones habituales: provocar una colisión, salirse de la pista y ganar ventaja, superar los límites de pista repetidamente y exceder la velocidad en el pit lane. Acumular 12 puntos de penalización en la superlicencia en 12 meses supone una carrera de sanción.",
+          "related": ["flags", "grid-penalties"] },
+        { "id": "grid-penalties", "title": "Límite de componentes", "important": false,
+          "summary": "Cada piloto tiene un número limitado de componentes de la unidad de potencia y de la caja de cambios por temporada; superarlo supone perder posiciones en parrilla.",
+          "body": "El límite presupuestario también restringe el gasto de los equipos, y el régimen de parque cerrado limita los cambios en el coche entre la clasificación y la carrera.",
+          "related": ["qualifying"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Límites de pista", "description": "Salirse repetidamente de las líneas blancas del circuito.", "consequence": "Vuelta anulada y después sanciones de tiempo", "severity": "MINOR" },
+    { "name": "Exceso de velocidad en el pit lane", "description": "Superar el límite de velocidad del pit lane.", "consequence": "Sanción de tiempo o drive-through", "severity": "MINOR" },
+    { "name": "Provocar una colisión", "description": "Piloto considerado total o principalmente culpable.", "consequence": "Sanción de tiempo y puntos de penalización", "severity": "MAJOR" },
+    { "name": "Ignorar una bandera roja", "description": "No reducir ni volver a boxes.", "consequence": "Sanciones graves, incluida la descalificación", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Entrenamientos", "description": "Los equipos prueban reglajes y neumáticos." },
+    { "title": "Clasificación", "description": "Tres sesiones eliminatorias deciden la parrilla." },
+    { "title": "Vuelta de formación", "description": "Los coches calientan neumáticos y se colocan en parrilla." },
+    { "title": "Se apagan los semáforos", "description": "Se apagan las cinco luces rojas y empieza la carrera." },
+    { "title": "Bandera a cuadros", "description": "Podio y después verificaciones técnicas." }
+  ],
+  "positions": [
+    { "name": "Piloto", "role": "Conduce el coche e informa a los ingenieros." },
+    { "name": "Ingeniero de carrera", "role": "La voz del piloto por radio: gestiona la estrategia y los ajustes del coche." },
+    { "name": "Estratega", "role": "Planifica las paradas y la elección de neumáticos." },
+    { "name": "Mecánicos de boxes", "role": "Cambian neumáticos y reparan en segundos." }
+  ],
+  "field": {
+    "name": "Circuito",
+    "dimensions": "Normalmente de 3 a 7 km por vuelta",
+    "surface": "Asfalto con pianos y escapatorias",
+    "notes": ["Pit lane con límite de velocidad", "El DRS u otras ayudas al adelantamiento dependen del reglamento vigente"]
+  },
+  "glossary": [
+    { "term": "Pole position", "definition": "Primer puesto en la parrilla de salida." },
+    { "term": "Undercut", "definition": "Parar antes que un rival para ganar tiempo con neumáticos nuevos." },
+    { "term": "Parque cerrado", "definition": "Régimen que limita los cambios en el coche tras la clasificación." },
+    { "term": "VSC", "definition": "Coche de seguridad virtual: neutralización con velocidad controlada sin coche físico." }
+  ],
+  "funFacts": [
+    "La primera carrera del Campeonato del Mundo de Fórmula 1 se disputó en Silverstone el 13 de mayo de 1950.",
+    "Una parada en boxes moderna puede durar menos de dos segundos."
+  ]
+}

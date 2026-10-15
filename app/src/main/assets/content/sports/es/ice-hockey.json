@@ -1,0 +1,118 @@
+{
+  "id": "ice-hockey",
+  "language": "es",
+  "intro": "Dos equipos de seis patinan a toda velocidad usando sticks para lanzar un disco de goma dura a la portería rival. Los jugadores cambian en marcha cada minuto, más o menos, el contacto corporal forma parte del juego masculino y las sanciones mandan a los jugadores al banquillo de castigo, dando al rival una superioridad numérica. La IIHF rige el hockey internacional; la NHL tiene su propio reglamento.",
+  "inThirtySeconds": [
+    "Se marca cuando el disco cruza por completo la línea de gol y entra en la portería.",
+    "Fuera de juego: los atacantes no pueden entrar en la zona de ataque antes que el disco.",
+    "Icing: si lanzas el disco desde tu campo más allá de la línea de gol rival sin que nadie lo toque, el saque neutral vuelve a tu zona.",
+    "Las sanciones mandan a los jugadores al banquillo 2 o 5 minutos; su equipo juega con uno menos."
+  ],
+  "objective": "Marcar más goles que el rival en tres periodos de 20 minutos.",
+  "facts": {
+    "players": "6 por equipo en el hielo (5 jugadores + portero), con cambios frecuentes",
+    "duration": "3 × 20 minutos de tiempo efectivo",
+    "environment": "Pista de hielo cubierta rodeada de vallas y cristales",
+    "equipment": ["Patines", "Stick", "Disco", "Casco y protección completa", "Espinilleras y máscara de portero"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "1", "detail": "El disco entero cruza la línea de gol entre los postes y bajo el larguero." },
+    { "label": "Gol en la tanda", "value": "Desempate", "detail": "En algunas competiciones, una tanda de penaltis decide los empates; el ganador suma un gol más al resultado final." }
+  ],
+  "variants": [
+    { "id": "iihf", "name": "IIHF", "description": "Reglas internacionales de los Campeonatos del Mundo y los Juegos Olímpicos.", "body": "iihf" },
+    { "id": "nhl", "name": "NHL", "description": "El reglamento propio de la National Hockey League, con su prórroga y medidas de pista.", "body": "nhl" }
+  ],
+  "bodies": [
+    { "id": "iihf", "name": "Federación Internacional de Hockey sobre Hielo", "acronym": "IIHF", "scope": "Organismo rector mundial; publica el Reglamento Oficial de la IIHF", "url": "https://www.iihf.com/" },
+    { "id": "nhl", "name": "National Hockey League", "acronym": "NHL", "scope": "Liga profesional norteamericana", "url": "https://www.nhl.com/" }
+  ],
+  "rulebooks": [
+    { "id": "iihf-rulebook", "title": "Reglamento Oficial de la IIHF", "publisher": "iihf", "variant": "iihf", "url": "https://www.iihf.com/", "checked": null },
+    { "id": "nhl-rulebook", "title": "Reglas oficiales de la NHL", "publisher": "nhl", "variant": "nhl", "url": "https://www.nhl.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "lines", "title": "Fuera de juego e icing", "summary": "Las dos reglas que marcan cada ataque.",
+      "rules": [
+        { "id": "offside-ice", "title": "Fuera de juego", "important": true,
+          "summary": "Un atacante está en fuera de juego si sus dos patines han cruzado por completo la línea azul rival antes que el disco.",
+          "body": "Cuenta la posición de los patines, no la del stick. El juego se detiene con un saque neutral fuera de la zona. Con el fuera de juego diferido, los atacantes pueden anularlo saliendo todos de la zona antes de que se detenga el juego.",
+          "example": "Un delantero cruza la línea azul una zancada antes de que su compañero entre con el disco: fuera de juego, saque neutral en la zona central.",
+          "related": ["icing"] },
+        { "id": "icing", "title": "Icing", "important": true,
+          "summary": "Si un equipo lanza el disco desde su lado de la línea roja central hasta más allá de la línea de gol rival, sin que nadie lo toque, es icing.",
+          "body": "El juego se reanuda con un saque neutral en la zona defensiva del equipo infractor, que no puede cambiar jugadores. Un equipo en inferioridad (cumpliendo una sanción) sí puede hacer icing. Tanto la IIHF como la NHL usan el icing híbrido, en el que el juez de línea valora la carrera por el disco para decidir si lo señala.",
+          "related": ["offside-ice", "minor-penalty"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Sanciones", "summary": "El banquillo de castigo y la superioridad numérica.",
+      "rules": [
+        { "id": "minor-penalty", "title": "Sanciones menores", "important": true,
+          "summary": "Infracciones como zancadillas, enganches, golpes con el stick, sujetar o el stick alto suelen costar 2 minutos en el banquillo de castigo.",
+          "body": "El rival juega con un jugador más: un power play. Si marca durante una sanción menor, el sancionado puede volver de inmediato. Un stick alto que provoca sangre suele castigarse con doble menor (4 minutos).",
+          "related": ["major-penalty"] },
+        { "id": "major-penalty", "title": "Sanciones mayores y de conducta", "important": false,
+          "summary": "Las infracciones graves —como pelear o golpes que causan lesión— suponen sanciones mayores de 5 minutos, que se cumplen enteras aunque haya goles.",
+          "body": "Las sanciones de conducta (10 minutos) retiran al jugador pero no dejan al equipo con uno menos; las de conducta de partido y las de partido expulsan al jugador.",
+          "related": ["minor-penalty", "checking"] },
+        { "id": "checking", "title": "Contacto corporal", "important": false,
+          "summary": "En el hockey masculino es legal cargar con la cadera o el hombro contra el rival que lleva el disco; no lo son los golpes a la cabeza, por la espalda ni los peligrosos contra la valla.",
+          "body": "El contacto corporal está prohibido en el hockey femenino según las reglas de la IIHF y en muchas categorías inferiores.",
+          "related": ["major-penalty"] }
+      ]
+    },
+    {
+      "id": "goals", "title": "Goles y prórroga", "summary": "Qué cuenta y cómo se deshacen los empates.",
+      "rules": [
+        { "id": "goal-ice", "title": "Goles anulados", "important": false,
+          "summary": "Se anula el gol si el disco entra de una patada deliberada, con el stick alto o si un atacante interfiere al portero.",
+          "body": "En las jugadas dudosas sobre si el disco cruzó la línea se usa el vídeo, y los entrenadores pueden pedir revisión por fuera de juego o interferencia al portero.",
+          "related": ["overtime-nhl", "overtime-iihf"] },
+        { "id": "overtime-nhl", "title": "Prórroga en la NHL", "important": false, "variants": ["nhl"],
+          "summary": "Los empates en temporada regular van a 5 minutos de prórroga 3 contra 3 a gol de oro, y después a una tanda de penaltis.",
+          "body": "En los playoffs, la prórroga es 5 contra 5 con periodos completos de 20 minutos hasta que alguien marca.",
+          "related": ["goal-ice"] },
+        { "id": "overtime-iihf", "title": "Prórroga en la IIHF", "important": false, "variants": ["iihf"],
+          "summary": "Los empates van a una prórroga a gol de oro y, en muchas fases, a una tanda de penaltis.",
+          "body": "La duración y el formato de la prórroga dependen de la fase del torneo; los partidos por las medallas tienen prórrogas más largas.",
+          "related": ["goal-ice"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Zancadilla / enganche / golpe con el stick", "description": "Usar el stick para frenar a un rival.", "consequence": "Menor de 2 minutos", "severity": "MINOR" },
+    { "name": "Stick alto", "description": "Tocar a un rival con el stick por encima de los hombros.", "consequence": "2 o 4 minutos", "severity": "MAJOR" },
+    { "name": "Carga contra la valla / por la espalda", "description": "Cargas peligrosas contra la valla.", "consequence": "Menor o mayor más sanción de conducta", "severity": "SEVERE" },
+    { "name": "Pelea", "description": "Quitarse los guantes para pelear.", "consequence": "Sanción mayor (expulsión con reglas IIHF)", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saque inicial", "description": "El árbitro deja caer el disco en el centro de la pista." },
+    { "title": "Turnos", "description": "Las líneas cambian cada 40–60 segundos, a menudo en marcha." },
+    { "title": "Descansos", "description": "Pausas entre periodos; los equipos cambian de lado." },
+    { "title": "Portería vacía", "description": "Al final, el equipo que pierde retira al portero para atacar con uno más." }
+  ],
+  "positions": [
+    { "name": "Centro", "role": "Disputa los saques neutrales y une defensa y ataque." },
+    { "name": "Extremos", "role": "Alas izquierdo y derecho, sobre todo atacantes." },
+    { "name": "Defensas", "role": "Dos jugadores que protegen su zona e inician los ataques." },
+    { "name": "Portero", "role": "Detiene los lanzamientos; muy protegido." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "NHL: 200 × 85 pies (unos 61 × 26 m); las pistas IIHF pueden ser más anchas",
+    "surface": "Hielo, rodeado de vallas y cristales",
+    "notes": ["Línea roja central y dos líneas azules", "Cinco círculos de saque neutral", "Portería: 6 × 4 pies (1,83 × 1,22 m)"]
+  },
+  "glossary": [
+    { "term": "Power play", "definition": "Jugar con más jugadores que el rival por una sanción." },
+    { "term": "Hat-trick", "definition": "Tres goles de un mismo jugador en un partido." },
+    { "term": "Saque neutral (face-off)", "definition": "La caída del disco que reanuda el juego." },
+    { "term": "Five-hole", "definition": "El hueco entre las piernas del portero." }
+  ],
+  "funFacts": [
+    "El primer partido organizado bajo techo suele datarse en Montreal, en 1875.",
+    "Los discos se congelan antes de los partidos para que boten menos."
+  ]
+}

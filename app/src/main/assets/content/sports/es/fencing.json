@@ -1,0 +1,114 @@
+{
+  "id": "fencing",
+  "language": "es",
+  "intro": "La esgrima es combate con armas blancas sobre una pista larga y estrecha. La puntuación electrónica registra cada tocado, pero las tres armas —florete, espada y sable— tienen sus propias zonas válidas y, sobre todo, su propia lógica para decidir quién puntúa cuando ambos tiradores tocan a la vez. La Federación Internacional de Esgrima (FIE) publica el reglamento.",
+  "inThirtySeconds": [
+    "Toca la zona válida del rival con tu arma antes de que él te toque a ti.",
+    "Florete y sable usan la «prioridad»: el punto es de quien atacó primero.",
+    "En espada todo el cuerpo es válido y los tocados simultáneos puntúan para ambos.",
+    "Los asaltos de eliminación van a 15 tocados, en tres periodos de tres minutos."
+  ],
+  "objective": "Llegar antes al número de tocados exigido (15 en eliminación directa), o ir por delante al acabar el tiempo.",
+  "facts": {
+    "players": "1 contra 1 (también relevos por equipos)",
+    "duration": "3 × 3 minutos a 15 tocados (poules: 3 minutos a 5)",
+    "environment": "Pista cubierta de unos 14 m",
+    "equipment": ["Florete, espada o sable", "Careta", "Chaquetilla y peto protector", "Pasantes y puntuación eléctrica"]
+  },
+  "scoring": [
+    { "label": "Tocado", "value": "1", "detail": "Un golpe válido en la zona válida registrado por el aparato." },
+    { "label": "Golpe doble", "value": "1 + 1", "detail": "Solo en espada: ambos puntúan si se tocan en una fracción de segundo." },
+    { "label": "Asalto", "value": "15", "detail": "Los asaltos de eliminación directa los gana el primero en llegar a 15 tocados." }
+  ],
+  "variants": [
+    { "id": "foil", "name": "Florete", "description": "Arma de punta; la zona válida es el tronco. Se aplica la prioridad.", "body": "fie" },
+    { "id": "epee", "name": "Espada", "description": "Arma de punta; todo el cuerpo es válido y no hay prioridad.", "body": "fie" },
+    { "id": "sabre", "name": "Sable", "description": "Arma de corte y punta; es válido todo lo que está por encima de la cintura. Se aplica la prioridad.", "body": "fie" }
+  ],
+  "bodies": [
+    { "id": "fie", "name": "Federación Internacional de Esgrima", "acronym": "FIE", "scope": "Federación internacional de esgrima", "url": "https://fie.org/" }
+  ],
+  "rulebooks": [
+    { "id": "fie-rules", "title": "Reglamentos de la FIE (técnico, de material y de organización)", "publisher": "fie", "url": "https://fie.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "targets", "title": "Armas y zonas válidas",
+      "summary": "Cada arma tiene su zona válida y su forma de tocar.",
+      "rules": [
+        { "id": "foil-target", "title": "Florete: el tronco", "important": true, "variants": ["foil"],
+          "summary": "Solo cuentan los tocados con la punta en el tronco (delante y detrás). Brazos, piernas y casi toda la cabeza no son válidos.",
+          "body": "Un tocado no válido enciende una luz blanca y detiene la acción, pero no da punto. La zona válida la cubre una chaquetilla conductora (lamé), de modo que los tocados válidos encienden una luz de color.",
+          "related": ["right-of-way"] },
+        { "id": "epee-target", "title": "Espada: todo el cuerpo", "important": true, "variants": ["epee"],
+          "summary": "Los tocados con la punta en cualquier parte del cuerpo, de la careta al pie, son válidos.",
+          "body": "No hay prioridad. Si ambos tiradores se tocan dentro del tiempo de bloqueo del aparato (una fracción de segundo), los dos puntúan.",
+          "example": "Ambos tocan casi a la vez, uno en la mano y otro en el pie: golpe doble, un punto para cada uno.",
+          "related": ["foil-target"] },
+        { "id": "sabre-target", "title": "Sable: por encima de la cintura", "important": true, "variants": ["sabre"],
+          "summary": "Los tocados con el filo o la punta en cualquier parte por encima de la cintura —cabeza y brazos incluidos, pero no las manos— son válidos.",
+          "body": "El sable es el arma más rápida. Los tiradores no pueden cruzar los pies al avanzar, lo que descarta la «flecha» a la carrera que se usa en las otras armas.",
+          "related": ["right-of-way"] }
+      ]
+    },
+    {
+      "id": "priority", "title": "La prioridad",
+      "summary": "Quién puntúa cuando se encienden las dos luces.",
+      "rules": [
+        { "id": "right-of-way", "title": "Prioridad del atacante", "important": true, "variants": ["foil", "sabre"],
+          "summary": "Cuando ambos tiradores tocan, el punto es para quien inició antes el ataque.",
+          "body": "Un ataque es la primera acción ofensiva hecha extendiendo el brazo y amenazando la zona válida. El defensor gana la prioridad parando (desviando la hoja) y respondiendo: la respuesta. Si el atacante falla o es parado, la prioridad cambia. El árbitro analiza cada frase de armas y explica su decisión con gestos.",
+          "example": "El tirador A se fonda con el brazo extendido; el B toca a la vez sin parar: punto para A.",
+          "related": ["foil-target", "sabre-target"] }
+      ]
+    },
+    {
+      "id": "piste", "title": "La pista y el asalto",
+      "summary": "Límites, tiempo y sanciones.",
+      "rules": [
+        { "id": "boundaries", "title": "Salir de la pista", "important": false,
+          "summary": "Salir con ambos pies por el fondo de la pista da un tocado al rival; salir por el lateral supone una penalización de terreno.",
+          "body": "La pista mide unos 14 m de largo y entre 1,5 y 2 m de ancho. Las líneas de advertencia cerca de cada extremo avisan de que el límite trasero está cerca.",
+          "related": ["cards"] },
+        { "id": "cards", "title": "Tarjetas amarilla, roja y negra", "important": false,
+          "summary": "Las infracciones se castigan con tarjeta amarilla (aviso), roja (tocado para el rival) o negra (exclusión).",
+          "body": "Las faltas típicas son cubrir la zona válida, dar la espalda, el cuerpo a cuerpo en florete y sable o alterar el orden. La falta de combatividad —un periodo largo sin tirar— también puede sancionarse.",
+          "related": ["boundaries"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Cubrir la zona válida", "description": "Proteger la zona válida con el brazo libre u otra parte del cuerpo.", "consequence": "Amarilla y después roja", "severity": "MINOR" },
+    { "name": "Cuerpo a cuerpo", "description": "Contacto corporal en florete o sable.", "consequence": "Alto; tarjeta si es deliberado", "severity": "MINOR" },
+    { "name": "Cruzar el límite trasero", "description": "Ambos pies por detrás de la línea final.", "consequence": "Tocado para el rival", "severity": "MINOR" },
+    { "name": "Brutalidad o fraude", "description": "Golpes violentos o material manipulado.", "consequence": "Tarjeta negra (exclusión)", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saludo", "description": "Los tiradores se saludan entre sí y al árbitro antes de ponerse la careta." },
+    { "title": "En garde, prêts, allez", "description": "El árbitro inicia cada acción desde las líneas de en guardia." },
+    { "title": "Alto y decisión", "description": "Tras cada tocado, el árbitro detiene el asalto y concede el punto." },
+    { "title": "Apretón de manos", "description": "Al final, los tiradores se quitan la careta y se dan la mano; no hacerlo se sanciona." }
+  ],
+  "positions": [
+    { "name": "Tirador de la derecha", "role": "Tiene asignada la luz verde del marcador." },
+    { "name": "Tirador de la izquierda", "role": "Tiene asignada la luz roja del marcador." },
+    { "name": "Árbitro (presidente)", "role": "Inicia y detiene la acción y concede los tocados." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "Unos 14 m de largo × 1,5–2 m de ancho, con prolongaciones en cada extremo",
+    "surface": "Pista metálica o de malla conductora",
+    "notes": ["Línea central y líneas de en guardia a 2 m de ella", "Zonas de advertencia antes de cada límite trasero"]
+  },
+  "glossary": [
+    { "term": "Tocado (touché)", "definition": "Un golpe válido." },
+    { "term": "Parada", "definition": "Desviar la hoja del rival." },
+    { "term": "Respuesta", "definition": "El contraataque tras una parada eficaz." },
+    { "term": "Fondo", "definition": "El paso clásico de ataque, extendiéndose hacia delante." },
+    { "term": "Flecha", "definition": "Ataque a la carrera, prohibido en sable." }
+  ],
+  "funFacts": [
+    "La esgrima ha estado en todos los Juegos Olímpicos modernos desde 1896.",
+    "La puntuación eléctrica llegó a la espada en los años treinta, al florete en los cincuenta y al sable solo en 1988."
+  ]
+}

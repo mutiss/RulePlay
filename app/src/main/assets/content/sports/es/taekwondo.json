@@ -1,0 +1,107 @@
+{
+  "id": "taekwondo",
+  "language": "es",
+  "intro": "El taekwondo es un arte marcial coreano famoso por sus patadas rápidas, altas y con giro. En el combate olímpico (kyorugi), los deportistas llevan petos electrónicos y sensores en el casco que registran los golpes válidos, mientras los jueces puntúan los puñetazos y los elementos técnicos. World Taekwondo (WT) publica el Reglamento de Competición.",
+  "inThirtySeconds": [
+    "Puntúa con patadas al peto y a la cabeza, y con puñetazos al peto.",
+    "Las técnicas más difíciles valen más: una patada con giro a la cabeza es lo que más puntúa.",
+    "Los combates se juegan por asaltos; gana quien gane dos.",
+    "Las sanciones (gam-jeom) dan un punto al rival."
+  ],
+  "objective": "Ganar la mayoría de asaltos anotando más puntos que el rival en cada uno.",
+  "facts": {
+    "players": "1 contra 1, por categoría de peso",
+    "duration": "Al mejor de tres asaltos de 2 minutos (competición internacional sénior)",
+    "environment": "Área de competición octogonal",
+    "equipment": ["Dobok (uniforme)", "Peto electrónico (PSS)", "Casco con sensores", "Calcetines con sensores, guantes y protecciones"]
+  },
+  "scoring": [
+    { "label": "Puñetazo al peto", "value": "1", "detail": "Puñetazo recto al peto." },
+    { "label": "Patada al peto", "value": "2", "detail": "La registra el peto electrónico." },
+    { "label": "Patada con giro al peto", "value": "4", "detail": "Puntos extra por una técnica con giro válida." },
+    { "label": "Patada a la cabeza", "value": "3", "detail": "Cualquier patada válida a la cabeza." },
+    { "label": "Patada con giro a la cabeza", "value": "5", "detail": "La técnica que más puntúa." },
+    { "label": "Gam-jeom", "value": "+1 rival", "detail": "Cada sanción da un punto al rival." }
+  ],
+  "bodies": [
+    { "id": "wt", "name": "World Taekwondo", "acronym": "WT", "scope": "Federación internacional del taekwondo olímpico", "url": "https://www.worldtaekwondo.org/" }
+  ],
+  "rulebooks": [
+    { "id": "wt-rules", "title": "Reglamento de Competición e Interpretación de World Taekwondo", "publisher": "wt", "url": "https://www.worldtaekwondo.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "points", "title": "Puntuar",
+      "summary": "Sensores, técnicas y valores.",
+      "rules": [
+        { "id": "valid-areas", "title": "Zonas válidas", "important": true,
+          "summary": "Las patadas pueden ir al peto y a la cabeza por encima de la clavícula; los puñetazos, solo al peto.",
+          "body": "Los ataques por debajo de la cintura, los puñetazos a la cabeza y los ataques a la nuca no están permitidos. Las patadas deben darse con el pie por debajo del tobillo; no se permiten rodillazos ni golpes de mano distintos del puño cerrado.",
+          "related": ["technique-values"] },
+        { "id": "technique-values", "title": "Valor de las técnicas", "important": true,
+          "summary": "Las patadas al peto valen 2, a la cabeza 3, y las patadas con giro válidas suman puntos extra.",
+          "body": "Los sensores electrónicos registran automáticamente los impactos en el peto y la cabeza; los jueces confirman los puñetazos y las técnicas con giro con mandos de puntuación. Los entrenadores pueden pedir revisión en vídeo de ciertas decisiones.",
+          "example": "Una patada de espalda con giro impacta en el casco: 5 puntos.",
+          "related": ["valid-areas", "rounds-tkd"] }
+      ]
+    },
+    {
+      "id": "match", "title": "Asaltos y victoria",
+      "summary": "El sistema de combate por asaltos.",
+      "rules": [
+        { "id": "rounds-tkd", "title": "Gana dos asaltos", "important": true,
+          "summary": "Cada asalto se gana por separado; el primero en ganar dos asaltos gana el combate.",
+          "body": "Si un asalto termina empatado a puntos, se aplican criterios de desempate, como quién anotó más con técnicas de mayor valor. Una diferencia de puntos suficientemente grande termina el asalto antes de tiempo. Consulta el Reglamento de Competición vigente de WT para los umbrales exactos, que han cambiado en los últimos ciclos.",
+          "related": ["technique-values", "gam-jeom"] },
+        { "id": "ko-tkd", "title": "KO", "important": false,
+          "summary": "Si un deportista cae por una técnica legal y no puede continuar tras la cuenta del árbitro, gana el rival.",
+          "body": "El árbitro cuenta hasta ocho cuando un deportista cae, y puede detener el combate si no puede seguir con seguridad.",
+          "related": ["rounds-tkd"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Sanciones",
+      "summary": "El gam-jeom y qué lo provoca.",
+      "rules": [
+        { "id": "gam-jeom", "title": "Gam-jeom", "important": true,
+          "summary": "Los actos prohibidos se sancionan con gam-jeom, que da un punto al rival.",
+          "body": "Causas habituales: salir del área, caerse, evitar o retrasar el combate, agarrar o empujar al rival, levantar la rodilla para bloquear o impedir una patada, atacar por debajo de la cintura y golpear la cabeza del rival con la mano. Acumular demasiadas sanciones supone perder el combate.",
+          "related": ["valid-areas"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Salir del área", "description": "Ambos pies salen del área de competición.", "consequence": "Gam-jeom", "severity": "MINOR" },
+    { "name": "Caerse", "description": "Tocar el suelo con cualquier parte del cuerpo que no sean los pies.", "consequence": "Gam-jeom", "severity": "MINOR" },
+    { "name": "Agarrar o empujar", "description": "Sujetar al rival o su patada.", "consequence": "Gam-jeom", "severity": "MINOR" },
+    { "name": "Golpear la cabeza con la mano", "description": "Golpear la cara con la mano.", "consequence": "Gam-jeom", "severity": "MAJOR" },
+    { "name": "Conducta incorrecta", "description": "Comportamiento antideportivo grave.", "consequence": "Sanciones hasta la descalificación", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saludo e inicio", "description": "Los deportistas se saludan; el árbitro indica «Shi-jak» para empezar." },
+    { "title": "Asaltos", "description": "Asaltos de dos minutos con un descanso entre ellos." },
+    { "title": "Revisión en vídeo", "description": "Los entrenadores pueden impugnar ciertas decisiones." },
+    { "title": "Resultado", "description": "El árbitro levanta la mano del ganador." }
+  ],
+  "positions": [
+    { "name": "Chung (azul)", "role": "Un competidor lleva protecciones azules." },
+    { "name": "Hong (rojo)", "role": "El otro competidor lleva protecciones rojas." }
+  ],
+  "field": {
+    "name": "Área de competición",
+    "dimensions": "Área octogonal de unos 8 m de diámetro, dentro de un cuadrado mayor",
+    "surface": "Tapiz plano y antideslizante",
+    "notes": ["Las líneas de límite marcan el octógono", "Marcador electrónico y sistema de revisión en vídeo en los grandes eventos"]
+  },
+  "glossary": [
+    { "term": "Kyorugi", "definition": "Combate: la modalidad competitiva de lucha." },
+    { "term": "Poomsae", "definition": "Formas: secuencias coreografiadas que se puntúan por su técnica." },
+    { "term": "Dollyo chagi", "definition": "Patada circular." },
+    { "term": "Gam-jeom", "definition": "Sanción que da un punto al rival." },
+    { "term": "PSS", "definition": "Protector and Scoring System: los sensores electrónicos." }
+  ],
+  "funFacts": [
+    "El taekwondo se convirtió en deporte olímpico de pleno derecho en Sídney 2000.",
+    "La puntuación electrónica llegó a los Juegos Olímpicos en Londres 2012."
+  ]
+}

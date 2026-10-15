@@ -1,0 +1,93 @@
+{
+  "id": "sepak-takraw",
+  "language": "es",
+  "intro": "El sepak takraw es voleibol con los pies, las rodillas, el pecho y la cabeza, nunca con las manos. Tres jugadores por equipo (un «regu») mantienen en el aire una bola trenzada y la mandan por encima de una red, con espectaculares remates de chilena. El deporte tiene raíces profundas en todo el Sudeste Asiático, desde el sepak raga de Malasia hasta el takraw de Tailandia. La Federación Internacional de Sepak Takraw (ISTAF) rige la competición.",
+  "inThirtySeconds": [
+    "Sin manos ni brazos: pies, rodillas, pecho y cabeza.",
+    "Tres toques como máximo por equipo; un mismo jugador puede dar los tres.",
+    "El saque lo hace con el pie el jugador de atrás, desde un círculo de saque.",
+    "Los sets van a 21 puntos (con dos de ventaja y máximo 25); al mejor de tres sets."
+  ],
+  "objective": "Hacer que la bola caiga en el campo rival o forzar su falta, ganando dos sets.",
+  "facts": {
+    "players": "3 contra 3 (regu); también modalidades de dobles y cuartetos",
+    "duration": "Al mejor de 3 sets a 21",
+    "environment": "Pista del tamaño de una de bádminton, normalmente cubierta",
+    "equipment": ["Bola trenzada sintética (tradicionalmente de ratán)", "Red de unos 1,52 m (hombres)"]
+  },
+  "scoring": [
+    { "label": "Punto directo", "value": "1", "detail": "Cada jugada da un punto al ganador." },
+    { "label": "Set", "value": "21", "detail": "Primero a 21 con dos de ventaja; el juego se detiene en 25." }
+  ],
+  "bodies": [
+    { "id": "istaf", "name": "Federación Internacional de Sepak Takraw", "acronym": "ISTAF", "scope": "Federación internacional de sepak takraw", "url": null }
+  ],
+  "rulebooks": [
+    { "id": "istaf-rules", "title": "Reglas de juego de la ISTAF", "publisher": "istaf", "url": null, "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "playing", "title": "Jugar la bola", "summary": "Sin manos, tres toques.",
+      "rules": [
+        { "id": "no-hands-st", "title": "Cualquier parte del cuerpo salvo los brazos", "important": true,
+          "summary": "La bola se puede jugar con los pies, las piernas, el pecho, los hombros y la cabeza, pero no con las manos ni los brazos.",
+          "body": "Tocar la bola con la mano o el brazo es falta y da el punto al rival.",
+          "related": ["three-touch-st"] },
+        { "id": "three-touch-st", "title": "Tres toques por equipo", "important": true,
+          "summary": "Un equipo puede tocar la bola hasta tres veces antes de que cruce la red, y un mismo jugador puede dar los tres toques.",
+          "body": "En esto se diferencia del voleibol, donde un jugador no puede tocar dos veces seguidas. La secuencia típica es recepción, colocación alta y remate.",
+          "example": "Un jugador controla la bola con el pecho, la sube con la rodilla y la manda de volea: tres toques del mismo jugador, legal.",
+          "related": ["no-hands-st", "spike-st"] },
+        { "id": "spike-st", "title": "El remate de chilena", "important": false,
+          "summary": "El rematador salta, gira hacia atrás en el aire y golpea la bola por encima de su cabeza hacia el campo rival.",
+          "body": "Los jugadores no pueden tocar la red ni invadir el campo rival con el cuerpo al rematar, aunque el pie puede pasar por encima de la red en la continuación del golpe.",
+          "related": ["three-touch-st", "net-st"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "El saque", "summary": "El saque con el pie.",
+      "rules": [
+        { "id": "serve-st", "title": "Sacar desde el círculo", "important": true,
+          "summary": "El sacador golpea la bola con el pie desde dentro del círculo de saque, después de que un compañero se la lance.",
+          "body": "El sacador debe mantener un pie dentro del círculo hasta golpear la bola. El saque debe cruzar la red y caer en el campo rival. El orden de saque varía según la modalidad.",
+          "related": ["net-st"] },
+        { "id": "net-st", "title": "Faltas de red y de línea", "important": false,
+          "summary": "Tocar la red, pisar más allá de la línea central o que la bola caiga fuera de la pista son faltas.",
+          "body": "Una bola que cae sobre la línea es buena.",
+          "related": ["spike-st"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Mano", "description": "La bola toca el brazo o la mano.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Cuatro toques", "description": "Más de tres contactos en un mismo campo.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Tocar la red", "description": "El cuerpo toca la red durante el juego.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Falta de saque", "description": "El pie del sacador sale del círculo antes del golpe.", "consequence": "Punto para el rival", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Sorteo y saque", "description": "El tekong saca desde el círculo." },
+    { "title": "Jugadas", "description": "Recepción, colocación y remate, o un bloqueo en la red." },
+    { "title": "Sets", "description": "Al mejor de tres sets a 21." }
+  ],
+  "positions": [
+    { "name": "Tekong", "role": "El sacador, situado atrás." },
+    { "name": "Colocador (feeder)", "role": "Prepara la bola para el remate y se la lanza al sacador." },
+    { "name": "Rematador (striker)", "role": "El atacante, especialista en remates acrobáticos." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "13,4 × 6,1 m (el tamaño de una pista de bádminton de dobles)",
+    "surface": "Pista cubierta",
+    "notes": ["Círculo de saque al fondo de cada mitad", "Cuartos de círculo junto a la red para los colocadores"]
+  },
+  "glossary": [
+    { "term": "Regu", "definition": "Un equipo de tres jugadores." },
+    { "term": "Tekong", "definition": "El sacador." },
+    { "term": "Sunback", "definition": "Remate golpeado con la planta del pie." },
+    { "term": "Remate de chilena", "definition": "Golpe por encima de la cabeza girando en el aire." }
+  ],
+  "funFacts": [
+    "«Sepak» significa «patada» en malayo y «takraw» es la palabra tailandesa para la bola trenzada.",
+    "El sepak takraw forma parte de los Juegos Asiáticos desde 1990."
+  ]
+}

@@ -1,0 +1,132 @@
+{
+  "id": "baseball",
+  "language": "es",
+  "intro": "El béisbol es un duelo entre lanzador y bateador repetido cientos de veces por partido. Los equipos se turnan para batear y defender durante nueve entradas; el equipo que batea anota haciendo avanzar a sus corredores por cuatro bases, mientras el que defiende necesita tres outs para cerrar la media entrada. La Major League Baseball (MLB) publica las Reglas Oficiales del Béisbol que se usan en Norteamérica, y la WBSC rige el deporte a nivel internacional.",
+  "inThirtySeconds": [
+    "Los equipos alternan bateo y defensa; tres outs cierran la media entrada.",
+    "Tres strikes y el bateador está out; cuatro bolas y va caminando a primera.",
+    "Una carrera se anota cuando un corredor toca las cuatro bases y llega al home.",
+    "Nueve entradas forman un partido; los empates continúan con entradas extra."
+  ],
+  "objective": "Anotar más carreras que el rival en nueve entradas.",
+  "facts": {
+    "players": "9 defensores por equipo en el campo",
+    "duration": "9 entradas (sin reloj de partido; la MLB usa reloj de lanzamiento)",
+    "environment": "Diamante al aire libre de césped y tierra, o estadios cubiertos",
+    "equipment": ["Bate", "Pelota", "Guantes", "Bases y home", "Cascos"]
+  },
+  "scoring": [
+    { "label": "Carrera", "value": "1", "detail": "Un corredor toca legalmente primera, segunda, tercera y home." },
+    { "label": "Jonrón", "value": "1–4", "detail": "El bateador manda la pelota por encima de la valla en territorio bueno y anota, junto con los corredores en base." }
+  ],
+  "bodies": [
+    { "id": "mlb", "name": "Major League Baseball", "acronym": "MLB", "scope": "Liga profesional norteamericana; publica las Reglas Oficiales del Béisbol", "url": "https://www.mlb.com/official-information" },
+    { "id": "wbsc", "name": "World Baseball Softball Confederation", "acronym": "WBSC", "scope": "Organismo rector mundial del béisbol y el sóftbol", "url": "https://www.wbsc.org/en" }
+  ],
+  "rulebooks": [
+    { "id": "obr", "title": "Reglas Oficiales del Béisbol", "publisher": "mlb", "url": "https://www.mlb.com/official-information", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "plate", "title": "El turno al bate",
+      "summary": "Bolas, strikes y cómo termina un turno.",
+      "rules": [
+        { "id": "strikes", "title": "Strikes y ponche", "important": true,
+          "summary": "Un strike es un lanzamiento en la zona de strike al que el bateador no hace swing, cualquier swing fallado o una bola de foul con menos de dos strikes. Tres strikes son out.",
+          "body": "La zona de strike va por encima del home desde, aproximadamente, el punto medio entre los hombros y el cinturón del bateador hasta la parte baja de la rótula. Un foul con dos strikes no cuenta como tercer strike, salvo que sea un toque de bola.",
+          "related": ["balls", "foul-ball"] },
+        { "id": "balls", "title": "Bolas y base por bolas", "important": true,
+          "summary": "Un lanzamiento fuera de la zona de strike al que el bateador no hace swing es una bola. Cuatro bolas dan al bateador la primera base.",
+          "body": "Un bateador golpeado por un lanzamiento también va a primera. La defensa puede señalar una base por bolas intencional sin lanzar.",
+          "related": ["strikes"] },
+        { "id": "foul-ball", "title": "Bola buena y foul", "important": false,
+          "summary": "Una bola bateada es foul si se detiene fuera de las líneas de foul, o si pasa primera o tercera base en territorio de foul.",
+          "body": "Las líneas de foul y los postes de foul son territorio bueno. Un foul atrapado en el aire antes de tocar el suelo es out.",
+          "related": ["strikes", "outs"] }
+      ]
+    },
+    {
+      "id": "outs", "title": "Conseguir outs",
+      "summary": "Cómo cierra la defensa la media entrada.",
+      "rules": [
+        { "id": "outs", "title": "Elevados, outs forzados y outs por toque", "important": true,
+          "summary": "El bateador es out si un defensor atrapa la bola bateada antes de que bote. Los corredores pueden ser forzados en una base o tocados entre bases.",
+          "body": "Hay out forzado cuando un corredor está obligado a avanzar porque el bateador se ha convertido en corredor: al defensor le basta con pisar la base con la pelota. Si el corredor no está forzado, hay que tocarle con la pelota. Conseguir dos outs en una jugada es una doble matanza.",
+          "example": "Corredor en primera, rodado al campocorto: lanza a segunda para el forzado y el segunda base lanza a primera. Doble matanza.",
+          "related": ["tag-up", "infield-fly"] },
+        { "id": "tag-up", "title": "Pisar y salir (tag up)", "important": false,
+          "summary": "Con un elevado atrapado, los corredores deben volver a tocar su base antes de avanzar.",
+          "body": "Una vez atrapada la bola pueden correr: así anota el corredor de tercera en un «elevado de sacrificio».",
+          "related": ["outs"] },
+        { "id": "infield-fly", "title": "Regla del infield fly", "important": false,
+          "summary": "Con corredores en primera y segunda (o bases llenas) y menos de dos outs, un elevado bueno que un jugador del cuadro puede atrapar con esfuerzo normal es out automático.",
+          "body": "La regla impide que los defensores dejen caer a propósito un elevado fácil para conseguir una doble matanza barata.",
+          "related": ["outs"] }
+      ]
+    },
+    {
+      "id": "pitching", "title": "El lanzamiento",
+      "summary": "El balk y el reloj de lanzamiento.",
+      "rules": [
+        { "id": "balk", "title": "El balk", "important": false,
+          "summary": "Con corredores en base, un movimiento ilegal del lanzador para engañarlos es un balk, y todos los corredores avanzan una base.",
+          "body": "Por ejemplo, iniciar el lanzamiento y detenerse, o no hacer una parada completa en la posición de set antes de lanzar.",
+          "related": ["pitch-clock"] },
+        { "id": "pitch-clock", "title": "El reloj de lanzamiento (MLB)", "important": false,
+          "summary": "Desde 2023, la MLB limita el tiempo entre lanzamientos; las infracciones suman una bola (lanzador) o un strike (bateador).",
+          "body": "El bateador debe estar en la caja y atento antes de cierto momento del reloj, y el lanzador tiene un número limitado de «desenganches» (intentos de pick-off o salidas de la goma) por turno.",
+          "related": ["balk"] }
+      ]
+    },
+    {
+      "id": "game", "title": "Entradas y entradas extra",
+      "summary": "La estructura de un partido.",
+      "rules": [
+        { "id": "innings", "title": "Nueve entradas", "important": true,
+          "summary": "Cada entrada tiene una parte alta (batean los visitantes) y una baja (batea el local). El partido dura nueve entradas.",
+          "body": "Si el local va ganando tras la parte alta de la novena, la baja no se juega. Si el local se pone por delante en la baja de la novena o después, el partido termina en ese momento (walk-off).",
+          "related": ["extra-innings"] },
+        { "id": "extra-innings", "title": "Entradas extra", "important": false,
+          "summary": "Los empates siguen con entradas extra hasta que un equipo vaya por delante al final de una entrada completa.",
+          "body": "En la temporada regular de la MLB, cada media entrada extra empieza con un corredor colocado en segunda base para acelerar el resultado.",
+          "related": ["innings"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Balk", "description": "Movimiento de lanzamiento ilegal con corredores en base.", "consequence": "Todos los corredores avanzan una base", "severity": "MINOR" },
+    { "name": "Interferencia", "description": "Un bateador o corredor estorba a un defensor que hace una jugada.", "consequence": "Corredor o bateador declarado out", "severity": "MINOR" },
+    { "name": "Obstrucción", "description": "Un defensor sin la pelota estorba a un corredor.", "consequence": "Se concede una base al corredor", "severity": "MINOR" },
+    { "name": "Expulsión", "description": "Conducta antideportiva, protestar bolas y strikes, pelotazos intencionados.", "consequence": "Salida del partido; posible suspensión", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Parte alta", "description": "El equipo visitante batea hasta tres outs." },
+    { "title": "Parte baja", "description": "El equipo local batea hasta tres outs." },
+    { "title": "Seventh-inning stretch", "description": "Pausa tradicional para el público antes de la baja de la séptima." },
+    { "title": "Entradas finales", "description": "Los cerradores suelen lanzar la novena para proteger una ventaja." }
+  ],
+  "positions": [
+    { "name": "Lanzador (pitcher)", "role": "Lanza al bateador desde el montículo." },
+    { "name": "Receptor (catcher)", "role": "Recibe los lanzamientos, dirige el juego y protege el home." },
+    { "name": "Jugadores de cuadro", "role": "Primera base, segunda base, campocorto y tercera base." },
+    { "name": "Jardineros", "role": "Izquierdo, central y derecho, cubren los batazos profundos." },
+    { "name": "Bateador designado", "role": "Batea en lugar del lanzador (universal en la MLB desde 2022)." }
+  ],
+  "field": {
+    "name": "Diamante",
+    "dimensions": "Bases separadas 90 pies (27,4 m); goma del lanzador a 60 pies y 6 pulgadas (18,4 m) del home",
+    "surface": "Jardín de césped y cuadro de tierra, o césped artificial",
+    "notes": ["La distancia a la valla varía según el estadio", "Las líneas y los postes de foul son territorio bueno"]
+  },
+  "glossary": [
+    { "term": "Carrera impulsada (RBI)", "definition": "Carrera atribuida a la acción del bateador." },
+    { "term": "Walk-off", "definition": "Batazo o jugada del equipo local que termina el partido en la última entrada." },
+    { "term": "Bullpen", "definition": "Los lanzadores relevistas, y la zona donde calientan." },
+    { "term": "Doble matanza", "definition": "Dos outs en una misma jugada." },
+    { "term": "Grand slam", "definition": "Jonrón con las bases llenas: cuatro carreras." }
+  ],
+  "funFacts": [
+    "Una pelota de béisbol reglamentaria tiene 108 puntadas dobles.",
+    "El reloj de lanzamiento redujo la duración media de los partidos de la MLB en una media hora aproximadamente en su primera temporada."
+  ]
+}

@@ -1,0 +1,131 @@
+{
+  "id": "baseball",
+  "intro": "Baseball is a duel between pitcher and batter repeated hundreds of times a game. Teams take turns batting and fielding over nine innings; the batting team scores by advancing runners around four bases, while the fielding team needs three outs to end the half-inning. Major League Baseball (MLB) publishes the Official Baseball Rules used in North America, and the WBSC governs the sport internationally.",
+  "inThirtySeconds": [
+    "Teams alternate batting and fielding; three outs end a half-inning.",
+    "Three strikes and the batter is out; four balls and they walk to first base.",
+    "A run scores when a runner touches all four bases and reaches home plate.",
+    "Nine innings make a game; ties continue into extra innings."
+  ],
+  "objective": "Score more runs than the opponent over nine innings.",
+  "facts": {
+    "players": "9 fielders per team on the field",
+    "duration": "9 innings (no game clock; MLB uses a pitch timer)",
+    "environment": "Outdoor diamond with grass and dirt, or domed stadiums",
+    "equipment": ["Bat", "Ball", "Gloves", "Bases and home plate", "Helmets"]
+  },
+  "scoring": [
+    { "label": "Run", "value": "1", "detail": "A runner legally touches first, second, third and home plate." },
+    { "label": "Home run", "value": "1–4", "detail": "The batter hits the ball over the fence in fair territory and scores, along with any runners on base." }
+  ],
+  "bodies": [
+    { "id": "mlb", "name": "Major League Baseball", "acronym": "MLB", "scope": "North American professional league; publishes the Official Baseball Rules", "url": "https://www.mlb.com/official-information" },
+    { "id": "wbsc", "name": "World Baseball Softball Confederation", "acronym": "WBSC", "scope": "World governing body for baseball and softball", "url": "https://www.wbsc.org/en" }
+  ],
+  "rulebooks": [
+    { "id": "obr", "title": "Official Baseball Rules", "publisher": "mlb", "url": "https://www.mlb.com/official-information", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "plate", "title": "The plate appearance",
+      "summary": "Balls, strikes and how an at-bat ends.",
+      "rules": [
+        { "id": "strikes", "title": "Strikes and the strikeout", "important": true,
+          "summary": "A strike is a pitch in the strike zone that the batter doesn't swing at, any swing and miss, or a foul ball with fewer than two strikes. Three strikes is an out.",
+          "body": "The strike zone runs over home plate from roughly the midpoint between the batter's shoulders and belt down to the hollow below the kneecap. A foul ball with two strikes does not count as a third strike — unless it is a bunt.",
+          "related": ["balls", "foul-ball"] },
+        { "id": "balls", "title": "Balls and the walk", "important": true,
+          "summary": "A pitch outside the strike zone that the batter doesn't swing at is a ball. Four balls award the batter first base (a walk).",
+          "body": "A batter hit by a pitch also goes to first base. An intentional walk can be signalled by the defence without throwing pitches.",
+          "related": ["strikes"] },
+        { "id": "foul-ball", "title": "Fair and foul", "important": false,
+          "summary": "A batted ball is foul if it settles outside the foul lines, or passes first or third base in foul territory.",
+          "body": "The foul lines and foul poles are themselves fair. A foul ball caught in the air before touching the ground is an out.",
+          "related": ["strikes", "outs"] }
+      ]
+    },
+    {
+      "id": "outs", "title": "Making outs",
+      "summary": "How the defence ends a half-inning.",
+      "rules": [
+        { "id": "outs", "title": "Fly outs, force outs and tag outs", "important": true,
+          "summary": "A batter is out if a fielder catches a batted ball before it bounces. Runners can be forced out at a base or tagged out between bases.",
+          "body": "A force out happens when a runner must advance because the batter became a runner — a fielder holding the ball simply touches the base. When a runner is not forced, the fielder must tag the runner with the ball. Turning two outs in one play is a double play.",
+          "example": "Runner on first, ground ball to the shortstop: he throws to second for the force, the second baseman throws to first — double play.",
+          "related": ["tag-up", "infield-fly"] },
+        { "id": "tag-up", "title": "Tagging up", "important": false,
+          "summary": "On a caught fly ball, runners must return to touch their original base before advancing.",
+          "body": "Once the catch is made they may run (tag up), which is how a 'sacrifice fly' scores a runner from third.",
+          "related": ["outs"] },
+        { "id": "infield-fly", "title": "Infield fly rule", "important": false,
+          "summary": "With runners on first and second (or bases loaded) and fewer than two outs, a fair pop-up that an infielder can catch with ordinary effort makes the batter out automatically.",
+          "body": "The rule stops fielders deliberately dropping an easy pop-up to turn a cheap double play.",
+          "related": ["outs"] }
+      ]
+    },
+    {
+      "id": "pitching", "title": "Pitching",
+      "summary": "Balks and the pitch clock.",
+      "rules": [
+        { "id": "balk", "title": "The balk", "important": false,
+          "summary": "With runners on base, an illegal motion by the pitcher intended to deceive them is a balk, and every runner advances one base.",
+          "body": "Examples include starting the delivery and stopping, or failing to come to a complete stop in the set position before pitching.",
+          "related": ["pitch-clock"] },
+        { "id": "pitch-clock", "title": "The pitch clock (MLB)", "important": false,
+          "summary": "Since 2023, MLB limits the time between pitches; violations add a ball (pitcher) or a strike (batter).",
+          "body": "Batters must be in the box and alert before the clock reaches a set mark, and pitchers have a limited number of 'disengagements' (pickoff attempts or step-offs) per plate appearance.",
+          "related": ["balk"] }
+      ]
+    },
+    {
+      "id": "game", "title": "Innings and extra innings",
+      "summary": "Structure of a game.",
+      "rules": [
+        { "id": "innings", "title": "Nine innings", "important": true,
+          "summary": "Each inning has a top half (visitors bat) and a bottom half (home team bats). The game lasts nine innings.",
+          "body": "If the home team is ahead after the top of the ninth, the bottom half is not played. If the home team takes the lead in the bottom of the ninth or later, the game ends immediately (a walk-off).",
+          "related": ["extra-innings"] },
+        { "id": "extra-innings", "title": "Extra innings", "important": false,
+          "summary": "Tied games continue with extra innings until one team leads at the end of a complete inning.",
+          "body": "In MLB regular-season games, each extra half-inning starts with a runner placed on second base to speed up a result.",
+          "related": ["innings"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Balk", "description": "Illegal pitching motion with runners on base.", "consequence": "All runners advance one base", "severity": "MINOR" },
+    { "name": "Interference", "description": "A batter or runner hinders a fielder making a play.", "consequence": "Runner or batter declared out", "severity": "MINOR" },
+    { "name": "Obstruction", "description": "A fielder without the ball impedes a runner.", "consequence": "Runner awarded a base", "severity": "MINOR" },
+    { "name": "Ejection", "description": "Unsportsmanlike conduct, arguing balls and strikes, intentional beanballs.", "consequence": "Removal from the game; possible suspension", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Top of the inning", "description": "The visiting team bats until three outs." },
+    { "title": "Bottom of the inning", "description": "The home team bats until three outs." },
+    { "title": "Seventh-inning stretch", "description": "A traditional pause for fans before the bottom of the seventh." },
+    { "title": "Final innings", "description": "Closers often pitch the ninth to protect a lead." }
+  ],
+  "positions": [
+    { "name": "Pitcher", "role": "Throws to the batter from the mound." },
+    { "name": "Catcher", "role": "Receives pitches, calls the game and guards home plate." },
+    { "name": "Infielders", "role": "First base, second base, shortstop and third base." },
+    { "name": "Outfielders", "role": "Left, centre and right field, covering deep hits." },
+    { "name": "Designated hitter", "role": "Bats in place of the pitcher (universal in MLB since 2022)." }
+  ],
+  "field": {
+    "name": "Diamond",
+    "dimensions": "Bases 90 ft (27.4 m) apart; pitching rubber 60 ft 6 in (18.4 m) from home plate",
+    "surface": "Grass outfield and dirt infield, or artificial turf",
+    "notes": ["Outfield fence distances vary by ballpark", "Foul lines and foul poles are in fair territory"]
+  },
+  "glossary": [
+    { "term": "RBI", "definition": "Run batted in — a run credited to the batter's action." },
+    { "term": "Walk-off", "definition": "A hit or play by the home team that ends the game in the final inning." },
+    { "term": "Bullpen", "definition": "The relief pitchers, and the area where they warm up." },
+    { "term": "Double play", "definition": "Two outs made in one continuous play." },
+    { "term": "Grand slam", "definition": "A home run with the bases loaded, scoring four runs." }
+  ],
+  "funFacts": [
+    "A regulation baseball has 108 double stitches.",
+    "The pitch clock cut the average MLB game time by roughly half an hour in its first season."
+  ]
+}

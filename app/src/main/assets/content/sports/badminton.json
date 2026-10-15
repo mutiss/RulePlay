@@ -1,0 +1,104 @@
+{
+  "id": "badminton",
+  "intro": "Players use light rackets to hit a feathered shuttlecock over a high net, trying to make it land in the opponent's court. Because the shuttle decelerates sharply, badminton mixes blistering smashes with delicate net play. Every rally scores a point, and the Laws of Badminton are maintained by the Badminton World Federation (BWF).",
+  "inThirtySeconds": [
+    "Win a rally and you score a point, whoever served.",
+    "Games go to 21 points (win by 2, maximum 30); best of three games.",
+    "The serve is hit underarm from below a fixed height, diagonally across.",
+    "The shuttle may never bounce — it must be returned in the air."
+  ],
+  "objective": "Win two games by landing the shuttle in the opponent's court or forcing them into a fault.",
+  "facts": {
+    "players": "1 v 1 or 2 v 2 (including mixed doubles)",
+    "duration": "Best of 3 games to 21 (no clock)",
+    "environment": "Indoor court (draughts affect the shuttle)",
+    "equipment": ["Racket", "Feather or synthetic shuttlecock", "Net 1.524 m high at the centre"]
+  },
+  "scoring": [
+    { "label": "Rally point", "value": "1", "detail": "The winner of every rally scores a point and serves next." },
+    { "label": "Game", "value": "21", "detail": "First to 21 with a two-point lead; at 29–29 the next point wins 30–29." },
+    { "label": "Match", "value": "2", "detail": "Best of three games." }
+  ],
+  "bodies": [
+    { "id": "bwf", "name": "Badminton World Federation", "acronym": "BWF", "scope": "World governing body; publishes the Laws of Badminton", "url": "https://corporate.bwfbadminton.com/statutes/" }
+  ],
+  "rulebooks": [
+    { "id": "bwf-laws", "title": "BWF Statutes — Laws of Badminton", "publisher": "bwf", "url": "https://corporate.bwfbadminton.com/statutes/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Scoring",
+      "summary": "Rally points, games and intervals.",
+      "rules": [
+        { "id": "rally-scoring", "title": "Rally scoring to 21", "important": true,
+          "summary": "Each rally scores a point; the first side to 21 points with a two-point lead wins the game.",
+          "body": "If the score reaches 20–20, play continues until one side leads by two. At 29–29, the side that scores the 30th point wins. Players get a 60-second interval when the leading score reaches 11, and two minutes between games.",
+          "related": ["serve-court"] },
+        { "id": "ends", "title": "Changing ends", "important": false,
+          "summary": "Players change ends after each game and, in a deciding third game, when the leading score reaches 11.",
+          "body": "This balances out lighting, draughts and other conditions that can affect a shuttle's flight.",
+          "related": ["rally-scoring"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "The serve",
+      "summary": "Badminton's tightly controlled serve.",
+      "rules": [
+        { "id": "serve-height", "title": "Underarm, below a fixed height", "important": true,
+          "summary": "At the moment of impact, the whole shuttle must be below 1.15 m from the court surface.",
+          "body": "The serve is struck underarm and travels diagonally into the opponent's service court. Both feet of the server and receiver must stay in contact with the floor and inside their service courts until the serve is struck. Any delay after the start of the service motion is a fault.",
+          "related": ["serve-court"] },
+        { "id": "serve-court", "title": "Which side to serve from", "important": false,
+          "summary": "In singles, serve from the right when your score is even and from the left when it is odd.",
+          "body": "In doubles, the same even/odd rule applies to the serving side's score, and partners only switch service courts when they win a point while serving. The receiving pair does not change positions.",
+          "related": ["serve-height", "rally-scoring"] }
+      ]
+    },
+    {
+      "id": "faults", "title": "Faults during play",
+      "summary": "What loses you a rally.",
+      "rules": [
+        { "id": "land", "title": "In or out", "important": true,
+          "summary": "The shuttle is in if it lands on or inside the boundary lines; it is out if it lands outside or touches the ceiling, walls or a person outside the court.",
+          "body": "Singles uses the long, narrow court; doubles uses the full width but a shorter service area at the back for serves.",
+          "related": ["net-fault"] },
+        { "id": "net-fault", "title": "Net and body faults", "important": false,
+          "summary": "It is a fault to touch the net, invade the opponent's court, hit the shuttle before it crosses the net, or hit it twice in a row.",
+          "body": "A player may follow through over the net after hitting the shuttle on their own side, as long as they do not touch the net. The shuttle touching a player's body or clothing is also a fault.",
+          "related": ["land"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Service fault", "description": "Serving above the 1.15 m limit, or a foot leaving the floor.", "consequence": "Point to the opponent", "severity": "MINOR" },
+    { "name": "Net touch", "description": "Racket, body or clothing touches the net.", "consequence": "Point to the opponent", "severity": "MINOR" },
+    { "name": "Obstruction", "description": "Preventing an opponent from making a legal stroke near the net.", "consequence": "Point to the opponent", "severity": "MINOR" },
+    { "name": "Misconduct", "description": "Delaying play, unsporting behaviour.", "consequence": "Warning, fault or disqualification", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Toss", "description": "The winner chooses to serve, receive or pick an end." },
+    { "title": "Rallies", "description": "Clears, drops, drives and smashes until a fault." },
+    { "title": "Interval at 11", "description": "A 60-second break and coaching." },
+    { "title": "Deciding game", "description": "If games are 1–1, a third game decides." }
+  ],
+  "positions": [
+    { "name": "Front player (doubles)", "role": "Hunts at the net with quick interceptions." },
+    { "name": "Back player (doubles)", "role": "Attacks with smashes from the rear court." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "13.40 m × 6.10 m (doubles); singles width 5.18 m",
+    "surface": "Synthetic mat over wood",
+    "notes": ["Net: 1.524 m at the centre, 1.55 m at the posts", "Short service line 1.98 m from the net"]
+  },
+  "glossary": [
+    { "term": "Clear", "definition": "A high, deep shot to the back of the opponent's court." },
+    { "term": "Drop shot", "definition": "A soft shot that falls just over the net." },
+    { "term": "Smash", "definition": "A steep, powerful overhead attacking shot." },
+    { "term": "Let", "definition": "A rally that is replayed, for example after an unforeseen interruption." }
+  ],
+  "funFacts": [
+    "Badminton takes its name from Badminton House in Gloucestershire, England.",
+    "Competition shuttles traditionally use 16 goose or duck feathers."
+  ]
+}

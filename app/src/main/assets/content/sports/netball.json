@@ -1,0 +1,105 @@
+{
+  "id": "netball",
+  "intro": "Netball is a fast passing game played by two teams of seven, hugely popular across the Commonwealth. There's no dribbling and no running with the ball: you have three seconds to pass or shoot, and strict footwork rules. Each player wears a bib with letters showing their position and may only enter certain thirds of the court. World Netball publishes the Rules of Netball.",
+  "inThirtySeconds": [
+    "Only the Goal Shooter and Goal Attack can score — from inside the shooting circle.",
+    "No dribbling or running with the ball; release it within 3 seconds.",
+    "Each position may only go into specific areas of the court.",
+    "Defenders must stay 0.9 m away from the player with the ball."
+  ],
+  "objective": "Score more goals than the opponent by shooting the ball through a ring with no backboard.",
+  "facts": {
+    "players": "7 per team",
+    "duration": "4 × 15 minutes",
+    "environment": "Indoor or outdoor hard court",
+    "equipment": ["Ball (size 5)", "Two goal rings 3.05 m high, no backboard", "Position bibs"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "A shot from inside the circle by GS or GA that passes through the ring." },
+    { "label": "Super Shot", "value": "2", "detail": "Some leagues (such as Australia's Super Netball) award 2 points for shots from the outer part of the circle in the final minutes of each quarter." }
+  ],
+  "bodies": [
+    { "id": "worldnetball", "name": "World Netball", "acronym": null, "scope": "International federation; publishes the Rules of Netball", "url": "https://netball.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wn-rules", "title": "World Netball Rules of Netball", "publisher": "worldnetball", "url": "https://netball.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Handling the ball", "summary": "Three seconds and footwork.",
+      "rules": [
+        { "id": "three-seconds-nb", "title": "Three seconds", "important": true,
+          "summary": "A player must pass or shoot within three seconds of receiving the ball.",
+          "body": "Players may not dribble, bounce the ball to themselves or throw it into the air and catch it again before another player touches it.",
+          "related": ["footwork"] },
+        { "id": "footwork", "title": "Footwork", "important": true,
+          "summary": "After catching the ball, the first foot to land is the landing foot. You can pivot on it, but once you lift it, you must release the ball before it touches down again.",
+          "body": "If a player lands on both feet at once, they may choose which one is the landing foot. Shuffling or dragging the landing foot is a footwork infringement, giving a free pass to the opponents.",
+          "example": "A Centre catches on her left foot, steps with her right, lifts her left — and puts it down again before passing: footwork, free pass to the other team.",
+          "related": ["three-seconds-nb"] }
+      ]
+    },
+    {
+      "id": "zones", "title": "Positions and areas", "summary": "Where each bib can go.",
+      "rules": [
+        { "id": "areas", "title": "Playing areas", "important": true,
+          "summary": "The court is split into thirds. Each position is limited to specific areas; stepping into the wrong one is offside.",
+          "body": "For example, the Goal Shooter may only play in the attacking third and shooting circle, while the Centre can go anywhere except the two shooting circles. Offside gives a free pass to the opponents.",
+          "related": ["shooting"] },
+        { "id": "shooting", "title": "Who can shoot", "important": false,
+          "summary": "Only the Goal Shooter (GS) and Goal Attack (GA) can score, and only from inside the shooting circle.",
+          "body": "If any other player throws the ball through the ring, or the shot is taken from outside the circle, no goal is scored.",
+          "related": ["areas"] }
+      ]
+    },
+    {
+      "id": "defence-nb", "title": "Defending", "summary": "Obstruction and contact.",
+      "rules": [
+        { "id": "obstruction", "title": "Obstruction: 0.9 metres", "important": true,
+          "summary": "A defender trying to intercept or defend the ball must be at least 0.9 m (3 ft) from the landing foot of the player with the ball.",
+          "body": "Closer than that, the defender may stand still but must not try to defend with arms raised. Breaches are penalised with a penalty pass (or penalty pass or shot in the circle), and the offender must stand beside the thrower without taking part until the ball is released.",
+          "related": ["contact-nb"] },
+        { "id": "contact-nb", "title": "Contact", "important": false,
+          "summary": "Netball is officially non-contact: players may not push, hold, trip or knock the ball from an opponent's hands.",
+          "body": "Contact that interferes with an opponent's play gives a penalty to the other team; repeated or dangerous contact can lead to warnings, suspensions or ordering off.",
+          "related": ["obstruction"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Footwork", "description": "Regrounding the landing foot while holding the ball.", "consequence": "Free pass", "severity": "MINOR" },
+    { "name": "Held ball", "description": "Holding the ball for more than 3 seconds.", "consequence": "Free pass", "severity": "MINOR" },
+    { "name": "Offside", "description": "Entering an area your position isn't allowed in.", "consequence": "Free pass", "severity": "MINOR" },
+    { "name": "Obstruction / contact", "description": "Defending too close or making contact.", "consequence": "Penalty pass (or pass or shot in the circle)", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Centre pass", "description": "Play starts and restarts after each goal with a centre pass, alternating between teams." },
+    { "title": "Attack through thirds", "description": "Short, fast passes move the ball to the shooters." },
+    { "title": "Quarters", "description": "Four 15-minute quarters; teams change ends." }
+  ],
+  "positions": [
+    { "name": "Goal Shooter (GS)", "role": "Main shooter; attacking third and circle only." },
+    { "name": "Goal Attack (GA)", "role": "Shooter and feeder; attacking two-thirds." },
+    { "name": "Wing Attack (WA)", "role": "Feeds the circle; attacking two-thirds, not the circle." },
+    { "name": "Centre (C)", "role": "Links play; everywhere except the circles." },
+    { "name": "Wing Defence (WD)", "role": "Marks the WA; defending two-thirds, not the circle." },
+    { "name": "Goal Defence (GD)", "role": "Marks the GA; defending two-thirds and circle." },
+    { "name": "Goal Keeper (GK)", "role": "Marks the GS; defending third and circle only." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "30.5 m × 15.25 m, divided into thirds",
+    "surface": "Hard court",
+    "notes": ["Shooting circles: 4.9 m radius", "Ring 3.05 m high, no backboard", "Centre circle for the centre pass"]
+  },
+  "glossary": [
+    { "term": "Landing foot", "definition": "The first foot grounded after catching." },
+    { "term": "Penalty pass", "definition": "Free pass where the offender must stand out of play." },
+    { "term": "Feed", "definition": "A pass into the shooting circle." },
+    { "term": "Rebound", "definition": "Regaining a missed shot." }
+  ],
+  "funFacts": [
+    "Netball developed in England in the 1890s from early versions of women's basketball.",
+    "Australia and New Zealand have dominated the Netball World Cup."
+  ]
+}

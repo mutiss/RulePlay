@@ -1,0 +1,121 @@
+{
+  "id": "padel",
+  "language": "es",
+  "intro": "El pádel se juega siempre por parejas en una pista cerrada de un tercio del tamaño de una de tenis, rodeada de paredes de cristal y malla metálica. Usa la puntuación del tenis, un saque por debajo de la cintura y palas macizas perforadas, y su seña de identidad es que la pelota puede jugarse después de rebotar en las paredes. La Federación Internacional de Pádel (FIP) mantiene el reglamento.",
+  "inThirtySeconds": [
+    "Solo dobles, en una pista de 20 × 10 m cerrada por paredes.",
+    "Saque por debajo de la cintura, en diagonal al cuadro de saque rival.",
+    "La pelota debe botar en el suelo antes de tocar las paredes del campo rival.",
+    "Tras el bote, puedes dejar que rebote en el cristal y devolverla igualmente. La puntuación es como en tenis."
+  ],
+  "objective": "Ganar puntos haciendo que la pelota bote dos veces en el campo rival, o forzando su error, y ganar los sets del partido.",
+  "facts": {
+    "players": "2 contra 2",
+    "duration": "Al mejor de 3 sets (sin reloj)",
+    "environment": "Pista cerrada con paredes de cristal y malla, cubierta o al aire libre",
+    "equipment": ["Pala maciza perforada (sin cordaje)", "Pelota presurizada similar a la de tenis", "Red de 0,88 m en el centro"]
+  },
+  "scoring": [
+    { "label": "Puntos", "value": "15·30·40", "detail": "Igual que en tenis: nada, 15, 30, 40 y juego." },
+    { "label": "Iguales", "value": "40-40", "detail": "Se juega con ventaja, aunque muchos torneos profesionales y amateurs usan el «punto de oro» decisivo." },
+    { "label": "Set", "value": "6+", "detail": "Seis juegos con dos de ventaja; con 6-6 se juega tie-break." }
+  ],
+  "bodies": [
+    { "id": "fip", "name": "Federación Internacional de Pádel", "acronym": "FIP", "scope": "Organismo rector mundial; publica el Reglamento de Juego", "url": "https://www.padelfip.com/" },
+    { "id": "premier", "name": "Premier Padel", "acronym": null, "scope": "Circuito profesional mundial organizado con la FIP", "url": "https://premierpadel.com/en" }
+  ],
+  "rulebooks": [
+    { "id": "fip-rules", "title": "Reglamento de Juego de la FIP", "publisher": "fip", "url": "https://www.padelfip.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "serve", "title": "El saque",
+      "summary": "El saque por abajo del pádel y qué lo convierte en falta.",
+      "rules": [
+        { "id": "serve-how", "title": "Cómo se saca", "important": true,
+          "summary": "Bota la pelota detrás de la línea de saque y golpéala a la altura de la cintura o por debajo, en diagonal al cuadro de saque rival.",
+          "body": "El sacador debe tener al menos un pie en el suelo y no puede pisar ni sobrepasar la línea de saque al sacar. La pelota se bota una vez en el suelo antes de golpearla. Como en tenis, hay dos intentos y se saca alternando el lado derecho y el izquierdo.",
+          "example": "Un jugador lanza la pelota al aire y la remata para empezar el punto: no es un saque legal de pádel.",
+          "related": ["serve-fault", "serve-let"] },
+        { "id": "serve-fault", "title": "Faltas de saque", "important": true,
+          "summary": "Un saque es falta si bota fuera del cuadro correcto o si, tras botar en él, toca la malla metálica antes del segundo bote.",
+          "body": "Tras botar en el cuadro, el saque puede rebotar en las paredes de cristal. Si toca primero la malla del lado del restador, es falta. Golpear por encima de la cintura o no botar la pelota antes de sacar también son faltas.",
+          "related": ["serve-how", "serve-let"] },
+        { "id": "serve-let", "title": "Repetición del saque (let)", "important": false,
+          "summary": "Si el saque toca la red y entra en el cuadro correcto, se repite, salvo que después toque la malla.",
+          "body": "Un let no anula una falta anterior. Si la pelota toca la red, bota en el cuadro y después golpea la malla antes del segundo bote, cuenta como falta y no como let.",
+          "related": ["serve-fault"] }
+      ]
+    },
+    {
+      "id": "walls", "title": "Jugar con las paredes",
+      "summary": "Las reglas que hacen único al pádel.",
+      "rules": [
+        { "id": "wall-opponent", "title": "Primero el suelo en el campo rival", "important": true,
+          "summary": "Tu golpe debe botar en el suelo del campo rival antes de tocar sus paredes o su malla.",
+          "body": "Si tu pelota golpea directamente el cristal o la malla rival, sin botar antes, pierdes el punto. Una vez que ha botado, puede rebotar en cualquier pared y los rivales pueden jugarla antes de que bote por segunda vez.",
+          "example": "Un drive potente cruza la red y se estrella de aire contra el cristal de fondo: punto para los rivales.",
+          "related": ["wall-own", "double-bounce"] },
+        { "id": "wall-own", "title": "Usar tus propias paredes", "important": true,
+          "summary": "Puedes golpear la pelota contra tus propias paredes para pasarla por encima de la red.",
+          "body": "Una pelota golpeada contra tu cristal o tu malla que después cruza la red y bota en el campo rival es un golpe legal. Esta «contrapared» es un recurso defensivo y una habilidad que define el pádel.",
+          "related": ["wall-opponent"] },
+        { "id": "double-bounce", "title": "Un solo bote", "important": false,
+          "summary": "La pelota debe devolverse antes de que bote dos veces en el suelo de tu campo.",
+          "body": "Las paredes no cuentan como botes: la pelota puede botar una vez en el suelo, golpear el cristal de fondo, después el lateral, y seguir siendo jugable. También puedes volear antes del bote, salvo al restar el saque.",
+          "related": ["wall-opponent"] },
+        { "id": "outside-play", "title": "Salir de la pista", "important": false,
+          "summary": "Donde la instalación lo permite, un jugador puede salir por las puertas de la pista para devolver una pelota que ha salido tras botar.",
+          "body": "Si una pelota bota en tu campo y luego sale del recinto por encima de la pared o por una abertura, el punto es para los rivales salvo que puedas devolverla antes de que bote fuera. Que sea posible depende del diseño de la pista y de la competición.",
+          "related": ["double-bounce"] }
+      ]
+    },
+    {
+      "id": "general", "title": "Juego general",
+      "summary": "Contacto con la red, con el cuerpo y puntuación.",
+      "rules": [
+        { "id": "net", "title": "No toques la red", "important": false,
+          "summary": "El jugador que toca la red o los postes con el cuerpo, la pala o la ropa con la pelota en juego pierde el punto.",
+          "body": "No puedes golpear la pelota antes de que pase a tu lado de la red ni invadir el campo rival. Que la pelota te dé también pierde el punto, salvo que ya haya botado dos veces.",
+          "related": ["scoring"] },
+        { "id": "scoring", "title": "Puntuación de tenis y punto de oro", "important": false,
+          "summary": "El pádel cuenta puntos, juegos y sets exactamente como el tenis.",
+          "body": "Muchos torneos usan el «punto de oro» con 40-40: la pareja restadora elige qué lado resta y el siguiente punto gana el juego. Los partidos suelen ser al mejor de tres sets, con tie-break en el 6-6.",
+          "related": ["net"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Saque por arriba", "description": "Golpear el saque por encima de la cintura.", "consequence": "Falta", "severity": "MINOR" },
+    { "name": "Pared directa", "description": "La pelota golpea las paredes rivales sin botar antes.", "consequence": "Punto perdido", "severity": "MINOR" },
+    { "name": "Tocar la red", "description": "Tocar la red o los postes con la pelota en juego.", "consequence": "Punto perdido", "severity": "MINOR" },
+    { "name": "Doble golpe", "description": "Golpear la pelota dos veces a propósito.", "consequence": "Punto perdido", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Sorteo", "description": "Los ganadores eligen sacar, restar o lado." },
+    { "title": "Puntos", "description": "Largos intercambios mientras las parejas luchan por la red." },
+    { "title": "Sets", "description": "Seis juegos con dos de ventaja, tie-break con 6-6." },
+    { "title": "Partido", "description": "Normalmente al mejor de tres sets." }
+  ],
+  "positions": [
+    { "name": "Jugador de derecha (drive)", "role": "A menudo el más regular, construye los puntos con control." },
+    { "name": "Jugador de revés", "role": "Suele asumir los remates y los golpes definitivos por el centro." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "20 m × 10 m, cerrada",
+    "surface": "Césped artificial con arena o superficies sintéticas",
+    "notes": ["Paredes de fondo de cristal; laterales en parte cristal y en parte malla", "Red: 0,88 m en el centro y 0,92 m en los postes", "Líneas de saque a 6,95 m de la red"]
+  },
+  "glossary": [
+    { "term": "Bandeja", "definition": "Remate controlado y cortado para mantener la posición en la red." },
+    { "term": "Víbora", "definition": "Remate agresivo con mucho efecto lateral." },
+    { "term": "Por tres", "definition": "Remate que bota y sale por encima de la pared lateral." },
+    { "term": "Punto de oro", "definition": "Punto único decisivo que se juega con 40-40." },
+    { "term": "Chiquita", "definition": "Golpe suave y bajo dirigido a los pies de los rivales." }
+  ],
+  "funFacts": [
+    "El pádel nació en Acapulco (México) en 1969: Enrique Corcuera cerró su pista con paredes para frenar la vegetación.",
+    "España y Argentina son las grandes potencias del pádel."
+  ]
+}

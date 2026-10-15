@@ -1,0 +1,120 @@
+{
+  "id": "padel",
+  "intro": "Padel is always played in doubles on an enclosed court about a third the size of a tennis court, surrounded by glass walls and wire mesh. It uses tennis scoring, an underarm serve and solid perforated rackets, and — its signature twist — the ball can be played after it rebounds off the walls. The International Padel Federation (FIP) maintains the rules.",
+  "inThirtySeconds": [
+    "Doubles only, on a 20 × 10 m court enclosed by walls.",
+    "Serve underarm, below waist height, diagonally into the opponent's service box.",
+    "The ball must bounce on the floor before it touches the walls on your opponents' side.",
+    "After it bounces, you can let it rebound off the glass and still return it. Scoring is like tennis."
+  ],
+  "objective": "Win points by making the ball bounce twice on the opponents' side, or by forcing them into an error — and win the sets that make up the match.",
+  "facts": {
+    "players": "2 v 2",
+    "duration": "Best of 3 sets (no clock)",
+    "environment": "Enclosed court with glass walls and mesh, indoor or outdoor",
+    "equipment": ["Solid perforated racket (no strings)", "Pressurised ball similar to tennis", "Net 0.88 m at the centre"]
+  },
+  "scoring": [
+    { "label": "Points", "value": "15·30·40", "detail": "Identical to tennis: love, 15, 30, 40, game." },
+    { "label": "Deuce", "value": "40–40", "detail": "Advantage scoring, though many professional and amateur events play a deciding 'golden point' at deuce." },
+    { "label": "Set", "value": "6+", "detail": "Six games with a two-game lead; a tie-break is played at 6–6." }
+  ],
+  "bodies": [
+    { "id": "fip", "name": "International Padel Federation", "acronym": "FIP", "scope": "World governing body; publishes the Rules of Padel", "url": "https://www.padelfip.com/" },
+    { "id": "premier", "name": "Premier Padel", "acronym": null, "scope": "Professional world tour run with the FIP", "url": "https://premierpadel.com/en" }
+  ],
+  "rulebooks": [
+    { "id": "fip-rules", "title": "FIP Rules of Padel", "publisher": "fip", "url": "https://www.padelfip.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "serve", "title": "The serve",
+      "summary": "Padel's underarm serve and what makes it a fault.",
+      "rules": [
+        { "id": "serve-how", "title": "How to serve", "important": true,
+          "summary": "Bounce the ball behind the service line, then hit it at or below waist height, diagonally into the opponent's service box.",
+          "body": "The server must have at least one foot on the ground and may not step on or over the service line while serving. The ball is bounced once on the floor before being struck. As in tennis, the server has two attempts and serves alternately from the right and left halves.",
+          "example": "A player throws the ball up and smashes it overhead to start the point: that is not a legal padel serve.",
+          "related": ["serve-fault", "serve-let"] },
+        { "id": "serve-fault", "title": "Serve faults", "important": true,
+          "summary": "A serve is a fault if it lands outside the correct box, or if after bouncing in the box it hits the wire mesh before a second bounce.",
+          "body": "After bouncing in the service box, a serve may legally rebound off the glass walls. If it touches the metal fence (mesh) on the receiver's side first, it is a fault. Hitting the ball above the waist or not bouncing it before serving are also faults.",
+          "related": ["serve-how", "serve-let"] },
+        { "id": "serve-let", "title": "Let on the serve", "important": false,
+          "summary": "If the serve clips the net and lands in the correct box, it is replayed — unless it then hits the mesh.",
+          "body": "A let does not cancel a first-serve fault. If the ball clips the net, bounces in the box and then strikes the wire mesh before the second bounce, it counts as a fault rather than a let.",
+          "related": ["serve-fault"] }
+      ]
+    },
+    {
+      "id": "walls", "title": "Playing with the walls",
+      "summary": "The rules that make padel unique.",
+      "rules": [
+        { "id": "wall-opponent", "title": "Floor first on the other side", "important": true,
+          "summary": "Your shot must bounce on the floor of the opponents' court before it touches their walls or mesh.",
+          "body": "If your shot hits the opponents' glass or fence directly, without bouncing first, you lose the point. Once it has bounced, it can rebound off any wall and the opponents may play it before it bounces a second time.",
+          "example": "A powerful drive flies over the net and strikes the back glass on the full: point to the opponents.",
+          "related": ["wall-own", "double-bounce"] },
+        { "id": "wall-own", "title": "Using your own walls", "important": true,
+          "summary": "You may hit the ball against your own walls to send it over the net.",
+          "body": "A ball struck against your own glass or mesh, which then crosses the net and lands in the opponents' court, is a legal shot. This 'back-wall' shot is a defensive escape — and a skill that defines padel.",
+          "related": ["wall-opponent"] },
+        { "id": "double-bounce", "title": "One bounce only", "important": false,
+          "summary": "The ball must be returned before it bounces twice on the floor of your court.",
+          "body": "Walls don't count as bounces: a ball can bounce once on the floor, hit the back glass, then the side glass, and still be played. You may also volley the ball before it bounces, except on the serve return.",
+          "related": ["wall-opponent"] },
+        { "id": "outside-play", "title": "Leaving the court", "important": false,
+          "summary": "Where the venue allows it, a player may run out through the court doors to return a ball that bounced out.",
+          "body": "If a ball bounces in your court and then leaves the enclosure over the wall or through an opening, it is the opponents' point unless you can play it back before it bounces outside. Whether this is possible depends on the court design and competition rules.",
+          "related": ["double-bounce"] }
+      ]
+    },
+    {
+      "id": "general", "title": "General play",
+      "summary": "Net contact, body contact and scoring.",
+      "rules": [
+        { "id": "net", "title": "Don't touch the net", "important": false,
+          "summary": "A player who touches the net or posts with their body, racket or clothing while the ball is in play loses the point.",
+          "body": "You may not hit the ball before it crosses to your side of the net, and you may not invade the opponents' half. Being hit by the ball also loses the point, unless it has already bounced twice.",
+          "related": ["scoring"] },
+        { "id": "scoring", "title": "Tennis scoring and the golden point", "important": false,
+          "summary": "Padel counts points, games and sets exactly like tennis.",
+          "body": "Many tournaments use a deciding 'golden point' at 40–40: the receiving pair chooses which side receives and the next point wins the game. Matches are usually best of three sets, with a tie-break at 6–6.",
+          "related": ["net"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Overhead serve", "description": "Striking the serve above waist height.", "consequence": "Fault", "severity": "MINOR" },
+    { "name": "Direct wall hit", "description": "Shot hits the opponents' walls without bouncing first.", "consequence": "Point lost", "severity": "MINOR" },
+    { "name": "Net touch", "description": "Touching the net or posts while the ball is in play.", "consequence": "Point lost", "severity": "MINOR" },
+    { "name": "Double hit", "description": "Hitting the ball twice deliberately.", "consequence": "Point lost", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Toss", "description": "The winners choose to serve, receive or pick a side." },
+    { "title": "Rallies", "description": "Long exchanges as pairs fight for the net position." },
+    { "title": "Sets", "description": "Six games with a two-game margin, tie-break at 6–6." },
+    { "title": "Match", "description": "Usually best of three sets." }
+  ],
+  "positions": [
+    { "name": "Right-side player (drive)", "role": "Often the more consistent player, building points with control." },
+    { "name": "Left-side player (revés)", "role": "Usually takes the overheads and finishing smashes in the middle." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "20 m × 10 m, enclosed",
+    "surface": "Artificial grass with sand, or synthetic surfaces",
+    "notes": ["Back walls of glass; side walls part glass, part wire mesh", "Net: 0.88 m at the centre, 0.92 m at the posts", "Service lines 6.95 m from the net"]
+  },
+  "glossary": [
+    { "term": "Bandeja", "definition": "A controlled, sliced overhead used to keep the net position." },
+    { "term": "Víbora", "definition": "An aggressive overhead with heavy side-spin." },
+    { "term": "Por tres", "definition": "A smash that bounces and flies out over the side wall." },
+    { "term": "Golden point", "definition": "A single deciding point played at 40–40." },
+    { "term": "Chiquita", "definition": "A soft, low shot aimed at the opponents' feet." }
+  ],
+  "funFacts": [
+    "Padel was created in Acapulco, Mexico, in 1969 by Enrique Corcuera, who walled in his court to stop vegetation taking over.",
+    "Spain and Argentina are padel's great powerhouses."
+  ]
+}

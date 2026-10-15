@@ -1,0 +1,22 @@
+<en-US>
+Welcome to RulePlay!
+• The rules of 40 sports in 12 categories, explained in plain language
+• "The game in 30 seconds" summary for every sport
+• Rule reader with examples, related rules and adjustable text size
+• Search every sport at once, typos included
+• Save sports and bookmark rules in your Library
+• Discover hidden gems with Surprise me
+• Fully offline, no account, no ads
+• English and Spanish
+</en-US>
+<es-ES>
+¡Bienvenido a RulePlay!
+• Las reglas de 40 deportes en 12 categorías, en lenguaje sencillo
+• Resumen "El juego en 30 segundos" para cada deporte
+• Lector de reglas con ejemplos, reglas relacionadas y tamaño de texto ajustable
+• Busca en todos los deportes a la vez, incluso con erratas
+• Guarda deportes y marca reglas en tu Biblioteca
+• Descubre joyas ocultas con Sorpréndeme
+• Sin conexión, sin cuenta y sin anuncios
+• En español e inglés
+</es-ES>

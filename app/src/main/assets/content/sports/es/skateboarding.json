@@ -1,0 +1,90 @@
+{
+  "id": "skateboarding",
+  "language": "es",
+  "intro": "En el skateboarding de competición, los jueces puntúan cómo patina cada uno un circuito de obstáculos: los trucos que elige, lo limpio que los aterriza y cómo usa el espacio. Hay dos disciplinas olímpicas: street, inspirada en una plaza urbana con escaleras y barandillas, y park, un bowl de transiciones curvas. World Skate rige el deporte a nivel internacional.",
+  "inThirtySeconds": [
+    "Los jueces puntúan rondas y trucos de 0 a 100.",
+    "Street: rondas cronometradas más intentos de mejor truco.",
+    "Park: rondas cronometradas en un bowl; cuenta la mejor.",
+    "Caerse arruina un truco: aterrizarlo limpio lo es todo."
+  ],
+  "objective": "Lograr la puntuación más alta combinando trucos difíciles y variados con una ejecución limpia y fluida.",
+  "facts": {
+    "players": "Individual",
+    "duration": "Rondas de unos 45 segundos; intentos de truco individual",
+    "environment": "Circuito de street o park construido a propósito",
+    "equipment": ["Monopatín", "Casco (obligatorio en algunas pruebas y edades)", "Protecciones"]
+  },
+  "scoring": [
+    { "label": "Nota de ronda", "value": "0–100", "detail": "Impresión general de una ronda cronometrada." },
+    { "label": "Nota de truco", "value": "0–100", "detail": "Solo en street: un intento de truco en un obstáculo." }
+  ],
+  "variants": [
+    { "id": "street", "name": "Street", "description": "Un circuito de escaleras, barandillas, bordillos y rampas inspirado en la ciudad.", "body": "worldskate" },
+    { "id": "park", "name": "Park", "description": "Un bowl de paredes curvas y profundas para líneas fluidas y aéreos grandes.", "body": "worldskate" }
+  ],
+  "bodies": [
+    { "id": "worldskate", "name": "World Skate", "acronym": null, "scope": "Federación internacional del skateboarding y los deportes sobre ruedas", "url": "https://www.worldskate.org/" }
+  ],
+  "rulebooks": [
+    { "id": "ws-rules", "title": "Reglamento de skateboarding de World Skate", "publisher": "worldskate", "url": "https://www.worldskate.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "judging", "title": "Puntuación", "summary": "Qué buscan los jueces.",
+      "rules": [
+        { "id": "criteria-skate", "title": "Criterios de los jueces", "important": true,
+          "summary": "Los jueces valoran la dificultad, la ejecución, la variedad, la fluidez y el uso del circuito, además de la regularidad.",
+          "body": "Las notas son una impresión general, no una tabla de puntos por truco. Normalmente se descartan la nota más alta y la más baja. Un truco que nadie había aterrizado antes en competición puede recibir notas enormes, si se aterriza limpio.",
+          "related": ["street-format", "park-format"] },
+        { "id": "bails", "title": "Caídas y trucos incompletos", "important": false,
+          "summary": "Un truco solo cuenta si el skater aterriza y sale rodando con control.",
+          "body": "En los intentos de mejor truco de street, una caída puntúa cero. En las rondas, una caída suele cortar el ritmo y afecta mucho a la nota.",
+          "related": ["criteria-skate"] }
+      ]
+    },
+    {
+      "id": "formats", "title": "Formatos", "summary": "Formatos de competición de street y park.",
+      "rules": [
+        { "id": "street-format", "title": "Street: rondas y mejores trucos", "important": true, "variants": ["street"],
+          "summary": "Los skaters tienen dos rondas cronometradas y varios intentos de truco individual; se combinan la mejor ronda y las mejores notas de truco.",
+          "body": "El número exacto de intentos y de notas de truco que cuentan depende del formato de la prueba, así que consulta el reglamento de la competición. Los trucos individuales permiten intentar las maniobras más difíciles en un solo obstáculo.",
+          "related": ["criteria-skate"] },
+        { "id": "park-format", "title": "Park: cuenta la mejor ronda", "important": true, "variants": ["park"],
+          "summary": "Los skaters tienen varias rondas cronometradas por el bowl, y su mejor ronda es su nota.",
+          "body": "El park premia la altura (amplitud), la velocidad y enlazar trucos en una línea continua por el bowl.",
+          "related": ["criteria-skate"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Caída", "description": "Caerse o no salir rodando de un truco.", "consequence": "Cero en el truco / nota de ronda más baja", "severity": "MINOR" },
+    { "name": "Fuera de tiempo", "description": "Trucos hechos después de que termine el tiempo de la ronda.", "consequence": "No puntúan", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Entrenamiento", "description": "Los skaters conocen el circuito en las sesiones de entrenamiento." },
+    { "title": "Rondas", "description": "Las rondas cronometradas muestran las líneas y la variedad." },
+    { "title": "Mejores trucos", "description": "En street, los skaters van a por sus trucos más difíciles." },
+    { "title": "Podio", "description": "Las notas combinadas deciden las medallas." }
+  ],
+  "positions": [
+    { "name": "Regular", "role": "Patina con el pie izquierdo delante." },
+    { "name": "Goofy", "role": "Patina con el pie derecho delante." }
+  ],
+  "field": {
+    "name": "Circuito",
+    "dimensions": "Varía según la prueba; los de street parecen plazas y los de park son bowls",
+    "surface": "Hormigón liso o madera",
+    "notes": ["Street: escaleras, barandillas, bordillos, rampas", "Park: bowls con transiciones, coping y paredes verticales"]
+  },
+  "glossary": [
+    { "term": "Ollie", "definition": "Saltar con la tabla sin usar las manos: la base del street." },
+    { "term": "Kickflip", "definition": "Hacer girar la tabla a lo largo de su eje en el aire con un golpe del pie." },
+    { "term": "Grind", "definition": "Deslizar sobre un borde apoyando los ejes de la tabla." },
+    { "term": "Coping", "definition": "El borde metálico de la parte superior de la pared de un bowl." }
+  ],
+  "funFacts": [
+    "El skateboarding nació en California en los años cincuenta, cuando los surfistas querían algo que montar sin olas.",
+    "El skate olímpico debutó en Tokio 2020 con medallistas de solo 13 años."
+  ]
+}

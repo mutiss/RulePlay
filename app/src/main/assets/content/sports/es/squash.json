@@ -1,0 +1,88 @@
+{
+  "id": "squash",
+  "language": "es",
+  "intro": "El squash lo juegan dos personas en una pista cerrada por cuatro paredes, golpeando una pequeña pelota de goma hueca contra la pared frontal. Como ambos jugadores comparten el mismo espacio, las reglas de interferencia —«let» y «stroke»— son centrales en el juego. World Squash publica las Reglas del Squash individual.",
+  "inThirtySeconds": [
+    "Golpea la pelota contra la pared frontal, por encima de la chapa, antes de que bote dos veces en el suelo.",
+    "Cada jugada da un punto; los juegos van a 11, con dos de ventaja.",
+    "Los partidos suelen ser al mejor de cinco juegos.",
+    "Si estorbas a tu rival, puede ganar la jugada con un «stroke»."
+  ],
+  "objective": "Ganar tres juegos antes que el rival.",
+  "facts": {
+    "players": "1 contra 1 (hay dobles en pistas más anchas)",
+    "duration": "Al mejor de 5 juegos a 11",
+    "environment": "Pista cubierta cerrada por cuatro paredes",
+    "equipment": ["Raqueta", "Pelota pequeña de goma (doble punto amarillo en la élite)", "Gafas protectoras (a menudo obligatorias en juveniles)"]
+  },
+  "scoring": [
+    { "label": "Punto", "value": "1", "detail": "Puntuación directa: cada jugada da un punto." },
+    { "label": "Juego", "value": "11", "detail": "Primero a 11; con 10-10 hacen falta dos puntos de ventaja." }
+  ],
+  "bodies": [
+    { "id": "worldsquash", "name": "World Squash", "acronym": null, "scope": "Organismo rector mundial; publica las Reglas del Squash", "url": "https://www.worldsquash.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "ws-squash-rules", "title": "Reglas del Squash individual de World Squash", "publisher": "worldsquash", "url": "https://www.worldsquash.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "rally", "title": "La jugada", "summary": "El saque y las devoluciones buenas.",
+      "rules": [
+        { "id": "serve-sq", "title": "El saque", "important": false,
+          "summary": "Con un pie dentro del cuadro de saque, el sacador golpea la pelota contra la pared frontal entre la línea de saque y la línea de fuera, para que caiga en el cuarto trasero contrario.",
+          "body": "La pelota puede tocar la pared lateral después de la frontal. El sacador alterna de cuadro mientras conserva el saque; el restador puede volear el saque.",
+          "related": ["good-return-sq"] },
+        { "id": "good-return-sq", "title": "Una devolución buena", "important": true,
+          "summary": "Golpea la pelota antes de que bote dos veces para que llegue a la pared frontal por encima de la chapa, directamente o tocando las laterales o la trasera, sin salir fuera.",
+          "body": "La chapa es una franja metálica en la parte baja de la pared frontal; si la tocas, pierdes la jugada. La pelota está fuera si toca las líneas de fuera o por encima de ellas en cualquier pared.",
+          "related": ["serve-sq", "let-stroke"] }
+      ]
+    },
+    {
+      "id": "interference", "title": "Let o stroke", "summary": "Cuando los jugadores se estorban.",
+      "rules": [
+        { "id": "clear-ball", "title": "Deja paso a tu rival", "important": true,
+          "summary": "Tras golpear, debes hacer todo lo posible para que tu rival pueda llegar a la pelota, verla, armar el golpe y mandarla a cualquier parte de la pared frontal.",
+          "body": "Los jugadores lo reclaman diciendo «let, please». El árbitro decide entonces entre let, stroke o no let.",
+          "related": ["let-stroke"] },
+        { "id": "let-stroke", "title": "Let, stroke o no let", "important": true,
+          "summary": "Let: se repite la jugada. Stroke: gana la jugada el jugador estorbado. No let: la jugada se mantiene.",
+          "body": "Se da stroke cuando el rival no hizo todo lo posible por apartarse, o cuando el jugador estorbado habría hecho un golpe ganador. Se da no let si el jugador no habría llegado a la pelota o no hizo todo lo posible por jugarla.",
+          "example": "Tu rival está en la línea de tu drive paralelo hacia la pared frontal: stroke para ti.",
+          "related": ["clear-ball"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Chapa", "description": "La pelota golpea la chapa.", "consequence": "Jugada perdida", "severity": "MINOR" },
+    { "name": "Fuera", "description": "La pelota toca la línea de fuera o por encima.", "consequence": "Jugada perdida", "severity": "MINOR" },
+    { "name": "Interferencia", "description": "No dejar paso al rival.", "consequence": "Let o stroke", "severity": "MINOR" },
+    { "name": "Juego peligroso", "description": "Swing excesivo o golpear al rival.", "consequence": "Aviso de conducta, stroke, juego o partido", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Calentamiento", "description": "Cinco minutos, cambiando de lado a la mitad." },
+    { "title": "Juegos", "description": "Puntuación directa a 11 con descansos cortos entre juegos." },
+    { "title": "La T", "description": "Los jugadores luchan por controlar la posición central, la «T»." }
+  ],
+  "positions": [
+    { "name": "Jugador delante", "role": "Debe apartarse tras golpear." },
+    { "name": "Jugador detrás", "role": "Tiene derecho a acceso directo a la pelota." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "9,75 × 6,4 m",
+    "surface": "Suelo de madera flotante, paredes de yeso o cristal",
+    "notes": ["Línea de fuera en la pared frontal a 4,57 m", "Línea de saque a 1,78 m", "Las pistas de cristal permiten público por todos los lados"]
+  },
+  "glossary": [
+    { "term": "La T", "definition": "El cruce central de las líneas del suelo." },
+    { "term": "Boast", "definition": "Golpe que toca la pared lateral antes que la frontal." },
+    { "term": "Dejada", "definition": "Golpe suave que muere junto a la pared frontal." },
+    { "term": "Nick", "definition": "La unión entre pared y suelo: un golpe que cae ahí es irrecuperable." }
+  ],
+  "funFacts": [
+    "El squash nació del rackets en la escuela de Harrow hacia 1830, cuando los alumnos descubrieron que una pelota más blanda, que se «aplastaba», hacía el juego más lento y variado.",
+    "El squash debutará en los Juegos Olímpicos en Los Ángeles 2028."
+  ]
+}

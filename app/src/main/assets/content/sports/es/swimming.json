@@ -1,0 +1,114 @@
+{
+  "id": "swimming",
+  "language": "es",
+  "intro": "La natación de competición es una carrera en el agua con uno de los cuatro estilos —libre, espalda, braza y mariposa— o con una combinación de ellos en las pruebas de estilos. Cada estilo tiene reglas técnicas precisas para brazos, piernas, virajes y llegadas, y los jueces descalifican a quien las incumple. World Aquatics (antes FINA) publica el reglamento de natación.",
+  "inThirtySeconds": [
+    "Gana el mejor tiempo; las pruebas van de 50 a 1500 m en piscina.",
+    "Una salida falsa y estás descalificado.",
+    "Cada estilo tiene sus reglas: braza y mariposa exigen tocar la pared con las dos manos.",
+    "No más de 15 m bajo el agua tras la salida y los virajes en libre, espalda y mariposa."
+  ],
+  "objective": "Completar la distancia en el estilo exigido, de forma legal, en el menor tiempo.",
+  "facts": {
+    "players": "Pruebas individuales y relevos de cuatro",
+    "duration": "Desde unos 20 segundos (50 m) hasta unos 15 minutos (1500 m)",
+    "environment": "Piscina de 50 m (larga) o 25 m (corta)",
+    "equipment": ["Bañador (materiales homologados)", "Gorro", "Gafas", "Poyetes y placas de llegada"]
+  },
+  "scoring": [
+    { "label": "Tiempo", "value": "0,01 s", "detail": "Cronometraje electrónico a la centésima, que arranca con la señal y se detiene con las placas." },
+    { "label": "Series → final", "value": "8", "detail": "Los más rápidos de las series (y semifinales) pasan a una final de ocho calles." }
+  ],
+  "bodies": [
+    { "id": "wa", "name": "World Aquatics", "acronym": null, "scope": "Organismo rector mundial de los deportes acuáticos (antes FINA)", "url": "https://www.worldaquatics.com/" }
+  ],
+  "rulebooks": [
+    { "id": "wa-swimming", "title": "Reglamento de natación de World Aquatics", "publisher": "wa", "url": "https://www.worldaquatics.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "start", "title": "Salidas",
+      "summary": "A sus puestos… y solo una vez.",
+      "rules": [
+        { "id": "false-start", "title": "Una sola salida", "important": true,
+          "summary": "Un nadador que sale antes de la señal queda descalificado.",
+          "body": "Los nadadores ocupan sus puestos y deben estar inmóviles antes de la señal de salida. Las pruebas de libre, braza y mariposa salen desde los poyetes; las de espalda, desde el agua, sujetando las asas del poyete.",
+          "related": ["underwater"] },
+        { "id": "underwater", "title": "La regla de los 15 metros", "important": false,
+          "summary": "En libre, espalda y mariposa, la cabeza del nadador debe romper la superficie antes de los 15 m tras la salida y cada viraje.",
+          "body": "El batido de delfín bajo el agua es más rápido que nadar en superficie, así que el límite mantiene las pruebas como pruebas de natación. La braza tiene su propia secuencia subacuática.",
+          "related": ["false-start", "breaststroke"] }
+      ]
+    },
+    {
+      "id": "strokes", "title": "Los cuatro estilos",
+      "summary": "Qué hace legal a cada estilo.",
+      "rules": [
+        { "id": "freestyle", "title": "Libre", "important": false,
+          "summary": "Se permite cualquier estilo, aunque casi todos nadan crol. Hay que tocar la pared en cada viraje y en la llegada con cualquier parte del cuerpo.",
+          "body": "En las pruebas de estilos, «libre» significa cualquier estilo que no sea mariposa, espalda ni braza.",
+          "related": ["medley"] },
+        { "id": "backstroke", "title": "Espalda", "important": false,
+          "summary": "Los nadadores permanecen boca arriba en todo momento, salvo durante el viraje.",
+          "body": "En el viraje se puede girar boca abajo y dar una única brazada continua hacia la voltereta. La llegada debe tocarse boca arriba.",
+          "related": ["underwater"] },
+        { "id": "breaststroke", "title": "Braza", "important": true,
+          "summary": "Brazos y piernas se mueven de forma simultánea y simétrica, y cada viraje y la llegada exigen tocar con las dos manos a la vez.",
+          "body": "Tras la salida y cada viraje, se permite bajo el agua una brazada y una patada de mariposa (delfín) antes de la primera patada de braza. Las patadas alternas o de crol son ilegales.",
+          "example": "Un nadador toca la pared con una mano un poco antes que la otra en un viraje: descalificación.",
+          "related": ["butterfly"] },
+        { "id": "butterfly", "title": "Mariposa", "important": true,
+          "summary": "Ambos brazos recobran a la vez por encima del agua, las piernas patean juntas y el toque en virajes y llegada es con las dos manos.",
+          "body": "No se permiten patadas de braza. Los nadadores pueden hacer varias patadas de delfín bajo el agua dentro del límite de 15 m.",
+          "related": ["breaststroke", "underwater"] }
+      ]
+    },
+    {
+      "id": "relays", "title": "Estilos y relevos",
+      "summary": "Orden de los estilos y relevos.",
+      "rules": [
+        { "id": "medley", "title": "Orden de los estilos", "important": false,
+          "summary": "Estilos individual: mariposa, espalda, braza y libre. Relevo de estilos: espalda, braza, mariposa y libre.",
+          "body": "El orden del relevo es distinto porque la espalda debe salir desde el agua.",
+          "related": ["relay-takeover"] },
+        { "id": "relay-takeover", "title": "Los cambios de relevo", "important": false,
+          "summary": "Los pies del siguiente nadador deben seguir en contacto con el poyete cuando el compañero que llega toca la pared.",
+          "body": "Las placas y los sensores de los poyetes miden el cambio; una salida anticipada descalifica al equipo.",
+          "related": ["medley"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Salida falsa", "description": "Salir del poyete antes de la señal.", "consequence": "Descalificación", "severity": "SEVERE" },
+    { "name": "Toque con una mano", "description": "Toque no simultáneo en braza o mariposa.", "consequence": "Descalificación", "severity": "SEVERE" },
+    { "name": "Infracción de 15 m", "description": "La cabeza sigue bajo el agua pasada la marca de 15 m.", "consequence": "Descalificación", "severity": "SEVERE" },
+    { "name": "Relevo anticipado", "description": "Los pies dejan el poyete antes de que toque el compañero.", "consequence": "Equipo descalificado", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Series", "description": "Los nadadores compiten en series según sus marcas de inscripción." },
+    { "title": "Semifinales", "description": "En las pruebas más cortas, los 16 más rápidos nadan de nuevo." },
+    { "title": "Final", "description": "Ocho finalistas; las calles centrales son para los más rápidos." },
+    { "title": "Resultados", "description": "Las placas dan los tiempos oficiales a la centésima." }
+  ],
+  "positions": [
+    { "name": "Velocista", "role": "Especialista en 50 y 100 m." },
+    { "name": "Fondista", "role": "Especialista en 400 a 1500 m." },
+    { "name": "Estilista", "role": "Completo en los cuatro estilos." }
+  ],
+  "field": {
+    "name": "Piscina",
+    "dimensions": "Piscina olímpica: 50 m × 25 m, con 8–10 calles",
+    "surface": "Agua a temperatura y profundidad reguladas",
+    "notes": ["Banderines de espalda a 5 m de cada pared", "Marcas de 15 m en las corcheras", "Las piscinas cortas miden 25 m"]
+  },
+  "glossary": [
+    { "term": "Estilos (IM)", "definition": "Un nadador, los cuatro estilos." },
+    { "term": "Viraje de voltereta", "definition": "Giro con voltereta usado en libre y espalda." },
+    { "term": "Piscina larga", "definition": "Competición en piscina de 50 m." },
+    { "term": "Parcial", "definition": "El tiempo de un nadador en una distancia intermedia." }
+  ],
+  "funFacts": [
+    "La mariposa nació de la braza y se convirtió en un estilo propio en los años cincuenta.",
+    "A veces solo unas centésimas separan a los medallistas."
+  ]
+}

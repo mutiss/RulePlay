@@ -1,0 +1,120 @@
+{
+  "id": "handball",
+  "intro": "Two teams of seven pass a ball by hand and try to throw it into the opponents' goal. Fast and physical, handball is built around one sacred line: the 6-metre goal area, which only the goalkeeper may enter. Attackers get around it by leaping into the air from outside and shooting before they land. The International Handball Federation (IHF) publishes the Rules of the Game.",
+  "inThirtySeconds": [
+    "Pass, dribble and shoot with your hands — feet below the knee are off limits.",
+    "No more than 3 steps or 3 seconds while holding the ball.",
+    "Only the goalkeeper may stand in the 6 m goal area — but you can jump over it to shoot.",
+    "Fouls are punished with free throws, 7-metre throws and 2-minute suspensions."
+  ],
+  "objective": "Score more goals than the opponent in two 30-minute halves.",
+  "facts": {
+    "players": "7 per team on court (6 + goalkeeper); unlimited rolling substitutions",
+    "duration": "2 × 30 minutes",
+    "environment": "Indoor court",
+    "equipment": ["Ball (size by age and gender)", "Two goals 3 m × 2 m"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "The whole ball crosses the goal line between the posts and under the crossbar." },
+    { "label": "Tie", "value": "—", "detail": "When a winner is required: extra time (2 × 5 minutes), possibly a second extra time, then 7-metre throws." }
+  ],
+  "bodies": [
+    { "id": "ihf", "name": "International Handball Federation", "acronym": "IHF", "scope": "World governing body; publishes the Rules of the Game", "url": "https://www.ihf.info/" }
+  ],
+  "rulebooks": [
+    { "id": "ihf-rules", "title": "IHF Rules of the Game (Indoor Handball)", "publisher": "ihf", "url": "https://www.ihf.info/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Handling the ball",
+      "summary": "Steps, seconds and dribbling.",
+      "rules": [
+        { "id": "steps", "title": "Three steps", "important": true,
+          "summary": "A player holding the ball may take a maximum of three steps.",
+          "body": "After three steps the player must pass, shoot or start dribbling. A dribble can be followed by another three steps once the ball is caught again, but a player cannot dribble, catch, and then dribble again (a double dribble).",
+          "related": ["seconds"] },
+        { "id": "seconds", "title": "Three seconds", "important": false,
+          "summary": "A player may hold the ball for no more than three seconds, even while standing still.",
+          "body": "This keeps the ball moving. The penalty for breaking the step or time limit is a free throw to the opponents.",
+          "related": ["steps", "passive"] },
+        { "id": "legs", "title": "No feet below the knee", "important": false,
+          "summary": "Outfield players may not deliberately touch the ball with their legs below the knee.",
+          "body": "Accidental contact, such as the ball being thrown against a player's leg, is not penalised. Goalkeepers may use any part of the body to save shots inside their goal area.",
+          "related": ["goal-area"] }
+      ]
+    },
+    {
+      "id": "area", "title": "The goal area",
+      "summary": "The 6-metre zone that shapes the whole game.",
+      "rules": [
+        { "id": "goal-area", "title": "Only the goalkeeper", "important": true,
+          "summary": "Only the goalkeeper may stand in the goal area, marked by the 6 m line.",
+          "body": "An attacker who steps on or inside the line while in possession loses the ball. A defender who enters the area to gain an advantage gives away a free throw — or a 7-metre throw if a clear scoring chance is destroyed. Players may be in the air above the area: a shooter who takes off from outside and releases the ball before landing has scored legally.",
+          "example": "A wing player dives from the corner, lands inside the area after the ball has left her hand, and scores: the goal stands.",
+          "related": ["seven-metre", "legs"] },
+        { "id": "goalkeeper", "title": "Goalkeeper restrictions", "important": false,
+          "summary": "The goalkeeper may leave the area to join play, but must then follow outfield rules.",
+          "body": "A goalkeeper may not carry the ball out of the goal area, and may not touch a ball that is lying or rolling outside it while standing inside. Teams sometimes swap their goalkeeper for an extra court player to attack with seven.",
+          "related": ["goal-area"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Fouls and punishments",
+      "summary": "Free throws, 7-metre throws, suspensions and cards.",
+      "rules": [
+        { "id": "contact", "title": "Allowed and forbidden contact", "important": true,
+          "summary": "Defenders may block an opponent with the torso and bent arms, but not hold, push, hit or trip.",
+          "body": "Snatching the ball from an opponent's hands and endangering them — especially the head or neck — is forbidden. Progressive punishments apply: a warning (yellow card), then 2-minute suspensions, and disqualification (red card) for serious offences or a third suspension.",
+          "related": ["suspension", "seven-metre"] },
+        { "id": "seven-metre", "title": "The 7-metre throw", "important": true,
+          "summary": "Handball's penalty: awarded when a clear chance to score is destroyed illegally anywhere on the court.",
+          "body": "The thrower must not cross the 7 m line before the ball leaves their hand, and the goalkeeper must stay at least 3 m from the throw line (marked by a short line at 4 m). All other players stay outside the free-throw line.",
+          "related": ["contact", "goal-area"] },
+        { "id": "suspension", "title": "Two-minute suspensions", "important": true,
+          "summary": "A suspended player leaves the court for two minutes and their team plays short-handed.",
+          "body": "A player's third 2-minute suspension automatically leads to disqualification. A disqualified player's team must also play short for two minutes before a replacement may enter.",
+          "related": ["contact"] },
+        { "id": "passive", "title": "Passive play", "important": false,
+          "summary": "Teams must keep trying to score; holding the ball without attacking leads to a warning signal and then a free throw.",
+          "body": "When referees see no attempt to attack, they raise an arm as a warning. After that, the attacking team has a limited number of passes to take a shot before possession is lost.",
+          "related": ["seconds"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Steps violation", "description": "More than three steps while holding the ball.", "consequence": "Free throw to opponents", "severity": "MINOR" },
+    { "name": "Line violation", "description": "Attacker steps into the goal area with the ball.", "consequence": "Possession to opponents", "severity": "MINOR" },
+    { "name": "Illegal contact", "description": "Holding, pushing or hitting an opponent.", "consequence": "Free throw, plus card or suspension when repeated or dangerous", "severity": "MAJOR" },
+    { "name": "Destroying a clear chance", "description": "Illegal action stopping an obvious scoring opportunity.", "consequence": "7-metre throw", "severity": "MAJOR" },
+    { "name": "Dangerous foul", "description": "Contact endangering an opponent's health, especially the head.", "consequence": "Disqualification (red card)", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Throw-off", "description": "Play starts from the centre of the court." },
+    { "title": "Attacks", "description": "Teams build attacks around the 9 m free-throw line and shoot over or around the defensive wall." },
+    { "title": "Fast breaks", "description": "After a save or turnover, teams sprint forward for quick goals." },
+    { "title": "Half-time", "description": "Teams swap ends after 30 minutes." },
+    { "title": "Final whistle", "description": "The higher score wins; knockout games go to extra time and 7-metre throws." }
+  ],
+  "positions": [
+    { "name": "Goalkeeper", "role": "Guards the goal and launches counter-attacks." },
+    { "name": "Back players", "role": "Left back, centre back and right back shoot from distance and organise attacks." },
+    { "name": "Wings", "role": "Fast players on the flanks who shoot from tight angles." },
+    { "name": "Pivot", "role": "Line player who battles among defenders on the 6 m line." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "40 m × 20 m",
+    "surface": "Indoor sports floor",
+    "notes": ["Goal area line: 6 m from the goal", "Free-throw line (dashed): 9 m", "7-metre line for penalty throws", "Goal: 3 m wide × 2 m high"]
+  },
+  "glossary": [
+    { "term": "Pivot", "definition": "Attacker who plays among the defenders on the 6 m line." },
+    { "term": "Kempa trick", "definition": "An alley-oop: a pass caught in mid-air above the goal area and shot before landing." },
+    { "term": "Passive play", "definition": "Holding possession without a recognisable attempt to score." },
+    { "term": "Empty-goal play", "definition": "Replacing the goalkeeper with a seventh court player." }
+  ],
+  "funFacts": [
+    "Field handball, played outdoors with 11 players, was an Olympic sport in 1936 before the indoor seven-a-side game took over.",
+    "The Kempa trick is named after German player Bernhard Kempa."
+  ]
+}

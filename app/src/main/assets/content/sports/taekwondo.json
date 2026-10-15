@@ -1,0 +1,106 @@
+{
+  "id": "taekwondo",
+  "intro": "Taekwondo is a Korean martial art famous for fast, high and spinning kicks. In Olympic sparring (kyorugi), athletes wear electronic trunk protectors and head-gear sensors that register valid hits, while judges award points for punches and technical elements. World Taekwondo (WT) publishes the Competition Rules.",
+  "inThirtySeconds": [
+    "Score with kicks to the trunk protector and head, and punches to the trunk.",
+    "Harder techniques score more: a turning kick to the head is worth the most.",
+    "Contests are played over rounds; win two rounds to win the match.",
+    "Penalties (gam-jeom) give a point to the opponent."
+  ],
+  "objective": "Win the majority of rounds by scoring more points than your opponent in each.",
+  "facts": {
+    "players": "1 v 1, by weight category",
+    "duration": "Best of three 2-minute rounds (senior international events)",
+    "environment": "Octagonal competition area",
+    "equipment": ["Dobok (uniform)", "Electronic trunk protector (PSS)", "Head-gear with sensors", "Sensor socks, gloves and protectors"]
+  },
+  "scoring": [
+    { "label": "Punch to trunk", "value": "1", "detail": "A straight punch to the trunk protector." },
+    { "label": "Kick to trunk", "value": "2", "detail": "Registered by the electronic protector." },
+    { "label": "Turning kick to trunk", "value": "4", "detail": "Extra points for a valid spinning technique." },
+    { "label": "Kick to head", "value": "3", "detail": "Any valid kick to the head." },
+    { "label": "Turning kick to head", "value": "5", "detail": "The highest-scoring technique." },
+    { "label": "Gam-jeom", "value": "+1 opp.", "detail": "Each penalty gives the opponent one point." }
+  ],
+  "bodies": [
+    { "id": "wt", "name": "World Taekwondo", "acronym": "WT", "scope": "International federation for Olympic taekwondo", "url": "https://www.worldtaekwondo.org/" }
+  ],
+  "rulebooks": [
+    { "id": "wt-rules", "title": "World Taekwondo Competition Rules & Interpretation", "publisher": "wt", "url": "https://www.worldtaekwondo.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "points", "title": "Scoring points",
+      "summary": "Sensors, techniques and values.",
+      "rules": [
+        { "id": "valid-areas", "title": "Valid target areas", "important": true,
+          "summary": "Kicks may target the trunk protector and the head above the collarbone; punches may only target the trunk.",
+          "body": "Attacks below the waist, punches to the head and attacks to the back of the head are not allowed. Kicks must use the foot below the ankle bone; knee strikes and hand strikes other than closed-fist punches are not permitted.",
+          "related": ["technique-values"] },
+        { "id": "technique-values", "title": "Technique values", "important": true,
+          "summary": "Trunk kicks score 2, head kicks 3, and valid turning (spinning) kicks earn extra points.",
+          "body": "Electronic sensors register trunk and head contact automatically; judges confirm punches and turning techniques with handheld scoring devices. Coaches may request video review of certain decisions.",
+          "example": "A spinning back kick lands on the head protector: 5 points.",
+          "related": ["valid-areas", "rounds-tkd"] }
+      ]
+    },
+    {
+      "id": "match", "title": "Rounds and winning",
+      "summary": "The round-based match system.",
+      "rules": [
+        { "id": "rounds-tkd", "title": "Win two rounds", "important": true,
+          "summary": "Each round is won separately; the first athlete to win two rounds wins the match.",
+          "body": "If a round is tied on points, tie-break criteria apply, such as the athlete who scored more with higher-value techniques. A large enough points gap during a round ends that round early. Check the current WT Competition Rules for the exact thresholds, which have changed over recent cycles.",
+          "related": ["technique-values", "gam-jeom"] },
+        { "id": "ko-tkd", "title": "Knockouts", "important": false,
+          "summary": "If an athlete is knocked down by a legal technique and cannot continue after the referee's count, the opponent wins.",
+          "body": "The referee counts to eight when an athlete is knocked down, and may stop the contest if the athlete is unable to continue safely.",
+          "related": ["rounds-tkd"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Penalties",
+      "summary": "Gam-jeom and what earns it.",
+      "rules": [
+        { "id": "gam-jeom", "title": "Gam-jeom", "important": true,
+          "summary": "Prohibited acts are penalised with a gam-jeom, which gives one point to the opponent.",
+          "body": "Common causes include crossing the boundary line, falling down, avoiding or delaying the match, grabbing or pushing the opponent, raising the knee to block or impede a kick, attacking below the waist, and hitting the opponent's head with the hand. Too many penalties lead to losing the match.",
+          "related": ["valid-areas"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Crossing the boundary", "description": "Both feet leave the competition area.", "consequence": "Gam-jeom", "severity": "MINOR" },
+    { "name": "Falling down", "description": "Any part of the body other than the feet touching the floor.", "consequence": "Gam-jeom", "severity": "MINOR" },
+    { "name": "Grabbing or pushing", "description": "Holding the opponent or their kick.", "consequence": "Gam-jeom", "severity": "MINOR" },
+    { "name": "Punching the head", "description": "Striking the face with the hand.", "consequence": "Gam-jeom", "severity": "MAJOR" },
+    { "name": "Misconduct", "description": "Serious unsporting behaviour.", "consequence": "Penalties up to disqualification", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Bow and start", "description": "Athletes bow to each other; the referee signals 'Shi-jak' to start." },
+    { "title": "Rounds", "description": "Two-minute rounds with a rest in between." },
+    { "title": "Video review", "description": "Coaches can challenge certain decisions." },
+    { "title": "Result", "description": "The referee raises the winner's hand." }
+  ],
+  "positions": [
+    { "name": "Chung (blue)", "role": "One competitor wears blue protectors." },
+    { "name": "Hong (red)", "role": "The other competitor wears red protectors." }
+  ],
+  "field": {
+    "name": "Competition area",
+    "dimensions": "Octagonal area, about 8 m across, inside a larger square",
+    "surface": "Flat, non-slip mats",
+    "notes": ["Boundary lines mark the octagon", "Electronic scoreboard and video replay system at major events"]
+  },
+  "glossary": [
+    { "term": "Kyorugi", "definition": "Sparring — competitive fighting." },
+    { "term": "Poomsae", "definition": "Forms — choreographed patterns judged for technique." },
+    { "term": "Dollyo chagi", "definition": "Roundhouse kick." },
+    { "term": "Gam-jeom", "definition": "Penalty awarding a point to the opponent." },
+    { "term": "PSS", "definition": "Protector and Scoring System — the electronic sensors." }
+  ],
+  "funFacts": [
+    "Taekwondo became a full Olympic sport at Sydney 2000.",
+    "Electronic scoring was introduced at the Olympics at London 2012."
+  ]
+}

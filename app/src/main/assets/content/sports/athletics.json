@@ -1,0 +1,116 @@
+{
+  "id": "athletics",
+  "intro": "Athletics brings together running, jumping and throwing — the oldest competitions in sport. Track events are races; field events are won with the longest throw or jump, or the highest clearance. Road running, race walking and combined events like the decathlon complete the family. World Athletics publishes the Book of Rules.",
+  "inThirtySeconds": [
+    "Track: first across the line (by the torso) wins.",
+    "One false start and you're disqualified.",
+    "Horizontal jumps and throws: your best valid attempt counts.",
+    "High jump and pole vault: three straight failures and you're out."
+  ],
+  "objective": "Run faster, jump further or higher, or throw further than everyone else.",
+  "facts": {
+    "players": "Individual events and 4-person relays",
+    "duration": "From under 10 seconds (100 m) to hours (marathon, race walks)",
+    "environment": "400 m track, field-event areas, roads",
+    "equipment": ["Spikes", "Starting blocks", "Hurdles", "Batons", "Shot, discus, hammer and javelin", "Poles and landing mats"]
+  },
+  "scoring": [
+    { "label": "Time", "value": "0.01 s", "detail": "Fully automatic timing; races are decided by the torso crossing the line." },
+    { "label": "Distance / height", "value": "1 cm", "detail": "Field events measured to the centimetre." },
+    { "label": "Combined events", "value": "Points", "detail": "Decathlon and heptathlon results are converted to points using scoring tables." }
+  ],
+  "bodies": [
+    { "id": "wa-ath", "name": "World Athletics", "acronym": null, "scope": "World governing body; publishes the Book of Rules", "url": "https://worldathletics.org/about-iaaf/documents/book-of-rules" }
+  ],
+  "rulebooks": [
+    { "id": "wa-book", "title": "World Athletics Book of Rules", "publisher": "wa-ath", "url": "https://worldathletics.org/about-iaaf/documents/book-of-rules", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "track", "title": "Track events",
+      "summary": "Starts, lanes and finishes.",
+      "rules": [
+        { "id": "false-start-ath", "title": "False starts", "important": true,
+          "summary": "In most events, any athlete responsible for a false start is disqualified.",
+          "body": "In sprints, starting blocks detect reaction times; reacting faster than 0.100 seconds after the gun is treated as a false start, because humans are considered unable to react that quickly to the sound. Combined events have their own rule.",
+          "example": "A sprinter's blocks register a reaction of 0.087 s: false start and disqualification.",
+          "related": ["lanes", "finish"] },
+        { "id": "lanes", "title": "Lanes", "important": false,
+          "summary": "Races up to 400 m are run entirely in lanes; in the 800 m athletes may break for the inside after the first bend.",
+          "body": "Starts are staggered on bends so each athlete runs the same distance. Stepping on or over the inside lane line can lead to disqualification. Longer races start on a curved line and are not in lanes.",
+          "related": ["false-start-ath"] },
+        { "id": "finish", "title": "The finish", "important": true,
+          "summary": "Athletes are placed in the order in which their torso — not the head, arms or legs — reaches the finish line.",
+          "body": "Photo-finish cameras resolve close races. This is why sprinters dip at the line.",
+          "related": ["false-start-ath"] },
+        { "id": "relays", "title": "Relays", "important": false,
+          "summary": "The baton must be passed within the 30 m changeover zone.",
+          "body": "What matters is the baton's position, not the runners'. Dropping the baton is not a disqualification if the runner who dropped it recovers it, but a pass outside the zone is.",
+          "related": ["lanes"] },
+        { "id": "hurdles", "title": "Hurdles", "important": false,
+          "summary": "Knocking hurdles over is allowed, but you must not deliberately knock them down or trail your leg alongside instead of over.",
+          "body": "Sprint hurdles are 100 m (women) and 110 m (men); the 400 m hurdles is run in lanes over ten barriers.",
+          "related": ["lanes"] }
+      ]
+    },
+    {
+      "id": "jumps", "title": "Jumps",
+      "summary": "Vertical and horizontal jumps.",
+      "rules": [
+        { "id": "vertical", "title": "High jump and pole vault", "important": true,
+          "summary": "Athletes are eliminated after three consecutive failures, at any combination of heights.",
+          "body": "Athletes may choose when to enter and may pass heights. Ties are broken by fewer failures at the height where the tie occurred, then by fewer failures in total. High jumpers must take off from one foot.",
+          "related": ["horizontal"] },
+        { "id": "horizontal", "title": "Long jump and triple jump", "important": false,
+          "summary": "A jump is a foul if the athlete's take-off foot oversteps the take-off line.",
+          "body": "Jumps are measured from the take-off line to the nearest mark in the sand. In major competitions, athletes get three attempts and the best eight get three more. A tailwind above 2.0 m/s means the result can't count for records.",
+          "related": ["vertical"] }
+      ]
+    },
+    {
+      "id": "throws", "title": "Throws",
+      "summary": "Circles, runways and sectors.",
+      "rules": [
+        { "id": "sector", "title": "Landing in the sector", "important": true,
+          "summary": "For a valid throw, the implement must land inside the sector lines and the athlete must leave the circle or runway correctly.",
+          "body": "In the shot, discus and hammer, athletes throw from a circle and must not touch the top of the rim or the ground outside it, then exit from the back half once the implement has landed. In the javelin, athletes must not cross the arc at the end of the runway.",
+          "related": ["horizontal"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "False start", "description": "Leaving the blocks before the gun (or with a reaction under 0.100 s).", "consequence": "Disqualification", "severity": "SEVERE" },
+    { "name": "Lane infringement", "description": "Running on or inside the lane line on bends.", "consequence": "Possible disqualification", "severity": "MAJOR" },
+    { "name": "No jump / no throw", "description": "Overstepping the board, stepping out of the circle or landing outside the sector.", "consequence": "Attempt not measured", "severity": "MINOR" },
+    { "name": "Obstruction", "description": "Pushing or impeding another athlete.", "consequence": "Disqualification", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Rounds", "description": "Heats and semi-finals reduce the field for track finals." },
+    { "title": "Qualifying", "description": "Field athletes must reach a qualifying mark or be among the best." },
+    { "title": "Final", "description": "Medals decided by time, distance or height." },
+    { "title": "Records", "description": "Wind, timing and doping controls are checked before records are ratified." }
+  ],
+  "positions": [
+    { "name": "Sprinter", "role": "100 m to 400 m." },
+    { "name": "Middle and long distance", "role": "800 m to 10,000 m and beyond." },
+    { "name": "Jumper", "role": "High jump, pole vault, long and triple jump." },
+    { "name": "Thrower", "role": "Shot put, discus, hammer and javelin." },
+    { "name": "Combined-events athlete", "role": "Decathlon (10 events) or heptathlon (7)." }
+  ],
+  "field": {
+    "name": "Stadium",
+    "dimensions": "400 m oval track (inside lane), usually 8 or 9 lanes of 1.22 m",
+    "surface": "Synthetic track; grass or synthetic infield",
+    "notes": ["Field events take place on the infield and in fan-shaped sectors", "Water jump on the steeplechase course"]
+  },
+  "glossary": [
+    { "term": "Stagger", "definition": "Offset starting positions on bends." },
+    { "term": "Dip", "definition": "Leaning the torso at the line to finish earlier." },
+    { "term": "PB", "definition": "Personal best." },
+    { "term": "Countback", "definition": "Tie-break by number of failures in vertical jumps." }
+  ],
+  "funFacts": [
+    "The first recorded Olympic event, in 776 BC, was a sprint of about 192 m called the stadion.",
+    "The marathon distance of 42.195 km was standardised after the 1908 London Olympics."
+  ]
+}

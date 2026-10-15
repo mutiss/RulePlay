@@ -1,0 +1,99 @@
+{
+  "id": "water-polo",
+  "language": "es",
+  "intro": "El waterpolo es un juego de equipo con balón en una piscina profunda: siete jugadores por equipo nadan, pasan y lanzan a porterías que flotan en cada extremo. Los jugadores de campo solo pueden tocar el balón con una mano, no pueden apoyarse en el fondo y deben mantenerse a flote todo el partido, casi siempre con la «patada de batidora». World Aquatics publica el reglamento de waterpolo.",
+  "inThirtySeconds": [
+    "Marca lanzando el balón a la portería rival.",
+    "Los jugadores de campo usan una sola mano y no pueden apoyarse en el fondo.",
+    "Un reloj de posesión obliga a lanzar rápido.",
+    "Las faltas graves expulsan al jugador 20 segundos; tres expulsiones y queda fuera del partido."
+  ],
+  "objective": "Marcar más goles que el rival en cuatro cuartos.",
+  "facts": {
+    "players": "7 por equipo en el agua (6 + portero)",
+    "duration": "4 × 8 minutos de tiempo efectivo",
+    "environment": "Piscina profunda",
+    "equipment": ["Balón de waterpolo", "Gorros numerados con protectores de oídos", "Porterías flotantes"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "1", "detail": "El balón entero cruza la línea de gol entre los postes y bajo el larguero." },
+    { "label": "Penalti", "value": "1", "detail": "Lanzamiento directo desde 5 m, concedido por faltas que impiden un gol probable." }
+  ],
+  "bodies": [
+    { "id": "wa-wp", "name": "World Aquatics", "acronym": null, "scope": "Organismo rector mundial del waterpolo", "url": "https://www.worldaquatics.com/" }
+  ],
+  "rulebooks": [
+    { "id": "wa-wp-rules", "title": "Reglamento de waterpolo de World Aquatics", "publisher": "wa-wp", "url": "https://www.worldaquatics.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Manejar el balón", "summary": "Una mano, sin fondo y sin hundir el balón.",
+      "rules": [
+        { "id": "one-hand", "title": "Solo una mano", "important": true,
+          "summary": "Los jugadores de campo solo pueden tocar el balón con una mano a la vez; los porteros pueden usar las dos dentro de su zona.",
+          "body": "Los jugadores también pueden avanzar nadando con el balón delante de la cabeza. Hundir el balón bajo el agua cuando te atacan es una falta ordinaria.",
+          "related": ["no-bottom"] },
+        { "id": "no-bottom", "title": "No toques el fondo", "important": false,
+          "summary": "Los jugadores no pueden apoyarse en el fondo de la piscina ni impulsarse en él para sacar ventaja.",
+          "body": "Las piscinas de competición son lo bastante profundas para que sea difícil, por eso los jugadores se mantienen a flote todo el tiempo con la patada de batidora.",
+          "related": ["one-hand"] },
+        { "id": "possession", "title": "Reloj de posesión", "important": false,
+          "summary": "Un equipo debe lanzar dentro del tiempo de posesión que marca el reloj sobre cada portería.",
+          "body": "El reloj se reinicia cuando un tiro golpea la portería o al portero, tras una expulsión y en otras situaciones previstas en el reglamento. En algunas reanudaciones se aplica un reinicio reducido.",
+          "related": ["exclusion"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Faltas", "summary": "Faltas ordinarias, expulsiones y penaltis.",
+      "rules": [
+        { "id": "ordinary", "title": "Faltas ordinarias", "important": false,
+          "summary": "Las faltas leves, como impedir el movimiento de un rival sin balón, se castigan con un tiro libre.",
+          "body": "El tiro libre debe sacarse sin demora. En un juego tan disputado, las faltas ordinarias son constantes y forman parte de la táctica defensiva.",
+          "related": ["exclusion"] },
+        { "id": "exclusion", "title": "Faltas de expulsión", "important": true,
+          "summary": "Agarrar, hundir o tirar hacia atrás de un jugador que no tiene el balón, y otras faltas graves, expulsan al infractor 20 segundos.",
+          "body": "El equipo atacante juega en superioridad (6 contra 5). Un jugador que acumula tres faltas personales (expulsiones o penaltis) debe abandonar el partido, y puede entrar un sustituto una vez cumplido el tiempo de expulsión.",
+          "example": "Un defensor tira hacia atrás de un atacante que nada para colocarse: expulsión, 20 segundos fuera; los atacantes montan un 6 contra 5.",
+          "related": ["penalty-wp", "ordinary"] },
+        { "id": "penalty-wp", "title": "Penalti", "important": false,
+          "summary": "Una falta dentro de la zona de 5 m que impide un gol probable da un penalti desde la línea de 5 m.",
+          "body": "El lanzador debe tirar con un movimiento continuo; solo puede defender el portero.",
+          "related": ["exclusion"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Falta ordinaria", "description": "Impedir, tocar con dos manos, hundir el balón.", "consequence": "Tiro libre", "severity": "MINOR" },
+    { "name": "Falta de expulsión", "description": "Agarrar, hundir o tirar hacia atrás de un jugador.", "consequence": "Expulsión de 20 segundos", "severity": "MAJOR" },
+    { "name": "Falta de penalti", "description": "Impedir un gol probable dentro de los 5 m.", "consequence": "Penalti", "severity": "MAJOR" },
+    { "name": "Brutalidad", "description": "Actos violentos como golpear a un rival.", "consequence": "Expulsión definitiva y penalti", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Sprint", "description": "Cada cuarto empieza con una carrera nadando hacia el balón en el centro." },
+    { "title": "Ataques", "description": "Ataque posicional en torno al boya delante de la portería." },
+    { "title": "Superioridad", "description": "Las superioridades tras expulsiones son grandes ocasiones de gol." },
+    { "title": "Penaltis", "description": "Las eliminatorias empatadas pueden ir a una tanda de penaltis." }
+  ],
+  "positions": [
+    { "name": "Portero", "role": "Defiende una portería de 3 m, con ambas manos." },
+    { "name": "Boya", "role": "Pelea por la posición delante de la portería." },
+    { "name": "Exteriores", "role": "Nadadores rápidos que atacan y lanzan desde el perímetro." },
+    { "name": "Defensa del boya", "role": "Marca al boya rival." }
+  ],
+  "field": {
+    "name": "Campo de juego",
+    "dimensions": "Hasta 30 × 20 m (hombres) / 25 × 20 m (mujeres), con al menos 2 m de profundidad",
+    "surface": "Agua",
+    "notes": ["Líneas de 2 y 5 m marcadas en el lateral", "Portería: 3 m de ancho, 0,9 m por encima del agua"]
+  },
+  "glossary": [
+    { "term": "Patada de batidora", "definition": "La patada circular que mantiene a los jugadores altos en el agua." },
+    { "term": "Superioridad", "definition": "Jugar con uno más tras una expulsión." },
+    { "term": "Boya", "definition": "La posición del delantero centro." },
+    { "term": "Vaselina", "definition": "Tiro alto y bombeado por encima del portero." }
+  ],
+  "funFacts": [
+    "El waterpolo fue el primer deporte de equipo de los Juegos Olímpicos modernos, en 1900.",
+    "Hungría es el país con más éxitos de la historia del waterpolo olímpico."
+  ]
+}

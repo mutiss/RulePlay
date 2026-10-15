@@ -1,0 +1,113 @@
+{
+  "id": "table-tennis",
+  "intro": "Two or four players hit a light 40 mm ball back and forth across a table divided by a low net. Short distances and heavy spin make it one of the fastest reaction sports there is. Games are short — first to 11 — and the serve has precise rules to stop players hiding spin. The International Table Tennis Federation (ITTF) publishes the Laws of Table Tennis.",
+  "inThirtySeconds": [
+    "Each rally scores a point; a game goes to 11, win by 2.",
+    "Serve changes every two points (every point from 10–10).",
+    "Toss the ball at least 16 cm up from an open palm, and make it bounce once on each side.",
+    "Return the ball after one bounce on your side so it lands on the opponent's half."
+  ],
+  "objective": "Win the majority of games — best of five or best of seven.",
+  "facts": {
+    "players": "1 v 1 or 2 v 2",
+    "duration": "Best of 5 or 7 games to 11",
+    "environment": "Indoor hall",
+    "equipment": ["Racket with rubber on both sides (one red, one black or other approved colour)", "40 mm plastic ball", "Table and net"]
+  },
+  "scoring": [
+    { "label": "Point", "value": "1", "detail": "Every rally scores, whoever served." },
+    { "label": "Game", "value": "11", "detail": "First to 11 points with a two-point lead." },
+    { "label": "Match", "value": "3 or 4", "detail": "Win three games (best of five) or four games (best of seven)." }
+  ],
+  "bodies": [
+    { "id": "ittf", "name": "International Table Tennis Federation", "acronym": "ITTF", "scope": "World governing body; publishes the ITTF Handbook and Laws", "url": "https://www.ittf.com/handbook/" }
+  ],
+  "rulebooks": [
+    { "id": "ittf-handbook", "title": "ITTF Handbook — Laws of Table Tennis", "publisher": "ittf", "url": "https://www.ittf.com/handbook/", "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Points and games",
+      "summary": "Short games and quick service changes.",
+      "rules": [
+        { "id": "eleven", "title": "Games to 11", "important": true,
+          "summary": "A game is won by the first player to reach 11 points with at least a two-point lead.",
+          "body": "At 10–10 play continues until one player leads by two. Players change ends after each game, and in the last possible game of a match when one player reaches 5 points.",
+          "related": ["serve-rotation"] },
+        { "id": "serve-rotation", "title": "Serve every two points", "important": true,
+          "summary": "The right to serve passes to the other player after every two points.",
+          "body": "From 10–10, service alternates after every single point. In doubles, the serving order rotates through all four players.",
+          "related": ["eleven", "serve-rules"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "The serve",
+      "summary": "Rules designed to make serves fair and visible.",
+      "rules": [
+        { "id": "serve-rules", "title": "A legal serve", "important": true,
+          "summary": "Rest the ball on an open, flat palm, toss it near-vertically at least 16 cm and strike it as it falls, so it bounces once on each side of the net.",
+          "body": "Throughout the serve the ball must stay above the level of the table and behind the server's end line, and it must not be hidden from the receiver by any part of the server's or partner's body or clothing. Umpires can warn and then fault doubtful serves.",
+          "example": "A player tosses the ball only a few centimetres before striking it: illegal toss, point to the receiver.",
+          "related": ["let-tt", "doubles-serve"] },
+        { "id": "let-tt", "title": "Lets", "important": false,
+          "summary": "If a serve touches the net assembly and then lands correctly, it is a let and is served again.",
+          "body": "A let can also be called if play is disturbed by conditions outside the players' control. A let does not count as a point.",
+          "related": ["serve-rules"] },
+        { "id": "doubles-serve", "title": "Serving in doubles", "important": false,
+          "summary": "In doubles, the serve must go from the server's right half-court to the receiver's right half-court.",
+          "body": "After the serve, partners must hit the ball alternately — a player hitting twice in a row loses the point.",
+          "related": ["serve-rules"] }
+      ]
+    },
+    {
+      "id": "rally", "title": "During the rally",
+      "summary": "Good returns and how points are lost.",
+      "rules": [
+        { "id": "good-return", "title": "A good return", "important": true,
+          "summary": "After the ball bounces once on your side, hit it so it passes over or around the net and lands on the opponent's half.",
+          "body": "A ball that clips the top edge of the table is good (an 'edge ball'); one that hits the side of the table is not. Volleying the ball before it bounces on your side over the playing surface loses the point.",
+          "related": ["lose-point-tt"] },
+        { "id": "lose-point-tt", "title": "Losing a point", "important": false,
+          "summary": "You lose the point by missing the return, touching the net, moving the table or touching the playing surface with your free hand.",
+          "body": "Hitting the ball with the racket hand below the wrist counts as part of the racket; contact with other parts of the body does not.",
+          "related": ["good-return", "expedite"] },
+        { "id": "expedite", "title": "Expedite system", "important": false,
+          "summary": "If a game is unfinished after 10 minutes (unless both players have at least 9 points), special rules speed it up.",
+          "body": "Players then take turns to serve every point, and if the receiver makes 13 good returns in a rally, the receiver wins the point. It is rarely needed but prevents endless defensive rallies.",
+          "related": ["lose-point-tt"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Illegal serve", "description": "Low toss, hidden ball or striking from under the table.", "consequence": "Point to the receiver (after a warning in doubtful cases)", "severity": "MINOR" },
+    { "name": "Free hand on table", "description": "Touching the playing surface with the non-racket hand.", "consequence": "Point lost", "severity": "MINOR" },
+    { "name": "Obstruction / volley", "description": "Hitting the ball above the table before it bounces on your side.", "consequence": "Point lost", "severity": "MINOR" },
+    { "name": "Misbehaviour", "description": "Unsporting conduct such as racket abuse.", "consequence": "Yellow, then penalty points (yellow-red)", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Warm-up", "description": "Two minutes of practice on the match table." },
+    { "title": "Games", "description": "Short games to 11 with quick service changes." },
+    { "title": "Breaks", "description": "Up to one minute between games; one timeout per player or pair per match." },
+    { "title": "Deciding game", "description": "Players change ends when someone reaches 5 points." }
+  ],
+  "positions": [
+    { "name": "Attacker", "role": "Uses loops and drives with heavy topspin, close to the table." },
+    { "name": "Defender (chopper)", "role": "Stands back and returns attacks with heavy backspin." }
+  ],
+  "field": {
+    "name": "Table",
+    "dimensions": "2.74 m × 1.525 m, surface 76 cm above the floor",
+    "surface": "Matt dark table (usually blue or green) with white lines",
+    "notes": ["Net height 15.25 cm", "Centre line divides each half for doubles serves", "Ball diameter: 40 mm"]
+  },
+  "glossary": [
+    { "term": "Loop", "definition": "A heavy topspin stroke that dips onto the table." },
+    { "term": "Chop", "definition": "A defensive stroke with backspin." },
+    { "term": "Edge ball", "definition": "A return that clips the top edge of the table — it is good." },
+    { "term": "Penhold", "definition": "A grip holding the racket like a pen." }
+  ],
+  "funFacts": [
+    "The name 'ping-pong' was once a trademark, which is one reason the sport's bodies use 'table tennis'.",
+    "Games used to go to 21 points; the change to 11 was made in 2001."
+  ]
+}

@@ -1,0 +1,109 @@
+{
+  "id": "field-hockey",
+  "language": "es",
+  "intro": "Dos equipos de once usan sticks curvados para impulsar una bola dura hacia la portería rival. Solo la cara plana del stick puede tocar la bola, los goles solo valen si se marcan desde dentro del área de tiro, y los penaltis córner son una gran fuente de goles. La Federación Internacional de Hockey (FIH) publica las Reglas del Hockey.",
+  "inThirtySeconds": [
+    "Solo vale el gol si un atacante toca la bola dentro del área de tiro.",
+    "Juega la bola con la cara plana del stick: nunca con el lomo redondeado ni con los pies.",
+    "No hay fuera de juego: los atacantes pueden esperar donde quieran.",
+    "Las faltas defensivas dentro o cerca del área dan penaltis córner."
+  ],
+  "objective": "Marcar más goles que el rival en cuatro cuartos de 15 minutos.",
+  "facts": {
+    "players": "11 por equipo (10 + portero), con cambios ilimitados en marcha",
+    "duration": "4 × 15 minutos",
+    "environment": "Campo de césped artificial, a menudo regado",
+    "equipment": ["Stick con cara plana", "Bola de plástico duro", "Espinilleras y protector bucal", "Equipo de portero"]
+  },
+  "scoring": [
+    { "label": "Gol de campo", "value": "1", "detail": "La bola, jugada por un atacante dentro del área, cruza la línea de gol." },
+    { "label": "Gol de penalti córner", "value": "1", "detail": "Gol en la jugada a balón parado tras una falta defensiva." },
+    { "label": "Penalti", "value": "1", "detail": "Un lanzamiento uno contra uno ante el portero desde el punto de penalti." }
+  ],
+  "bodies": [
+    { "id": "fih", "name": "Federación Internacional de Hockey", "acronym": "FIH", "scope": "Organismo rector mundial; publica las Reglas del Hockey", "url": "https://www.fih.hockey/" }
+  ],
+  "rulebooks": [
+    { "id": "fih-rules", "title": "Reglas del Hockey de la FIH", "publisher": "fih", "url": "https://www.fih.hockey/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "playing", "title": "Jugar la bola", "summary": "El stick, los pies y el área.",
+      "rules": [
+        { "id": "flat-side", "title": "Solo la cara plana", "important": true,
+          "summary": "Los jugadores solo pueden jugar la bola con la cara plana y los cantos del stick, no con el lomo redondeado.",
+          "body": "Por eso los jugadores giran el stick para jugar de «revés». Usar el lomo del stick da un golpe franco al rival.",
+          "related": ["feet"] },
+        { "id": "feet", "title": "Nada de pies", "important": false,
+          "summary": "Los jugadores de campo no pueden parar, patear ni impulsar la bola con ninguna parte del cuerpo.",
+          "body": "Solo es falta si el jugador saca ventaja o se interpuso deliberadamente en la trayectoria de la bola. Los porteros pueden usar el cuerpo dentro de su área.",
+          "related": ["flat-side"] },
+        { "id": "circle", "title": "Marcar desde el área", "important": true,
+          "summary": "Un gol solo vale si un atacante jugó la bola dentro del área de tiro y no se volvió a jugar fuera después.",
+          "body": "El área es una zona en forma de D que se extiende 14,63 m (16 yardas) desde la portería. Un disparo espectacular desde fuera no cuenta salvo que lo desvíe un atacante dentro del área.",
+          "example": "Un golpe potente desde justo fuera del área entra sin que nadie lo toque: no es gol; reanuda la defensa.",
+          "related": ["penalty-corner"] }
+      ]
+    },
+    {
+      "id": "setpieces", "title": "Jugadas a balón parado", "summary": "Golpes francos, penaltis córner y penaltis.",
+      "rules": [
+        { "id": "free-hit", "title": "Golpe franco y autopase", "important": false,
+          "summary": "Las faltas dan un golpe franco; los rivales deben estar a 5 m, y el lanzador puede conducir la bola él mismo (autopase).",
+          "body": "Los golpes francos a favor del ataque dentro de los 23 m tienen normas especiales: la bola debe recorrer 5 m o tocar a un defensor antes de entrar en el área.",
+          "related": ["penalty-corner"] },
+        { "id": "penalty-corner", "title": "Penalti córner", "important": true,
+          "summary": "Se concede por faltas defensivas dentro del área (que no impidan un gol probable) o faltas deliberadas en los 23 m defensivos.",
+          "body": "Un atacante empuja la bola desde la línea de fondo, a 10 m del poste. Cinco defensores, incluido el portero, empiezan detrás de la línea de gol; el resto espera más allá de la línea central. Los atacantes deben parar la bola fuera del área antes de tirar, y el primer tiro, si es un golpe, no puede cruzar la línea de gol por encima de la altura de la tabla trasera.",
+          "related": ["circle", "penalty-stroke"] },
+        { "id": "penalty-stroke", "title": "Penalti", "important": false,
+          "summary": "Se concede cuando una falta impide un gol probable, o por faltas deliberadas en el área contra un jugador con la bola.",
+          "body": "Se lanza desde el punto a 6,4 m de la portería: un atacante contra el portero en la línea, con un solo empuje o flick.",
+          "related": ["penalty-corner"] }
+      ]
+    },
+    {
+      "id": "discipline", "title": "Tarjetas", "summary": "Exclusiones temporales.",
+      "rules": [
+        { "id": "cards-hockey", "title": "Tarjetas verde, amarilla y roja", "important": false,
+          "summary": "Tarjeta verde: 2 minutos de exclusión. Amarilla: al menos 5 minutos. Roja: expulsión definitiva.",
+          "body": "El juego peligroso con bolas elevadas o sticks levantados, y la conducta incorrecta, son los motivos más habituales. Los equipos de los excluidos juegan con uno menos.",
+          "related": ["free-hit"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Lomo del stick", "description": "Jugar la bola con el lomo redondeado del stick.", "consequence": "Golpe franco", "severity": "MINOR" },
+    { "name": "Pie", "description": "Bola jugada con el cuerpo de forma deliberada o con ventaja.", "consequence": "Golpe franco (penalti córner en el área)", "severity": "MINOR" },
+    { "name": "Obstrucción", "description": "Proteger la bola con el cuerpo o el stick para impedir una entrada.", "consequence": "Golpe franco", "severity": "MINOR" },
+    { "name": "Juego peligroso", "description": "Bola elevada o stick que pone en peligro a otros.", "consequence": "Golpe franco y tarjetas", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Pase central", "description": "Cada cuarto y cada gol se reanudan con un pase desde el centro." },
+    { "title": "Cuartos", "description": "Cuatro cuartos de 15 minutos con pausas cortas y un descanso al medio." },
+    { "title": "Penaltis córner", "description": "Jugadas ensayadas con arrastres y desvíos." },
+    { "title": "Shoot-out", "description": "Las eliminatorias empatadas van a un shoot-out uno contra uno." }
+  ],
+  "positions": [
+    { "name": "Portero", "role": "Totalmente protegido; puede usar el cuerpo para parar dentro del área." },
+    { "name": "Defensas", "role": "Protegen el área y defienden los penaltis córner." },
+    { "name": "Centrocampistas", "role": "Unen el juego y recorren grandes distancias." },
+    { "name": "Delanteros", "role": "Marcan desde dentro del área y provocan penaltis córner." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "91,4 m × 55 m",
+    "surface": "Césped artificial (de agua en la élite)",
+    "notes": ["Áreas de tiro a 14,63 m de la portería", "Líneas de 23 m", "Portería: 3,66 m de ancho × 2,14 m de alto"]
+  },
+  "glossary": [
+    { "term": "Arrastre (drag flick)", "definition": "Lanzamiento potente arrastrando la bola, usado en los penaltis córner." },
+    { "term": "Área", "definition": "La zona de tiro en forma de D." },
+    { "term": "Revés", "definition": "Jugar con el stick girado, por el lado izquierdo." },
+    { "term": "Autopase", "definition": "Sacar un golpe franco conduciendo la bola uno mismo." }
+  ],
+  "funFacts": [
+    "Los cuartos sustituyeron a los dos tiempos en el hockey internacional en 2014.",
+    "India y Pakistán dominaron el hockey olímpico masculino durante décadas; India ganó ocho oros."
+  ]
+}

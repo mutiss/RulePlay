@@ -1,0 +1,97 @@
+{
+  "id": "lacrosse",
+  "language": "es",
+  "intro": "El lacrosse lo crearon pueblos indígenas de Norteamérica —los haudenosaunee lo llaman «el juego del Creador»— mucho antes de la llegada de los europeos. Los jugadores usan sticks con una red en la cabeza para atrapar, llevar y lanzar una bola de goma maciza, y tiran a una portería defendida por un portero. Hoy se juega en varias modalidades; World Lacrosse rige el deporte a nivel internacional e introdujo el formato rápido y reducido «sixes», elegido para los Juegos de 2028.",
+  "inThirtySeconds": [
+    "Lleva la bola en la red de tu stick y lánzala a la portería.",
+    "Nadie puede tocar la bola con las manos salvo el portero dentro del área.",
+    "Los atacantes no pueden pisar el círculo que rodea la portería (el crease).",
+    "Un reloj de posesión mantiene el ritmo; las faltas mandan a los jugadores al banquillo de castigo."
+  ],
+  "objective": "Marcar más goles que el rival.",
+  "facts": {
+    "players": "Campo masculino: 10 contra 10 · Femenino: 12 contra 12 · Sixes: 6 contra 6",
+    "duration": "Cuatro cuartos (duración según modalidad y nivel)",
+    "environment": "Campo al aire libre (box lacrosse en pista cubierta)",
+    "equipment": ["Stick (crosse) con cabeza de red", "Bola de goma maciza", "Casco y guantes (masculino)", "Protección ocular (femenino)"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "1", "detail": "La bola cruza por completo la línea de gol. Algunas ligas dan 2 puntos por los tiros lejanos." }
+  ],
+  "variants": [
+    { "id": "field", "name": "Campo", "description": "La modalidad tradicional al aire libre, con equipos grandes y campo completo.", "body": "worldlax" },
+    { "id": "sixes", "name": "Sixes", "description": "Formato rápido de 6 contra 6 en un campo más pequeño y con reloj de posesión corto; elegido para los Juegos Olímpicos.", "body": "worldlax" }
+  ],
+  "bodies": [
+    { "id": "worldlax", "name": "World Lacrosse", "acronym": null, "scope": "Federación internacional de lacrosse", "url": "https://worldlacrosse.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wl-rules", "title": "Reglamento de World Lacrosse", "publisher": "worldlax", "url": "https://worldlacrosse.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "playing", "title": "Jugar la bola", "summary": "Sticks, manos y el crease.",
+      "rules": [
+        { "id": "no-hands", "title": "Stick, no manos", "important": true,
+          "summary": "Los jugadores de campo no pueden tocar la bola con las manos: se lleva, se pasa y se lanza con el stick.",
+          "body": "Los jugadores hacen «cradle» —balancean el stick— para mantener la bola en la red mientras corren. Se puede mover la bola con el pie, pero no marcar gol de una patada.",
+          "related": ["crease"] },
+        { "id": "crease", "title": "El crease", "important": true,
+          "summary": "Los atacantes no pueden entrar en el círculo que rodea la portería (el crease). Dentro de él, el portero está protegido.",
+          "body": "Un gol no vale si el lanzador cae dentro del crease. Los defensores pueden atravesarlo, pero no retener la bola mucho tiempo en él.",
+          "related": ["no-hands", "shot-clock-lax"] },
+        { "id": "shot-clock-lax", "title": "Reloj de posesión", "important": false,
+          "summary": "Los equipos deben tirar a portería dentro del tiempo del reloj, mucho más corto en sixes.",
+          "body": "El reloj se reinicia cuando un tiro golpea la portería o al portero. En el lacrosse de campo, los equipos también deben pasar la bola del medio campo dentro de un tiempo límite.",
+          "related": ["crease"] }
+      ]
+    },
+    {
+      "id": "contact", "title": "Contacto y faltas", "summary": "Qué está permitido, en masculino y femenino.",
+      "rules": [
+        { "id": "checking-lax", "title": "Golpes al stick y cargas", "important": true,
+          "summary": "Los defensores pueden golpear el stick del rival para quitarle la bola. En el lacrosse de campo masculino se permiten cargas sobre el portador, con límites; el femenino y el sixes restringen mucho más el contacto.",
+          "body": "Las cargas deben ser por debajo del cuello y de frente o de lado. Golpear el cuerpo con el stick (slashing), cargar con el mango (cross-check) y los golpes a la cabeza son faltas personales.",
+          "related": ["penalties-lax"] },
+        { "id": "penalties-lax", "title": "Faltas personales y técnicas", "important": false,
+          "summary": "Las faltas técnicas (como agarrar o el fuera de juego) suelen costar la posesión o 30 segundos de castigo; las personales, de uno a tres minutos.",
+          "body": "El equipo sancionado juega con uno menos, lo que da al rival una superioridad. El lacrosse femenino usa lanzamientos libres en lugar del banquillo de castigo para muchas faltas.",
+          "related": ["checking-lax"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Invasión del crease", "description": "Un atacante pisa el crease de la portería.", "consequence": "Gol anulado / cambio de posesión", "severity": "MINOR" },
+    { "name": "Agarrar / empujar", "description": "Impedir ilegalmente el movimiento de un rival.", "consequence": "Falta técnica", "severity": "MINOR" },
+    { "name": "Slashing", "description": "Golpear con el stick el cuerpo del rival.", "consequence": "Falta personal, tiempo en el banquillo de castigo", "severity": "MAJOR" },
+    { "name": "Carga ilegal", "description": "Cargas tardías, altas o por la espalda.", "consequence": "Falta personal; posible expulsión", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Face-off / draw", "description": "La posesión empieza con un face-off (masculino) o un draw (femenino)." },
+    { "title": "Ataque posicional", "description": "Los equipos mueven la bola alrededor del crease." },
+    { "title": "Transición", "description": "Contraataques rápidos tras paradas y pérdidas." },
+    { "title": "Cuartos", "description": "Los equipos cambian de campo entre periodos." }
+  ],
+  "positions": [
+    { "name": "Ataque", "role": "Goleadores que juegan cerca de la portería rival." },
+    { "name": "Medio campo", "role": "Cubren ambos extremos del campo." },
+    { "name": "Defensa", "role": "A menudo con sticks largos para quitar la bola a los atacantes." },
+    { "name": "Portero", "role": "Defiende una portería de 6 pies con un stick de cabeza grande." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "Campo masculino: unos 110 × 60 m; el sixes usa un campo mucho más pequeño",
+    "surface": "Césped natural o artificial",
+    "notes": ["Portería: 6 × 6 pies (1,83 m)", "Radio del crease: 9 pies (2,74 m)"]
+  },
+  "glossary": [
+    { "term": "Cradle", "definition": "Balancear el stick para mantener la bola en la red." },
+    { "term": "Crease", "definition": "El círculo protegido alrededor de la portería." },
+    { "term": "Face-off", "definition": "Reanudación en la que dos jugadores disputan la bola en el centro." },
+    { "term": "Superioridad", "definition": "Jugar con uno más tras una sanción al rival." }
+  ],
+  "funFacts": [
+    "Los Haudenosaunee Nationals compiten internacionalmente como nación propia en los eventos de World Lacrosse.",
+    "El lacrosse vuelve al programa olímpico en Los Ángeles 2028 en formato sixes."
+  ]
+}

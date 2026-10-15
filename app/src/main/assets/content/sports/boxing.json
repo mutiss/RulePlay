@@ -1,0 +1,116 @@
+{
+  "id": "boxing",
+  "intro": "Two boxers in the same weight class fight with padded gloves inside a roped ring, scoring with clean punches to the front and sides of the head and body above the belt. Bouts are divided into timed rounds and won by knockout, stoppage or judges' decision. Olympic-style boxing is governed internationally by World Boxing, while professional boxing is regulated by national and state commissions, with titles sanctioned by several organisations.",
+  "inThirtySeconds": [
+    "Punch only with the knuckle part of a closed glove, above the belt.",
+    "Rounds last 3 minutes, with 1-minute breaks.",
+    "Knocked down? The referee counts — still down at 10 is a knockout.",
+    "If nobody is stopped, judges score each round, usually 10–9 to the winner."
+  ],
+  "objective": "Win by knockout, by the referee stopping the contest, or on the judges' scorecards.",
+  "facts": {
+    "players": "1 v 1, matched by weight class",
+    "duration": "Olympic-style: 3 × 3 min · Professional: up to 12 × 3 min",
+    "environment": "Roped square ring",
+    "equipment": ["Gloves", "Hand wraps", "Mouthguard", "Groin protector", "Headguard in some categories"]
+  },
+  "scoring": [
+    { "label": "10-point must", "value": "10–9", "detail": "Each judge gives 10 to the round winner and fewer to the loser." },
+    { "label": "Knockdown", "value": "10–8", "detail": "A knockdown usually costs the fallen boxer an extra point on the cards." },
+    { "label": "KO / TKO", "value": "Win", "detail": "Ends the bout immediately, regardless of scorecards." }
+  ],
+  "variants": [
+    { "id": "olympic", "name": "Olympic-style", "description": "Amateur boxing as contested at the Olympics and World Boxing events: three 3-minute rounds and five judges.", "body": "worldboxing" },
+    { "id": "pro", "name": "Professional", "description": "Paid boxing regulated by commissions: 4 to 12 rounds, usually three judges, and title belts from sanctioning bodies.", "body": null }
+  ],
+  "bodies": [
+    { "id": "worldboxing", "name": "World Boxing", "acronym": null, "scope": "International federation for Olympic-style boxing", "url": "https://worldboxing.org/" }
+  ],
+  "rulebooks": [
+    { "id": "wb-rules", "title": "World Boxing Technical & Competition Rules", "publisher": "worldboxing", "variant": "olympic", "url": "https://worldboxing.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "legal", "title": "Legal punches",
+      "summary": "What counts and where you may hit.",
+      "rules": [
+        { "id": "target", "title": "The target area", "important": true,
+          "summary": "Punches must land with the knuckle part of a closed glove on the front or sides of the head and body, above the belt.",
+          "body": "The back of the head, the back, the kidneys and anywhere below the belt are illegal targets. Judges reward clean, effective punches, defence, ring generalship and aggression that lands.",
+          "related": ["clinch", "scoring-must"] },
+        { "id": "clinch", "title": "Holding and clinching", "important": false,
+          "summary": "Boxers may not hold, hook an arm or wrestle; the referee separates clinches with 'break'.",
+          "body": "Repeated holding to avoid punches leads to warnings and point deductions. After 'break' both boxers must step back before punching again.",
+          "related": ["target"] }
+      ]
+    },
+    {
+      "id": "knockdowns", "title": "Knockdowns and stoppages",
+      "summary": "The count, the knockout and the referee's role.",
+      "rules": [
+        { "id": "count", "title": "The count", "important": true,
+          "summary": "When a boxer is knocked down, the referee counts to 10; if the boxer can't continue by then, it is a knockout.",
+          "body": "A boxer is 'down' if any part of the body other than the feet touches the floor, or if they are hanging helplessly on the ropes. The opponent goes to a neutral corner. In many rule sets the count continues to at least eight even if the boxer rises immediately (a mandatory eight count).",
+          "example": "A fighter is dropped, gets up at the count of six but cannot raise her guard: the referee may stop the bout — a TKO.",
+          "related": ["tko"] },
+        { "id": "tko", "title": "Referee stops contest (TKO)", "important": true,
+          "summary": "The referee, the ringside doctor or a boxer's corner can stop a bout to protect a boxer who cannot defend themselves.",
+          "body": "This is recorded as a technical knockout (TKO) or 'referee stops contest' (RSC). Cuts judged too dangerous by the doctor can also end a fight.",
+          "related": ["count"] }
+      ]
+    },
+    {
+      "id": "judging", "title": "Judging",
+      "summary": "How bouts that go the distance are decided.",
+      "rules": [
+        { "id": "scoring-must", "title": "The 10-point must system", "important": true,
+          "summary": "Judges score each round independently, giving 10 points to the winner and 9 or fewer to the loser.",
+          "body": "At the end, the scores are totalled. A decision can be unanimous (all judges agree), split (judges disagree) or majority (one judge scores a draw). A draw is also possible.",
+          "related": ["olympic-judging", "pro-rounds"] },
+        { "id": "olympic-judging", "title": "Five judges", "important": false, "variants": ["olympic"],
+          "summary": "Olympic-style bouts are scored by five judges over three rounds.",
+          "body": "The winner is the boxer favoured by the majority of judges. Rules on headguards vary by age group and gender, so check World Boxing's current regulations.",
+          "related": ["scoring-must"] },
+        { "id": "pro-rounds", "title": "Championship rounds", "important": false, "variants": ["pro"],
+          "summary": "Professional title fights are scheduled for 12 rounds; non-title bouts may be 4, 6, 8 or 10.",
+          "body": "Professional rules are set by the commission overseeing the event, so details such as the three-knockdown rule or standing eight counts vary between jurisdictions.",
+          "related": ["scoring-must"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Low blow", "description": "Punching below the belt.", "consequence": "Warning, point deduction or disqualification", "severity": "MAJOR" },
+    { "name": "Rabbit punch", "description": "Hitting the back of the head or neck.", "consequence": "Warning or point deduction", "severity": "MAJOR" },
+    { "name": "Headbutt", "description": "Using the head as a weapon, accidental or deliberate.", "consequence": "Deduction; deliberate headbutts can disqualify", "severity": "SEVERE" },
+    { "name": "Hitting after the bell", "description": "Punching once the round has ended or after 'break'.", "consequence": "Warning or deduction", "severity": "MAJOR" },
+    { "name": "Holding", "description": "Excessive clinching to smother punches.", "consequence": "Warnings, then deductions", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Weigh-in", "description": "Boxers must make the weight limit of their division." },
+    { "title": "Rounds", "description": "Three-minute rounds separated by one-minute rests in the corner." },
+    { "title": "Knockdowns", "description": "Counts and possible stoppages during the bout." },
+    { "title": "Decision", "description": "If the bout goes the distance, the scorecards are read." }
+  ],
+  "positions": [
+    { "name": "Orthodox boxer", "role": "Leads with the left hand and foot." },
+    { "name": "Southpaw", "role": "Leads with the right — awkward for orthodox opponents." },
+    { "name": "Corner team", "role": "Coaches and cutman who advise and treat the boxer between rounds." }
+  ],
+  "field": {
+    "name": "Ring",
+    "dimensions": "Usually between about 4.9 m and 7.3 m square inside the ropes",
+    "surface": "Padded canvas floor surrounded by four ropes",
+    "notes": ["Two corners for the boxers, two neutral corners", "The bell signals the start and end of each round"]
+  },
+  "glossary": [
+    { "term": "Jab", "definition": "A quick straight punch with the lead hand." },
+    { "term": "Cross", "definition": "A straight punch with the rear hand." },
+    { "term": "Hook", "definition": "A curved punch thrown from the side." },
+    { "term": "Uppercut", "definition": "A rising punch aimed at the chin or body." },
+    { "term": "TKO", "definition": "Technical knockout — the bout is stopped for the boxer's safety." }
+  ],
+  "funFacts": [
+    "Modern boxing is based on the Marquess of Queensberry Rules of 1867, which introduced gloves and 3-minute rounds.",
+    "Boxing has featured at every modern Summer Olympics since 1904 except 1912."
+  ]
+}

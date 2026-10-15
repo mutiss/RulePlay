@@ -1,0 +1,117 @@
+{
+  "id": "boxing",
+  "language": "es",
+  "intro": "Dos boxeadores de la misma categoría de peso pelean con guantes acolchados dentro de un ring con cuerdas, puntuando con golpes limpios en la parte delantera y lateral de la cabeza y el cuerpo, por encima de la cintura. Los combates se dividen en asaltos cronometrados y se ganan por KO, por detención o por decisión de los jueces. El boxeo olímpico lo rige a nivel internacional World Boxing, mientras que el profesional lo regulan comisiones nacionales y estatales, con títulos avalados por varias organizaciones.",
+  "inThirtySeconds": [
+    "Golpea solo con los nudillos del guante cerrado, por encima de la cintura.",
+    "Los asaltos duran 3 minutos, con descansos de 1 minuto.",
+    "¿Derribado? El árbitro cuenta: si sigues en la lona a la de 10, es KO.",
+    "Si nadie cae, los jueces puntúan cada asalto, normalmente 10-9 para el ganador."
+  ],
+  "objective": "Ganar por KO, porque el árbitro detenga el combate o por las tarjetas de los jueces.",
+  "facts": {
+    "players": "1 contra 1, emparejados por peso",
+    "duration": "Olímpico: 3 × 3 min · Profesional: hasta 12 × 3 min",
+    "environment": "Ring cuadrado con cuerdas",
+    "equipment": ["Guantes", "Vendas", "Protector bucal", "Coquilla", "Casco en algunas categorías"]
+  },
+  "scoring": [
+    { "label": "Sistema de 10 puntos", "value": "10–9", "detail": "Cada juez da 10 al ganador del asalto y menos al perdedor." },
+    { "label": "Derribo", "value": "10–8", "detail": "Un derribo suele costar al boxeador caído un punto extra en las tarjetas." },
+    { "label": "KO / KOT", "value": "Victoria", "detail": "Termina el combate de inmediato, digan lo que digan las tarjetas." }
+  ],
+  "variants": [
+    { "id": "olympic", "name": "Olímpico", "description": "Boxeo amateur como el de los Juegos y las pruebas de World Boxing: tres asaltos de 3 minutos y cinco jueces.", "body": "worldboxing" },
+    { "id": "pro", "name": "Profesional", "description": "Boxeo remunerado regulado por comisiones: de 4 a 12 asaltos, normalmente tres jueces y cinturones de organismos sancionadores.", "body": null }
+  ],
+  "bodies": [
+    { "id": "worldboxing", "name": "World Boxing", "acronym": null, "scope": "Federación internacional del boxeo olímpico", "url": "https://worldboxing.org/" }
+  ],
+  "rulebooks": [
+    { "id": "wb-rules", "title": "Reglas técnicas y de competición de World Boxing", "publisher": "worldboxing", "variant": "olympic", "url": "https://worldboxing.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "legal", "title": "Golpes legales",
+      "summary": "Qué cuenta y dónde se puede golpear.",
+      "rules": [
+        { "id": "target", "title": "La zona de golpeo", "important": true,
+          "summary": "Los golpes deben conectar con los nudillos del guante cerrado en la parte delantera o lateral de la cabeza y el cuerpo, por encima de la cintura.",
+          "body": "La nuca, la espalda, los riñones y todo lo que esté por debajo de la cintura son zonas prohibidas. Los jueces premian los golpes limpios y efectivos, la defensa, el dominio del ring y la agresividad que conecta.",
+          "related": ["clinch", "scoring-must"] },
+        { "id": "clinch", "title": "Agarrar y el clinch", "important": false,
+          "summary": "Los boxeadores no pueden agarrar, enganchar un brazo ni forcejear; el árbitro separa los clinches con «break».",
+          "body": "Agarrar una y otra vez para evitar golpes lleva a avisos y descuentos de puntos. Tras el «break», ambos deben retroceder antes de volver a golpear.",
+          "related": ["target"] }
+      ]
+    },
+    {
+      "id": "knockdowns", "title": "Derribos y detenciones",
+      "summary": "La cuenta, el KO y el papel del árbitro.",
+      "rules": [
+        { "id": "count", "title": "La cuenta", "important": true,
+          "summary": "Cuando un boxeador cae, el árbitro cuenta hasta 10; si no puede seguir para entonces, es KO.",
+          "body": "Un boxeador está «caído» si toca la lona con cualquier parte del cuerpo que no sean los pies, o si cuelga indefenso de las cuerdas. El rival va a una esquina neutral. En muchos reglamentos la cuenta sigue al menos hasta ocho aunque el boxeador se levante enseguida (cuenta obligatoria de ocho).",
+          "example": "Una boxeadora cae, se levanta a la de seis pero no puede subir la guardia: el árbitro puede detener el combate, KOT.",
+          "related": ["tko"] },
+        { "id": "tko", "title": "El árbitro detiene el combate (KOT)", "important": true,
+          "summary": "El árbitro, el médico del ring o la esquina pueden detener el combate para proteger a un boxeador que no puede defenderse.",
+          "body": "Se registra como KO técnico (KOT) o «el árbitro detiene el combate». Los cortes que el médico considere demasiado peligrosos también pueden acabar la pelea.",
+          "related": ["count"] }
+      ]
+    },
+    {
+      "id": "judging", "title": "Puntuación",
+      "summary": "Cómo se deciden los combates que llegan al final.",
+      "rules": [
+        { "id": "scoring-must", "title": "El sistema de 10 puntos", "important": true,
+          "summary": "Los jueces puntúan cada asalto por separado: 10 puntos al ganador y 9 o menos al perdedor.",
+          "body": "Al final se suman las tarjetas. La decisión puede ser unánime (todos los jueces coinciden), dividida (no coinciden) o mayoritaria (un juez da empate). También es posible un empate.",
+          "related": ["olympic-judging", "pro-rounds"] },
+        { "id": "olympic-judging", "title": "Cinco jueces", "important": false, "variants": ["olympic"],
+          "summary": "Los combates olímpicos los puntúan cinco jueces durante tres asaltos.",
+          "body": "Gana el boxeador favorecido por la mayoría de los jueces. Las normas sobre el casco varían según la edad y el sexo, así que consulta el reglamento vigente de World Boxing.",
+          "related": ["scoring-must"] },
+        { "id": "pro-rounds", "title": "Asaltos de campeonato", "important": false, "variants": ["pro"],
+          "summary": "Los combates por el título profesional se programan a 12 asaltos; los demás pueden ser a 4, 6, 8 o 10.",
+          "body": "Las normas profesionales las fija la comisión que supervisa el evento, así que detalles como la regla de los tres derribos o la cuenta de protección de pie varían entre jurisdicciones.",
+          "related": ["scoring-must"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Golpe bajo", "description": "Golpear por debajo de la cintura.", "consequence": "Aviso, descuento de punto o descalificación", "severity": "MAJOR" },
+    { "name": "Golpe en la nuca", "description": "Golpear la parte trasera de la cabeza o el cuello.", "consequence": "Aviso o descuento de punto", "severity": "MAJOR" },
+    { "name": "Cabezazo", "description": "Usar la cabeza como arma, accidental o deliberadamente.", "consequence": "Descuento; los cabezazos deliberados pueden descalificar", "severity": "SEVERE" },
+    { "name": "Golpear tras la campana", "description": "Golpear cuando el asalto ha terminado o tras el «break».", "consequence": "Aviso o descuento", "severity": "MAJOR" },
+    { "name": "Agarrar", "description": "Abusar del clinch para anular los golpes.", "consequence": "Avisos y después descuentos", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Pesaje", "description": "Los boxeadores deben dar el peso de su categoría." },
+    { "title": "Asaltos", "description": "Asaltos de tres minutos separados por un minuto de descanso en la esquina." },
+    { "title": "Derribos", "description": "Cuentas y posibles detenciones durante el combate." },
+    { "title": "Decisión", "description": "Si el combate llega al final, se leen las tarjetas." }
+  ],
+  "positions": [
+    { "name": "Boxeador ortodoxo", "role": "Guardia con la mano y el pie izquierdos adelantados." },
+    { "name": "Zurdo", "role": "Guardia con la derecha adelantada: incómodo para los ortodoxos." },
+    { "name": "Equipo de esquina", "role": "Entrenadores y cutman que aconsejan y curan al boxeador entre asaltos." }
+  ],
+  "field": {
+    "name": "Ring",
+    "dimensions": "Normalmente entre unos 4,9 m y 7,3 m de lado dentro de las cuerdas",
+    "surface": "Lona acolchada rodeada de cuatro cuerdas",
+    "notes": ["Dos esquinas para los boxeadores y dos esquinas neutrales", "La campana marca el inicio y el final de cada asalto"]
+  },
+  "glossary": [
+    { "term": "Jab", "definition": "Golpe recto y rápido con la mano adelantada." },
+    { "term": "Cross (directo)", "definition": "Golpe recto con la mano retrasada." },
+    { "term": "Gancho", "definition": "Golpe curvo lanzado desde el lateral." },
+    { "term": "Uppercut", "definition": "Golpe ascendente a la barbilla o al cuerpo." },
+    { "term": "KOT", "definition": "KO técnico: el combate se detiene por la seguridad del boxeador." }
+  ],
+  "funFacts": [
+    "El boxeo moderno se basa en las reglas del Marqués de Queensberry de 1867, que introdujeron los guantes y los asaltos de 3 minutos.",
+    "El boxeo ha estado en todos los Juegos Olímpicos de verano modernos desde 1904, salvo en 1912."
+  ]
+}

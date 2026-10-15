@@ -1,0 +1,133 @@
+{
+  "id": "tennis",
+  "language": "es",
+  "intro": "Los jugadores golpean una pelota por encima de una red con raquetas, intentando que bote dentro del campo rival de forma que no pueda devolverla. Los puntos forman juegos, los juegos forman sets y los sets, el partido: un sistema anidado que hace que cada punto valga distinto. Las Reglas del Tenis las mantiene la Federación Internacional de Tenis (ITF).",
+  "inThirtySeconds": [
+    "Ganas el punto si tu rival no devuelve la pelota a tu campo antes de su segundo bote.",
+    "Los puntos van 15, 30, 40 y juego; con 40 iguales necesitas dos puntos seguidos.",
+    "Seis juegos ganan un set (con dos de ventaja); con 6-6, la mayoría de sets se deciden en un tie-break.",
+    "El sacador tiene dos intentos; un saque que roza la red y entra se repite."
+  ],
+  "objective": "Ganar los sets necesarios: normalmente dos de tres, o tres de cinco en los Grand Slam masculinos.",
+  "facts": {
+    "players": "1 contra 1 (individual) o 2 contra 2 (dobles)",
+    "duration": "Sin reloj: al mejor de 3 o 5 sets",
+    "environment": "Pista cubierta o al aire libre: hierba, tierra batida o dura",
+    "equipment": ["Raqueta", "Pelota con fieltro", "Red de 0,914 m en el centro"]
+  },
+  "scoring": [
+    { "label": "Punto", "value": "15·30·40", "detail": "Los tres primeros puntos de un juego se cantan 15, 30 y 40; el cero es «nada»." },
+    { "label": "Juego", "value": "4+", "detail": "Gana cuatro puntos con dos de ventaja. Desde 40 iguales, hay que ganar dos seguidos." },
+    { "label": "Set", "value": "6+", "detail": "Gana seis juegos con dos de ventaja, o el tie-break con 6-6." }
+  ],
+  "variants": [
+    { "id": "singles", "name": "Individual", "description": "Un jugador por lado en la pista estrecha de individuales.", "body": "itf" },
+    { "id": "doubles", "name": "Dobles", "description": "Dos jugadores por lado; los pasillos laterales entran en juego tras el saque.", "body": "itf" }
+  ],
+  "bodies": [
+    { "id": "itf", "name": "Federación Internacional de Tenis", "acronym": "ITF", "scope": "Organismo rector mundial; publica las Reglas del Tenis", "url": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/" }
+  ],
+  "rulebooks": [
+    { "id": "itf-rules", "title": "Reglas del Tenis de la ITF", "publisher": "itf", "url": "https://www.itftennis.com/en/about-us/governance/rules-and-regulations/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Cómo se puntúa",
+      "summary": "Puntos, juegos, sets y tie-break.",
+      "rules": [
+        { "id": "game-score", "title": "Puntuar un juego", "important": true,
+          "summary": "Los puntos se cantan nada, 15, 30, 40 y juego. Con 40-40 el marcador es «iguales».",
+          "body": "Desde iguales, quien gana el siguiente punto tiene «ventaja». Si gana también el siguiente, se lleva el juego; si lo pierde, se vuelve a iguales. Algunos formatos, como muchos torneos de dobles, usan el «punto de oro»: en iguales, un solo punto decide el juego.",
+          "example": "El sacador va 40-30 y pierde el punto: iguales. Gana el siguiente: ventaja al saque. Pierde el siguiente: otra vez iguales.",
+          "related": ["set-score", "tie-break"] },
+        { "id": "set-score", "title": "Ganar un set", "important": true,
+          "summary": "El primero en ganar seis juegos con dos de ventaja gana el set.",
+          "body": "Con 5-5 hay que llegar a 7-5. Con 6-6, la mayoría de competiciones juegan un tie-break. Los jugadores cambian de lado tras el primer juego, el tercero y cada juego impar siguiente de cada set.",
+          "related": ["tie-break", "game-score"] },
+        { "id": "tie-break", "title": "El tie-break", "important": true,
+          "summary": "Con 6-6, el primero en llegar a 7 puntos con dos de ventaja gana el set 7-6.",
+          "body": "Los puntos se cuentan 1, 2, 3… Saca primero a quien le tocaba; después, el saque se alterna cada dos puntos. Se cambia de lado cada seis puntos. Muchos torneos, incluidos los Grand Slam, juegan ya un tie-break a 10 puntos con 6-6 en el set decisivo.",
+          "example": "Con 6-6 en el tie-break, se sigue jugando hasta que alguien saque dos de ventaja: 8-6, 9-7, 12-10…",
+          "related": ["set-score", "serve"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "El saque",
+      "summary": "Cómo empieza un punto, las faltas y la repetición (let).",
+      "rules": [
+        { "id": "serve", "title": "El saque", "important": true,
+          "summary": "El sacador se coloca detrás de la línea de fondo y golpea la pelota en diagonal hacia el cuadro de saque rival.",
+          "body": "Los saques alternan entre la derecha (lado de iguales) y la izquierda (lado de ventaja) en cada punto. El sacador tiene dos intentos: fallar el primero es una «falta» y dos faltas seguidas son una «doble falta», que pierde el punto. El sacador no puede pisar la línea de fondo ni el interior de la pista antes de golpear (falta de pie).",
+          "related": ["let", "tie-break"] },
+        { "id": "let", "title": "Let", "important": false,
+          "summary": "Un saque que toca la red y entra en el cuadro correcto es «let» y se repite.",
+          "body": "Un let no anula una falta anterior: el sacador simplemente repite ese saque. También se puede cantar let si el juego se interrumpe, por ejemplo porque entra una pelota en la pista; entonces se repite el punto entero.",
+          "related": ["serve"] }
+      ]
+    },
+    {
+      "id": "rally", "title": "Durante el punto",
+      "summary": "Dentro o fuera, botes y cómo se pierde un punto.",
+      "rules": [
+        { "id": "in-out", "title": "Dentro o fuera", "important": true,
+          "summary": "Una pelota que toca cualquier parte de la línea es buena.",
+          "body": "Las líneas pertenecen a la zona que delimitan. Donde se usa el arbitraje electrónico (como Hawk-Eye), decide la máquina; en algunos torneos los jugadores pueden pedir un número limitado de revisiones.",
+          "example": "Una pelota bota rozando solo con el fieltro exterior la línea de fondo: es buena.",
+          "related": ["lose-point"] },
+        { "id": "lose-point", "title": "Formas de perder un punto", "important": true,
+          "summary": "Pierdes el punto si la pelota bota dos veces en tu campo, o si la mandas a la red o fuera.",
+          "body": "También lo pierdes si la pelota te toca a ti o a tu ropa, si tú o tu raqueta tocáis la red con la pelota en juego, si golpeas la pelota antes de que cruce la red o si la golpeas dos veces a propósito. La volea —golpear antes del bote— está permitida en cualquier parte de tu campo, salvo al restar el saque.",
+          "related": ["in-out"] }
+      ]
+    },
+    {
+      "id": "doubles", "title": "Dobles",
+      "summary": "Qué cambia cuando cuatro jugadores comparten la pista.",
+      "rules": [
+        { "id": "doubles-court", "title": "Los pasillos de dobles", "important": false, "variants": ["doubles"],
+          "summary": "Tras el saque, se juega en la pista ancha de dobles, incluidos los pasillos laterales.",
+          "body": "Los saques deben seguir entrando en el cuadro de saque normal. Una vez restado el saque, las líneas laterales exteriores marcan el límite de la pista.",
+          "related": ["doubles-order"] },
+        { "id": "doubles-order", "title": "Orden de saque y resto", "important": false, "variants": ["doubles"],
+          "summary": "Cada pareja decide quién saca primero; después el saque rota entre los cuatro jugadores juego a juego.",
+          "body": "Los restadores eligen lado (iguales o ventaja) al empezar cada set y lo mantienen todo el set. Los compañeros pueden colocarse donde quieran, por eso existen la «formación australiana» y otras tácticas.",
+          "related": ["serve", "doubles-court"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Doble falta", "description": "Fallar los dos intentos de saque.", "consequence": "Punto para el restador", "severity": "MINOR" },
+    { "name": "Falta de pie", "description": "Pisar la línea de fondo o la pista antes de golpear el saque.", "consequence": "Cuenta como falta", "severity": "MINOR" },
+    { "name": "Tocar la red", "description": "El jugador, la raqueta o la ropa tocan la red con la pelota en juego.", "consequence": "Punto perdido", "severity": "MINOR" },
+    { "name": "Infracción del código", "description": "Conducta antideportiva, como romper la raqueta o superar el tiempo, según el código de conducta del torneo.", "consequence": "Aviso y después penalizaciones de punto y juego", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Calentamiento y sorteo", "description": "Quien gana el sorteo elige sacar, restar o lado." },
+    { "title": "Juegos", "description": "El saque se alterna cada juego; se cambia de lado tras los juegos impares." },
+    { "title": "Sets", "description": "Primero a seis juegos con dos de ventaja, o tie-break con 6-6." },
+    { "title": "Punto de partido", "description": "El partido termina cuando un jugador gana los sets necesarios." }
+  ],
+  "positions": [
+    { "name": "Sacador", "role": "Inicia cada punto desde detrás de la línea de fondo." },
+    { "name": "Restador", "role": "Devuelve el saque; puede colocarse donde quiera en su campo." },
+    { "name": "Jugador de red (dobles)", "role": "Compañero situado junto a la red para volear e interceptar." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "23,77 m de largo; 8,23 m de ancho (individual) o 10,97 m (dobles)",
+    "surface": "Hierba, tierra batida, dura (acrílica) o moqueta",
+    "notes": ["Altura de la red: 0,914 m en el centro, 1,07 m en los postes", "Los cuadros de saque llegan a 6,40 m de la red", "La superficie cambia mucho la velocidad y el bote de la pelota"]
+  },
+  "glossary": [
+    { "term": "Nada", "definition": "Cero en el marcador de tenis (en inglés, «love»)." },
+    { "term": "Iguales", "definition": "40-40 en un juego; hacen falta dos puntos seguidos para ganarlo." },
+    { "term": "Break (rotura)", "definition": "Ganar un juego al saque del rival." },
+    { "term": "Ace", "definition": "Saque bueno que el restador ni siquiera toca." },
+    { "term": "Tie-break", "definition": "Carrera a 7 (o 10) puntos que decide un set con 6-6." },
+    { "term": "Volea", "definition": "Golpear la pelota antes de que bote." }
+  ],
+  "funFacts": [
+    "Nadie sabe con certeza por qué el tenis cuenta 15, 30, 40; una teoría popular apunta a los cuartos de la esfera de un reloj.",
+    "Wimbledon es el único Grand Slam que se sigue jugando sobre hierba."
+  ]
+}

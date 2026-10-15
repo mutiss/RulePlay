@@ -1,0 +1,91 @@
+{
+  "id": "ultimate",
+  "intro": "Ultimate is a fast, non-contact team sport played with a flying disc. Teams score by catching a pass in the end zone they are attacking, and the disc changes hands whenever a pass is dropped, blocked or goes out. Its defining feature is the Spirit of the Game: in most competitions there are no referees, and players call their own fouls. The World Flying Disc Federation (WFDF) publishes the rules.",
+  "inThirtySeconds": [
+    "Score by catching the disc in the end zone you're attacking.",
+    "You can't run with the disc — pivot and throw.",
+    "Any dropped, blocked or out-of-bounds pass is a turnover.",
+    "Players referee themselves under the Spirit of the Game."
+  ],
+  "objective": "Be first to the target score (often 15), or lead when time runs out.",
+  "facts": {
+    "players": "7 v 7 on grass (5 v 5 on beach)",
+    "duration": "Game to 15 points or a time cap (~100 minutes)",
+    "environment": "Grass or turf field with end zones",
+    "equipment": ["175 g flying disc", "Cleats"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "Catching a pass inside the attacking end zone." }
+  ],
+  "bodies": [
+    { "id": "wfdf", "name": "World Flying Disc Federation", "acronym": "WFDF", "scope": "International federation; publishes the WFDF Rules of Ultimate", "url": "https://wfdf.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wfdf-rules", "title": "WFDF Rules of Ultimate", "publisher": "wfdf", "url": "https://wfdf.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "play-u", "title": "Moving the disc", "summary": "Pivot, throw and the stall count.",
+      "rules": [
+        { "id": "no-running", "title": "No running with the disc", "important": true,
+          "summary": "The thrower must stop and establish a pivot foot; the disc moves only by passing.",
+          "body": "A player catching on the run may take a few steps to slow down, but may not gain ground. Moving the pivot foot before releasing is a travel.",
+          "related": ["stall"] },
+        { "id": "stall", "title": "The stall count", "important": true,
+          "summary": "The marking defender counts aloud to ten; the thrower must release the disc before 'ten'.",
+          "body": "If the count reaches ten, it's a turnover. The marker must stay at least a disc's diameter away and may not wrap arms around the thrower.",
+          "example": "'Stalling one… two… three…' — the thrower fakes left, steps right and releases on 'eight'.",
+          "related": ["no-running", "turnover"] },
+        { "id": "turnover", "title": "Turnovers", "important": true,
+          "summary": "Possession changes when a pass is incomplete, intercepted, caught out of bounds, or the stall count reaches ten.",
+          "body": "The defence becomes the offence immediately from where the disc stopped (or where it went out).",
+          "related": ["stall"] }
+      ]
+    },
+    {
+      "id": "spirit", "title": "Spirit of the Game", "summary": "Self-officiating.",
+      "rules": [
+        { "id": "self-officiating", "title": "Players make the calls", "important": true,
+          "summary": "Players are responsible for calling fouls and line decisions, and for resolving disputes respectfully.",
+          "body": "When a call is contested, the disc usually goes back to the last uncontested thrower. Some elite competitions use observers to help with disputes, and spirit scores are given after games to reward fair play.",
+          "related": ["fouls-u"] },
+        { "id": "fouls-u", "title": "Non-contact", "important": false,
+          "summary": "Ultimate is non-contact; contact that affects play is a foul.",
+          "body": "A player who is fouled while catching keeps possession as if the catch was made, if the opponent agrees; otherwise play restarts with the disc returned to the thrower.",
+          "related": ["self-officiating"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Travel", "description": "Moving the pivot or gaining ground after catching.", "consequence": "Thrower re-establishes the pivot", "severity": "MINOR" },
+    { "name": "Stall", "description": "Holding the disc until 'ten'.", "consequence": "Turnover", "severity": "MINOR" },
+    { "name": "Receiving foul", "description": "Contact preventing a catch.", "consequence": "Possession to the fouled player", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Pull", "description": "Each point starts with the defence throwing the disc to the offence." },
+    { "title": "Work the disc", "description": "Short passes and long hucks move towards the end zone." },
+    { "title": "Score", "description": "Teams switch direction after every point." },
+    { "title": "Spirit circle", "description": "Teams gather together after the game." }
+  ],
+  "positions": [
+    { "name": "Handler", "role": "Main thrower who keeps possession." },
+    { "name": "Cutter", "role": "Runs to get open for passes." },
+    { "name": "Deep", "role": "Defender covering long throws." }
+  ],
+  "field": {
+    "name": "Field",
+    "dimensions": "100 m × 37 m including two 18 m end zones",
+    "surface": "Grass or turf",
+    "notes": ["Brick marks for restarts"]
+  },
+  "glossary": [
+    { "term": "Huck", "definition": "A long throw downfield." },
+    { "term": "Layout", "definition": "A diving catch or block." },
+    { "term": "Pull", "definition": "The opening throw of each point." },
+    { "term": "Hammer", "definition": "An overhead throw that flips over." }
+  ],
+  "funFacts": [
+    "Ultimate was developed by high-school students in Maplewood, New Jersey, in 1968.",
+    "The rules have always relied on self-refereeing, with the 'Spirit of the Game' written into them."
+  ]
+}

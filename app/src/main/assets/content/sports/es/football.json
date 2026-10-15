@@ -1,0 +1,195 @@
+{
+  "id": "football",
+  "language": "es",
+  "intro": "Dos equipos de once intentan meter un balón en la portería contraria usando cualquier parte del cuerpo excepto las manos y los brazos: solo los porteros pueden tocarlo con la mano, y únicamente dentro de su propia área. Fácil de empezar e infinitamente profundo, el fútbol se juega con las diecisiete Reglas de Juego que mantiene la IFAB.",
+  "inThirtySeconds": [
+    "Se marca gol cuando el balón entero cruza la línea de meta, entre los postes y bajo el larguero.",
+    "Pies, cabeza o cuerpo: solo los porteros pueden usar las manos, y solo en su área.",
+    "Dos tiempos de 45 minutos más el añadido; gana quien marque más goles.",
+    "Las faltas dan un tiro libre al rival; dentro del área, un penalti."
+  ],
+  "objective": "Marcar más goles que el rival antes del final del partido.",
+  "facts": {
+    "players": "11 por equipo en el campo, incluido un portero",
+    "duration": "2 × 45 minutos + tiempo añadido",
+    "environment": "Campo de césped natural o artificial al aire libre",
+    "equipment": ["Balón esférico (talla 5)", "Dos porterías de 7,32 m × 2,44 m", "Espinilleras", "Botas"]
+  },
+  "scoring": [
+    { "label": "Gol", "value": "1", "detail": "El balón entero cruza la línea de meta entre los postes y bajo el larguero, sin infracción previa del equipo atacante." },
+    { "label": "Gol en propia puerta", "value": "1", "detail": "Cuenta para el rival cuando un jugador mete el balón en su propia portería." },
+    { "label": "Empate", "value": "—", "detail": "En liga, el empate se mantiene. Las eliminatorias pueden usar prórroga y/o tanda de penaltis." }
+  ],
+  "bodies": [
+    { "id": "ifab", "name": "International Football Association Board", "acronym": "IFAB", "scope": "Redacta y actualiza las Reglas de Juego", "url": "https://www.theifab.com/laws/latest/about-the-laws/" },
+    { "id": "fifa", "name": "Fédération Internationale de Football Association", "acronym": "FIFA", "scope": "Organismo rector mundial; organiza el Mundial", "url": null }
+  ],
+  "rulebooks": [
+    { "id": "ifab-laws", "title": "Reglas de Juego (Laws of the Game)", "publisher": "ifab", "url": "https://www.theifab.com/laws/latest/about-the-laws/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "basics", "title": "El campo y el equipo",
+      "summary": "Dónde se juega, quién participa y con qué equipamiento.",
+      "rules": [
+        { "id": "field", "ref": "Regla 1", "title": "El terreno de juego", "important": false,
+          "summary": "Un rectángulo marcado con líneas de banda, líneas de meta, línea media, círculo central y dos áreas penales.",
+          "body": "Las líneas de banda son más largas que las de meta. En partidos internacionales el campo suele medir entre 100 y 110 m de largo y entre 64 y 75 m de ancho. Cada extremo tiene un área de meta (5,5 m) y un área penal (16,5 m), con el punto penal a 11 m de la línea de meta. El círculo central tiene 9,15 m de radio: la misma distancia que deben guardar los rivales en la mayoría de reanudaciones.",
+          "example": "En un tiro libre, la barrera debe situarse a 9,15 m: exactamente el radio del círculo central, lo que ayuda al árbitro a medirlo.",
+          "related": ["free-kicks", "penalty"] },
+        { "id": "players", "ref": "Regla 3", "title": "Jugadores y sustitutos", "important": false,
+          "summary": "Hasta once jugadores por equipo, uno de ellos portero; el partido no puede continuar si un equipo tiene menos de siete.",
+          "body": "El reglamento de cada competición decide cuántos cambios se permiten: muchas competiciones de élite permiten hasta cinco, en un número limitado de interrupciones, y algunas añaden sustituciones por conmoción cerebral. En la mayoría de competiciones, el jugador sustituido no puede volver. Cualquier jugador de campo puede cambiarse con el portero si se avisa al árbitro y el juego está detenido.",
+          "related": ["field"] },
+        { "id": "equipment", "ref": "Regla 4", "title": "Equipamiento de los jugadores", "important": false,
+          "summary": "Camiseta, pantalón, medias, espinilleras y calzado; los porteros visten colores que los distinguen de todos los demás.",
+          "body": "Los jugadores no pueden llevar nada peligroso, como joyas. Cada equipo viste colores que lo distinguen del rival y de los árbitros, y los colores de cada portero deben diferenciarse de los del resto de jugadores."
+        }
+      ]
+    },
+    {
+      "id": "match", "title": "Cómo transcurre un partido",
+      "summary": "Saque inicial, tiempos, añadido y cuándo el balón está en juego.",
+      "rules": [
+        { "id": "duration", "ref": "Regla 7", "title": "Duración del partido", "important": true,
+          "summary": "Dos tiempos de 45 minutos. El árbitro añade tiempo por interrupciones como cambios, lesiones o revisiones del VAR.",
+          "body": "El descanso no puede superar los 15 minutos. El tiempo perdido en cada parte se recupera a criterio del árbitro: el cuarto árbitro muestra el añadido mínimo al final de cada tiempo. Las competiciones pueden acordar tiempos más cortos, por ejemplo en fútbol base.",
+          "related": ["outcome"] },
+        { "id": "kick-off", "ref": "Regla 8", "title": "Inicio y reanudación del juego", "important": false,
+          "summary": "Un saque desde el centro del campo inicia cada tiempo y reanuda el juego tras un gol.",
+          "body": "En el saque inicial todos los jugadores deben estar en su propio campo y los rivales a 9,15 m del balón hasta que esté en juego. El balón está en juego cuando se golpea y se mueve claramente. Se puede marcar directamente desde el saque inicial al rival. Si el juego se detiene por un motivo no previsto en otra regla, se reanuda con un balón a tierra.",
+          "related": ["in-out"] },
+        { "id": "in-out", "ref": "Regla 9", "title": "Balón en juego y fuera de juego", "important": false,
+          "summary": "El balón sale solo cuando ha cruzado por completo una línea de banda o de meta, por tierra o por aire.",
+          "body": "Si cualquier parte del balón está sobre la línea o encima de ella, sigue en juego. El juego también se detiene cuando pita el árbitro. El balón sigue en juego si rebota en un poste, el larguero, el banderín o un árbitro dentro del campo, salvo que tocar al árbitro provoque un ataque prometedor, un gol o un cambio de posesión: entonces se reanuda con balón a tierra.",
+          "example": "Un balón que está al 99 % fuera pero aún toca la línea desde arriba sigue en juego.",
+          "related": ["outcome"] },
+        { "id": "outcome", "ref": "Regla 10", "title": "Determinar el resultado", "important": true,
+          "summary": "Se marca gol cuando el balón entero cruza la línea de meta entre los postes y bajo el larguero.",
+          "body": "Gana el equipo que marca más goles; con los mismos goles hay empate. Si una competición necesita un ganador, puede usar prórroga (dos periodos de 15 minutos como máximo) y después tiros desde el punto penal, lanzados alternativamente hasta que un equipo marque más que el otro con el mismo número de lanzamientos.",
+          "related": ["duration", "in-out"] }
+      ]
+    },
+    {
+      "id": "offside", "title": "Fuera de juego",
+      "summary": "La regla más discutida del fútbol, explicada con claridad.",
+      "rules": [
+        { "id": "offside-position", "ref": "Regla 11", "title": "Estar en posición de fuera de juego", "important": true,
+          "summary": "Estás en posición de fuera de juego si estás en campo rival y más cerca de su línea de meta que el balón y que el penúltimo adversario.",
+          "body": "Solo cuentan la cabeza, el cuerpo y los pies: manos y brazos no se tienen en cuenta, ni para atacantes ni para defensores (porteros incluidos). Estar en línea con el penúltimo adversario, o con los dos últimos, no es fuera de juego. Nunca se está en fuera de juego en el propio campo. Y, sobre todo, estar en posición de fuera de juego no es una infracción por sí mismo.",
+          "example": "Un delantero está un paso por delante del último defensor cuando su compañero pasa, pero el balón está a su altura: no está en fuera de juego, porque no está por delante del balón.",
+          "related": ["offside-offence", "offside-exceptions"] },
+        { "id": "offside-offence", "ref": "Regla 11", "title": "Cuándo se sanciona el fuera de juego", "important": true,
+          "summary": "Un jugador en posición de fuera de juego solo se sanciona si participa en el juego activo en el momento en que un compañero juega o toca el balón.",
+          "body": "Participar significa intervenir en el juego (jugar o tocar el balón), interferir a un adversario (por ejemplo, tapar la visión del portero o disputarle el balón) o sacar ventaja jugando un balón que le llega rebotado o desviado por los palos, un árbitro o un adversario. Una jugada deliberada de un defensor (que no sea una parada) suele anular la situación. La infracción se castiga con tiro libre indirecto donde se cometió.",
+          "example": "Un delantero en fuera de juego no se mueve hacia el balón mientras un compañero marca desde lejos: el gol vale, salvo que tapara la visión del portero.",
+          "related": ["offside-position", "free-kicks"] },
+        { "id": "offside-exceptions", "ref": "Regla 11", "title": "Sin fuera de juego en estas reanudaciones", "important": false,
+          "summary": "No hay infracción de fuera de juego si el jugador recibe el balón directamente de un saque de meta, un saque de banda o un saque de esquina.",
+          "body": "Por eso los atacantes se colocan muy adelantados en los saques de banda. En cuanto otro jugador toca el balón tras la reanudación, se vuelve a aplicar el fuera de juego con normalidad.",
+          "related": ["throw-in", "goal-kick-corner"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Faltas y conducta incorrecta",
+      "summary": "Qué es falta, cuándo sale una tarjeta y cómo funciona la mano.",
+      "rules": [
+        { "id": "direct-fouls", "ref": "Regla 12", "title": "Faltas de tiro libre directo", "important": true,
+          "summary": "Cargar, saltar sobre, dar una patada, empujar, golpear, entrar o zancadillear a un adversario de forma imprudente, temeraria o con fuerza excesiva.",
+          "body": "Sujetar a un adversario, impedir su avance con contacto, morder o escupir, lanzar un objeto a alguien y tocar el balón con la mano deliberadamente también son faltas de tiro libre directo. Si un defensor comete una dentro de su propia área, el rival lanza un penalti. «Imprudente» no conlleva tarjeta; «temeraria», amarilla; «con fuerza excesiva», roja.",
+          "related": ["penalty", "cards", "handball"] },
+        { "id": "handball", "ref": "Regla 12", "title": "Mano", "important": true,
+          "summary": "Es infracción tocar el balón deliberadamente con la mano o el brazo, o aumentar el volumen del cuerpo de forma antinatural con él.",
+          "body": "El límite del brazo está aproximadamente a la altura de la axila. No todo contacto es infracción: el árbitro valora si la posición del brazo está justificada por el movimiento del jugador. Un gol marcado directamente con la mano o el brazo, aunque sea accidental, se anula. Los porteros pueden usar las manos en su área, pero no cuando un compañero les cede el balón deliberadamente con el pie ni directamente desde un saque de banda de un compañero.",
+          "example": "Un defensor se tira al suelo con un brazo extendido para cortar un centro: ese brazo aumenta el volumen del cuerpo de forma antinatural, así que probablemente es mano.",
+          "related": ["direct-fouls", "goalkeeper"] },
+        { "id": "cards", "ref": "Regla 12", "title": "Tarjetas amarilla y roja", "important": true,
+          "summary": "La amarilla es una amonestación; dos en el mismo partido, o una roja directa, suponen la expulsión y el equipo juega con uno menos.",
+          "body": "Amonestaciones habituales: conducta antideportiva, protestar, infringir las reglas de forma reiterada, retrasar la reanudación, no respetar la distancia y entrar o salir del campo sin permiso. Son motivo de expulsión el juego brusco grave, la conducta violenta, morder o escupir, el lenguaje o gestos ofensivos y evitar una ocasión manifiesta de gol (DOGSO). Si la ocasión se evita dentro del área intentando jugar el balón, la sanción suele reducirse a amarilla porque se concede penalti.",
+          "related": ["direct-fouls"] },
+        { "id": "goalkeeper", "ref": "Regla 12", "title": "Límites del portero con las manos", "important": false,
+          "summary": "Retener el balón demasiado tiempo, o cogerlo con la mano tras una cesión deliberada con el pie de un compañero, se sanciona.",
+          "body": "Desde la edición 2025/26 de las Reglas, si el portero controla el balón con las manos más de ocho segundos se concede un saque de esquina al rival, y el árbitro cuenta visiblemente los últimos cinco segundos. Coger con la mano una cesión deliberada con el pie, o un balón lanzado directamente desde un saque de banda de un compañero, se castiga con tiro libre indirecto.",
+          "related": ["handball"] }
+      ]
+    },
+    {
+      "id": "restarts", "title": "Tiros libres y reanudaciones",
+      "summary": "Todas las formas de reanudar el juego, y desde cuáles se puede marcar directamente.",
+      "rules": [
+        { "id": "free-kicks", "ref": "Regla 13", "title": "Tiro libre directo e indirecto", "important": false,
+          "summary": "Un tiro libre directo puede entrar directamente en la portería; uno indirecto debe tocar antes a otro jugador.",
+          "body": "El árbitro señala el tiro libre indirecto levantando un brazo por encima de la cabeza hasta que el balón toque a otro jugador. Los rivales deben estar a 9,15 m hasta que el balón esté en juego. Cuando el equipo defensor forma una barrera de tres o más jugadores, los atacantes no pueden situarse a menos de 1 m de ella.",
+          "related": ["direct-fouls", "offside-offence"] },
+        { "id": "penalty", "ref": "Regla 14", "title": "El penalti", "important": true,
+          "summary": "Se concede por una falta de tiro libre directo de un defensor dentro de su área; se lanza desde el punto penal, a 11 m.",
+          "body": "El portero debe permanecer sobre la línea de meta entre los postes, de cara al lanzador y sin tocar postes ni red, hasta que se golpee el balón; en ese momento al menos parte de un pie debe estar sobre la línea o en línea con ella. El resto de jugadores queda fuera del área y del semicírculo, detrás del punto penal. El lanzador debe golpear el balón hacia delante; puede detenerse durante la carrera, pero no fintar una vez completada.",
+          "related": ["direct-fouls", "outcome"] },
+        { "id": "throw-in", "ref": "Regla 15", "title": "El saque de banda", "important": false,
+          "summary": "Cuando el balón cruza una línea de banda, el rival del último en tocarlo lo devuelve al juego con ambas manos desde detrás de la cabeza.",
+          "body": "El lanzador mira hacia el campo, mantiene parte de cada pie sobre la línea de banda o fuera de ella, y saca desde donde salió el balón. No se puede marcar gol directamente desde un saque de banda, ni hay fuera de juego en él.",
+          "related": ["offside-exceptions"] },
+        { "id": "goal-kick-corner", "ref": "Reglas 16–17", "title": "Saque de meta y saque de esquina", "important": false,
+          "summary": "Si el balón sale por la línea de meta tras tocarlo un atacante: saque de meta. Si lo tocó un defensor: saque de esquina.",
+          "body": "El saque de meta se lanza desde cualquier punto del área de meta y el balón está en juego en cuanto se golpea y se mueve claramente; ya no necesita salir del área penal. El saque de esquina se lanza desde el cuadrante más cercano a donde salió el balón. Desde ambos se puede marcar directamente al rival.",
+          "related": ["offside-exceptions"] }
+      ]
+    },
+    {
+      "id": "officials", "title": "Árbitros y tecnología",
+      "summary": "Quién aplica las Reglas y cómo encaja la revisión en vídeo.",
+      "rules": [
+        { "id": "referee", "ref": "Regla 5", "title": "El árbitro", "important": false,
+          "summary": "El árbitro tiene plena autoridad para aplicar las Reglas, y sus decisiones sobre hechos del juego son definitivas.",
+          "body": "El árbitro puede aplicar la ley de la ventaja —dejar seguir el juego cuando detenerlo beneficiaría al infractor— y aun así amonestar o expulsar en la siguiente interrupción. Los árbitros asistentes señalan sobre todo el fuera de juego y cuándo sale el balón; el cuarto árbitro ayuda con los cambios y el añadido.",
+          "related": ["var"] },
+        { "id": "var", "ref": "Regla 6", "title": "Videoarbitraje (VAR)", "important": false,
+          "summary": "Donde se usa, el VAR solo puede ayudar a corregir errores claros y manifiestos o incidentes graves no vistos en cuatro situaciones.",
+          "body": "Las cuatro situaciones revisables son: goles (y las infracciones previas), penaltis, rojas directas y confusión de identidad. El árbitro puede revisar las imágenes en el monitor junto al campo; la decisión final siempre es suya. No todas las competiciones usan VAR.",
+          "related": ["referee", "offside-position"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Fuera de juego", "description": "Participar en el juego desde una posición de fuera de juego.", "consequence": "Tiro libre indirecto", "severity": "MINOR" },
+    { "name": "Entrada o zancadilla imprudente", "description": "Disputa del balón sin el cuidado debido.", "consequence": "Tiro libre directo (penalti dentro del área)", "severity": "MINOR" },
+    { "name": "Entrada temeraria", "description": "Disputa sin tener en cuenta el peligro para el adversario.", "consequence": "Tiro libre directo + tarjeta amarilla", "severity": "MAJOR" },
+    { "name": "Evitar una ocasión manifiesta de gol", "description": "Falta o mano que impide una ocasión clara de gol.", "consequence": "Roja en la mayoría de casos (amarilla en algunas situaciones dentro del área)", "severity": "SEVERE" },
+    { "name": "Juego brusco grave / conducta violenta", "description": "Fuerza excesiva al disputar el balón, o brutalidad sin balón.", "consequence": "Tarjeta roja", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Sorteo y saque inicial", "description": "Quien gana el sorteo elige campo o saque; el otro equipo recibe la opción restante." },
+    { "title": "Primer tiempo", "description": "45 minutos de juego, más el tiempo añadido por interrupciones." },
+    { "title": "Descanso", "description": "Hasta 15 minutos. Los equipos cambian de campo para la segunda parte." },
+    { "title": "Segundo tiempo", "description": "Otros 45 minutos más el añadido; saca el otro equipo." },
+    { "title": "Prórroga y penaltis", "description": "Solo en competiciones que necesitan un ganador: hasta 2 × 15 minutos y después tanda de penaltis." }
+  ],
+  "positions": [
+    { "name": "Portero", "role": "Última línea de defensa; el único que puede usar las manos, dentro de su propia área." },
+    { "name": "Central", "role": "Defensor central que frena a los delanteros, gana los balones aéreos y a menudo inicia la salida de balón." },
+    { "name": "Lateral / carrilero", "role": "Defiende las bandas y se suma al ataque para centrar." },
+    { "name": "Mediocentro defensivo", "role": "Protege a la defensa, corta ataques y recicla la posesión." },
+    { "name": "Interior / mediapunta", "role": "Une defensa y ataque, crea ocasiones y llega al área." },
+    { "name": "Extremo", "role": "Atacante de banda que regatea, centra y busca el disparo hacia dentro." },
+    { "name": "Delantero centro", "role": "Principal amenaza de gol; fija a los centrales y presiona la salida." }
+  ],
+  "field": {
+    "name": "Terreno de juego",
+    "dimensions": "Partidos internacionales: 100–110 m × 64–75 m",
+    "surface": "Césped natural, artificial o híbrido (según la competición)",
+    "notes": ["Portería: 7,32 m de ancho × 2,44 m de alto", "Punto penal: a 11 m de la línea de meta", "Radio del círculo central: 9,15 m", "Área penal: 16,5 m desde cada poste y hacia el campo"]
+  },
+  "glossary": [
+    { "term": "Ventaja", "definition": "El árbitro deja seguir el juego tras una falta porque detenerlo beneficiaría al infractor." },
+    { "term": "Tiempo añadido", "definition": "Tiempo que se suma al final de cada parte para compensar las interrupciones." },
+    { "term": "DOGSO", "definition": "Evitar una ocasión manifiesta de gol: normalmente, motivo de expulsión." },
+    { "term": "Penúltimo adversario", "definition": "Jugador de referencia para el fuera de juego; suele ser el último defensor de campo (el portero acostumbra a ser el último)." },
+    { "term": "Tiro libre indirecto", "definition": "Tiro libre desde el que solo se puede marcar si el balón toca antes a otro jugador." },
+    { "term": "Semicírculo del área", "definition": "El arco fuera del área penal que mantiene a los jugadores a 9,15 m del punto penal." },
+    { "term": "Portería a cero", "definition": "Partido en el que un equipo no encaja ningún gol." }
+  ],
+  "funFacts": [
+    "Las Reglas de Juego las mantiene la IFAB, fundada en 1886: es más antigua que la propia FIFA (1904).",
+    "Hay exactamente 17 Reglas de Juego, desde el terreno de juego hasta el saque de esquina."
+  ]
+}

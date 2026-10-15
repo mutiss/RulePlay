@@ -1,0 +1,115 @@
+{
+  "id": "rugby-league",
+  "language": "es",
+  "intro": "El rugby league se separó del rugby union en 1895 y evolucionó hacia un juego más rápido y estructurado. Trece jugadores por equipo tienen seis placajes para avanzar y marcar; tras el sexto, la posesión pasa al rival. En lugar de los rucks disputados, se usa el rápido «play-the-ball», que mantiene el juego fluido. La International Rugby League (IRL) rige este deporte a nivel mundial.",
+  "inThirtySeconds": [
+    "Marca un ensayo (4 puntos) posando el balón tras la línea de ensayo rival.",
+    "Cada equipo tiene seis placajes por posesión y suele patear en el último.",
+    "Tras un placaje, el jugador se levanta y pasa el balón hacia atrás con el pie: el play-the-ball.",
+    "Como en el union, los pases deben ir hacia atrás."
+  ],
+  "objective": "Superar al rival con ensayos, transformaciones, golpes de castigo y drops durante 80 minutos.",
+  "facts": {
+    "players": "13 por equipo, más jugadores de rotación",
+    "duration": "2 × 40 minutos",
+    "environment": "Campo de césped natural o artificial con palos en forma de H",
+    "equipment": ["Balón ovalado", "Protector bucal", "Botas"]
+  },
+  "scoring": [
+    { "label": "Ensayo", "value": "4", "detail": "Posar el balón sobre la línea de ensayo rival o detrás de ella." },
+    { "label": "Transformación", "value": "2", "detail": "Patada a palos tras un ensayo." },
+    { "label": "Golpe de castigo", "value": "2", "detail": "Patada a palos concedida tras una infracción." },
+    { "label": "Drop", "value": "1", "detail": "Patada de botepronto por encima del larguero durante el juego (también llamada «field goal»)." }
+  ],
+  "bodies": [
+    { "id": "irl", "name": "International Rugby League", "acronym": "IRL", "scope": "Organismo rector mundial del rugby league", "url": "https://www.intrl.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "irl-laws", "title": "Reglamento de Juego de la International Rugby League", "publisher": "irl", "url": "https://www.intrl.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "sets", "title": "Seis placajes",
+      "summary": "La posesión está racionada: hay que aprovecharla.",
+      "rules": [
+        { "id": "six-tackles", "title": "La serie de seis placajes", "important": true,
+          "summary": "Al equipo en posesión pueden placarle cinco veces; en el sexto placaje, el balón pasa al rival.",
+          "body": "Por eso los equipos suelen avanzar con el balón durante cinco placajes y patear en el último para ganar terreno o buscar el ensayo. Si el equipo defensor toca el balón de ciertas maneras o comete una infracción, el atacante puede recibir una nueva serie de seis.",
+          "example": "En el quinto placaje, el medio patea en alto hacia la esquina esperando que su ala la coja y marque antes que los defensores.",
+          "related": ["play-the-ball", "kicking-league"] },
+        { "id": "play-the-ball", "title": "El play-the-ball", "important": true,
+          "summary": "Tras ser placado, el jugador se levanta, pone el balón en el suelo y lo hace rodar hacia atrás con el pie hacia un compañero.",
+          "body": "Uno o dos defensores («marcadores») pueden situarse justo enfrente; el resto de la defensa debe retroceder una distancia fijada (normalmente 10 m) hasta que se juegue el balón. Esto es lo que hace el rugby league rápido y continuo.",
+          "related": ["six-tackles", "offside-league"] }
+      ]
+    },
+    {
+      "id": "play", "title": "Juego general",
+      "summary": "Pases, fuera de juego y patadas.",
+      "rules": [
+        { "id": "forward-pass-league", "title": "Solo pases hacia atrás", "important": false,
+          "summary": "Los pases no pueden ir hacia delante; un pase adelantado o un avant suele dar una melé al rival.",
+          "body": "En el rugby league la melé es una reanudación más que una lucha de fuerza, y algunas competiciones la sustituyen por una simple entrega del balón en ciertas situaciones.",
+          "related": ["six-tackles"] },
+        { "id": "offside-league", "title": "Fuera de juego en el play-the-ball", "important": false,
+          "summary": "Los defensores deben retroceder la distancia exigida y no pueden adelantarse antes de que se juegue el balón.",
+          "body": "Estar en fuera de juego, interferir en el play-the-ball o retener demasiado al placado da un golpe de castigo al atacante, y a menudo una nueva serie de seis.",
+          "related": ["play-the-ball"] },
+        { "id": "kicking-league", "title": "El 40/20 y las patadas a touch", "important": false,
+          "summary": "Según el reglamento internacional actual y las grandes ligas, una patada desde tu propia mitad que bota y sale a touch dentro de los 20 m rivales tiene premio.",
+          "body": "Esta patada «40/20» premia el juego táctico preciso con el pie. Los detalles (si se gana la introducción en una melé o se reanuda con un toque) varían entre competiciones, así que consulta el reglamento vigente de cada una.",
+          "related": ["six-tackles"] }
+      ]
+    },
+    {
+      "id": "discipline", "title": "Disciplina",
+      "summary": "Golpes de castigo, exclusión temporal y expulsiones.",
+      "rules": [
+        { "id": "penalties-league", "title": "Golpes de castigo", "important": false,
+          "summary": "Con un golpe de castigo, el equipo puede patear a palos (2 puntos), patear a touch o jugar rápido con un toque.",
+          "body": "Patear a touch da al equipo la reanudación cerca de donde salió el balón y una nueva serie de placajes.",
+          "related": ["offside-league"] },
+        { "id": "cards-league", "title": "Exclusión temporal y expulsión", "important": false,
+          "summary": "El juego sucio puede costar 10 minutos de exclusión o la expulsión para el resto del partido.",
+          "body": "Los placajes altos, las cargas con el hombro y los derribos peligrosos son motivos habituales. Las competiciones también revisan las acciones después del partido y pueden sancionar a los jugadores.",
+          "related": ["penalties-league"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Avant / pase adelantado", "description": "El balón va hacia delante desde las manos.", "consequence": "Melé o entrega del balón al rival", "severity": "MINOR" },
+    { "name": "Fuera de juego", "description": "El defensor no retrocede la distancia exigida en el play-the-ball.", "consequence": "Golpe de castigo", "severity": "MAJOR" },
+    { "name": "Retener al placado", "description": "Impedir que el jugador placado se levante.", "consequence": "Golpe de castigo", "severity": "MAJOR" },
+    { "name": "Placaje alto", "description": "Contacto con la cabeza o el cuello.", "consequence": "Golpe de castigo, exclusión temporal o expulsión", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saque inicial", "description": "Cada parte empieza con una patada colocada desde el centro." },
+    { "title": "Series de seis", "description": "Los equipos se turnan en series de seis placajes." },
+    { "title": "Patadas en el último placaje", "description": "Patadas para ganar terreno o forzar un saque desde la línea de ensayo." },
+    { "title": "Final", "description": "En algunas competiciones, los empates se deciden con «golden point» en la prórroga." }
+  ],
+  "positions": [
+    { "name": "Zaguero (1)", "role": "Último defensor y corredor en el contraataque." },
+    { "name": "Alas y centros (2–5)", "role": "Tres cuartos que finalizan los ataques y defienden los extremos." },
+    { "name": "Apertura y medio melé (6–7)", "role": "Los «medios»: organizadores y principales pateadores." },
+    { "name": "Pilares (8, 10)", "role": "Delanteros grandes que cargan con fuerza por el centro." },
+    { "name": "Talonador (9)", "role": "Distribuye desde el play-the-ball, como un medio." },
+    { "name": "Segundas líneas y tercera (11–13)", "role": "Delanteros móviles que placan y atacan por los lados." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "100 m entre líneas de ensayo × unos 68 m de ancho, más las zonas de marca",
+    "surface": "Césped natural o artificial homologado",
+    "notes": ["Líneas cada 10 m a lo ancho del campo", "Palos en forma de H"]
+  },
+  "glossary": [
+    { "term": "Dummy-half", "definition": "El jugador que recoge el balón en el play-the-ball." },
+    { "term": "Serie", "definition": "La tanda de seis placajes de un equipo." },
+    { "term": "Golden point", "definition": "Prórroga en la que la primera anotación gana el partido." },
+    { "term": "Drop-out", "definition": "Patada de reanudación desde la línea de ensayo o la de 20 m." }
+  ],
+  "funFacts": [
+    "La escisión de 1895 fue sobre todo por dinero: los clubes del norte de Inglaterra querían compensar a sus jugadores obreros por los salarios perdidos.",
+    "El State of Origin, entre Queensland y Nueva Gales del Sur, es uno de los mayores eventos deportivos de Australia."
+  ]
+}

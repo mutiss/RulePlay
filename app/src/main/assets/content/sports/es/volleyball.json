@@ -1,0 +1,133 @@
+{
+  "id": "volleyball",
+  "language": "es",
+  "intro": "Dos equipos de seis se enfrentan a ambos lados de una red alta e intentan que el balón toque el suelo del campo rival. Cada equipo puede tocar el balón hasta tres veces para preparar un ataque, y cada jugada da un punto. Las reglas las mantiene la FIVB, que también rige el vóley playa con un reglamento propio.",
+  "inThirtySeconds": [
+    "Cada jugada da un punto, haya sacado quien haya sacado.",
+    "Hasta tres toques por equipo, y ningún jugador puede tocar el balón dos veces seguidas.",
+    "Los sets van a 25 (con dos de ventaja); el quinto, decisivo, va a 15.",
+    "Los jugadores rotan en el sentido de las agujas del reloj cada vez que su equipo recupera el saque."
+  ],
+  "objective": "Ganar tres sets haciendo que el balón caiga en el campo rival o forzando su error.",
+  "facts": {
+    "players": "6 por equipo en pista, más un líbero",
+    "duration": "Al mejor de 5 sets (sin reloj de partido)",
+    "environment": "Pista cubierta",
+    "equipment": ["Balón", "Red de 2,43 m (hombres) / 2,24 m (mujeres)", "Varillas que marcan el espacio de paso"]
+  },
+  "scoring": [
+    { "label": "Punto directo", "value": "1", "detail": "Cada jugada da un punto al equipo que la gana." },
+    { "label": "Set", "value": "25", "detail": "Primero a 25 con dos puntos de ventaja (sets 1 a 4)." },
+    { "label": "Quinto set", "value": "15", "detail": "El set decisivo se juega a 15, también con dos de ventaja." }
+  ],
+  "bodies": [
+    { "id": "fivb", "name": "Fédération Internationale de Volleyball", "acronym": "FIVB", "scope": "Organismo rector mundial del voleibol y el vóley playa", "url": "https://www.fivb.com/" }
+  ],
+  "rulebooks": [
+    { "id": "fivb-rules", "title": "Reglas Oficiales de Voleibol de la FIVB", "publisher": "fivb", "url": "https://www.fivb.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Puntos y sets",
+      "summary": "Puntuación directa y cómo se gana un partido.",
+      "rules": [
+        { "id": "rally-point", "title": "Puntuación por jugada", "important": true,
+          "summary": "El equipo que gana la jugada suma un punto, haya sacado quien haya sacado.",
+          "body": "Si gana la jugada el equipo receptor, suma el punto y gana el derecho a sacar, lo que provoca una rotación. Un set se gana a 25 puntos con dos de ventaja; no hay límite, así que hay sets que acaban 30-28 o más.",
+          "related": ["rotation", "match"] },
+        { "id": "match", "title": "Ganar el partido", "important": false,
+          "summary": "El primer equipo en ganar tres sets gana el partido; el quinto, si hace falta, va a 15.",
+          "body": "Los equipos cambian de campo tras cada set, y en el quinto también cuando el equipo que va ganando llega a 8 puntos.",
+          "related": ["rally-point"] }
+      ]
+    },
+    {
+      "id": "touches", "title": "Jugar el balón",
+      "summary": "Tres toques, contactos limpios y el bloqueo.",
+      "rules": [
+        { "id": "three-touches", "title": "Tres toques", "important": true,
+          "summary": "Un equipo puede tocar el balón como máximo tres veces antes de devolverlo por encima de la red.",
+          "body": "La secuencia clásica es recepción, colocación y ataque (remate). El toque de bloqueo no cuenta como uno de los tres, así que un equipo puede bloquear y aún disponer de tres toques más.",
+          "example": "El balón se desvía en las manos de un bloqueador: el equipo que bloquea sigue teniendo tres toques.",
+          "related": ["double-contact", "block"] },
+        { "id": "double-contact", "title": "Dobles y retenciones", "important": true,
+          "summary": "Ningún jugador puede tocar el balón dos veces seguidas, y el balón debe golpearse, no atraparse ni lanzarse.",
+          "body": "Excepciones: un bloqueador puede volver a tocar el balón justo después de bloquear, y en el primer toque del equipo el balón puede tocar varias partes del cuerpo en una sola acción. Sujetar o acompañar el balón es una falta de retención.",
+          "related": ["three-touches"] },
+        { "id": "block", "title": "El bloqueo", "important": false,
+          "summary": "Solo los jugadores de la línea delantera pueden bloquear, alzando los brazos por encima de la red para frenar un ataque.",
+          "body": "Los bloqueadores pueden pasar los brazos por encima de la red siempre que no interfieran con los rivales antes o durante su ataque. Los zagueros y el líbero no pueden completar un bloqueo.",
+          "related": ["three-touches", "back-row-attack"] }
+      ]
+    },
+    {
+      "id": "rotation", "title": "Rotación y posiciones",
+      "summary": "Por qué los jugadores se mueven por la pista.",
+      "rules": [
+        { "id": "rotation", "title": "La rotación", "important": true,
+          "summary": "Cuando un equipo recupera el saque, sus jugadores rotan una posición en el sentido de las agujas del reloj.",
+          "body": "En el momento del saque, los jugadores deben estar en su orden de rotación: cada delantero por delante de su zaguero correspondiente y en el orden correcto de izquierda a derecha. Tras el saque pueden moverse libremente. Estar mal colocado es falta.",
+          "related": ["rally-point", "back-row-attack"] },
+        { "id": "back-row-attack", "title": "Ataque de zaguero", "important": false,
+          "summary": "Un zaguero no puede atacar un balón por encima del borde de la red desde la zona de ataque (delante de la línea de 3 m).",
+          "body": "Los zagueros pueden atacar saltando desde detrás de la línea de ataque: el «pipe». Donde caigan da igual; lo que cuenta es el punto de batida.",
+          "related": ["libero", "rotation"] },
+        { "id": "libero", "title": "El líbero", "important": false,
+          "summary": "Especialista defensivo con camiseta de otro color que puede sustituir a cualquier zaguero sin que cuente como cambio.",
+          "body": "El líbero no puede atacar un balón que esté totalmente por encima de la red, ni bloquear o intentar bloquear. Si el líbero coloca de dedos desde delante de la línea de ataque, ningún compañero puede atacar ese balón por encima de la red.",
+          "related": ["back-row-attack"] }
+      ]
+    },
+    {
+      "id": "net", "title": "En la red",
+      "summary": "Toques de red y la línea central.",
+      "rules": [
+        { "id": "net-touch", "title": "Tocar la red", "important": false,
+          "summary": "Tocar la red entre las varillas durante la acción de jugar el balón es falta.",
+          "body": "El contacto con la red fuera de las varillas, o el contacto casual que no interfiere en el juego, no es falta. El balón sí puede tocar la red, incluso en el saque.",
+          "related": ["centre-line"] },
+        { "id": "centre-line", "title": "La línea central", "important": false,
+          "summary": "Puedes sobrepasar la línea central con un pie o una mano si una parte queda sobre la línea o encima de ella.",
+          "body": "Entrar del todo en el campo rival con un pie o una mano, o tocarlo con otra parte del cuerpo de forma que interfiera con los rivales, es falta.",
+          "related": ["net-touch"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Cuatro toques", "description": "Un equipo toca el balón cuatro veces.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Dobles", "description": "El mismo jugador toca el balón dos veces seguidas.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Falta de red", "description": "Tocar la red entre las varillas al jugar el balón.", "consequence": "Punto para el rival", "severity": "MINOR" },
+    { "name": "Falta de rotación", "description": "Jugadores fuera de orden en el momento del saque.", "consequence": "Punto para el rival y posiciones corregidas", "severity": "MINOR" },
+    { "name": "Conducta incorrecta", "description": "Comportamiento grosero, ofensivo o agresivo.", "consequence": "Sanción, expulsión o descalificación", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saque", "description": "El sacador tiene 8 segundos tras el silbato para sacar desde detrás de la línea de fondo." },
+    { "title": "Recepción, colocación, ataque", "description": "El equipo receptor construye su ataque con hasta tres toques." },
+    { "title": "Defensa y bloqueo", "description": "Los rivales bloquean en la red y defienden los ataques en el fondo." },
+    { "title": "Punto y rotación", "description": "Se anota el punto; si el receptor recupera el saque, rota." }
+  ],
+  "positions": [
+    { "name": "Colocador", "role": "Da el segundo toque y distribuye los ataques: el director del juego." },
+    { "name": "Receptor-atacante", "role": "Ataca por la zona 4 y recibe el saque." },
+    { "name": "Opuesto", "role": "Ataca por la derecha, a menudo el máximo anotador." },
+    { "name": "Central", "role": "Bloquea en el centro y ataca balones rápidos." },
+    { "name": "Líbero", "role": "Especialista de zaguero en recepción y defensa." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "18 m × 9 m, dividida en dos campos de 9 × 9 m",
+    "surface": "Madera o sintético (pista cubierta)",
+    "notes": ["Línea de ataque a 3 m de la línea central", "Altura de la red: 2,43 m (hombres) / 2,24 m (mujeres)", "Las varillas marcan el espacio de paso sobre cada línea lateral"]
+  },
+  "glossary": [
+    { "term": "Defensa (dig)", "definition": "Recepción de un ataque potente, normalmente cerca del suelo." },
+    { "term": "Punto de ataque", "definition": "Un remate que gana directamente el punto." },
+    { "term": "Side-out", "definition": "Ganar una jugada en recepción, lo que da el saque." },
+    { "term": "Ace", "definition": "Saque que es punto directo." },
+    { "term": "Pipe", "definition": "Ataque de zaguero por el centro de la pista." }
+  ],
+  "funFacts": [
+    "William G. Morgan inventó el voleibol en 1895 como alternativa menos exigente al baloncesto.",
+    "La puntuación por jugada sustituyó al sistema de «cambio de saque» en el voleibol internacional en 1999."
+  ]
+}

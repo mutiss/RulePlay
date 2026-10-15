@@ -1,0 +1,106 @@
+{
+  "id": "wrestling",
+  "language": "es",
+  "intro": "La lucha es uno de los deportes más antiguos del mundo: dos deportistas intentan derribarse, exponer la espalda del rival hacia el tapiz y, en último término, inmovilizar sus dos hombros para lograr el tocado. La lucha olímpica tiene dos estilos: libre, en el que se pueden atacar las piernas, y grecorromana, en el que todos los agarres deben ser por encima de la cintura. United World Wrestling (UWW) publica el reglamento internacional.",
+  "inThirtySeconds": [
+    "Inmoviliza los dos hombros del rival contra el tapiz para lograr el tocado: victoria inmediata.",
+    "Suma puntos con derribos, exposiciones y empujando al rival fuera.",
+    "Una ventaja de puntos suficiente termina el combate antes (superioridad técnica).",
+    "Grecorromana: prohibido atacar las piernas y usar las piernas para zancadillear."
+  ],
+  "objective": "Ganar por tocado, por superioridad técnica o por puntos tras dos periodos de 3 minutos.",
+  "facts": {
+    "players": "1 contra 1, por categoría de peso",
+    "duration": "2 × 3 minutos con un descanso de 30 segundos",
+    "environment": "Tapiz circular",
+    "equipment": ["Maillot (rojo o azul)", "Zapatillas de lucha", "Protectores de oídos opcionales"]
+  },
+  "scoring": [
+    { "label": "Derribo", "value": "2+", "detail": "Llevar al rival al tapiz con control; más puntos en las proyecciones de gran amplitud." },
+    { "label": "Exposición", "value": "2", "detail": "Girar la espalda del rival hacia el tapiz (posición de peligro)." },
+    { "label": "Salida", "value": "1", "detail": "El rival sale de la zona de protección." },
+    { "label": "Tocado", "value": "Victoria", "detail": "Los dos hombros sujetos contra el tapiz." }
+  ],
+  "variants": [
+    { "id": "freestyle", "name": "Libre", "description": "Agarres en cualquier parte del cuerpo, incluidos los ataques a las piernas.", "body": "uww" },
+    { "id": "greco", "name": "Grecorromana", "description": "Agarres solo por encima de la cintura; las piernas no se pueden usar para atacar ni zancadillear.", "body": "uww" }
+  ],
+  "bodies": [
+    { "id": "uww", "name": "United World Wrestling", "acronym": "UWW", "scope": "Federación internacional de lucha", "url": "https://uww.org/" }
+  ],
+  "rulebooks": [
+    { "id": "uww-rules", "title": "Reglamento internacional de lucha de la UWW", "publisher": "uww", "url": "https://uww.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "winning", "title": "Formas de ganar", "summary": "Tocado, superioridad técnica y puntos.",
+      "rules": [
+        { "id": "fall", "title": "El tocado", "important": true,
+          "summary": "Sujetar los dos hombros del rival contra el tapiz el tiempo suficiente para que el árbitro confirme el control termina el combate.",
+          "body": "El tocado gana sea cual sea el marcador. El árbitro golpea el tapiz con la mano para confirmarlo.",
+          "related": ["tech-sup"] },
+        { "id": "tech-sup", "title": "Superioridad técnica", "important": true,
+          "summary": "Una ventaja de puntos suficiente detiene el combate antes: 10 puntos en libre y 8 en grecorromana.",
+          "body": "Si nadie logra tocado ni superioridad técnica, gana quien tenga más puntos. Los empates se resuelven por el agarre de mayor valor, menos amonestaciones y el último punto conseguido.",
+          "related": ["fall", "points-w"] }
+      ]
+    },
+    {
+      "id": "points-ch", "title": "Puntuación", "summary": "Derribos, exposiciones y salidas.",
+      "rules": [
+        { "id": "points-w", "title": "Derribos y exposición", "important": true,
+          "summary": "Un derribo vale 2 puntos o más; girar la espalda del rival hacia el tapiz vale 2 (el «gut wrench» es una forma clásica).",
+          "body": "Las grandes proyecciones que llevan al rival por el aire directamente a posición de peligro pueden valer 4 o 5 puntos.",
+          "related": ["tech-sup"] },
+        { "id": "passivity", "title": "Pasividad", "important": false,
+          "summary": "Al luchador que evita luchar se le puede señalar pasividad, lo que da al rival una oportunidad de puntuar.",
+          "body": "En libre, el pasivo recibe un periodo de actividad de 30 segundos; si no puntúa, el rival suma un punto. En grecorromana, la pasividad puede dar al rival un punto y la opción de reanudar en posición de suelo (par terre).",
+          "related": ["points-w"] }
+      ]
+    },
+    {
+      "id": "styles", "title": "Los dos estilos", "summary": "Qué cambia entre libre y grecorromana.",
+      "rules": [
+        { "id": "greco-rule", "title": "Grecorromana: por encima de la cintura", "important": true, "variants": ["greco"],
+          "summary": "Está prohibido agarrar las piernas del rival o usar las propias para zancadillear, levantar o hacer presas.",
+          "body": "Así, la grecorromana es un juego de agarres de tronco, tirones de brazo y espectaculares levantamientos y proyecciones.",
+          "related": ["freestyle-rule"] },
+        { "id": "freestyle-rule", "title": "Libre: las piernas valen", "important": false, "variants": ["freestyle"],
+          "summary": "Se pueden atacar las piernas con entradas, a una pierna o a dos piernas.",
+          "body": "La lucha libre es el estilo que practican las mujeres en los Juegos Olímpicos, y los hombres junto a la grecorromana.",
+          "related": ["greco-rule"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Huir de la presa o del tapiz", "description": "Evitar el contacto o salir para escapar.", "consequence": "Amonestación y puntos para el rival", "severity": "MAJOR" },
+    { "name": "Presa ilegal", "description": "Presas peligrosas como torsiones del cuello o de las articulaciones.", "consequence": "Amonestación y puntos; posible descalificación", "severity": "SEVERE" },
+    { "name": "Uso de piernas (grecorromana)", "description": "Usar o atacar las piernas en grecorromana.", "consequence": "Amonestación y puntos para el rival", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Pesaje", "description": "Los luchadores dan el peso antes de competir." },
+    { "title": "Primer periodo", "description": "Tres minutos desde posición de pie." },
+    { "title": "Descanso", "description": "30 segundos de consejos." },
+    { "title": "Segundo periodo", "description": "Tres minutos; el árbitro levanta la mano del ganador." }
+  ],
+  "positions": [
+    { "name": "Esquina roja", "role": "Viste maillot rojo." },
+    { "name": "Esquina azul", "role": "Viste maillot azul." }
+  ],
+  "field": {
+    "name": "Tapiz",
+    "dimensions": "Zona de lucha de 9 m de diámetro, más una zona de protección",
+    "surface": "Tapiz acolchado",
+    "notes": ["Círculo central para las reanudaciones", "Zona roja de pasividad cerca del borde"]
+  },
+  "glossary": [
+    { "term": "Derribo", "definition": "Llevar al rival al tapiz desde de pie." },
+    { "term": "Gut wrench", "definition": "Girar al rival en el suelo." },
+    { "term": "Par terre", "definition": "Reanudación con un luchador a cuatro patas." },
+    { "term": "Tocado", "definition": "Inmovilizar los dos hombros: victoria." }
+  ],
+  "funFacts": [
+    "La lucha entró en los antiguos Juegos Olímpicos en el 708 a. C.",
+    "La lucha libre femenina se incorporó al programa olímpico en 2004."
+  ]
+}

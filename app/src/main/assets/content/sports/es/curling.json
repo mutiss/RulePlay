@@ -1,0 +1,95 @@
+{
+  "id": "curling",
+  "language": "es",
+  "intro": "El curling se juega en una larga pista de hielo granulado. Dos equipos de cuatro deslizan pesadas piedras de granito hacia una diana llamada casa, y los compañeros barren el hielo delante de la piedra para cambiar su velocidad y su curva. Llamado a menudo «ajedrez sobre hielo», cada end es un rompecabezas estratégico. World Curling publica las reglas del curling y de la competición.",
+  "inThirtySeconds": [
+    "Cada equipo lanza ocho piedras por end, alternando lanzamientos.",
+    "Solo puntúa un equipo por end: un punto por cada piedra más cercana al centro que la mejor del rival.",
+    "Barrer hace que la piedra recorra más distancia y curve menos.",
+    "Diez ends forman un partido (ocho en muchas competiciones)."
+  ],
+  "objective": "Anotar más puntos que el rival dejando las piedras lo más cerca posible del centro de la casa.",
+  "facts": {
+    "players": "4 por equipo (dobles mixtos: 2)",
+    "duration": "8 o 10 ends, unas 2–3 horas",
+    "environment": "Pista de curling cubierta con hielo granulado",
+    "equipment": ["Piedras de granito de casi 20 kg", "Escobas", "Zapatillas de curling con suela deslizante"]
+  },
+  "scoring": [
+    { "label": "Punto", "value": "1", "detail": "Por cada piedra más cerca del botón que la piedra más cercana del rival." },
+    { "label": "End en blanco", "value": "0", "detail": "Sin piedras en la casa: nadie puntúa y el equipo con el martillo lo conserva." }
+  ],
+  "bodies": [
+    { "id": "wcf", "name": "World Curling", "acronym": null, "scope": "Organismo rector mundial; publica las Reglas del Curling", "url": "https://worldcurling.org/rules/" }
+  ],
+  "rulebooks": [
+    { "id": "wc-rules", "title": "Reglas del Curling y Reglas de Competición", "publisher": "wcf", "url": "https://worldcurling.org/rules/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Ends y puntuación", "summary": "Cómo se cuentan los puntos.",
+      "rules": [
+        { "id": "end-scoring", "title": "Puntuar un end", "important": true,
+          "summary": "Tras lanzar las 16 piedras, el equipo con la piedra más cercana al botón suma un punto por cada una de sus piedras más cercanas que la mejor del rival.",
+          "body": "Solo cuentan las piedras dentro de la casa (los círculos). Los árbitros usan un medidor cuando no se puede decidir a simple vista.",
+          "example": "Rojo tiene la primera y la segunda piedra más cercanas y amarillo la tercera: rojo suma dos.",
+          "related": ["hammer"] },
+        { "id": "hammer", "title": "El martillo", "important": true,
+          "summary": "El equipo que lanza la última piedra del end tiene el «martillo»: una gran ventaja.",
+          "body": "El equipo que puntúa en un end cede el martillo al rival para el siguiente. Los equipos con martillo suelen buscar dos o más puntos, y a veces dejan un end en blanco a propósito para conservarlo.",
+          "related": ["end-scoring", "free-guard"] }
+      ]
+    },
+    {
+      "id": "delivery", "title": "Lanzamiento y barrido", "summary": "Lanzar y barrer la piedra.",
+      "rules": [
+        { "id": "hog-line", "title": "Soltar antes de la línea de hog", "important": false,
+          "summary": "El lanzador debe soltar la piedra antes de que llegue a la línea de hog cercana.",
+          "body": "En las grandes competiciones, asas electrónicas detectan las sueltas tardías. Una piedra que no cruza por completo la línea de hog lejana se retira del juego, salvo que haya golpeado otra piedra.",
+          "related": ["sweeping"] },
+        { "id": "sweeping", "title": "El barrido", "important": true,
+          "summary": "Barrer delante de una piedra en movimiento calienta brevemente el hielo, reduce la fricción y hace que la piedra llegue más lejos y más recta.",
+          "body": "Cualquier equipo puede barrer cualquier piedra una vez que pasa la línea de tee, pero antes de esa línea solo puede barrerla el equipo que la lanza. Tocar una piedra en movimiento con la escoba o el cuerpo («quemarla») es una infracción.",
+          "related": ["hog-line"] },
+        { "id": "free-guard", "title": "Zona de guardias protegidas", "important": false,
+          "summary": "Al principio de cada end, las piedras de guardia delante de la casa no pueden ser sacadas del juego por el rival.",
+          "body": "Esta regla (la «regla de las cinco piedras» en el curling de cuatro) protege las guardias en las primeras piedras del end y fomenta un juego agresivo y de más puntos.",
+          "related": ["hammer"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Infracción de la línea de hog", "description": "Soltar la piedra después de la línea de hog.", "consequence": "Piedra retirada del juego", "severity": "MINOR" },
+    { "name": "Piedra quemada", "description": "Tocar una piedra en movimiento.", "consequence": "Piedra retirada o recolocada a elección del equipo no infractor", "severity": "MINOR" },
+    { "name": "Infracción de guardia protegida", "description": "Sacar una guardia protegida demasiado pronto.", "consequence": "Piedras recolocadas; piedra lanzada retirada", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Martillo", "description": "El martillo del primer end se decide con un lanzamiento previo al botón." },
+    { "title": "Ends", "description": "Los equipos alternan 16 piedras por end." },
+    { "title": "Estrategia", "description": "Guardias, dibujos, sacadas y piedras pegadas." },
+    { "title": "Concesión", "description": "Los equipos suelen conceder («darse la mano») cuando el partido está perdido." }
+  ],
+  "positions": [
+    { "name": "Primero", "role": "Lanza las dos primeras piedras, normalmente guardias y dibujos." },
+    { "name": "Segundo", "role": "Lanza las piedras tercera y cuarta; barredor potente y especialista en sacadas." },
+    { "name": "Tercero (vice-skip)", "role": "Lanza las piedras quinta y sexta y sujeta la escoba para el skip." },
+    { "name": "Skip", "role": "Capitán del equipo; decide la estrategia y lanza las últimas piedras." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "Unos 45 m de largo y 5 m de ancho",
+    "surface": "Hielo granulado: diminutas gotas heladas que provocan la curva",
+    "notes": ["Casa: círculo de 12 pies con el botón en el centro", "Líneas de hog a 6,4 m de cada línea de tee"]
+  },
+  "glossary": [
+    { "term": "Casa", "definition": "Los círculos de la diana." },
+    { "term": "Botón", "definition": "El centro de la casa." },
+    { "term": "Martillo", "definition": "La última piedra del end." },
+    { "term": "Sacada", "definition": "Lanzamiento que saca otra piedra del juego." },
+    { "term": "Piedra pegada", "definition": "Piedra que se detiene tocando a otra, difícil de sacar." }
+  ],
+  "funFacts": [
+    "Muchas piedras de curling olímpicas se fabrican con granito de Ailsa Craig, una isla frente a Escocia.",
+    "Una piedra de curling apenas gira unas pocas veces a lo largo de la pista, y aun así curva más de un metro."
+  ]
+}

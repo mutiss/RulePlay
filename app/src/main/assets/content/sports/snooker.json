@@ -1,0 +1,94 @@
+{
+  "id": "snooker",
+  "intro": "Snooker is played on a large cloth-covered table with fifteen red balls, six coloured balls and a white cue ball. Players alternate potting a red and then a colour, building 'breaks' of points, and when they can't score they lay 'snookers' that force the opponent into fouls. The WPBSA publishes the Official Rules of the Games of Snooker and English Billiards.",
+  "inThirtySeconds": [
+    "Pot a red, then a colour, then a red… until the reds are gone.",
+    "Reds are worth 1; colours 2 (yellow) to 7 (black). Colours go back on their spots while reds remain.",
+    "Then the colours are potted in order: yellow, green, brown, blue, pink, black.",
+    "Fouls give your opponent at least 4 points."
+  ],
+  "objective": "Score more points than your opponent in each frame, and win the required number of frames.",
+  "facts": {
+    "players": "1 v 1",
+    "duration": "Frames of about 15–30 minutes; matches best of a set number of frames",
+    "environment": "Full-size snooker table (12 ft × 6 ft)",
+    "equipment": ["Cue", "22 balls", "Chalk", "Rests and extensions"]
+  },
+  "scoring": [
+    { "label": "Red", "value": "1", "detail": "Fifteen reds on the table at the start." },
+    { "label": "Colours", "value": "2–7", "detail": "Yellow 2, green 3, brown 4, blue 5, pink 6, black 7." },
+    { "label": "Maximum break", "value": "147", "detail": "All 15 reds with 15 blacks, then all the colours." },
+    { "label": "Foul", "value": "4–7", "detail": "Points to the opponent: at least 4, or the value of the ball involved if higher." }
+  ],
+  "bodies": [
+    { "id": "wpbsa", "name": "World Professional Billiards and Snooker Association", "acronym": "WPBSA", "scope": "Governing body; publishes the Official Rules", "url": "https://www.wpbsa.com/rules/" }
+  ],
+  "rulebooks": [
+    { "id": "wpbsa-rules", "title": "Official Rules of the Games of Snooker and English Billiards", "publisher": "wpbsa", "url": "https://www.wpbsa.com/rules/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "frame", "title": "Playing a frame", "summary": "Reds, colours and the order of play.",
+      "rules": [
+        { "id": "red-colour", "title": "Red, then colour", "important": true,
+          "summary": "While reds remain, a player must first pot a red, then nominate and pot a colour, then a red again.",
+          "body": "Potted colours are re-spotted as long as reds remain. A visit (break) ends when the player misses or fouls. Once all reds are gone, the colours are potted in ascending value and stay down.",
+          "example": "Red (1), black (7), red (1), pink (6): a break of 15 so far.",
+          "related": ["foul-snooker", "snookered"] },
+        { "id": "maximum", "title": "The maximum break", "important": false,
+          "summary": "Fifteen reds each followed by the black, then all six colours, gives 147.",
+          "body": "Breaks above 147 are possible only after an opponent's foul leaves a 'free ball'.",
+          "related": ["red-colour"] }
+      ]
+    },
+    {
+      "id": "fouls-sn", "title": "Fouls and snookers", "summary": "How points are given away.",
+      "rules": [
+        { "id": "foul-snooker", "title": "Fouls", "important": true,
+          "summary": "Missing the ball you must hit first, potting the cue ball, hitting the wrong ball first or touching balls with anything other than the cue tip are fouls.",
+          "body": "The opponent receives at least 4 points, or more if a higher-value ball is involved. After a foul, the opponent may play or ask the offender to play again from the same position.",
+          "related": ["snookered", "miss"] },
+        { "id": "snookered", "title": "Snookers", "important": true,
+          "summary": "A player is 'snookered' when they can't hit the ball they must hit directly, because other balls are in the way.",
+          "body": "Laying snookers is a key tactic when trailing — the opponent may foul trying to escape, giving away points. If a foul leaves the next player snookered, they get a 'free ball': any ball can be nominated and played as if it were the ball on.",
+          "related": ["foul-snooker"] },
+        { "id": "miss", "title": "The miss rule", "important": false,
+          "summary": "If the referee judges a player didn't make a good enough attempt to hit the ball on, it is called a 'foul and a miss', and the opponent can have the balls replaced.",
+          "body": "This rule stops players deliberately missing to leave their opponent in trouble.",
+          "related": ["foul-snooker"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "In-off", "description": "Potting the white ball.", "consequence": "4+ points to opponent; ball in hand in the D", "severity": "MINOR" },
+    { "name": "Hitting the wrong ball", "description": "First contact with a ball other than the ball on.", "consequence": "4+ points to opponent", "severity": "MINOR" },
+    { "name": "Foul and a miss", "description": "Insufficient attempt to hit the ball on.", "consequence": "Points plus option to replace balls", "severity": "MAJOR" },
+    { "name": "Push shot", "description": "Cue tip in contact with the cue ball as it hits another ball.", "consequence": "4+ points to opponent", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Break-off", "description": "From the D, the opening player hits the pack of reds." },
+    { "title": "Safety exchanges", "description": "Players leave the cue ball in difficult positions." },
+    { "title": "Breaks", "description": "Scoring visits of red-colour combinations." },
+    { "title": "Colours", "description": "The frame often ends on the final colours." }
+  ],
+  "positions": [
+    { "name": "Player at the table", "role": "Takes shots until a miss or foul." },
+    { "name": "Referee", "role": "Re-spots colours, calls fouls and keeps order." }
+  ],
+  "field": {
+    "name": "Table",
+    "dimensions": "Playing area about 3.57 m × 1.78 m (12 ft × 6 ft table)",
+    "surface": "Napped green baize over slate",
+    "notes": ["Six pockets", "Baulk line and the 'D'", "Spots for each colour"]
+  },
+  "glossary": [
+    { "term": "Break", "definition": "Points scored in one visit to the table." },
+    { "term": "Century", "definition": "A break of 100 or more." },
+    { "term": "Safety", "definition": "A defensive shot to leave nothing for the opponent." },
+    { "term": "Free ball", "definition": "Nominating any ball after being snookered by a foul." }
+  ],
+  "funFacts": [
+    "Snooker is traditionally said to have been devised by British Army officers in Jabalpur, India, in 1875.",
+    "The first maximum 147 made on television was by Steve Davis in 1982."
+  ]
+}

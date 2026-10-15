@@ -1,0 +1,89 @@
+{
+  "id": "skateboarding",
+  "intro": "Competitive skateboarding is judged on how well skaters ride an obstacle course: the tricks they choose, how cleanly they land them, and how they use the space. There are two Olympic disciplines — street, built like an urban plaza with stairs and rails, and park, a bowl of curved transitions. World Skate governs the sport internationally.",
+  "inThirtySeconds": [
+    "Judges score runs and tricks from 0 to 100.",
+    "Street: timed runs plus single best-trick attempts.",
+    "Park: timed runs in a bowl; the best run counts.",
+    "Falling (a 'bail') ruins a trick — landing it cleanly is everything."
+  ],
+  "objective": "Earn the highest score by combining difficult, varied tricks with clean execution and flow.",
+  "facts": {
+    "players": "Individual",
+    "duration": "Runs of about 45 seconds; single-trick attempts",
+    "environment": "Purpose-built street or park course",
+    "equipment": ["Skateboard", "Helmet (mandatory in some events and age groups)", "Pads"]
+  },
+  "scoring": [
+    { "label": "Run score", "value": "0–100", "detail": "An overall impression of a timed run." },
+    { "label": "Trick score", "value": "0–100", "detail": "Street only: a single trick attempt on one obstacle." }
+  ],
+  "variants": [
+    { "id": "street", "name": "Street", "description": "A course of stairs, rails, ledges and banks, inspired by city spaces.", "body": "worldskate" },
+    { "id": "park", "name": "Park", "description": "A bowl with deep curved walls for flowing lines and big airs.", "body": "worldskate" }
+  ],
+  "bodies": [
+    { "id": "worldskate", "name": "World Skate", "acronym": null, "scope": "International federation for skateboarding and roller sports", "url": "https://www.worldskate.org/" }
+  ],
+  "rulebooks": [
+    { "id": "ws-rules", "title": "World Skate Skateboarding Rules", "publisher": "worldskate", "url": "https://www.worldskate.org/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "judging", "title": "Judging", "summary": "What judges look for.",
+      "rules": [
+        { "id": "criteria-skate", "title": "Judging criteria", "important": true,
+          "summary": "Judges consider difficulty, execution, variety, flow and use of the course, plus consistency.",
+          "body": "Scores are an overall impression rather than a points-per-trick table. The highest and lowest judges' scores are usually discarded. A trick no one has landed before in competition can earn big scores — if it's landed cleanly.",
+          "related": ["street-format", "park-format"] },
+        { "id": "bails", "title": "Bails and incomplete tricks", "important": false,
+          "summary": "A trick only counts if the skater lands and rides away in control.",
+          "body": "In street best-trick attempts, a bail scores zero. In runs, a fall usually ends the run's momentum and heavily affects the score.",
+          "related": ["criteria-skate"] }
+      ]
+    },
+    {
+      "id": "formats", "title": "Formats", "summary": "Street and park competition formats.",
+      "rules": [
+        { "id": "street-format", "title": "Street: runs and best tricks", "important": true, "variants": ["street"],
+          "summary": "Skaters get two timed runs and several single-trick attempts; the best run and best trick scores are combined.",
+          "body": "Exact numbers of attempts and how many trick scores count depend on the event format, so check the competition's rules. Single tricks let skaters attempt their hardest manoeuvres on one feature.",
+          "related": ["criteria-skate"] },
+        { "id": "park-format", "title": "Park: best run counts", "important": true, "variants": ["park"],
+          "summary": "Skaters have a few timed runs around the bowl, and their single best run is their score.",
+          "body": "Park rewards height (amplitude), speed and linking tricks in a continuous line through the bowl.",
+          "related": ["criteria-skate"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Bail", "description": "Falling or failing to ride away from a trick.", "consequence": "Zero for the trick / lower run score", "severity": "MINOR" },
+    { "name": "Running over time", "description": "Tricks after the run timer ends.", "consequence": "Not scored", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Practice", "description": "Skaters learn the course in practice sessions." },
+    { "title": "Runs", "description": "Timed runs showcase lines and variety." },
+    { "title": "Best tricks", "description": "Street skaters go for their hardest single tricks." },
+    { "title": "Podium", "description": "Combined scores decide the medals." }
+  ],
+  "positions": [
+    { "name": "Regular", "role": "Rides left foot forward." },
+    { "name": "Goofy", "role": "Rides right foot forward." }
+  ],
+  "field": {
+    "name": "Course",
+    "dimensions": "Varies by event; street courses resemble plazas, park courses are bowls",
+    "surface": "Smooth concrete or wood",
+    "notes": ["Street: stairs, handrails, ledges, banks", "Park: bowls with transitions, coping and vertical walls"]
+  },
+  "glossary": [
+    { "term": "Ollie", "definition": "Jumping with the board without using the hands — the foundation of street skating." },
+    { "term": "Kickflip", "definition": "Flicking the board to spin it along its length in the air." },
+    { "term": "Grind", "definition": "Sliding along an edge on the board's trucks." },
+    { "term": "Coping", "definition": "The metal edge at the top of a bowl wall." }
+  ],
+  "funFacts": [
+    "Skateboarding began in California in the 1950s when surfers wanted something to ride when the waves were flat.",
+    "Olympic skateboarding debuted at Tokyo 2020 with medallists as young as 13."
+  ]
+}

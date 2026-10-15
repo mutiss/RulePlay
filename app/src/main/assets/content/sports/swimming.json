@@ -1,0 +1,113 @@
+{
+  "id": "swimming",
+  "intro": "Competitive swimming is a race through the water in one of four strokes — freestyle, backstroke, breaststroke and butterfly — or a combination of them in medley events. Each stroke has precise technical rules for arms, legs, turns and finishes, and judges disqualify swimmers who break them. World Aquatics (formerly FINA) publishes the swimming rules.",
+  "inThirtySeconds": [
+    "Fastest time wins; races run from 50 m to 1500 m in the pool.",
+    "One false start and you're disqualified.",
+    "Each stroke has its own rules — breaststroke and butterfly need a two-hand touch at walls.",
+    "No more than 15 m underwater after starts and turns in freestyle, backstroke and butterfly."
+  ],
+  "objective": "Complete the distance in the stroke required, legally, in the fastest time.",
+  "facts": {
+    "players": "Individual events and relays of four",
+    "duration": "From about 20 seconds (50 m) to around 15 minutes (1500 m)",
+    "environment": "50 m (long course) or 25 m (short course) pool",
+    "equipment": ["Swimsuit (approved materials)", "Cap", "Goggles", "Starting blocks and touchpads"]
+  },
+  "scoring": [
+    { "label": "Time", "value": "0.01 s", "detail": "Electronic timing to hundredths of a second, started by the signal and stopped by touchpads." },
+    { "label": "Heats → final", "value": "8", "detail": "The fastest swimmers from heats (and semi-finals) qualify for an eight-lane final." }
+  ],
+  "bodies": [
+    { "id": "wa", "name": "World Aquatics", "acronym": null, "scope": "World governing body for aquatic sports (formerly FINA)", "url": "https://www.worldaquatics.com/" }
+  ],
+  "rulebooks": [
+    { "id": "wa-swimming", "title": "World Aquatics Swimming Rules", "publisher": "wa", "url": "https://www.worldaquatics.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "start", "title": "Starts",
+      "summary": "On your marks — and only once.",
+      "rules": [
+        { "id": "false-start", "title": "One-start rule", "important": true,
+          "summary": "A swimmer who starts before the signal is disqualified.",
+          "body": "Swimmers take their marks and must be stationary before the start signal. Freestyle, breaststroke and butterfly races start from the blocks; backstroke races start in the water, holding the block grips.",
+          "related": ["underwater"] },
+        { "id": "underwater", "title": "The 15-metre rule", "important": false,
+          "summary": "In freestyle, backstroke and butterfly, the swimmer's head must break the surface by 15 m after the start and each turn.",
+          "body": "Underwater dolphin kicking is faster than swimming on the surface, so the limit keeps races about swimming. Breaststroke has its own underwater sequence instead.",
+          "related": ["false-start", "breaststroke"] }
+      ]
+    },
+    {
+      "id": "strokes", "title": "The four strokes",
+      "summary": "What makes each stroke legal.",
+      "rules": [
+        { "id": "freestyle", "title": "Freestyle", "important": false,
+          "summary": "Any stroke is allowed, though almost everyone swims front crawl. Swimmers must touch the wall at each turn and the finish with any part of the body.",
+          "body": "In medley events, 'freestyle' means any stroke other than butterfly, backstroke or breaststroke.",
+          "related": ["medley"] },
+        { "id": "backstroke", "title": "Backstroke", "important": false,
+          "summary": "Swimmers stay on their back throughout, except during the turn.",
+          "body": "During the turn a swimmer may roll onto the front and make a single continuous arm pull into a flip turn. The finish must be touched while on the back.",
+          "related": ["underwater"] },
+        { "id": "breaststroke", "title": "Breaststroke", "important": true,
+          "summary": "Arms and legs move simultaneously and symmetrically, and every turn and the finish need a simultaneous two-hand touch.",
+          "body": "After the start and each turn, one arm stroke and one butterfly (dolphin) kick are allowed underwater before the first breaststroke kick. Alternating or flutter kicks are illegal.",
+          "example": "A swimmer touches the wall with one hand slightly before the other at a turn: disqualification.",
+          "related": ["butterfly"] },
+        { "id": "butterfly", "title": "Butterfly", "important": true,
+          "summary": "Both arms recover together over the water, legs kick together, and the touch at turns and the finish is with both hands.",
+          "body": "Breaststroke kicks are not allowed. Swimmers may perform several dolphin kicks underwater within the 15 m limit.",
+          "related": ["breaststroke", "underwater"] }
+      ]
+    },
+    {
+      "id": "relays", "title": "Medleys and relays",
+      "summary": "Order of strokes and changeovers.",
+      "rules": [
+        { "id": "medley", "title": "Medley order", "important": false,
+          "summary": "Individual medley: butterfly, backstroke, breaststroke, freestyle. Medley relay: backstroke, breaststroke, butterfly, freestyle.",
+          "body": "The relay order is different because backstroke must start in the water.",
+          "related": ["relay-takeover"] },
+        { "id": "relay-takeover", "title": "Relay changeovers", "important": false,
+          "summary": "The next swimmer's feet must still be in contact with the block when the incoming teammate touches the wall.",
+          "body": "Touchpads and sensors on the blocks measure the changeover; an early take-off disqualifies the team.",
+          "related": ["medley"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "False start", "description": "Moving off the block before the signal.", "consequence": "Disqualification", "severity": "SEVERE" },
+    { "name": "One-hand touch", "description": "Non-simultaneous touch in breaststroke or butterfly.", "consequence": "Disqualification", "severity": "SEVERE" },
+    { "name": "15 m violation", "description": "Head still underwater beyond the 15 m mark.", "consequence": "Disqualification", "severity": "SEVERE" },
+    { "name": "Early relay takeover", "description": "Feet leave the block before the teammate touches.", "consequence": "Team disqualified", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Heats", "description": "Swimmers race in heats seeded by entry times." },
+    { "title": "Semi-finals", "description": "In shorter events, the fastest 16 race again." },
+    { "title": "Final", "description": "Eight finalists; the centre lanes go to the fastest qualifiers." },
+    { "title": "Results", "description": "Touchpads give official times to the hundredth." }
+  ],
+  "positions": [
+    { "name": "Sprinter", "role": "Specialist in 50 m and 100 m events." },
+    { "name": "Distance swimmer", "role": "Specialist in 400 m to 1500 m." },
+    { "name": "Medley swimmer", "role": "All-rounder across the four strokes." }
+  ],
+  "field": {
+    "name": "Pool",
+    "dimensions": "Olympic pool: 50 m × 25 m with 8–10 lanes",
+    "surface": "Water at a regulated temperature and depth",
+    "notes": ["Backstroke flags 5 m from each wall", "15 m marks on the lane ropes", "Short-course pools are 25 m"]
+  },
+  "glossary": [
+    { "term": "IM", "definition": "Individual medley — one swimmer, all four strokes." },
+    { "term": "Flip turn", "definition": "A somersault turn used in freestyle and backstroke." },
+    { "term": "Long course", "definition": "Competition in a 50 m pool." },
+    { "term": "Split", "definition": "A swimmer's time at an intermediate distance." }
+  ],
+  "funFacts": [
+    "Butterfly was developed from breaststroke and became a separate stroke in the 1950s.",
+    "Hundredths of a second can separate the medallists."
+  ]
+}

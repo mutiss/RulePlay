@@ -1,0 +1,96 @@
+{
+  "id": "archery",
+  "intro": "Target archery asks one thing: put arrows as close to the centre as possible, again and again, under pressure and in the wind. There are two main bow types in elite competition — the Olympic recurve and the compound, which uses cams and a release aid — each with its own distances and match format. World Archery publishes the rules.",
+  "inThirtySeconds": [
+    "Targets have ten scoring rings; the gold centre scores 10.",
+    "An arrow touching a line takes the higher score.",
+    "Recurve matches use sets: win a set for 2 points, first to 6 wins.",
+    "Compound matches add up every arrow: highest total wins."
+  ],
+  "objective": "Score more than your opponent in elimination matches, after a ranking round to set the seeding.",
+  "facts": {
+    "players": "Individual, team and mixed team",
+    "duration": "Matches of a few minutes; ranking rounds of 72 arrows",
+    "environment": "Outdoor range (indoor in winter season)",
+    "equipment": ["Recurve or compound bow", "Arrows", "Finger tab or release aid", "Sight and stabilisers"]
+  },
+  "scoring": [
+    { "label": "Ring score", "value": "1–10", "detail": "Ten concentric rings; the innermost gold ring is 10." },
+    { "label": "Set point (recurve)", "value": "2 / 1", "detail": "2 points for winning a set of 3 arrows, 1 each for a tie." },
+    { "label": "Total (compound)", "value": "150", "detail": "Maximum score in a 15-arrow compound match." }
+  ],
+  "variants": [
+    { "id": "recurve", "name": "Recurve", "description": "The Olympic bow, shot at 70 m on a 122 cm target face, with set-system matches.", "body": "wa-arch" },
+    { "id": "compound", "name": "Compound", "description": "A bow with pulley cams and a mechanical release, shot at 50 m on an 80 cm face with cumulative scoring.", "body": "wa-arch" }
+  ],
+  "bodies": [
+    { "id": "wa-arch", "name": "World Archery", "acronym": null, "scope": "International federation for archery", "url": "https://www.worldarchery.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wa-rulebook", "title": "World Archery Rulebook", "publisher": "wa-arch", "url": "https://www.worldarchery.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scoring", "title": "Scoring arrows", "summary": "Rings, lines and the X.",
+      "rules": [
+        { "id": "line-cutter", "title": "Line cutters score high", "important": true,
+          "summary": "If an arrow's shaft touches the line between two rings, it scores the higher value.",
+          "body": "Scores are confirmed by judges at the target. The innermost 'X' ring inside the 10 is used to break ties in ranking rounds. In compound, only the smaller inner ring counts as 10.",
+          "example": "An arrow touches the line between the 9 and the 10: it scores 10.",
+          "related": ["shoot-off"] },
+        { "id": "time-limit", "title": "Time limits", "important": false,
+          "summary": "Archers must shoot within a time limit; in individual matches they alternate arrows with a short limit for each.",
+          "body": "Lights and countdown clocks show the time. An arrow shot after the signal scores zero.",
+          "related": ["line-cutter"] }
+      ]
+    },
+    {
+      "id": "matches", "title": "Match formats", "summary": "Sets for recurve, totals for compound.",
+      "rules": [
+        { "id": "set-system", "title": "The set system", "important": true, "variants": ["recurve"],
+          "summary": "Each set is three arrows. The higher total wins the set and 2 set points; a tie gives 1 each. First to 6 set points wins.",
+          "body": "Because each set restarts the count, one bad arrow costs at most a set — keeping matches tense until the end.",
+          "example": "Set 1: 28 v 27 (2–0). Set 2: 27 v 27 (3–1). Set 3: 26 v 29 (3–3)…",
+          "related": ["shoot-off"] },
+        { "id": "cumulative", "title": "Cumulative scoring", "important": true, "variants": ["compound"],
+          "summary": "Compound matches are five ends of three arrows; all scores are added together.",
+          "body": "With top archers hitting 10 after 10, a single 9 can decide a match.",
+          "related": ["shoot-off"] },
+        { "id": "shoot-off", "title": "Shoot-off", "important": false,
+          "summary": "If a match is tied, each archer shoots one arrow; the higher score — or the arrow closest to the centre — wins.",
+          "body": "Officials measure the distance from the centre when both arrows score the same.",
+          "related": ["set-system", "cumulative"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Shooting after time", "description": "Releasing after the time limit.", "consequence": "Highest-scoring arrow of that end lost", "severity": "MINOR" },
+    { "name": "Shooting out of turn", "description": "Shooting when it's the opponent's turn.", "consequence": "Arrow scores zero", "severity": "MINOR" },
+    { "name": "Unsafe behaviour", "description": "Drawing the bow in an unsafe direction.", "consequence": "Warnings, possible disqualification", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Ranking round", "description": "72 arrows decide the seeding." },
+    { "title": "Elimination", "description": "Head-to-head matches through to the final." },
+    { "title": "Finals", "description": "Alternating arrows on a central stage." }
+  ],
+  "positions": [
+    { "name": "Recurve archer", "role": "Shoots with fingers and a clicker to time the release." },
+    { "name": "Compound archer", "role": "Uses a mechanical release aid and magnifying sight." }
+  ],
+  "field": {
+    "name": "Range",
+    "dimensions": "Recurve: 70 m; compound: 50 m",
+    "surface": "Flat grass field with target butts",
+    "notes": ["Recurve target face: 122 cm, 10 ring 12.2 cm", "Wind flags above each target"]
+  },
+  "glossary": [
+    { "term": "End", "definition": "A group of arrows shot before scoring (three in matches)." },
+    { "term": "X", "definition": "The innermost ring of the 10, used for tie-breaks." },
+    { "term": "Clicker", "definition": "A device that clicks at full draw length." },
+    { "term": "Release aid", "definition": "Mechanical trigger used in compound." }
+  ],
+  "funFacts": [
+    "The 10 ring of a recurve target at 70 m is about the size of a CD.",
+    "South Korea has won every Olympic women's team archery title since the event was introduced in 1988."
+  ]
+}

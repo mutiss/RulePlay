@@ -1,0 +1,194 @@
+{
+  "id": "football",
+  "intro": "Two teams of eleven try to put a ball into the opposing goal using any part of the body except the hands and arms — only the goalkeepers may handle it, and only inside their own penalty area. Simple to start, endlessly deep to master, football is played under seventeen Laws of the Game maintained by IFAB.",
+  "inThirtySeconds": [
+    "Score by getting the whole ball over the goal line, between the posts and under the bar.",
+    "Use feet, head or body — only goalkeepers may handle, and only in their own penalty area.",
+    "Two halves of 45 minutes plus added time; the team with more goals wins.",
+    "Fouls give the other team a free kick — inside the penalty area, a penalty kick."
+  ],
+  "objective": "Score more goals than the opponent by the end of the match.",
+  "facts": {
+    "players": "11 per team on the pitch, including one goalkeeper",
+    "duration": "2 × 45 minutes + added time",
+    "environment": "Outdoor grass or artificial turf pitch",
+    "equipment": ["Spherical ball (size 5)", "Two goals 7.32 m × 2.44 m", "Shin guards", "Boots"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "The whole ball crosses the goal line between the posts and under the crossbar, with no offence committed by the attacking team." },
+    { "label": "Own goal", "value": "1", "detail": "Counts for the opponent when a player puts the ball into their own net." },
+    { "label": "Draw", "value": "—", "detail": "Level scores stand in league play. Knockout competitions may use extra time and/or kicks from the penalty mark." }
+  ],
+  "bodies": [
+    { "id": "ifab", "name": "The International Football Association Board", "acronym": "IFAB", "scope": "Writes and maintains the Laws of the Game", "url": "https://www.theifab.com/laws/latest/about-the-laws/" },
+    { "id": "fifa", "name": "Fédération Internationale de Football Association", "acronym": "FIFA", "scope": "World governing body; organises the World Cup", "url": null }
+  ],
+  "rulebooks": [
+    { "id": "ifab-laws", "title": "Laws of the Game", "publisher": "ifab", "url": "https://www.theifab.com/laws/latest/about-the-laws/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "basics", "title": "The field and the team",
+      "summary": "Where the game is played, who takes part and what they wear.",
+      "rules": [
+        { "id": "field", "ref": "Law 1", "title": "The field of play", "important": false,
+          "summary": "A rectangle marked with touchlines, goal lines, a halfway line, a centre circle and two penalty areas.",
+          "body": "The touchlines are longer than the goal lines. For international matches the pitch is usually between 100–110 m long and 64–75 m wide. Each end has a goal area (5.5 m) and a penalty area (16.5 m) with a penalty mark 11 m from the goal line. The centre circle has a radius of 9.15 m — the same distance opponents must keep at most restarts.",
+          "example": "When a free kick is taken, defenders must retreat 9.15 m — exactly the radius of the centre circle, which helps referees judge it.",
+          "related": ["free-kicks", "penalty"] },
+        { "id": "players", "ref": "Law 3", "title": "Players and substitutes", "important": false,
+          "summary": "Up to eleven players each, one of them a goalkeeper; a match cannot continue if a team has fewer than seven.",
+          "body": "Competition rules decide how many substitutes may be used — many top competitions allow up to five, with limited stoppages in which to make them, and some add concussion substitutes. A substituted player cannot return in most competitions. Any outfield player may swap with the goalkeeper if the referee is told and play is stopped.",
+          "related": ["field"] },
+        { "id": "equipment", "ref": "Law 4", "title": "Players' equipment", "important": false,
+          "summary": "Shirt, shorts, socks, shin guards and footwear; goalkeepers wear colours that stand out from everyone else.",
+          "body": "Players must not wear anything dangerous, such as jewellery. Each team wears colours that distinguish it from the opponent and the match officials, and each goalkeeper's colours must differ from all other players."
+        }
+      ]
+    },
+    {
+      "id": "match", "title": "How a match runs",
+      "summary": "Kick-off, halves, added time and when the ball is in play.",
+      "rules": [
+        { "id": "duration", "ref": "Law 7", "title": "Duration of the match", "important": true,
+          "summary": "Two halves of 45 minutes. The referee adds time for stoppages such as substitutions, injuries and VAR checks.",
+          "body": "Half-time may not exceed 15 minutes. Time lost during a half is added on at the referee's discretion — the fourth official displays the minimum added time near the end of each half. Competitions can agree shorter halves (for youth football, for example).",
+          "related": ["outcome"] },
+        { "id": "kick-off", "ref": "Law 8", "title": "Starting and restarting play", "important": false,
+          "summary": "A kick-off from the centre mark starts each half and restarts play after a goal.",
+          "body": "At the kick-off every player must be in their own half and opponents at least 9.15 m from the ball until it is in play. The ball is in play once it is kicked and clearly moves. A goal can be scored directly from a kick-off against the opponent. If play is stopped for a reason not covered elsewhere, it restarts with a dropped ball.",
+          "related": ["in-out"] },
+        { "id": "in-out", "ref": "Law 9", "title": "Ball in and out of play", "important": false,
+          "summary": "The ball is out only when the whole ball has crossed a touchline or goal line — on the ground or in the air.",
+          "body": "If any part of the ball is still on or above the line, it is in play. Play also stops when the referee blows the whistle. The ball remains in play if it rebounds off a post, the crossbar, the corner flag or a match official who is on the field, unless it strikes the referee and leads to a promising attack, a goal or a change of possession — then a dropped ball restarts play.",
+          "example": "A ball that is 99% over the touchline but still touching the line from above is still in play.",
+          "related": ["outcome"] },
+        { "id": "outcome", "ref": "Law 10", "title": "Determining the outcome", "important": true,
+          "summary": "A goal is scored when the whole ball passes over the goal line between the posts and under the crossbar.",
+          "body": "The team scoring more goals wins; equal goals is a draw. When a competition needs a winner, it may use extra time (two periods of no more than 15 minutes each) and then kicks from the penalty mark, taken alternately until one team has scored more from the same number of kicks.",
+          "related": ["duration", "in-out"] }
+      ]
+    },
+    {
+      "id": "offside", "title": "Offside",
+      "summary": "The most debated law in football — explained in plain language.",
+      "rules": [
+        { "id": "offside-position", "ref": "Law 11", "title": "Being in an offside position", "important": true,
+          "summary": "You are in an offside position if you are in the opponents' half and closer to their goal line than both the ball and the second-last opponent.",
+          "body": "Only the head, body and feet count — hands and arms are ignored, for attackers and defenders alike (goalkeepers included). Being level with the second-last opponent, or with the last two opponents, is not offside. You cannot be offside in your own half. Crucially, being in an offside position is not an offence by itself.",
+          "example": "An attacker stands one step beyond the last outfield defender when a team-mate passes, but the ball is level with them — they are not offside, because they are not ahead of the ball.",
+          "related": ["offside-offence", "offside-exceptions"] },
+        { "id": "offside-offence", "ref": "Law 11", "title": "When offside is penalised", "important": true,
+          "summary": "An offside-positioned player is penalised only when they become involved in active play at the moment a team-mate plays or touches the ball.",
+          "body": "Becoming involved means interfering with play (playing or touching the ball), interfering with an opponent (for example blocking the goalkeeper's line of vision or challenging for the ball), or gaining an advantage by playing a ball that rebounds or is deflected to them off the woodwork, a match official or an opponent. A deliberate play of the ball by a defender (other than a save) generally resets offside. The offence is punished with an indirect free kick where it happened.",
+          "example": "A striker is offside but makes no move towards the ball while a team-mate scores from distance: the goal stands unless the striker obstructed the goalkeeper's view.",
+          "related": ["offside-position", "free-kicks"] },
+        { "id": "offside-exceptions", "ref": "Law 11", "title": "No offside from these restarts", "important": false,
+          "summary": "There is no offside offence if a player receives the ball directly from a goal kick, a throw-in or a corner kick.",
+          "body": "This is why attackers often stand far upfield at throw-ins. Once another player touches the ball after the restart, normal offside judgement applies again.",
+          "related": ["throw-in", "goal-kick-corner"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Fouls and misconduct",
+      "summary": "What counts as a foul, when a card comes out and how handball works.",
+      "rules": [
+        { "id": "direct-fouls", "ref": "Law 12", "title": "Fouls that give a direct free kick", "important": true,
+          "summary": "Charging, jumping at, kicking, pushing, striking, tackling or tripping an opponent carelessly, recklessly or with excessive force.",
+          "body": "Holding an opponent, impeding with contact, biting or spitting at someone, throwing an object at someone, and deliberately handling the ball are also direct free kick offences. If a defending player commits one inside their own penalty area, the opponent is awarded a penalty kick. 'Careless' means no card; 'reckless' means a yellow card; 'excessive force' means a red card.",
+          "related": ["penalty", "cards", "handball"] },
+        { "id": "handball", "ref": "Law 12", "title": "Handball", "important": true,
+          "summary": "It is an offence to deliberately touch the ball with the hand or arm, or to make your body unnaturally bigger with it.",
+          "body": "The boundary of the arm is roughly at the bottom of the armpit. Not every touch is an offence: referees judge whether the arm position was justified by the player's movement. A player who scores directly from their own hand or arm — even accidentally — has the goal disallowed. Goalkeepers may handle inside their own penalty area, but not when the ball is deliberately kicked to them by a team-mate or thrown to them directly from a team-mate's throw-in.",
+          "example": "A defender slides with an arm stretched out wide to block a cross: that arm made the body unnaturally bigger, so it is likely a handball offence.",
+          "related": ["direct-fouls", "goalkeeper"] },
+        { "id": "cards", "ref": "Law 12", "title": "Yellow and red cards", "important": true,
+          "summary": "A yellow card is a caution; two in one match, or a straight red, mean a sending-off and the team plays with one fewer player.",
+          "body": "Typical cautions: unsporting behaviour, dissent, persistent offences, delaying the restart, not respecting the required distance, and entering or leaving the field without permission. Sending-off offences include serious foul play, violent conduct, biting or spitting, offensive or abusive language or gestures, and denying an obvious goal-scoring opportunity (DOGSO). When DOGSO happens in the penalty area while genuinely trying to play the ball, the punishment is usually reduced to a caution because a penalty is awarded.",
+          "related": ["direct-fouls"] },
+        { "id": "goalkeeper", "ref": "Law 12", "title": "Goalkeeper handling limits", "important": false,
+          "summary": "Holding the ball too long, or handling after a deliberate back-pass from a team-mate's foot, is penalised.",
+          "body": "Since the 2025/26 edition of the Laws, a goalkeeper who controls the ball in the hands for more than eight seconds concedes a corner kick, with the referee visibly counting down the final five seconds. Handling a deliberate kick from a team-mate, or a ball thrown directly from a team-mate's throw-in, results in an indirect free kick.",
+          "related": ["handball"] }
+      ]
+    },
+    {
+      "id": "restarts", "title": "Free kicks and restarts",
+      "summary": "Every way play starts again — and which ones can score directly.",
+      "rules": [
+        { "id": "free-kicks", "ref": "Law 13", "title": "Direct and indirect free kicks", "important": false,
+          "summary": "A direct free kick can go straight into the goal; an indirect one must touch another player first.",
+          "body": "The referee signals an indirect free kick by raising an arm above the head until the kick has touched another player. Opponents must stay at least 9.15 m away until the ball is in play. When the defending team builds a wall of three or more players, attackers may not stand within 1 m of it.",
+          "related": ["direct-fouls", "offside-offence"] },
+        { "id": "penalty", "ref": "Law 14", "title": "The penalty kick", "important": true,
+          "summary": "Awarded for a direct free kick offence by defenders inside their own penalty area; taken from the penalty mark 11 m out.",
+          "body": "The goalkeeper must stay on the goal line between the posts, facing the kicker, without touching the posts or net, until the ball is kicked — at least part of one foot must be on or in line with the line at that moment. All other players stay outside the penalty area and the penalty arc, behind the penalty mark. The kicker must kick the ball forward; stopping in the run-up is allowed, but feinting once the run-up is completed is not.",
+          "related": ["direct-fouls", "outcome"] },
+        { "id": "throw-in", "ref": "Law 15", "title": "The throw-in", "important": false,
+          "summary": "When the ball crosses a touchline, the opponent of the last player to touch it throws it back in with both hands from behind the head.",
+          "body": "The thrower faces the field, keeps part of each foot on the touchline or on the ground outside it, and throws from the point where the ball left the field. A goal cannot be scored directly from a throw-in, and there is no offside from it.",
+          "related": ["offside-exceptions"] },
+        { "id": "goal-kick-corner", "ref": "Law 16–17", "title": "Goal kicks and corner kicks", "important": false,
+          "summary": "Ball out over the goal line last touched by an attacker: goal kick. Last touched by a defender: corner kick.",
+          "body": "A goal kick is taken from anywhere inside the goal area and the ball is in play as soon as it is kicked and clearly moves — it no longer needs to leave the penalty area. A corner kick is taken from the corner arc nearest to where the ball went out. A goal can be scored directly from either against the opponent.",
+          "related": ["offside-exceptions"] }
+      ]
+    },
+    {
+      "id": "officials", "title": "Officials and technology",
+      "summary": "Who enforces the Laws, and how video review fits in.",
+      "rules": [
+        { "id": "referee", "ref": "Law 5", "title": "The referee", "important": false,
+          "summary": "The referee has full authority to enforce the Laws, and decisions on facts connected with play are final.",
+          "body": "The referee can play advantage — letting play continue when stopping it would benefit the team that committed the offence — and can still caution or send off a player at the next stoppage. Assistant referees mainly signal offside and when the ball leaves the field; a fourth official helps with substitutions and added time.",
+          "related": ["var"] },
+        { "id": "var", "ref": "Law 6", "title": "Video assistant referee (VAR)", "important": false,
+          "summary": "Where used, VAR can only help correct clear and obvious errors or serious missed incidents in four situations.",
+          "body": "The four reviewable situations are goals (and offences in the build-up), penalty decisions, direct red cards, and mistaken identity. The referee may review footage on the pitch-side monitor; the final decision always remains the referee's. Not every competition uses VAR.",
+          "related": ["referee", "offside-position"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Offside", "description": "Becoming involved in play from an offside position.", "consequence": "Indirect free kick", "severity": "MINOR" },
+    { "name": "Careless tackle or trip", "description": "Challenge made without due care.", "consequence": "Direct free kick (penalty inside the area)", "severity": "MINOR" },
+    { "name": "Reckless challenge", "description": "Challenge made with disregard for the danger to an opponent.", "consequence": "Direct free kick + yellow card", "severity": "MAJOR" },
+    { "name": "Denying an obvious goal-scoring opportunity", "description": "A foul or handball that stops a clear chance to score.", "consequence": "Red card in most cases (reduced to a caution in some penalty-area situations)", "severity": "SEVERE" },
+    { "name": "Serious foul play / violent conduct", "description": "Excessive force when challenging for the ball, or brutality off the ball.", "consequence": "Red card", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Coin toss & kick-off", "description": "The winner of the toss picks an end or the kick-off; the other team gets the other option." },
+    { "title": "First half", "description": "45 minutes of play, plus time added for stoppages." },
+    { "title": "Half-time", "description": "Up to 15 minutes. Teams swap ends for the second half." },
+    { "title": "Second half", "description": "Another 45 minutes plus added time; the other team kicks off." },
+    { "title": "Extra time & penalties", "description": "Only in competitions that need a winner: up to 2 × 15 minutes, then kicks from the penalty mark." }
+  ],
+  "positions": [
+    { "name": "Goalkeeper", "role": "Last line of defence; the only player allowed to handle the ball, inside their own penalty area." },
+    { "name": "Centre-back", "role": "Central defender who blocks attackers, wins headers and often starts build-up play." },
+    { "name": "Full-back / wing-back", "role": "Defends the flanks and overlaps to deliver crosses." },
+    { "name": "Defensive midfielder", "role": "Shields the defence, breaks up attacks and recycles possession." },
+    { "name": "Central / attacking midfielder", "role": "Links defence and attack, creates chances and arrives in the box." },
+    { "name": "Winger", "role": "Wide attacker who dribbles, crosses and cuts inside to shoot." },
+    { "name": "Striker", "role": "Main goal threat, leads the line and presses defenders." }
+  ],
+  "field": {
+    "name": "Pitch",
+    "dimensions": "International matches: 100–110 m × 64–75 m",
+    "surface": "Natural grass, artificial turf or hybrid (as allowed by competition rules)",
+    "notes": ["Goal: 7.32 m wide × 2.44 m high", "Penalty mark: 11 m from goal line", "Centre circle radius: 9.15 m", "Penalty area: 16.5 m from each goal post and into the field"]
+  },
+  "glossary": [
+    { "term": "Advantage", "definition": "The referee lets play continue after a foul because stopping would benefit the offending team." },
+    { "term": "Added time", "definition": "Time added at the end of each half to compensate for stoppages." },
+    { "term": "DOGSO", "definition": "Denying an obvious goal-scoring opportunity — usually a red-card offence." },
+    { "term": "Second-last opponent", "definition": "The reference player for offside, usually the last outfield defender (the goalkeeper is typically the last)." },
+    { "term": "Indirect free kick", "definition": "A free kick from which a goal can only be scored after the ball touches another player." },
+    { "term": "Penalty arc", "definition": "The arc outside the penalty area that keeps players 9.15 m from the penalty mark." },
+    { "term": "Clean sheet", "definition": "A match in which a team concedes no goals." }
+  ],
+  "funFacts": [
+    "The Laws of the Game are maintained by IFAB, a body founded in 1886 — older than FIFA itself (1904).",
+    "There are exactly 17 Laws of the Game, from the field of play to the corner kick."
+  ]
+}

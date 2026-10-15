@@ -1,0 +1,91 @@
+{
+  "id": "rowing",
+  "intro": "Rowing races are a test of power, endurance and perfect synchronisation. Crews of one, two, four or eight sit facing backwards and race side by side over 2,000 metres. In sculling, each rower uses two oars; in sweep rowing, each rower uses one. Eights are steered by a coxswain who calls the race. World Rowing publishes the Rules of Racing.",
+  "inThirtySeconds": [
+    "Standard races are 2,000 m in straight lanes.",
+    "Sculling: two oars per rower. Sweep: one oar each.",
+    "First bow ball across the line wins.",
+    "False starts and leaving your lane are penalised."
+  ],
+  "objective": "Cross the finish line first, with the boat's bow ahead of every other crew.",
+  "facts": {
+    "players": "Crews of 1, 2, 4 or 8 (eights include a coxswain)",
+    "duration": "About 5½ to 8 minutes for 2,000 m",
+    "environment": "Still water: lakes, rivers and purpose-built courses",
+    "equipment": ["Racing shell", "Oars (sculls or sweep blades)", "Sliding seats and foot stretchers"]
+  },
+  "scoring": [
+    { "label": "Place", "value": "1st", "detail": "Order of the bow crossing the finish line, judged by photo finish." }
+  ],
+  "bodies": [
+    { "id": "worldrowing", "name": "World Rowing", "acronym": null, "scope": "International federation; publishes the Rules of Racing", "url": "https://worldrowing.com/" }
+  ],
+  "rulebooks": [
+    { "id": "wr-rules", "title": "World Rowing Rules of Racing", "publisher": "worldrowing", "url": "https://worldrowing.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "boats", "title": "Boat classes", "summary": "Sculling and sweep.",
+      "rules": [
+        { "id": "sculling", "title": "Sculling and sweep", "important": true,
+          "summary": "Sculling boats (single, double, quad) give each rower two oars. Sweep boats (pair, four, eight) give each rower one.",
+          "body": "Boat classes are written in short form: 1x (single scull), 2x (double), 4x (quad), 2- (pair without coxswain), 4- (four), 8+ (eight with coxswain). Lightweight events add weight limits for rowers.",
+          "related": ["coxswain"] },
+        { "id": "coxswain", "title": "The coxswain", "important": false,
+          "summary": "In coxed boats, the coxswain steers, calls the stroke rate and motivates the crew.",
+          "body": "Coxswains face forward and must meet a minimum weight, carrying extra weight if they are too light.",
+          "related": ["sculling"] }
+      ]
+    },
+    {
+      "id": "race", "title": "Racing", "summary": "Start, lanes and finish.",
+      "rules": [
+        { "id": "start-row", "title": "The start", "important": true,
+          "summary": "Boats are held at the start pontoons; a crew that moves before the signal makes a false start.",
+          "body": "Under current rules, a false start can lead to exclusion from the race. Starts are aligned so every boat's bow is level.",
+          "related": ["lanes-row"] },
+        { "id": "lanes-row", "title": "Stay in your lane", "important": false,
+          "summary": "Crews must stay in their lane; leaving it and interfering with another crew can lead to exclusion.",
+          "body": "Buoy lines mark the lanes on international courses. An umpire follows each race in a motorboat.",
+          "related": ["start-row", "finish-row"] },
+        { "id": "finish-row", "title": "The finish", "important": true,
+          "summary": "A crew finishes when its bow reaches the finish line; positions are decided by photo finish.",
+          "body": "A crew may finish even if a rower has lost an oar or caught a 'crab' (the oar getting stuck in the water), as long as the crew is complete.",
+          "related": ["lanes-row"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "False start", "description": "Moving before the start signal.", "consequence": "Warning or exclusion", "severity": "MAJOR" },
+    { "name": "Lane infringement", "description": "Leaving your lane and impeding a rival.", "consequence": "Exclusion", "severity": "MAJOR" },
+    { "name": "Underweight coxswain", "description": "Coxswain below the minimum weight without ballast.", "consequence": "Not allowed to race", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Heats", "description": "Top crews advance directly." },
+    { "title": "Repechage", "description": "A second chance for crews that missed out." },
+    { "title": "Semi-finals", "description": "Crews race for places in the finals." },
+    { "title": "Final A", "description": "Six crews race for the medals." }
+  ],
+  "positions": [
+    { "name": "Stroke", "role": "Sets the rhythm for the crew." },
+    { "name": "Bow", "role": "Rower nearest the front of the boat." },
+    { "name": "Engine room", "role": "The powerful middle seats of a four or eight." },
+    { "name": "Coxswain", "role": "Steers and calls the race." }
+  ],
+  "field": {
+    "name": "Course",
+    "dimensions": "2,000 m straight, usually six lanes",
+    "surface": "Still water",
+    "notes": ["Buoyed lanes", "Distance markers every 250 or 500 m"]
+  },
+  "glossary": [
+    { "term": "Catch", "definition": "The moment the blade enters the water." },
+    { "term": "Crab", "definition": "When an oar gets caught in the water, stopping the rower." },
+    { "term": "Stroke rate", "definition": "Strokes per minute." },
+    { "term": "Erg", "definition": "Rowing machine." }
+  ],
+  "funFacts": [
+    "The Boat Race between Oxford and Cambridge was first rowed in 1829.",
+    "In a racing eight, the coxswain is often the only person facing the finish line."
+  ]
+}

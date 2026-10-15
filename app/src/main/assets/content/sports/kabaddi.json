@@ -1,0 +1,107 @@
+{
+  "id": "kabaddi",
+  "intro": "Kabaddi is a contact team sport from the Indian subcontinent that mixes tag and wrestling. One player — the raider — crosses into the opponents' half, tries to touch defenders and get back across the midline, while the defenders try to stop the raider from returning. Traditionally raiders chant 'kabaddi, kabaddi' on a single breath; modern professional leagues use a raid timer instead. This entry summarises standard (court) kabaddi as played internationally and in professional leagues.",
+  "inThirtySeconds": [
+    "Teams take turns sending a raider into the opponents' half.",
+    "The raider scores a point for every defender touched — if they make it back across the midline.",
+    "Defenders score by stopping the raider from getting back (a tackle).",
+    "Players who are 'out' leave the court and come back when their team scores."
+  ],
+  "objective": "Score more points than the opponent through successful raids, tackles and all-outs.",
+  "facts": {
+    "players": "7 per team on court, with substitutes",
+    "duration": "Usually 2 × 20 minutes (adult men)",
+    "environment": "Indoor mat (traditionally earth)",
+    "equipment": ["Mat court with marked lines", "Team kit"]
+  },
+  "scoring": [
+    { "label": "Touch point", "value": "1 each", "detail": "For each defender the raider touches before returning safely." },
+    { "label": "Bonus point", "value": "1", "detail": "Raider crosses the bonus line with a foot while enough defenders are on court." },
+    { "label": "Tackle point", "value": "1", "detail": "Defenders stop the raider from returning." },
+    { "label": "All out", "value": "+2", "detail": "Bonus for eliminating the entire opposing team." }
+  ],
+  "bodies": [
+    { "id": "ikf", "name": "International Kabaddi Federation", "acronym": "IKF", "scope": "International federation for standard-style kabaddi", "url": null },
+    { "id": "pkl", "name": "Pro Kabaddi League", "acronym": "PKL", "scope": "Professional league in India with its own playing rules", "url": "https://www.prokabaddi.com/" }
+  ],
+  "rulebooks": [
+    { "id": "ikf-rules", "title": "Standard kabaddi rules (IKF)", "publisher": "ikf", "url": null, "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "raid", "title": "The raid", "summary": "How a raider attacks.",
+      "rules": [
+        { "id": "raid-basics", "title": "Raiding", "important": true,
+          "summary": "The raider crosses the midline into the opponents' half, tries to touch one or more defenders, and must return across the midline to score.",
+          "body": "Traditionally the raider must keep chanting 'kabaddi' in one breath for the whole raid ('cant'); losing the cant gets the raider out. Professional leagues instead give the raider 30 seconds to complete the raid. Each team sends raiders alternately.",
+          "example": "A raider touches two defenders with a toe-touch and dives back over the midline: two points, and both defenders are out.",
+          "related": ["baulk-line", "tackle"] },
+        { "id": "baulk-line", "title": "Baulk line and bonus line", "important": false,
+          "summary": "The raider must cross the baulk line in the opponents' half for the raid to count; crossing the further bonus line can earn a bonus point.",
+          "body": "If the raider returns without crossing the baulk line or touching a defender, the raid is unsuccessful. The bonus point only applies when a minimum number of defenders (usually six) are on court.",
+          "related": ["raid-basics"] },
+        { "id": "do-or-die", "title": "Do-or-die raid", "important": false,
+          "summary": "In professional leagues, after two consecutive empty raids the team's third raid must score — or the raider is out.",
+          "body": "This rule stops teams playing safe with empty raids and creates high-pressure moments.",
+          "related": ["raid-basics"] }
+      ]
+    },
+    {
+      "id": "defence", "title": "Defence", "summary": "Tackles and eliminations.",
+      "rules": [
+        { "id": "tackle", "title": "The tackle", "important": true,
+          "summary": "Defenders score a point if they hold the raider and stop them returning to their half.",
+          "body": "Defenders may hold the raider by the torso and limbs but not by the hair or clothing, and may not use dangerous holds such as gripping the throat. Successful tackles with three or fewer defenders on court earn an extra 'super tackle' point.",
+          "related": ["raid-basics", "revival"] },
+        { "id": "revival", "title": "Out and revival", "important": true,
+          "summary": "Players who are out leave the court; each point scored by their team brings one teammate back, in the order they went out.",
+          "body": "If a team loses all its players, the opponents score an 'all out' bonus and the whole team returns. This revival system means the number of players on court changes constantly.",
+          "related": ["tackle"] }
+      ]
+    },
+    {
+      "id": "court-rules", "title": "Court and conduct", "summary": "Boundaries and lobbies.",
+      "rules": [
+        { "id": "lobby", "title": "Boundaries and the lobby", "important": false,
+          "summary": "Players who step out of bounds are out; the side 'lobby' strips only become part of the court once contact is made during a raid.",
+          "body": "A defender who pushes the raider out of bounds without a legal tackle may give the raider the point.",
+          "related": ["tackle"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Losing the cant / raid time", "description": "Raider stops chanting or exceeds the raid timer.", "consequence": "Raider out", "severity": "MINOR" },
+    { "name": "Stepping out of bounds", "description": "Leaving the playing area without contact having been made.", "consequence": "Player out", "severity": "MINOR" },
+    { "name": "Illegal hold", "description": "Holding by the hair, kit or throat.", "consequence": "Point to the raider, possible card", "severity": "MAJOR" },
+    { "name": "Misconduct", "description": "Unsporting behaviour.", "consequence": "Green, yellow or red card", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Toss", "description": "The winner chooses court side or first raid." },
+    { "title": "Alternating raids", "description": "Teams send raiders one after another." },
+    { "title": "Half-time", "description": "Teams switch courts." },
+    { "title": "Final raids", "description": "Tactical substitutions and do-or-die moments decide close matches." }
+  ],
+  "positions": [
+    { "name": "Raider", "role": "Attacker who enters the opponents' half." },
+    { "name": "Corner defenders", "role": "Specialists at the ends of the defensive chain." },
+    { "name": "Cover defenders", "role": "Inner defenders who support tackles." },
+    { "name": "All-rounder", "role": "Player who both raids and defends." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "About 13 m × 10 m for men (smaller for women and juniors)",
+    "surface": "Synthetic mat (traditionally soil)",
+    "notes": ["Midline divides the court", "Baulk line and bonus line in each half", "Lobby strips along the sides"]
+  },
+  "glossary": [
+    { "term": "Raider", "definition": "The attacking player." },
+    { "term": "Cant", "definition": "The continuous chant of 'kabaddi' during a raid." },
+    { "term": "Super tackle", "definition": "A tackle made when three or fewer defenders remain." },
+    { "term": "All out", "definition": "Eliminating every player on the opposing team." },
+    { "term": "Toe touch", "definition": "A quick extended-leg touch on a defender." }
+  ],
+  "funFacts": [
+    "Kabaddi has been played at the Asian Games since 1990.",
+    "The Pro Kabaddi League, launched in 2014, turned the sport into a major television event in India."
+  ]
+}

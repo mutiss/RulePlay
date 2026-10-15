@@ -1,0 +1,289 @@
+<resources>
+    <string name="app_name" translatable="false">RulePlay</string>
+    <string name="brand_tagline">Every sport. Every rule.</string>
+
+    <!-- Navigation -->
+    <string name="nav_discover">Discover</string>
+    <string name="nav_explore">Explore</string>
+    <string name="nav_library">Library</string>
+    <string name="nav_settings">Settings</string>
+
+    <!-- Common actions -->
+    <string name="action_back">Back</string>
+    <string name="action_clear">Clear</string>
+    <string name="action_clear_all">Clear all</string>
+    <string name="action_clear_filters">Clear filters</string>
+    <string name="action_explore_sports">Explore sports</string>
+    <string name="action_know_the_rules">Know the rules</string>
+    <string name="action_next">Next</string>
+    <string name="action_open_official_source">Open official source</string>
+    <string name="action_open_sport">Open %1$s</string>
+    <string name="action_open_website">Open website</string>
+    <string name="action_remove">Remove</string>
+    <string name="action_retry">Try again</string>
+    <string name="action_save_rule">Save rule</string>
+    <string name="action_unsave_rule">Remove rule from library</string>
+    <string name="action_save_sport">Save %1$s</string>
+    <string name="action_unsave_sport">Remove %1$s from library</string>
+    <string name="action_see_all">See all</string>
+    <string name="action_show_all_terms">Show all %1$d terms</string>
+    <string name="action_show_less">Show fewer terms</string>
+    <string name="action_skip">Skip</string>
+    <string name="action_start_exploring">Start exploring</string>
+    <string name="action_surprise_me">Surprise me</string>
+    <string name="action_surprise_again">Another one</string>
+    <string name="action_undo">Undo</string>
+
+    <!-- States -->
+    <string name="state_saved">Saved</string>
+    <string name="state_not_saved">Not saved</string>
+    <string name="state_expanded">Expanded</string>
+    <string name="state_collapsed">Collapsed</string>
+    <string name="state_loading">Loading</string>
+    <string name="error_title">Something went wrong</string>
+    <string name="error_content">The encyclopedia could not be loaded. Please restart the app.</string>
+
+    <!-- Labels -->
+    <string name="label_editorial_summary">Editorial summary</string>
+    <string name="label_example">Example</string>
+    <string name="label_hidden_gem">Hidden gem</string>
+    <string name="label_key_rule">Key rule</string>
+    <string name="label_language">Language</string>
+    <string name="label_link_checked">Link checked %1$s</string>
+    <string name="label_link_unverified">Link not verified</string>
+    <string name="label_note">Note</string>
+    <string name="label_related_rules">Related rules</string>
+    <string name="severity_minor">Minor</string>
+    <string name="severity_major">Major</string>
+    <string name="severity_severe">Severe</string>
+
+    <!-- Onboarding -->
+    <string name="onboarding_1_title">Every sport.</string>
+    <string name="onboarding_1_body">From the World Cup final to a village kabaddi match — discover how the world plays.</string>
+    <string name="onboarding_2_title">Every rule.</string>
+    <string name="onboarding_2_body">Rulebooks broken into chapters, key rules and real examples. No walls of text.</string>
+    <string name="onboarding_3_title">One place.</string>
+    <string name="onboarding_3_body">Search, save and explore offline. Come for padel, stay for curling.</string>
+    <string name="onboarding_page">Page %1$d of %2$d</string>
+
+    <!-- Discover -->
+    <string name="discover_sport_of_the_day">Sport of the day</string>
+    <string name="discover_headline_1">Every sport has a story.</string>
+    <string name="discover_headline_2">Know the rules.</string>
+    <string name="discover_popular">Popular right now</string>
+    <string name="discover_popular_overline">The big ones</string>
+    <string name="discover_categories">Pick your arena</string>
+    <string name="discover_categories_overline">Browse by category</string>
+    <string name="discover_hidden_gems">Hidden gems</string>
+    <string name="discover_hidden_gems_overline">Off the beaten track</string>
+    <string name="discover_because_you_read">Because you read %1$s</string>
+    <string name="discover_because_overline">Keep exploring</string>
+    <string name="discover_recent">Recently viewed</string>
+    <string name="discover_recent_overline">Pick up where you left off</string>
+    <string name="discover_surprise_overline">Feeling curious?</string>
+    <string name="discover_surprise_title">Discover a sport at random</string>
+    <string name="discover_surprise_body">Let RulePlay pick something you have probably never played. Lesser-known sports come up more often.</string>
+    <string name="discover_library_title">Your library</string>
+    <string name="discover_library_empty">Save sports and rules to find them here</string>
+    <string name="discover_footer_note">Rules in RulePlay are editorial summaries written to be easy to read. Always check the official rulebook for competition use. Content version %1$s.</string>
+
+    <!-- Search -->
+    <string name="search_open">Search sports and rules</string>
+    <string name="search_prefix">Search</string>
+    <string name="search_hint_default">sports and rules</string>
+    <string name="search_placeholder">Sports, rules, terms…</string>
+    <string name="search_recent">Recent searches</string>
+    <string name="search_remove_recent">Remove %1$s from recent searches</string>
+    <string name="search_try">Try searching for</string>
+    <string name="search_browse_categories">Browse categories</string>
+    <string name="search_suggested">You might not know these</string>
+    <string name="search_searching">Searching…</string>
+    <string name="search_no_results_short">No matches</string>
+    <string name="search_no_results_title">Nothing for “%1$s”</string>
+    <string name="search_no_results_body">Try a sport name, a rule like “offside” or a term like “tie-break”. Search covers names, alternative names, categories, rule titles, rule text and glossaries.</string>
+    <string name="search_section_sports">Sports</string>
+    <string name="search_section_rules">Rules</string>
+    <string name="search_section_terms">Terms</string>
+    <string name="search_also_known_as">Also known as %1$s</string>
+    <string-array name="search_hints">
+        <item>“offside”</item>
+        <item>padel</item>
+        <item>“the kitchen”</item>
+        <item>kabaddi</item>
+        <item>“tie-break”</item>
+        <item>“icing”</item>
+    </string-array>
+    <string-array name="search_try_terms">
+        <item>offside</item>
+        <item>tie-break</item>
+        <item>kitchen</item>
+        <item>ippon</item>
+        <item>icing</item>
+        <item>LBW</item>
+        <item>shot clock</item>
+        <item>scrum</item>
+    </string-array>
+
+    <!-- Explore -->
+    <string name="explore_title">Explore</string>
+    <string name="explore_overline">The encyclopedia</string>
+    <string name="explore_filter_placeholder">Filter sports</string>
+    <string name="explore_all">All</string>
+    <string name="explore_favorites_only">Show saved sports only</string>
+    <string name="explore_empty_title">No sports match</string>
+    <string name="explore_empty_body">Try another category or a different word. Alternative names like “soccer” or “ping-pong” work too.</string>
+    <string name="explore_empty_favorites_title">No saved sports here</string>
+    <string name="explore_empty_favorites_body">Tap the heart on any sport to keep it close.</string>
+    <string name="sort_curated">Curated</string>
+    <string name="sort_popular">Popular</string>
+    <string name="sort_az">A–Z</string>
+
+    <!-- Sport detail -->
+    <string name="detail_tab_overview">Overview</string>
+    <string name="detail_tab_rules">Rules</string>
+    <string name="detail_tab_fouls">Fouls</string>
+    <string name="detail_tab_flow">Match flow</string>
+    <string name="detail_tab_positions">Positions</string>
+    <string name="detail_tab_field">Field</string>
+    <string name="detail_tab_sources">Sources</string>
+    <string name="detail_art_description">Original illustration for %1$s</string>
+    <string name="detail_thirty_seconds">The game in 30 seconds</string>
+    <string name="detail_objective">Objective</string>
+    <string name="detail_players">Players</string>
+    <string name="detail_duration">Duration</string>
+    <string name="detail_environment">Played on</string>
+    <string name="detail_equipment">Equipment</string>
+    <string name="detail_rule_set">Rule set</string>
+    <string name="detail_scoring">Scoring</string>
+    <string name="detail_essential_rules">Essential rules</string>
+    <string name="detail_essential_overline">Start here</string>
+    <string name="detail_open_reader">Open the rule reader</string>
+    <string name="detail_fouls">Fouls and violations</string>
+    <string name="detail_fouls_overline">What not to do</string>
+    <string name="detail_flow">How a match unfolds</string>
+    <string name="detail_flow_overline">Match flow</string>
+    <string name="detail_positions">Positions and roles</string>
+    <string name="detail_positions_overline">Who does what</string>
+    <string name="detail_field">The field of play</string>
+    <string name="detail_field_overline">Where it happens</string>
+    <string name="detail_diagram_note">Diagram is illustrative and not to scale.</string>
+    <string name="detail_glossary">Speak the language</string>
+    <string name="detail_glossary_overline">Glossary</string>
+    <string name="detail_did_you_know">Did you know?</string>
+    <string name="detail_sources">Sources and rule sets</string>
+    <string name="detail_sources_overline">Official rulebooks</string>
+    <string name="detail_sources_disclaimer">The rules on this page are plain-language summaries written by RulePlay, not official wording. Rule references (like “Law 11”) appear only where they match the official numbering. For refereeing or competition, use the governing body’s current rulebook.</string>
+    <string name="detail_governing_bodies">Governing bodies</string>
+    <string name="detail_cover_photo">Cover photo</string>
+    <string name="photo_credit_by">Photo: %1$s</string>
+    <string name="action_open_photo_source">Open photo source and licence</string>
+    <string name="sources_photos">Cover photos</string>
+    <string name="detail_related">If you like %1$s, try…</string>
+    <string name="detail_related_overline">Keep exploring</string>
+    <string name="detail_fallback_language">This entry is not translated yet, so it is shown in English.</string>
+    <string name="detail_not_found_title">Sport not found</string>
+    <string name="detail_not_found_body">This entry may have been removed or renamed in a content update.</string>
+
+    <!-- Reader -->
+    <string name="reader_overline">Rule reader</string>
+    <string name="reader_title">The rules of %1$s</string>
+    <string name="reader_chapter">Chapter %1$d</string>
+    <string name="reader_chapter_of">Chapter %1$d of %2$d</string>
+    <string name="reader_contents">Contents</string>
+    <string name="reader_text_size">Change text size</string>
+    <string name="reader_expand_all">Expand all rules</string>
+    <string name="reader_collapse_all">Collapse all rules</string>
+    <string name="reader_disclaimer">Each card starts with the rule in a sentence. Tap to read the full explanation and a worked example.</string>
+    <string name="reader_source_title">Source and attribution</string>
+    <string name="reader_source_rulebook">Official rulebook</string>
+    <string name="reader_source_publisher">Published by</string>
+    <string name="reader_source_edition">Edition</string>
+    <string name="reader_source_edition_unknown">Not specified — check the publisher for the current edition</string>
+    <string name="reader_source_none">No official rulebook is linked for this sport yet.</string>
+
+    <!-- Library -->
+    <string name="library_title">Library</string>
+    <string name="library_overline">Saved by you</string>
+    <string name="library_subtitle">Your sports and bookmarked rules, available offline.</string>
+    <string name="library_tab_sports">Sports · %1$d</string>
+    <string name="library_tab_rules">Rules · %1$d</string>
+    <string name="library_empty_sports_title">No saved sports yet</string>
+    <string name="library_empty_sports_body">Tap the heart on any sport to build your personal shelf.</string>
+    <string name="library_empty_rules_title">No bookmarked rules yet</string>
+    <string name="library_empty_rules_body">Open any rule card and tap the bookmark to keep it for later.</string>
+    <string name="library_removed">Removed “%1$s”</string>
+    <string name="library_remove_item">Remove %1$s</string>
+
+    <!-- Settings -->
+    <string name="settings_title">Settings</string>
+    <string name="settings_overline">Make it yours</string>
+    <string name="settings_appearance">Appearance</string>
+    <string name="settings_theme">Theme</string>
+    <string name="settings_theme_body">RulePlay is designed dark-first</string>
+    <string name="theme_system">System</string>
+    <string name="theme_dark">Dark</string>
+    <string name="theme_light">Light</string>
+    <string name="settings_language">Language</string>
+    <string name="settings_language_body">Rules are available in English and Spanish</string>
+    <string name="language_system">System default</string>
+    <string name="settings_reading">Reading</string>
+    <string name="settings_reader_size">Reader text size</string>
+    <string name="settings_reader_size_body">Applies to the rule reader</string>
+    <string name="settings_accessibility">Accessibility</string>
+    <string name="settings_reduce_motion">Reduce motion</string>
+    <string name="settings_reduce_motion_body">Replaces transitions and parallax with instant changes. Also follows the system “Remove animations” setting.</string>
+    <string name="settings_about">About</string>
+    <string name="settings_about_body">RulePlay is an encyclopedia of sports rules, written to make unfamiliar games approachable. Content is bundled with the app and works offline.</string>
+    <string name="settings_sources">Sources and acknowledgements</string>
+    <string name="settings_sources_body">Governing bodies, content policy and licences</string>
+    <string name="settings_replay_onboarding">Show the introduction again</string>
+    <string name="settings_replay_onboarding_body">It will appear the next time you open RulePlay</string>
+    <string name="settings_content_version">Content version</string>
+    <string name="settings_catalog">Catalog</string>
+    <string name="settings_catalog_value">%1$d sports · %2$d rules</string>
+    <string name="settings_app_version">App version</string>
+
+    <!-- Sources -->
+    <string name="sources_title">Sources</string>
+    <string name="sources_policy">RulePlay summarises the rules of each sport in its own words. Summaries are not official rule text and are not endorsed by any federation. We link to each governing body so you can read the current official rulebook, and we only show a rule number when it matches the official numbering.</string>
+    <string name="sources_links_checked">%1$d of %2$d rulebook links were checked as reachable on the date shown next to each one. Federations update their documents regularly, so editions can change.</string>
+    <string name="sources_governing_bodies">Governing bodies referenced</string>
+    <string name="sources_acknowledgements">Acknowledgements</string>
+    <string name="sources_fonts">Typefaces: Bebas Neue (Dharma Type) and Inter (Rasmus Andersson), both under the SIL Open Font License 1.1.</string>
+    <string name="sources_art">Cover photos come from Wikimedia Commons under the licence shown for each one (Creative Commons or public domain); they were cropped, resized and colour-graded. Sports without a photo use original artwork generated on-device by RulePlay. No federation imagery is used.</string>
+    <string name="sources_trademarks">Names of competitions, leagues and organisations are trademarks of their respective owners and are used for identification only.</string>
+
+    <!-- Plurals -->
+    <plurals name="sports_count">
+        <item quantity="one">%1$d sport</item>
+        <item quantity="other">%1$d sports</item>
+    </plurals>
+    <plurals name="rules_count">
+        <item quantity="one">%1$d rule</item>
+        <item quantity="other">%1$d rules</item>
+    </plurals>
+    <plurals name="chapters_count">
+        <item quantity="one">%1$d chapter</item>
+        <item quantity="other">%1$d chapters</item>
+    </plurals>
+    <plurals name="saved_items">
+        <item quantity="one">%1$d saved item</item>
+        <item quantity="other">%1$d saved items</item>
+    </plurals>
+    <plurals name="discover_catalog_summary">
+        <item quantity="one">%1$d sport across %2$d categories, explained in plain language. Works offline.</item>
+        <item quantity="other">%1$d sports across %2$d categories, explained in plain language. Works offline.</item>
+    </plurals>
+    <plurals name="explore_subtitle">
+        <item quantity="one">%1$d sport and counting</item>
+        <item quantity="other">%1$d sports and counting</item>
+    </plurals>
+    <plurals name="search_results_count">
+        <item quantity="one">%1$d result</item>
+        <item quantity="other">%1$d results</item>
+    </plurals>
+    <plurals name="library_hint">
+        <item quantity="one">Swipe left on an item to remove it.</item>
+        <item quantity="other">Swipe left on an item to remove it.</item>
+    </plurals>
+</resources>

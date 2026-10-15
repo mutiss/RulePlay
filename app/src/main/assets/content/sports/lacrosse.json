@@ -1,0 +1,96 @@
+{
+  "id": "lacrosse",
+  "intro": "Lacrosse was created by Indigenous peoples of North America — the Haudenosaunee call it the Creator's Game — long before Europeans arrived. Players use sticks with a netted pocket to catch, carry and throw a solid rubber ball, and shoot at a goal guarded by a goalkeeper. Today it is played in several forms; World Lacrosse governs the sport internationally and introduced the fast, small-sided 'sixes' format used at the 2028 Olympics.",
+  "inThirtySeconds": [
+    "Carry the ball in your stick's netted pocket and shoot it into the goal.",
+    "No one may touch the ball with their hands except the goalkeeper in the crease.",
+    "Attackers can't step into the circle around the goal (the crease).",
+    "A shot clock keeps play moving; fouls send players to the penalty box."
+  ],
+  "objective": "Score more goals than the opponent.",
+  "facts": {
+    "players": "Men's field: 10 v 10 · Women's: 12 v 12 · Sixes: 6 v 6",
+    "duration": "Four quarters (length depends on format and level)",
+    "environment": "Outdoor field (box lacrosse indoors)",
+    "equipment": ["Stick (crosse) with netted head", "Solid rubber ball", "Helmet and gloves (men's)", "Eye protection (women's)"]
+  },
+  "scoring": [
+    { "label": "Goal", "value": "1", "detail": "The ball fully crosses the goal line. Some leagues award 2 points for long-range shots." }
+  ],
+  "variants": [
+    { "id": "field", "name": "Field", "description": "The traditional outdoor game with large teams and a full-size field.", "body": "worldlax" },
+    { "id": "sixes", "name": "Sixes", "description": "A fast 6-a-side format on a smaller field with a short shot clock; chosen for the Olympics.", "body": "worldlax" }
+  ],
+  "bodies": [
+    { "id": "worldlax", "name": "World Lacrosse", "acronym": null, "scope": "International federation for lacrosse", "url": "https://worldlacrosse.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wl-rules", "title": "World Lacrosse Rules", "publisher": "worldlax", "url": "https://worldlacrosse.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "playing", "title": "Playing the ball", "summary": "Sticks, hands and the crease.",
+      "rules": [
+        { "id": "no-hands", "title": "Sticks, not hands", "important": true,
+          "summary": "Field players must not touch the ball with their hands; it is carried, passed and shot with the stick.",
+          "body": "Players 'cradle' the ball — rocking the stick — to keep it in the pocket while running. Kicking the ball is allowed to move it, but goals cannot be kicked in.",
+          "related": ["crease"] },
+        { "id": "crease", "title": "The crease", "important": true,
+          "summary": "Attackers may not enter the circle around the goal (the crease). Inside it, the goalkeeper is protected.",
+          "body": "A goal does not count if the shooter lands in the crease. Defenders may pass through the crease but must not hold the ball there for long.",
+          "related": ["no-hands", "shot-clock-lax"] },
+        { "id": "shot-clock-lax", "title": "Shot clock", "important": false,
+          "summary": "Teams must shoot on goal within the shot clock, which is much shorter in sixes.",
+          "body": "The clock resets when a shot hits the goal or goalkeeper. In field lacrosse, teams must also advance the ball over the midfield line within a time limit.",
+          "related": ["crease"] }
+      ]
+    },
+    {
+      "id": "contact", "title": "Contact and fouls", "summary": "What's allowed, men's and women's.",
+      "rules": [
+        { "id": "checking-lax", "title": "Stick checks and body checks", "important": true,
+          "summary": "Defenders may hit an opponent's stick to dislodge the ball. In men's field lacrosse, body checks are allowed on the ball carrier within limits; women's lacrosse and sixes restrict contact far more.",
+          "body": "Checks must be below the neck and from the front or side. Slashing (swinging at the body), cross-checking with the shaft and hits to the head are personal fouls.",
+          "related": ["penalties-lax"] },
+        { "id": "penalties-lax", "title": "Personal and technical fouls", "important": false,
+          "summary": "Technical fouls (like holding or offside) usually cost possession or 30 seconds in the box; personal fouls cost one to three minutes.",
+          "body": "The penalised team plays a player short — giving the opponents a man-up opportunity. Women's lacrosse uses free positions instead of a penalty box for many fouls.",
+          "related": ["checking-lax"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Crease violation", "description": "Attacker steps into the goal crease.", "consequence": "Goal disallowed / possession change", "severity": "MINOR" },
+    { "name": "Holding / pushing", "description": "Illegally impeding an opponent.", "consequence": "Technical foul", "severity": "MINOR" },
+    { "name": "Slashing", "description": "Swinging the stick at an opponent's body.", "consequence": "Personal foul, time in the penalty box", "severity": "MAJOR" },
+    { "name": "Illegal body check", "description": "Late, high or from-behind hits.", "consequence": "Personal foul; possible ejection", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Face-off / draw", "description": "Possession starts with a face-off (men) or a draw (women)." },
+    { "title": "Settled attack", "description": "Teams work the ball around the crease." },
+    { "title": "Transition", "description": "Fast breaks after saves and turnovers." },
+    { "title": "Quarters", "description": "Teams swap ends between periods." }
+  ],
+  "positions": [
+    { "name": "Attack", "role": "Scorers who play near the opponents' goal." },
+    { "name": "Midfield", "role": "Run both ends of the field." },
+    { "name": "Defence", "role": "Often carry long sticks to check attackers." },
+    { "name": "Goalkeeper", "role": "Guards a 6 ft square goal with a large-headed stick." }
+  ],
+  "field": {
+    "name": "Field",
+    "dimensions": "Men's field: about 110 m × 60 m; sixes uses a much smaller field",
+    "surface": "Grass or artificial turf",
+    "notes": ["Goal: 6 ft × 6 ft (1.83 m)", "Crease radius: 9 ft (2.74 m)"]
+  },
+  "glossary": [
+    { "term": "Cradle", "definition": "Rocking the stick to keep the ball in the pocket." },
+    { "term": "Crease", "definition": "The protected circle around the goal." },
+    { "term": "Face-off", "definition": "Restart where two players contest the ball at midfield." },
+    { "term": "Man-up", "definition": "Playing with an extra player after an opponent's penalty." }
+  ],
+  "funFacts": [
+    "The Haudenosaunee Nationals compete internationally as their own nation in World Lacrosse events.",
+    "Lacrosse returns to the Olympic programme at Los Angeles 2028 in the sixes format."
+  ]
+}

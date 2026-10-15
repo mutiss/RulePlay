@@ -1,0 +1,114 @@
+{
+  "id": "pickleball",
+  "language": "es",
+  "intro": "El pickleball mezcla elementos del tenis, el bádminton y el tenis de mesa en una pista pequeña, con palas macizas y una pelota de plástico perforada. Dos reglas ingeniosas lo definen: la regla de los dos botes ralentiza el inicio de cada punto, y la zona de no volea —«la cocina»— impide rematarlo todo en la red. Esta ficha sigue el reglamento de USA Pickleball, la referencia más utilizada.",
+  "inThirtySeconds": [
+    "Saca por abajo, en diagonal, más allá de la línea de la cocina.",
+    "El saque y el resto deben botar antes de golpearse (regla de los dos botes).",
+    "No puedes volear si estás en la cocina: la zona de 7 pies junto a la red.",
+    "Los juegos tradicionales van a 11, con dos de ventaja, y solo puntúa el lado que saca."
+  ],
+  "objective": "Ganar jugadas hasta llegar a 11 puntos (o el objetivo del formato) con dos de ventaja.",
+  "facts": {
+    "players": "1 contra 1 o 2 contra 2 (los dobles son lo más habitual)",
+    "duration": "Juegos a 11 (sin reloj)",
+    "environment": "Pista dura, cubierta o al aire libre",
+    "equipment": ["Pala maciza", "Pelota de plástico perforada", "Red de 34 pulgadas en el centro"]
+  },
+  "scoring": [
+    { "label": "Punto", "value": "1", "detail": "En el sistema tradicional de cambio de saque, solo puntúa el lado que saca." },
+    { "label": "Juego", "value": "11", "detail": "Normalmente a 11, con dos de ventaja; los torneos pueden jugar a 15 o 21." },
+    { "label": "Canto del marcador", "value": "3 números", "detail": "En dobles: puntos del equipo que saca, puntos del que resta y número de sacador (1 o 2)." }
+  ],
+  "bodies": [
+    { "id": "usap", "name": "USA Pickleball", "acronym": null, "scope": "Organismo rector de EE. UU.; publica el Reglamento Oficial", "url": "https://usapickleball.org/what-is-pickleball/official-rules/" }
+  ],
+  "rulebooks": [
+    { "id": "usap-rulebook", "title": "Reglamento Oficial de USA Pickleball", "publisher": "usap", "url": "https://usapickleball.org/what-is-pickleball/official-rules/", "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "serve", "title": "El saque",
+      "summary": "Por abajo y en diagonal.",
+      "rules": [
+        { "id": "serve-pb", "title": "El saque por abajo", "important": true,
+          "summary": "El saque se golpea con un movimiento ascendente, por abajo, contactando la pelota por debajo de la cintura, y viaja en diagonal al cuadro de saque contrario.",
+          "body": "Al menos un pie debe estar detrás de la línea de fondo, y el saque debe superar la zona de no volea, incluida su línea. El reglamento actual también permite el «saque con bote», en el que se deja caer la pelota y se golpea tras botar. El sacador tiene un solo intento.",
+          "related": ["two-bounce", "side-out"] },
+        { "id": "side-out", "title": "Puntuación con cambio de saque", "important": true,
+          "summary": "Solo puntúa el lado que saca. En dobles, ambos compañeros sacan antes de que el saque pase al rival.",
+          "body": "Al empezar cada juego, solo saca un jugador del primer equipo antes del cambio, por eso el primer canto es «0-0-2». Algunas competiciones usan puntuación directa, en la que cada jugada da un punto.",
+          "example": "Se canta «5-3-1»: el equipo que saca tiene 5, el que resta 3, y saca el primer sacador.",
+          "related": ["serve-pb"] }
+      ]
+    },
+    {
+      "id": "bounce", "title": "La regla de los dos botes",
+      "summary": "Por qué cada punto empieza desde el fondo.",
+      "rules": [
+        { "id": "two-bounce", "title": "Deja botar los dos primeros golpes", "important": true,
+          "summary": "El equipo que resta debe dejar botar el saque antes de devolverlo, y el que saca debe dejar botar el resto antes de golpearlo.",
+          "body": "Tras esos dos botes, cualquiera puede volear o jugar tras el bote. La regla impide que el equipo que saca suba a la red de inmediato y alarga los puntos. Incumplirla es falta.",
+          "example": "El compañero del sacador volea el resto en el aire: falta, cambio de saque o punto para los restadores.",
+          "related": ["kitchen"] }
+      ]
+    },
+    {
+      "id": "kitchen", "title": "La cocina",
+      "summary": "La zona de no volea junto a la red.",
+      "rules": [
+        { "id": "kitchen", "title": "Nada de voleas en la zona de no volea", "important": true,
+          "summary": "No puedes volear mientras tocas la zona de no volea o su línea.",
+          "body": "La restricción incluye tu inercia: si voleas fuera de la zona y el impulso te mete en ella —aunque la pelota ya esté muerta—, es falta. Puedes entrar en la cocina en cualquier momento para jugar una pelota que ha botado.",
+          "example": "Un jugador volea con ambos pies detrás de la línea, tropieza y toca la línea de la cocina: falta.",
+          "related": ["two-bounce", "dink"] },
+        { "id": "dink", "title": "El dink", "important": false,
+          "summary": "Los golpes suaves que caen en la cocina rival («dinks») son una táctica clave.",
+          "body": "Como el rival no puede volear un dink desde dentro de la cocina, debe dejarlo botar, lo que hace los puntos pacientes hasta que alguien deja una pelota lo bastante alta para atacar.",
+          "related": ["kitchen"] }
+      ]
+    },
+    {
+      "id": "faults", "title": "Faltas",
+      "summary": "Formas habituales de perder la jugada.",
+      "rules": [
+        { "id": "faults-pb", "title": "Faltas generales", "important": false,
+          "summary": "Mandar la pelota fuera o a la red, volear desde la cocina o incumplir la regla de los dos botes termina la jugada.",
+          "body": "Las líneas son buenas, salvo la línea de la cocina en el saque: si el saque la toca, es falta. Tocar la red o los postes con el cuerpo, la pala o la ropa con la pelota en juego también es falta.",
+          "related": ["kitchen", "two-bounce"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Infracción de cocina", "description": "Volear mientras se toca la zona de no volea.", "consequence": "Falta", "severity": "MINOR" },
+    { "name": "Infracción de dos botes", "description": "Volear el saque o el resto.", "consequence": "Falta", "severity": "MINOR" },
+    { "name": "Saque corto", "description": "El saque cae en la cocina o en su línea.", "consequence": "Falta", "severity": "MINOR" },
+    { "name": "Aviso técnico", "description": "Conducta antideportiva en competición oficial.", "consequence": "Aviso y después penalización de puntos", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Saque", "description": "En diagonal, por abajo y profundo." },
+    { "title": "Resto y tercer golpe", "description": "Ambos deben botar; el tercero suele ser una dejada suave a la cocina." },
+    { "title": "En la red", "description": "Los jugadores suben a la línea de la cocina e intercambian dinks y voleas." },
+    { "title": "Cambio de saque", "description": "Cuando el lado que saca pierde jugadas, el saque pasa al rival." }
+  ],
+  "positions": [
+    { "name": "Sacador", "role": "Inicia cada jugada desde detrás de la línea de fondo." },
+    { "name": "Compañero en la línea de la cocina", "role": "Sube para controlar la red una vez que el resto ha botado." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "20 × 44 pies (6,1 m × 13,4 m), para individuales y dobles",
+    "surface": "Pista dura (acrílico, hormigón o asfalto)",
+    "notes": ["Zona de no volea: 7 pies a cada lado de la red", "Red: 36 pulgadas en los laterales y 34 en el centro"]
+  },
+  "glossary": [
+    { "term": "Cocina", "definition": "La zona de no volea junto a la red." },
+    { "term": "Dink", "definition": "Golpe suave que cae en la cocina rival." },
+    { "term": "Dejada de tercer golpe", "definition": "Golpe suave tras el resto para subir a la red con seguridad." },
+    { "term": "Erne", "definition": "Saltar por fuera del poste de la cocina para volear desde fuera de la pista." }
+  ],
+  "funFacts": [
+    "El pickleball se inventó en 1965 en la isla de Bainbridge, cerca de Seattle, cuando tres padres improvisaron un juego para sus familias.",
+    "Aún se discute si el nombre viene de una tripulación de remo («pickle boat») o de un perro de la familia llamado Pickles."
+  ]
+}

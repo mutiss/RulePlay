@@ -1,0 +1,90 @@
+{
+  "id": "surfing",
+  "language": "es",
+  "intro": "El surf de competición se puntúa: en mangas cortas, los surfistas cogen tantas olas como quieren y un panel de jueces puntúa cada ola de 0 a 10. Solo cuentan las dos mejores olas de cada surfista. Como el océano es impredecible, elegir bien las olas y respetar el sistema de preferencia —la prioridad— importa tanto como las maniobras. La International Surfing Association (ISA) rige el surf olímpico; la World Surf League (WSL) organiza el circuito profesional.",
+  "inThirtySeconds": [
+    "Las mangas duran entre 20 y 35 minutos, con dos a cuatro surfistas.",
+    "Cada ola se puntúa de 0 a 10; tus dos mejores olas forman tu total de la manga, sobre 20.",
+    "El surfista con prioridad tiene derecho a cualquier ola que elija.",
+    "Saltarse la prioridad y coger la ola de otro es una interferencia y cuesta muy caro."
+  ],
+  "objective": "Terminar en los puestos de clasificación de cada manga con la mejor suma de dos olas.",
+  "facts": {
+    "players": "Surfistas individuales en mangas de 2 a 4",
+    "duration": "Mangas de unos 20–35 minutos",
+    "environment": "Rompientes oceánicas (y algunas piscinas de olas)",
+    "equipment": ["Tabla (corta o longboard)", "Invento (leash)", "Licra de competición"]
+  },
+  "scoring": [
+    { "label": "Nota de la ola", "value": "0–10", "detail": "Los jueces puntúan cada ola; de cinco notas se descartan la más alta y la más baja y se promedian las demás." },
+    { "label": "Total de la manga", "value": "/20", "detail": "Suma de las dos mejores olas del surfista." }
+  ],
+  "bodies": [
+    { "id": "isa", "name": "International Surfing Association", "acronym": "ISA", "scope": "Organismo rector mundial; gestiona la clasificación olímpica", "url": "https://isasurf.org/" },
+    { "id": "wsl", "name": "World Surf League", "acronym": "WSL", "scope": "Circuito profesional del campeonato", "url": "https://www.worldsurfleague.com/" }
+  ],
+  "rulebooks": [
+    { "id": "isa-rules", "title": "Reglamento de la ISA", "publisher": "isa", "url": "https://isasurf.org/", "checked": "2026-10-14" },
+    { "id": "wsl-rules", "title": "Reglamento de la WSL", "publisher": "wsl", "url": "https://www.worldsurfleague.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "judging", "title": "Puntuación", "summary": "Cómo se puntúa una ola.",
+      "rules": [
+        { "id": "criteria", "title": "Criterios de los jueces", "important": true,
+          "summary": "Los jueces valoran el compromiso y la dificultad, las maniobras innovadoras y progresivas, la combinación de maniobras principales, la variedad, y la velocidad, la potencia y la fluidez.",
+          "body": "El peso de cada criterio cambia con las condiciones: las olas grandes y huecas favorecen los tubos, y las más blandas premian las maniobras aéreas. Una escala orienta las notas; por ejemplo, de 8,0 a 10,0 es «excelente».",
+          "related": ["two-best"] },
+        { "id": "two-best", "title": "Las dos mejores olas", "important": true,
+          "summary": "Los surfistas pueden coger muchas olas, pero solo cuentan sus dos notas más altas.",
+          "body": "Así, un surfista que va por detrás puede remontar con una sola gran ola. Los comentaristas hablan de la nota «necesaria»: lo que un surfista necesita para ponerse por delante.",
+          "example": "Olas puntuadas con 7,5, 6,2 y 3,0 dan un total de 13,70.",
+          "related": ["criteria"] }
+      ]
+    },
+    {
+      "id": "priority", "title": "Prioridad e interferencia", "summary": "El derecho de paso en el agua.",
+      "rules": [
+        { "id": "priority-rule", "title": "Prioridad", "important": true,
+          "summary": "En la mayoría de mangas, un orden de prioridad decide quién puede coger la siguiente ola. El surfista con prioridad puede coger cualquiera; los demás solo pueden remar a ella si él no la coge.",
+          "body": "Cuando un surfista coge una ola, o rema a una y la pierde, pasa a la última prioridad. La prioridad se indica con luces o discos de colores en la playa.",
+          "related": ["interference"] },
+        { "id": "interference", "title": "Interferencia", "important": true,
+          "summary": "Estorbar a un surfista que tiene el derecho de paso —por ejemplo, saltarle la ola— es una interferencia.",
+          "body": "La sanción suele reducir las notas del infractor: una de sus dos mejores olas se divide por la mitad o se anula, según el reglamento. Las interferencias repetidas pueden suponer la descalificación de la manga.",
+          "related": ["priority-rule"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Saltar la ola (drop-in)", "description": "Coger una ola delante de un surfista con derecho de paso.", "consequence": "Sanción por interferencia", "severity": "MAJOR" },
+    { "name": "Interferencia remando", "description": "Bloquear la remada de otro surfista hacia una ola.", "consequence": "Sanción por interferencia", "severity": "MAJOR" },
+    { "name": "Superar el límite de olas", "description": "Coger más olas de las permitidas en la manga.", "consequence": "Penalización en las notas", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Inicio de la manga", "description": "Una bocina y las luces señalan el inicio." },
+    { "title": "Elección de olas", "description": "Los surfistas usan la prioridad para elegir las mejores olas." },
+    { "title": "Últimos minutos", "description": "Quien va por detrás busca la nota necesaria." },
+    { "title": "Clasificación", "description": "Los primeros pasan a la siguiente ronda." }
+  ],
+  "positions": [
+    { "name": "Regular", "role": "Surfea con el pie izquierdo delante." },
+    { "name": "Goofy", "role": "Surfea con el pie derecho delante." }
+  ],
+  "field": {
+    "name": "Zona de competición",
+    "dimensions": "Una zona delimitada de la rompiente, marcada con banderas en la playa",
+    "surface": "Olas oceánicas (de playa, de arrecife o de punta)",
+    "notes": ["Indicador de prioridad visible desde el agua", "Los periodos de espera permiten elegir el mejor swell"]
+  },
+  "glossary": [
+    { "term": "Tubo", "definition": "Surfear dentro de la parte hueca de la ola." },
+    { "term": "Aéreo", "definition": "Despegar la tabla por encima del labio de la ola." },
+    { "term": "Pico", "definition": "Donde los surfistas esperan las olas." },
+    { "term": "Saltar la ola", "definition": "Coger una ola delante de quien tiene el derecho de paso." }
+  ],
+  "funFacts": [
+    "El surf debutó en los Juegos Olímpicos en Tokio 2020, celebrados en 2021.",
+    "El surf de París 2024 se disputó en Teahupo'o (Tahití), a unos 15 000 km de París."
+  ]
+}

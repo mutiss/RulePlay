@@ -1,0 +1,92 @@
+{
+  "id": "ultimate",
+  "language": "es",
+  "intro": "El ultimate es un deporte de equipo rápido y sin contacto que se juega con un disco volador. Se anota atrapando un pase en la zona de anotación que se ataca, y el disco cambia de manos cuando un pase cae, se bloquea o sale fuera. Su seña de identidad es el Espíritu del Juego: en la mayoría de competiciones no hay árbitros y los jugadores señalan sus propias faltas. La Federación Mundial de Disco Volador (WFDF) publica el reglamento.",
+  "inThirtySeconds": [
+    "Anota atrapando el disco en la zona de anotación que atacas.",
+    "No puedes correr con el disco: pivota y lanza.",
+    "Cualquier pase que cae, se bloquea o sale fuera es un cambio de posesión.",
+    "Los jugadores se arbitran a sí mismos con el Espíritu del Juego."
+  ],
+  "objective": "Llegar antes al tanteo objetivo (a menudo 15), o ir por delante cuando se acaba el tiempo.",
+  "facts": {
+    "players": "7 contra 7 en hierba (5 contra 5 en playa)",
+    "duration": "Partido a 15 puntos o con tiempo límite (~100 minutos)",
+    "environment": "Campo de hierba o césped artificial con zonas de anotación",
+    "equipment": ["Disco volador de 175 g", "Botas de tacos"]
+  },
+  "scoring": [
+    { "label": "Punto", "value": "1", "detail": "Atrapar un pase dentro de la zona de anotación que se ataca." }
+  ],
+  "bodies": [
+    { "id": "wfdf", "name": "Federación Mundial de Disco Volador", "acronym": "WFDF", "scope": "Federación internacional; publica las Reglas de Ultimate de la WFDF", "url": "https://wfdf.sport/" }
+  ],
+  "rulebooks": [
+    { "id": "wfdf-rules", "title": "Reglas de Ultimate de la WFDF", "publisher": "wfdf", "url": "https://wfdf.sport/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "play-u", "title": "Mover el disco", "summary": "Pivote, pase y la cuenta.",
+      "rules": [
+        { "id": "no-running", "title": "Sin correr con el disco", "important": true,
+          "summary": "El lanzador debe detenerse y fijar un pie de pivote; el disco solo avanza con pases.",
+          "body": "Un jugador que atrapa en carrera puede dar unos pasos para frenar, pero no ganar terreno. Mover el pie de pivote antes de soltar el disco es un «travel».",
+          "related": ["stall"] },
+        { "id": "stall", "title": "La cuenta (stall)", "important": true,
+          "summary": "El defensor que marca cuenta en voz alta hasta diez; el lanzador debe soltar el disco antes del «diez».",
+          "body": "Si la cuenta llega a diez, hay cambio de posesión. El marcador debe estar al menos a la distancia de un disco y no puede rodear al lanzador con los brazos.",
+          "example": "«Stalling uno… dos… tres…»: el lanzador amaga a la izquierda, pivota a la derecha y suelta en el «ocho».",
+          "related": ["no-running", "turnover"] },
+        { "id": "turnover", "title": "Cambios de posesión", "important": true,
+          "summary": "La posesión cambia cuando un pase queda incompleto, se intercepta, se atrapa fuera o la cuenta llega a diez.",
+          "body": "La defensa pasa a atacar inmediatamente desde donde se detuvo el disco (o desde donde salió).",
+          "related": ["stall"] }
+      ]
+    },
+    {
+      "id": "spirit", "title": "Espíritu del Juego", "summary": "El autoarbitraje.",
+      "rules": [
+        { "id": "self-officiating", "title": "Los jugadores señalan", "important": true,
+          "summary": "Los jugadores son responsables de señalar las faltas y las decisiones de línea, y de resolver las discrepancias con respeto.",
+          "body": "Cuando una decisión se discute, el disco suele volver al último lanzador no discutido. Algunas competiciones de élite usan observadores para ayudar en las disputas, y tras los partidos se dan puntuaciones de espíritu para premiar el juego limpio.",
+          "related": ["fouls-u"] },
+        { "id": "fouls-u", "title": "Sin contacto", "important": false,
+          "summary": "El ultimate es sin contacto; el contacto que afecta al juego es falta.",
+          "body": "Un jugador que sufre falta al intentar atrapar conserva la posesión como si hubiera atrapado, si el rival está de acuerdo; si no, el juego se reanuda devolviendo el disco al lanzador.",
+          "related": ["self-officiating"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Travel", "description": "Mover el pivote o ganar terreno tras atrapar.", "consequence": "El lanzador vuelve a fijar el pivote", "severity": "MINOR" },
+    { "name": "Stall", "description": "Retener el disco hasta el «diez».", "consequence": "Cambio de posesión", "severity": "MINOR" },
+    { "name": "Falta en la recepción", "description": "Contacto que impide atrapar el disco.", "consequence": "Posesión para quien sufrió la falta", "severity": "MAJOR" }
+  ],
+  "flow": [
+    { "title": "Pull", "description": "Cada punto empieza con la defensa lanzando el disco al ataque." },
+    { "title": "Mover el disco", "description": "Pases cortos y hucks largos avanzan hacia la zona de anotación." },
+    { "title": "Punto", "description": "Los equipos cambian de dirección tras cada punto." },
+    { "title": "Círculo de espíritu", "description": "Los equipos se reúnen juntos al terminar el partido." }
+  ],
+  "positions": [
+    { "name": "Handler", "role": "Lanzador principal que mantiene la posesión." },
+    { "name": "Cutter", "role": "Corre para desmarcarse y recibir pases." },
+    { "name": "Deep", "role": "Defensor que cubre los lanzamientos largos." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "100 × 37 m, incluidas dos zonas de anotación de 18 m",
+    "surface": "Hierba o césped artificial",
+    "notes": ["Marcas de «brick» para las reanudaciones"]
+  },
+  "glossary": [
+    { "term": "Huck", "definition": "Lanzamiento largo hacia delante." },
+    { "term": "Layout", "definition": "Recepción o bloqueo en plancha." },
+    { "term": "Pull", "definition": "El lanzamiento inicial de cada punto." },
+    { "term": "Hammer", "definition": "Lanzamiento por encima de la cabeza que da la vuelta en el aire." }
+  ],
+  "funFacts": [
+    "El ultimate lo desarrollaron estudiantes de instituto de Maplewood (Nueva Jersey) en 1968.",
+    "Sus reglas siempre se han basado en el autoarbitraje, con el «Espíritu del Juego» recogido en ellas."
+  ]
+}

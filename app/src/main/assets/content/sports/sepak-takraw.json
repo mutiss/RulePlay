@@ -1,0 +1,92 @@
+{
+  "id": "sepak-takraw",
+  "intro": "Sepak takraw is volleyball played with the feet, knees, chest and head — never the hands. Three players per side (a 'regu') keep a woven ball in the air and send it over a net, with acrobatic overhead 'roll spikes' that look like bicycle kicks. The sport has deep roots across Southeast Asia, from Malaysia's sepak raga to Thailand's takraw. The International Sepak Takraw Federation (ISTAF) governs the competitive game.",
+  "inThirtySeconds": [
+    "No hands or arms: use feet, knees, chest and head.",
+    "Three touches maximum per side — a single player may use all three.",
+    "The serve is kicked by the back player from a service circle.",
+    "Sets go to 21 points (win by 2, capped at 25); best of three sets."
+  ],
+  "objective": "Make the ball land in the opponents' court or force them into a fault, winning two sets.",
+  "facts": {
+    "players": "3 v 3 (regu); also doubles and quad formats",
+    "duration": "Best of 3 sets to 21",
+    "environment": "Badminton-sized court, usually indoor",
+    "equipment": ["Woven synthetic (traditionally rattan) ball", "Net about 1.52 m high (men)"]
+  },
+  "scoring": [
+    { "label": "Rally point", "value": "1", "detail": "Every rally scores a point for the winner." },
+    { "label": "Set", "value": "21", "detail": "First to 21 with a two-point lead; play stops at 25." }
+  ],
+  "bodies": [
+    { "id": "istaf", "name": "International Sepak Takraw Federation", "acronym": "ISTAF", "scope": "International federation for sepak takraw", "url": null }
+  ],
+  "rulebooks": [
+    { "id": "istaf-rules", "title": "ISTAF Laws of the Game", "publisher": "istaf", "url": null, "checked": null }
+  ],
+  "chapters": [
+    {
+      "id": "playing", "title": "Playing the ball", "summary": "No hands, three touches.",
+      "rules": [
+        { "id": "no-hands-st", "title": "Any part of the body except the arms", "important": true,
+          "summary": "The ball may be played with the feet, legs, chest, shoulders and head, but not the hands or arms.",
+          "body": "Touching the ball with the hand or arm is a fault and gives the point to the opponents.",
+          "related": ["three-touch-st"] },
+        { "id": "three-touch-st", "title": "Three touches per side", "important": true,
+          "summary": "A side may touch the ball up to three times before it crosses the net — and one player may take all three.",
+          "body": "This differs from volleyball, where the same player can't touch twice in a row. The typical sequence is a reception, a high set and a spike.",
+          "example": "A player traps the ball on their chest, juggles it with the knee and volleys it over: three touches by one player — legal.",
+          "related": ["no-hands-st", "spike-st"] },
+        { "id": "spike-st", "title": "The roll spike", "important": false,
+          "summary": "The spiker leaps, rolls backwards in the air and kicks the ball over their head down into the opponents' court.",
+          "body": "Players must not touch the net or cross into the opponents' court with their body while spiking, though the follow-through of the foot may pass over the net.",
+          "related": ["three-touch-st", "net-st"] }
+      ]
+    },
+    {
+      "id": "serve", "title": "Serving", "summary": "The kicked serve.",
+      "rules": [
+        { "id": "serve-st", "title": "Serving from the circle", "important": true,
+          "summary": "The server kicks the ball from inside the service circle after it is tossed to them by a teammate.",
+          "body": "The server must keep one foot in the circle until the ball is kicked. The serve must cross the net and land in the opponents' court. Serve rotation rules vary between event formats.",
+          "related": ["net-st"] },
+        { "id": "net-st", "title": "Net and line faults", "important": false,
+          "summary": "Touching the net, stepping over the centre line or the ball landing outside the court are faults.",
+          "body": "A ball landing on the line is in.",
+          "related": ["spike-st"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Hand ball", "description": "Ball touches the arm or hand.", "consequence": "Point to the opponents", "severity": "MINOR" },
+    { "name": "Four touches", "description": "More than three contacts on one side.", "consequence": "Point to the opponents", "severity": "MINOR" },
+    { "name": "Net touch", "description": "Body touching the net during play.", "consequence": "Point to the opponents", "severity": "MINOR" },
+    { "name": "Service fault", "description": "Server's foot leaves the circle before the kick.", "consequence": "Point to the opponents", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Toss and serve", "description": "The tekong serves from the circle." },
+    { "title": "Rallies", "description": "Receive, set, spike — or a block at the net." },
+    { "title": "Sets", "description": "Best of three sets to 21." }
+  ],
+  "positions": [
+    { "name": "Tekong", "role": "The server, standing at the back." },
+    { "name": "Feeder (setter)", "role": "Sets the ball up for spikes and tosses it to the server." },
+    { "name": "Striker (killer)", "role": "The spiker, specialising in acrobatic attacks." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "13.4 m × 6.1 m (the size of a badminton doubles court)",
+    "surface": "Indoor court",
+    "notes": ["Service circle at the back of each half", "Quarter circles at the net for the feeders"]
+  },
+  "glossary": [
+    { "term": "Regu", "definition": "A team of three players." },
+    { "term": "Tekong", "definition": "The server." },
+    { "term": "Sunback", "definition": "A spike struck with the sole of the foot." },
+    { "term": "Roll spike", "definition": "An overhead somersault kick." }
+  ],
+  "funFacts": [
+    "'Sepak' is Malay for kick and 'takraw' is Thai for the woven ball.",
+    "Sepak takraw has been part of the Asian Games since 1990."
+  ]
+}

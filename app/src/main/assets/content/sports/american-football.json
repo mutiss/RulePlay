@@ -1,0 +1,141 @@
+{
+  "id": "american-football",
+  "intro": "American football is a game of territory played in short bursts. The attacking team (the offence) has four attempts — downs — to advance the ball ten yards; succeed and they earn four more. Every play stops and restarts from a line of scrimmage, turning each snap into a set piece planned in advance. This entry follows the NFL's rules; college and high-school football use their own rulebooks.",
+  "inThirtySeconds": [
+    "Four downs to gain ten yards; reach it and the count resets.",
+    "Score a touchdown (6) by carrying or catching the ball in the end zone.",
+    "Each play starts from the line of scrimmage and ends when the ball carrier is down or a pass falls incomplete.",
+    "Fouls are punished by moving the ball backwards or forwards by a number of yards."
+  ],
+  "objective": "Outscore the opponent with touchdowns, extra points, field goals and safeties over four quarters.",
+  "facts": {
+    "players": "11 per team on the field; specialised offence, defence and special-teams units",
+    "duration": "4 × 15 minutes (NFL), with frequent clock stoppages",
+    "environment": "Grass or artificial turf field with end zones and goalposts",
+    "equipment": ["Prolate leather ball", "Helmet", "Shoulder pads"]
+  },
+  "scoring": [
+    { "label": "Touchdown", "value": "6", "detail": "Possessing the ball in the opponent's end zone." },
+    { "label": "Extra point", "value": "1", "detail": "Kick through the uprights after a touchdown." },
+    { "label": "Two-point conversion", "value": "2", "detail": "Running or passing into the end zone again from close range after a touchdown." },
+    { "label": "Field goal", "value": "3", "detail": "Kick through the uprights during a normal play." },
+    { "label": "Safety", "value": "2", "detail": "The defence tackles the ball carrier in their own end zone, among other situations." }
+  ],
+  "bodies": [
+    { "id": "nfl", "name": "National Football League", "acronym": "NFL", "scope": "Professional league; publishes the NFL Rulebook", "url": "https://operations.nfl.com/" }
+  ],
+  "rulebooks": [
+    { "id": "nfl-rulebook", "title": "Official Playing Rules of the NFL", "publisher": "nfl", "url": "https://operations.nfl.com/rules-officiating/2026-nfl-rulebook", "edition": "2026 NFL Rulebook", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "downs", "title": "Downs and yards",
+      "summary": "The system that structures every drive.",
+      "rules": [
+        { "id": "four-downs", "title": "Four downs to make ten yards", "important": true,
+          "summary": "The offence has four plays (downs) to move the ball at least ten yards from where the series started.",
+          "body": "If they make it, they get a new 'first down' and four more tries. If they fail after four downs, the ball goes to the opponents at that spot — which is why teams usually punt or kick a field goal on fourth down rather than risk it.",
+          "example": "'Third and 4' means it is the third attempt and 4 yards are still needed for a first down.",
+          "related": ["scrimmage", "punt"] },
+        { "id": "scrimmage", "title": "The line of scrimmage", "important": true,
+          "summary": "Every play starts with the ball on the ground at the line of scrimmage; the centre snaps it back to start the play.",
+          "body": "Before the snap, players must stay on their own side of the line. At least seven offensive players must line up on the line. A play ends when the ball carrier is down (a knee or body touches the ground after contact), goes out of bounds, scores, or a forward pass hits the ground.",
+          "related": ["four-downs", "false-start"] }
+      ]
+    },
+    {
+      "id": "passing", "title": "Passing and catching",
+      "summary": "One forward pass per play and what makes a catch.",
+      "rules": [
+        { "id": "forward-pass-nfl", "title": "One forward pass per play", "important": true,
+          "summary": "The offence may throw one forward pass per play, from behind the line of scrimmage.",
+          "body": "Backward passes (laterals) are allowed any time. An incomplete forward pass stops the clock and the play; the ball returns to the previous spot and a down is used.",
+          "related": ["catch", "interference"] },
+        { "id": "catch", "title": "What is a catch", "important": false,
+          "summary": "A receiver must gain control of the ball, get both feet (or another body part) down in bounds, and keep control long enough to make a football move.",
+          "body": "If the receiver loses the ball while going to the ground before completing the catch, it is incomplete. Catch rules have been revised several times; replay review is often used on close calls.",
+          "related": ["forward-pass-nfl"] },
+        { "id": "interference", "title": "Pass interference", "important": false,
+          "summary": "Neither offensive nor defensive players may illegally hinder an opponent's chance to catch a forward pass once it is thrown.",
+          "body": "Defensive pass interference in the NFL is a spot foul: the offence gets a first down where the foul happened, which can mean dozens of yards.",
+          "related": ["forward-pass-nfl"] }
+      ]
+    },
+    {
+      "id": "kicking", "title": "Kicking plays",
+      "summary": "Kick-offs, punts and field goals.",
+      "rules": [
+        { "id": "kickoff", "title": "Kick-offs", "important": false,
+          "summary": "Each half and every score (except some after a safety) is followed by a kick-off to the opponents.",
+          "body": "The NFL has substantially changed kick-off formations in recent seasons to reduce high-speed collisions; check the current rulebook for player alignment and touchback rules.",
+          "related": ["punt"] },
+        { "id": "punt", "title": "Punts", "important": false,
+          "summary": "On fourth down, the offence often punts the ball away to push the opponents back.",
+          "body": "The receiving team can return the punt or signal a fair catch to catch it without being tackled.",
+          "related": ["four-downs"] },
+        { "id": "field-goal", "title": "Field goals", "important": false,
+          "summary": "A kick from the ground (held by a teammate) that passes between the uprights and over the crossbar scores 3 points.",
+          "body": "A missed field goal gives the ball to the opponents at the spot of the kick (or the 20-yard line if further back).",
+          "related": ["four-downs"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Penalties",
+      "summary": "Yards lost or gained for fouls.",
+      "rules": [
+        { "id": "false-start", "title": "False start and offside", "important": false,
+          "summary": "Moving before the snap (offence) or crossing the line of scrimmage early (defence) costs 5 yards.",
+          "body": "These are 'pre-snap' fouls: the play is usually stopped immediately or the foul enforced after the play.",
+          "related": ["scrimmage"] },
+        { "id": "holding", "title": "Holding", "important": false,
+          "summary": "Grabbing or restricting an opponent who is not the ball carrier is holding.",
+          "body": "Offensive holding usually costs 10 yards; defensive holding gives 5 yards and an automatic first down.",
+          "related": ["personal-fouls"] },
+        { "id": "personal-fouls", "title": "Personal fouls", "important": false,
+          "summary": "Unnecessary roughness, roughing the passer and illegal hits to the head cost 15 yards.",
+          "body": "Player safety rules protect quarterbacks, receivers and kickers in defenceless positions. Flagrant fouls can also lead to ejection.",
+          "related": ["holding"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "False start", "description": "Offensive player moves before the snap.", "consequence": "5-yard penalty", "severity": "MINOR" },
+    { "name": "Offensive holding", "description": "Illegally restricting a defender.", "consequence": "10-yard penalty", "severity": "MINOR" },
+    { "name": "Defensive pass interference", "description": "Illegal contact with a receiver while the pass is in the air.", "consequence": "Ball placed at the foul spot, first down", "severity": "MAJOR" },
+    { "name": "Roughing the passer", "description": "Illegal hit on the quarterback after the throw.", "consequence": "15 yards and automatic first down", "severity": "MAJOR" },
+    { "name": "Unnecessary roughness / flagrant hit", "description": "Dangerous contact, especially to the head.", "consequence": "15 yards; possible ejection", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Coin toss and kick-off", "description": "The toss decides who receives the opening kick-off." },
+    { "title": "Drives", "description": "The offence tries to string first downs together and score." },
+    { "title": "Change of possession", "description": "After a score, punt, turnover or failed fourth down, the other team attacks." },
+    { "title": "Two-minute warning", "description": "An automatic stoppage near the end of each half in the NFL." },
+    { "title": "Overtime", "description": "Tied games go to an overtime period with NFL possession rules." }
+  ],
+  "positions": [
+    { "name": "Quarterback", "role": "Receives the snap and runs the offence, usually by passing." },
+    { "name": "Running back", "role": "Carries the ball on running plays and blocks." },
+    { "name": "Wide receivers and tight end", "role": "Catch passes; tight ends also block." },
+    { "name": "Offensive line", "role": "Five blockers protecting the quarterback and opening running lanes." },
+    { "name": "Defensive line and linebackers", "role": "Stop the run and pressure the quarterback." },
+    { "name": "Cornerbacks and safeties", "role": "Cover receivers and defend against passes." },
+    { "name": "Kicker and punter", "role": "Specialists for field goals, kick-offs and punts." }
+  ],
+  "field": {
+    "name": "Field",
+    "dimensions": "120 yards × 53⅓ yards (100-yard field plus two 10-yard end zones)",
+    "surface": "Natural grass or artificial turf",
+    "notes": ["Yard lines every 5 yards, numbered every 10", "Goalposts at the back of each end zone", "Hash marks locate the ball between plays"]
+  },
+  "glossary": [
+    { "term": "Snap", "definition": "The centre passing the ball back to start a play." },
+    { "term": "Sack", "definition": "Tackling the quarterback behind the line of scrimmage before a pass." },
+    { "term": "Interception", "definition": "A defender catching a pass meant for the offence." },
+    { "term": "Fumble", "definition": "A ball carrier losing possession; either team can recover it." },
+    { "term": "Red zone", "definition": "The area inside the opponent's 20-yard line." }
+  ],
+  "funFacts": [
+    "The 'gridiron' nickname comes from the field's early markings, which formed a grid pattern.",
+    "Walter Camp introduced the line of scrimmage and the system of downs in the early 1880s."
+  ]
+}

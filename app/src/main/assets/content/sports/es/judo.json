@@ -1,0 +1,112 @@
+{
+  "id": "judo",
+  "language": "es",
+  "intro": "El judo, «el camino de la suavidad», lo fundó Jigoro Kano en Tokio en 1882. Dos deportistas vestidos con judogi se agarran e intentan proyectar al rival limpiamente sobre la espalda, o controlarlo en el suelo con inmovilizaciones, estrangulaciones y luxaciones. Una sola técnica perfecta —ippon— termina el combate al instante. La Federación Internacional de Judo (IJF) publica el Reglamento Deportivo y de Organización.",
+  "inThirtySeconds": [
+    "Proyecta al rival sobre la espalda con fuerza, velocidad y control para lograr ippon: victoria inmediata.",
+    "Una proyección menos completa vale waza-ari; dos waza-ari hacen ippon.",
+    "En el suelo, inmoviliza 20 segundos o haz que el rival se rinda a una estrangulación o una luxación.",
+    "La pasividad y los agarres ilegales se castigan con shido; el tercero hace perder el combate."
+  ],
+  "objective": "Lograr ippon, o ir por delante en el marcador al acabar el tiempo. Los empates van a golden score.",
+  "facts": {
+    "players": "1 contra 1, por categoría de peso",
+    "duration": "4 minutos (sénior) y golden score sin límite si hay empate",
+    "environment": "Tatami",
+    "equipment": ["Judogi (blanco o azul)", "Cinturón"]
+  },
+  "scoring": [
+    { "label": "Ippon", "value": "Victoria", "detail": "Una proyección completa, una inmovilización de 20 segundos o una rendición." },
+    { "label": "Waza-ari", "value": "½", "detail": "Una proyección a la que le falta un elemento del ippon, o una inmovilización de 10 segundos. Dos waza-ari equivalen a ippon." },
+    { "label": "Shido", "value": "Sanción", "detail": "Infracción leve. Tres shido suponen la derrota (hansoku-make)." }
+  ],
+  "bodies": [
+    { "id": "ijf", "name": "Federación Internacional de Judo", "acronym": "IJF", "scope": "Organismo rector mundial; publica el Reglamento Deportivo y de Organización de la IJF", "url": "https://www.ijf.org/documents" }
+  ],
+  "rulebooks": [
+    { "id": "ijf-rules", "title": "Reglamento Deportivo y de Organización de la IJF", "publisher": "ijf", "url": "https://www.ijf.org/documents", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "scores", "title": "Puntuación",
+      "summary": "Ippon, waza-ari y golden score.",
+      "rules": [
+        { "id": "ippon", "title": "Ippon", "important": true,
+          "summary": "Una proyección que lleva al rival mayoritariamente de espaldas al tatami con fuerza, velocidad y control considerables gana el combate al instante.",
+          "body": "También se logra ippon inmovilizando al rival 20 segundos, o cuando se rinde a una estrangulación o una luxación dando dos palmadas o diciendo «maitta». El anuncio de ippon por parte del árbitro termina el combate.",
+          "example": "Una proyección de hombro limpia (seoi-nage) deja al rival plano sobre la espalda: ippon, se acabó.",
+          "related": ["waza-ari", "osaekomi"] },
+        { "id": "waza-ari", "title": "Waza-ari", "important": true,
+          "summary": "Una proyección a la que le falta alguno de los elementos del ippon vale waza-ari. Dos waza-ari suman ippon.",
+          "body": "Una inmovilización de 10 segundos o más, pero de menos de 20, también vale waza-ari. Al acabar el tiempo reglamentario, gana quien tenga mejor puntuación.",
+          "related": ["ippon", "golden-score"] },
+        { "id": "golden-score", "title": "Golden score", "important": false,
+          "summary": "Si hay empate al terminar el tiempo, el combate sigue sin límite de tiempo; lo decide la primera puntuación o diferencia de sanciones.",
+          "body": "Las puntuaciones del tiempo reglamentario se mantienen. En el golden score, el combate termina cuando un deportista puntúa o recibe una sanción.",
+          "related": ["waza-ari", "shido"] }
+      ]
+    },
+    {
+      "id": "ground", "title": "Trabajo en el suelo (ne-waza)",
+      "summary": "Inmovilizaciones, estrangulaciones y luxaciones.",
+      "rules": [
+        { "id": "osaekomi", "title": "Inmovilizaciones (osaekomi)", "important": true,
+          "summary": "Controlar al rival de espaldas, sin estar atrapado entre sus piernas, pone en marcha el reloj de osaekomi.",
+          "body": "Si se mantiene 20 segundos, es ippon; 10 segundos dan waza-ari. Si el que está debajo escapa o atrapa con sus piernas una pierna del que inmoviliza, el árbitro anuncia «toketa» y el reloj se detiene.",
+          "related": ["submissions", "ippon"] },
+        { "id": "submissions", "title": "Estrangulaciones y luxaciones", "important": false,
+          "summary": "Las estrangulaciones (shime-waza) y las luxaciones (kansetsu-waza) ganan por ippon cuando el rival se rinde o el árbitro detiene el combate.",
+          "body": "Solo se permiten luxaciones en la articulación del codo. Las llaves al cuello, a la columna y a otras articulaciones están prohibidas. Estas técnicas están restringidas en las categorías más jóvenes.",
+          "related": ["osaekomi"] }
+      ]
+    },
+    {
+      "id": "penalties", "title": "Sanciones",
+      "summary": "Shido y hansoku-make.",
+      "rules": [
+        { "id": "shido", "title": "Shido", "important": true,
+          "summary": "Las infracciones leves —pasividad, evitar el agarre, falsos ataques o salir del área— se castigan con shido.",
+          "body": "El shido no da puntuación al rival, pero el tercero supone hansoku-make: la derrota. Romper el agarre con las dos manos y adoptar posturas excesivamente defensivas también se sanciona.",
+          "related": ["hansoku-make", "golden-score"] },
+        { "id": "hansoku-make", "title": "Hansoku-make", "important": false,
+          "summary": "Las infracciones graves, o tres shido, suponen la descalificación del combate.",
+          "body": "Por ejemplo, entrar de cabeza contra el tatami al proyectar, acciones peligrosas para el cuello o la columna del rival y actuar contra el espíritu del judo. Un hansoku-make directo por un acto grave puede excluir al deportista del resto de la competición.",
+          "related": ["shido"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Pasividad", "description": "No atacar o evitar el agarre.", "consequence": "Shido", "severity": "MINOR" },
+    { "name": "Falso ataque", "description": "Un ataque solo para aparentar actividad, sin intención de proyectar.", "consequence": "Shido", "severity": "MINOR" },
+    { "name": "Entrar de cabeza", "description": "Clavar la cabeza en el tatami al atacar o defender.", "consequence": "Hansoku-make", "severity": "SEVERE" },
+    { "name": "Luxación ilegal", "description": "Luxar cualquier articulación que no sea el codo.", "consequence": "Hansoku-make", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saludo", "description": "Los deportistas saludan al entrar en el tatami y entre ellos." },
+    { "title": "Hajime", "description": "El árbitro dice «hajime» para empezar; los deportistas luchan por el agarre (kumikata)." },
+    { "title": "Matte", "description": "El árbitro detiene la acción con «matte», por ejemplo cuando salen del área." },
+    { "title": "Sore-made", "description": "El árbitro da por terminado el combate; los deportistas vuelven a saludar." }
+  ],
+  "positions": [
+    { "name": "Tori", "role": "Quien ejecuta la técnica." },
+    { "name": "Uke", "role": "Quien recibe la técnica." },
+    { "name": "Árbitro y jueces", "role": "Un árbitro en el tatami, apoyado por la revisión en vídeo (Care System)." }
+  ],
+  "field": {
+    "name": "Área de competición",
+    "dimensions": "Área de combate de aproximadamente 8 × 8 m a 10 × 10 m, más un área de seguridad alrededor",
+    "surface": "Tatamis",
+    "notes": ["El área de combate y la de seguridad son de colores distintos", "Los judogis blanco y azul distinguen a los deportistas"]
+  },
+  "glossary": [
+    { "term": "Hajime", "definition": "«Comenzad»." },
+    { "term": "Matte", "definition": "«Esperad»: el árbitro detiene la acción." },
+    { "term": "Kumikata", "definition": "El agarre." },
+    { "term": "Seoi-nage", "definition": "Proyección de hombro." },
+    { "term": "Uchi-mata", "definition": "Proyección por el interior del muslo." }
+  ],
+  "funFacts": [
+    "El judo se convirtió en deporte olímpico en los Juegos de Tokio 1964.",
+    "Los judogis azules se introdujeron para que público y árbitros distinguieran mejor a los deportistas."
+  ]
+}

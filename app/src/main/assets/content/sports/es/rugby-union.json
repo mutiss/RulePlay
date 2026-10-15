@@ -1,0 +1,139 @@
+{
+  "id": "rugby-union",
+  "language": "es",
+  "intro": "Quince jugadores por equipo llevan, patean y pasan un balón ovalado para posarlo tras la línea de ensayo rival. El balón solo puede pasarse hacia atrás, así que el terreno se gana corriendo, pateando y con el empuje colectivo de rucks, mauls y melés. World Rugby publica el Reglamento de Juego.",
+  "inThirtySeconds": [
+    "Marca un ensayo (5 puntos) posando el balón tras la línea de ensayo rival.",
+    "Pasa solo hacia atrás o en horizontal; si el balón cae hacia delante, es un avant.",
+    "El jugador placado debe soltar el balón, y la lucha por él forma rucks y mauls.",
+    "Las infracciones leves dan una melé; las más graves, un golpe de castigo, que puede patearse a palos."
+  ],
+  "objective": "Anotar más puntos que el rival con ensayos, transformaciones, golpes de castigo y drops.",
+  "facts": {
+    "players": "15 por equipo, con reservas (hasta 8 en partidos de élite)",
+    "duration": "2 × 40 minutos",
+    "environment": "Campo de césped natural o artificial con palos en forma de H",
+    "equipment": ["Balón ovalado", "Protector bucal", "Botas", "Casco acolchado opcional"]
+  },
+  "scoring": [
+    { "label": "Ensayo", "value": "5", "detail": "Posar el balón sobre la línea de ensayo rival o detrás de ella." },
+    { "label": "Transformación", "value": "2", "detail": "Patada a palos tras un ensayo, en línea con el lugar donde se marcó." },
+    { "label": "Golpe de castigo", "value": "3", "detail": "Patada a palos, colocada o de botepronto, tras una infracción." },
+    { "label": "Drop", "value": "3", "detail": "Patada de botepronto por encima del larguero durante el juego." },
+    { "label": "Ensayo de castigo", "value": "7", "detail": "Se concede cuando el juego sucio impide un ensayo probable; no se transforma." }
+  ],
+  "bodies": [
+    { "id": "worldrugby", "name": "World Rugby", "acronym": null, "scope": "Organismo rector mundial; publica el Reglamento de Juego", "url": "https://passport.world.rugby/laws-of-the-game/" }
+  ],
+  "rulebooks": [
+    { "id": "wr-laws", "title": "Reglamento de Juego de World Rugby", "publisher": "worldrugby", "url": "https://passport.world.rugby/laws-of-the-game/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "ball", "title": "Mover el balón",
+      "summary": "Pases, avants y patadas.",
+      "rules": [
+        { "id": "forward-pass", "title": "Nada de pases adelantados", "important": true,
+          "summary": "El balón puede pasarse en horizontal o hacia atrás, nunca hacia delante.",
+          "body": "Los árbitros valoran la dirección del pase respecto a las manos del pasador y no al suelo, porque un jugador en carrera puede soltar un pase hacia atrás que aun así avance. Un pase adelantado da una melé al rival.",
+          "related": ["knock-on"] },
+        { "id": "knock-on", "title": "Avant", "important": true,
+          "summary": "Si un jugador pierde el balón y va hacia delante, o lo golpea hacia delante con la mano o el brazo, es un avant.",
+          "body": "El avant involuntario se castiga con melé para el rival. Hacerlo a propósito, por ejemplo para cortar un pase, es golpe de castigo y puede costar una amarilla. Interceptar una patada (carga) no es avant.",
+          "example": "Un ala no controla un balón alto, que le rebota en el pecho y las manos hacia delante: avant, melé para el otro equipo.",
+          "related": ["forward-pass", "scrum"] },
+        { "id": "kicking", "title": "Patadas y patadas a touch", "important": false,
+          "summary": "Cualquier jugador puede patear el balón hacia delante; los compañeros situados por delante del pateador están fuera de juego hasta que se les habilite.",
+          "body": "Un golpe de castigo pateado a touch da al equipo pateador el lanzamiento del lateral. En juego abierto, una patada que sale directamente a touch desde fuera de los propios 22 m devuelve el lateral a la altura desde donde se pateó.",
+          "related": ["lineout", "offside"] }
+      ]
+    },
+    {
+      "id": "contact", "title": "Placajes, rucks y mauls",
+      "summary": "La lucha por el balón tras el contacto.",
+      "rules": [
+        { "id": "tackle", "title": "El placaje", "important": true,
+          "summary": "Hay placaje cuando el portador es sujetado y llevado al suelo. El jugador placado debe pasar o soltar el balón inmediatamente.",
+          "body": "El placador debe soltar al placado y apartarse rodando. Los placajes deben hacerse por debajo de la línea de los hombros; los placajes altos, los placajes en volteo y las cargas peligrosas son juego sucio y pueden costar amarilla o roja.",
+          "related": ["ruck", "foul-play"] },
+        { "id": "ruck", "title": "El ruck", "important": true,
+          "summary": "Se forma un ruck cuando el balón está en el suelo y al menos un jugador de cada equipo, de pie, se agarran sobre él.",
+          "body": "En el ruck no se puede tocar el balón con las manos: hay que usar los pies para sacarlo hacia atrás. Los jugadores que llegan deben entrar por detrás del último pie de su equipo («la puerta») y mantenerse de pie. Los que no participan deben quedarse detrás de la línea de fuera de juego que crea.",
+          "example": "Un flanker se tira por encima de un ruck para frenar la salida del balón: golpe de castigo por no mantenerse de pie.",
+          "related": ["tackle", "maul", "offside"] },
+        { "id": "maul", "title": "El maul", "important": false,
+          "summary": "Se forma un maul cuando un rival sujeta al portador y un compañero de este se agarra a él, todos de pie.",
+          "body": "El maul puede empujarse hacia delante. Termina cuando sale el balón, cae al suelo o se detiene sin que se juegue el balón. Los mauls tras touch son una gran fuente de ensayos.",
+          "related": ["ruck", "lineout"] }
+      ]
+    },
+    {
+      "id": "set-piece", "title": "Fases estáticas",
+      "summary": "Las melés y los laterales reanudan el juego.",
+      "rules": [
+        { "id": "scrum", "title": "La melé", "important": false,
+          "summary": "Ocho delanteros de cada equipo se agarran y empujan mientras el balón se introduce en el túnel entre las primeras líneas.",
+          "body": "Las melés reanudan el juego tras infracciones leves como un avant o un pase adelantado. El medio melé introduce el balón por el centro y los talonadores lo disputan. Hundir la melé o no empujar recto se castiga.",
+          "related": ["knock-on"] },
+        { "id": "lineout", "title": "El lateral (touch)", "important": false,
+          "summary": "Cuando el balón sale a touch, los jugadores forman dos filas y el balón se lanza recto entre ellas.",
+          "body": "Los saltadores pueden ser elevados por sus compañeros para atrapar el lanzamiento. El lanzamiento debe ser recto; si no, el rival puede elegir entre un lateral o una melé.",
+          "related": ["kicking", "maul"] }
+      ]
+    },
+    {
+      "id": "discipline", "title": "Fuera de juego y disciplina",
+      "summary": "Dónde puedes estar y qué pasa si te pasas de la raya.",
+      "rules": [
+        { "id": "offside", "title": "Fuera de juego en juego abierto", "important": true,
+          "summary": "Un jugador situado por delante de un compañero que jugó el balón por última vez está en fuera de juego y no puede participar.",
+          "body": "Rucks, mauls, melés y laterales crean sus propias líneas de fuera de juego, por detrás de las cuales deben quedarse los jugadores que no participan. Un jugador en fuera de juego puede quedar habilitado por acciones de compañeros o rivales, por ejemplo cuando el pateador le sobrepasa.",
+          "related": ["ruck", "kicking"] },
+        { "id": "foul-play", "title": "Juego sucio y tarjetas", "important": true,
+          "summary": "El juego peligroso se castiga con golpe de castigo, tarjeta amarilla (10 minutos de exclusión temporal) o roja.",
+          "body": "El contacto en la cabeza se trata con especial dureza: los árbitros siguen un protocolo que valora el grado de peligro y los atenuantes. Algunas competiciones han probado una roja de 20 minutos tras la cual puede entrar un sustituto; consulta el reglamento de la competición.",
+          "related": ["tackle"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Avant / pase adelantado", "description": "El balón va hacia delante desde las manos.", "consequence": "Melé para el rival", "severity": "MINOR" },
+    { "name": "Fuera de juego", "description": "Participar desde delante del balón o de la línea de fuera de juego correspondiente.", "consequence": "Golpe de castigo", "severity": "MAJOR" },
+    { "name": "No soltar", "description": "El placado o el placador retienen tras el placaje.", "consequence": "Golpe de castigo", "severity": "MAJOR" },
+    { "name": "Hundir el maul o la melé", "description": "Llevarlos al suelo deliberadamente.", "consequence": "Golpe de castigo", "severity": "MAJOR" },
+    { "name": "Placaje alto / juego peligroso", "description": "Contacto por encima de los hombros u otras acciones temerarias.", "consequence": "Golpe de castigo y amarilla o roja", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Saque inicial", "description": "Un drop desde el centro que debe recorrer al menos 10 m." },
+    { "title": "Fases", "description": "Los equipos avanzan, placan y reciclan el balón con rucks y mauls." },
+    { "title": "Fases estáticas", "description": "Melés y laterales reanudan el juego tras las interrupciones." },
+    { "title": "Puntos", "description": "Tras una anotación, el equipo que la ha encajado reanuda con un drop desde el centro." },
+    { "title": "Final", "description": "Tras 80 minutos, el juego sigue hasta que el balón quede muerto." }
+  ],
+  "positions": [
+    { "name": "Pilares y talonador (1–3)", "role": "Primera línea: sostienen la melé; el talonador lanza en los laterales." },
+    { "name": "Segundas líneas (4–5)", "role": "Jugadores altos que ganan los laterales y empujan en la melé." },
+    { "name": "Tercera línea (6–8)", "role": "Flankers y número 8: placadores y portadores que disputan el balón en el suelo." },
+    { "name": "Medio melé (9)", "role": "Une delanteros y tres cuartos; pasa desde rucks y melés." },
+    { "name": "Apertura (10)", "role": "Principal decisor; patea y dirige el ataque." },
+    { "name": "Centros (12–13)", "role": "Corredores y placadores del medio campo." },
+    { "name": "Alas y zaguero (11, 14, 15)", "role": "Finalizadores y última línea de defensa." }
+  ],
+  "field": {
+    "name": "Campo",
+    "dimensions": "Hasta 100 m entre líneas de ensayo × hasta 70 m de ancho, más las zonas de marca",
+    "surface": "Césped natural o artificial homologado",
+    "notes": ["Palos en H, separados 5,6 m, con el larguero a 3 m", "Líneas de 22 m y de 10 m a lo ancho del campo", "Zona de marca de entre 6 y 22 m de fondo"]
+  },
+  "glossary": [
+    { "term": "Breakdown", "definition": "La lucha por el balón tras un placaje." },
+    { "term": "Exclusión temporal", "definition": "Diez minutos fuera del campo tras una tarjeta amarilla." },
+    { "term": "Ventaja", "definition": "El juego continúa tras una infracción si beneficia al equipo no infractor." },
+    { "term": "Turnover", "definition": "Recuperar la posesión del rival, a menudo en un ruck." },
+    { "term": "Patada rasa (grubber)", "definition": "Patada baja que rueda y bota por el suelo." }
+  ],
+  "funFacts": [
+    "El origen del rugby —William Webb Ellis cogiendo el balón en la escuela de Rugby en 1823— es una leyenda con poca base, pero el trofeo de la Copa del Mundo lleva su nombre.",
+    "El ensayo se llama así («try») porque al principio no valía nada: solo daba derecho a «intentar» una patada a palos."
+  ]
+}

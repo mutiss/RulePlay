@@ -1,0 +1,118 @@
+{
+  "id": "formula-1",
+  "intro": "Formula 1 is the FIA's top single-seater championship: teams design and build their own cars within tight technical regulations and race them on circuits around the world. Every Grand Prix weekend combines practice, qualifying and a race, and points accumulate into two titles — the Drivers' and the Constructors' Championships. The FIA publishes the Sporting, Technical and Financial Regulations; 2026 marked a major reset with new power units and chassis rules.",
+  "inThirtySeconds": [
+    "Qualifying decides the starting grid: the fastest lap starts on pole.",
+    "The top ten finishers score points, from 25 for the win down to 1 for tenth.",
+    "In a dry race, each car must use at least two different tyre compounds.",
+    "Flags, the safety car and stewards' penalties keep racing safe and fair."
+  ],
+  "objective": "Score the most points across the season — for the driver and for the team.",
+  "facts": {
+    "players": "Two drivers per team",
+    "duration": "Race of about 305 km (Monaco shorter), capped at 2 hours of running",
+    "environment": "Permanent and street circuits worldwide",
+    "equipment": ["Single-seater car", "Hybrid power unit", "Pirelli tyres", "Helmet, HANS device and fire-resistant overalls"]
+  },
+  "scoring": [
+    { "label": "Win", "value": "25", "detail": "Points for the top ten: 25, 18, 15, 12, 10, 8, 6, 4, 2, 1." },
+    { "label": "Sprint", "value": "8", "detail": "At sprint weekends, a shorter race gives points to the top eight (8 down to 1)." },
+    { "label": "Constructors", "value": "Σ", "detail": "A team's championship total is the sum of both drivers' points." }
+  ],
+  "bodies": [
+    { "id": "fia", "name": "Fédération Internationale de l'Automobile", "acronym": "FIA", "scope": "Governing body; publishes the F1 regulations", "url": "https://www.fia.com/regulation/category/110" },
+    { "id": "f1", "name": "Formula 1", "acronym": "F1", "scope": "Commercial rights holder and championship organiser", "url": "https://www.formula1.com/" }
+  ],
+  "rulebooks": [
+    { "id": "fia-f1-regs", "title": "FIA Formula 1 Sporting & Technical Regulations", "publisher": "fia", "url": "https://www.fia.com/regulation/category/110", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "weekend", "title": "The race weekend", "summary": "Practice, qualifying and the race.",
+      "rules": [
+        { "id": "qualifying", "title": "Knockout qualifying", "important": true,
+          "summary": "Qualifying has three sessions — Q1, Q2 and Q3. The slowest cars are knocked out after Q1 and Q2; the top ten fight for pole in Q3.",
+          "body": "Grid positions follow the qualifying order, adjusted for any grid penalties. A driver who fails to set a time within 107% of the fastest Q1 time may need the stewards' permission to start.",
+          "related": ["grid-penalties", "points"] },
+        { "id": "sprint", "title": "Sprint weekends", "important": false,
+          "summary": "At selected events, a separate sprint qualifying and a short race of about 100 km take place before the main Grand Prix.",
+          "body": "The sprint awards points to the top eight. It does not set the grid for the main race, which has its own qualifying.",
+          "related": ["points"] },
+        { "id": "points", "title": "Points and championships", "important": true,
+          "summary": "The top ten in the race score 25, 18, 15, 12, 10, 8, 6, 4, 2 and 1 points.",
+          "body": "There are two championships: drivers and constructors. If a race is stopped early and not resumed, reduced points may be awarded depending on how much distance was completed.",
+          "related": ["qualifying", "sprint"] }
+      ]
+    },
+    {
+      "id": "racing", "title": "During the race", "summary": "Tyres, pit stops and safety.",
+      "rules": [
+        { "id": "tyres", "title": "Tyre rules", "important": true,
+          "summary": "In a dry race, every driver must use at least two different dry-weather compounds, which forces at least one pit stop.",
+          "body": "Pirelli nominates three dry compounds per event (hard, medium, soft). If intermediate or wet tyres are used because of rain, the two-compound rule no longer applies.",
+          "example": "A driver starts on mediums and switches to hards: requirement met. Finishing on the starting compound without changing would bring a penalty.",
+          "related": ["pit-stops"] },
+        { "id": "pit-stops", "title": "Pit stops and the pit lane", "important": false,
+          "summary": "Cars must obey a speed limit in the pit lane; unsafe releases into the path of other cars are penalised.",
+          "body": "Crews can change all four tyres in a couple of seconds. Teams time stops tactically — an 'undercut' pits earlier to use fresh tyres to gain time.",
+          "related": ["tyres", "safety-car"] },
+        { "id": "safety-car", "title": "Safety car and red flags", "important": true,
+          "summary": "After an incident, the safety car or virtual safety car slows the field; a red flag stops the session.",
+          "body": "Under the safety car, overtaking is forbidden and the field bunches up behind it. Under the virtual safety car, drivers must stay above a minimum time on each section. A red flag sends everyone to the pit lane.",
+          "related": ["flags"] }
+      ]
+    },
+    {
+      "id": "conduct", "title": "Flags and penalties", "summary": "Signals and stewarding.",
+      "rules": [
+        { "id": "flags", "title": "Flags", "important": false,
+          "summary": "Yellow: danger, slow down, no overtaking. Blue: let a faster car lapping you through. Red: session stopped. Chequered: finish.",
+          "body": "A black-and-white diagonal flag is a warning for unsporting behaviour, and a black flag disqualifies a driver. Flags are complemented by marshal light panels and in-car displays.",
+          "related": ["safety-car", "penalties"] },
+        { "id": "penalties", "title": "Stewards' penalties", "important": false,
+          "summary": "Stewards can impose time penalties (5 or 10 seconds), drive-throughs, stop-and-go penalties, grid drops and penalty points.",
+          "body": "Common offences include causing a collision, leaving the track and gaining an advantage, exceeding track limits repeatedly, and speeding in the pit lane. Accumulating 12 penalty points on a superlicence within 12 months leads to a race ban.",
+          "related": ["flags", "grid-penalties"] },
+        { "id": "grid-penalties", "title": "Component limits", "important": false,
+          "summary": "Each driver has a limited number of power-unit components and gearbox parts per season; using more brings grid penalties.",
+          "body": "Cost-cap rules also limit team spending, and parc fermé conditions restrict changes to the car between qualifying and the race.",
+          "related": ["qualifying"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Track limits", "description": "Repeatedly leaving the track's white lines.", "consequence": "Lap time deleted, then time penalties", "severity": "MINOR" },
+    { "name": "Pit-lane speeding", "description": "Exceeding the pit speed limit.", "consequence": "Time penalty or drive-through", "severity": "MINOR" },
+    { "name": "Causing a collision", "description": "Driver judged wholly or predominantly to blame.", "consequence": "Time penalty and penalty points", "severity": "MAJOR" },
+    { "name": "Ignoring a red flag", "description": "Failing to slow and return to the pits.", "consequence": "Severe penalties, including disqualification", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Practice", "description": "Teams test set-ups and tyres." },
+    { "title": "Qualifying", "description": "Three knockout sessions decide the grid." },
+    { "title": "Formation lap", "description": "Cars warm their tyres and line up on the grid." },
+    { "title": "Lights out", "description": "Five red lights go out and the race begins." },
+    { "title": "Chequered flag", "description": "Podium, then post-race technical checks." }
+  ],
+  "positions": [
+    { "name": "Driver", "role": "Races the car and feeds back to engineers." },
+    { "name": "Race engineer", "role": "The driver's voice on the radio, managing strategy and car settings." },
+    { "name": "Strategist", "role": "Plans pit stops and tyre choices." },
+    { "name": "Pit crew", "role": "Changes tyres and makes repairs in seconds." }
+  ],
+  "field": {
+    "name": "Circuit",
+    "dimensions": "Typically 3–7 km per lap",
+    "surface": "Asphalt with kerbs and run-off areas",
+    "notes": ["Pit lane with a speed limit", "DRS or other overtaking aids depend on the current regulations"]
+  },
+  "glossary": [
+    { "term": "Pole position", "definition": "First place on the starting grid." },
+    { "term": "Undercut", "definition": "Pitting earlier than a rival to gain time on fresh tyres." },
+    { "term": "Parc fermé", "definition": "Conditions limiting changes to the car after qualifying." },
+    { "term": "VSC", "definition": "Virtual safety car — a speed-controlled neutralisation without a physical car." }
+  ],
+  "funFacts": [
+    "The first Formula 1 World Championship race was held at Silverstone on 13 May 1950.",
+    "A modern pit stop can take less than two seconds."
+  ]
+}

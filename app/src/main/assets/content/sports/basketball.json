@@ -1,0 +1,167 @@
+{
+  "id": "basketball",
+  "intro": "Two teams of five try to score by shooting a ball through a hoop 3.05 m (10 ft) above the floor. Strict clocks keep the game moving: a shot clock forces attacks to finish, and a backcourt count stops teams stalling. The game is governed internationally by FIBA, while the NBA writes its own rulebook — the two are close cousins with important differences.",
+  "inThirtySeconds": [
+    "Score 2 points inside the arc, 3 beyond it and 1 for each free throw.",
+    "You may not run with the ball — dribble or pass it.",
+    "A team has 24 seconds to attempt a shot that hits the rim.",
+    "Too many personal fouls and a player is out: 5 in FIBA, 6 in the NBA."
+  ],
+  "objective": "Score more points than the opponent by shooting the ball through their basket before time runs out.",
+  "facts": {
+    "players": "5 per team on court; substitutions are unlimited",
+    "duration": "FIBA: 4 × 10 min · NBA: 4 × 12 min (+5-min overtimes)",
+    "environment": "Indoor hardwood court",
+    "equipment": ["Ball", "Two baskets 3.05 m high", "Backboards", "Shot clocks"]
+  },
+  "scoring": [
+    { "label": "Field goal", "value": "2", "detail": "Any made shot from inside the three-point line." },
+    { "label": "Three-pointer", "value": "3", "detail": "A made shot with both feet behind the three-point line at release." },
+    { "label": "Free throw", "value": "1", "detail": "Uncontested shot from the free-throw line, usually after a foul." }
+  ],
+  "variants": [
+    { "id": "fiba", "name": "FIBA", "description": "International rules used at the Olympics, FIBA World Cups and most leagues outside North America.", "body": "fiba" },
+    { "id": "nba", "name": "NBA", "description": "The National Basketball Association's own rulebook, used in the NBA and its development league.", "body": "nba" }
+  ],
+  "bodies": [
+    { "id": "fiba", "name": "International Basketball Federation", "acronym": "FIBA", "scope": "World governing body; publishes the Official Basketball Rules", "url": "https://about.fiba.basketball/en/services/resource-hub" },
+    { "id": "nba", "name": "National Basketball Association", "acronym": "NBA", "scope": "North American professional league with its own rulebook", "url": "https://official.nba.com/" }
+  ],
+  "rulebooks": [
+    { "id": "fiba-obr", "title": "FIBA Official Basketball Rules", "publisher": "fiba", "variant": "fiba", "url": "https://about.fiba.basketball/en/services/resource-hub", "checked": "2026-10-14" },
+    { "id": "nba-rules", "title": "Official NBA Rulebook", "publisher": "nba", "variant": "nba", "url": "https://official.nba.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "game", "title": "The game and the clock",
+      "summary": "How long a game lasts and what happens when it is tied.",
+      "rules": [
+        { "id": "periods-fiba", "title": "Four 10-minute quarters", "important": true, "variants": ["fiba"],
+          "summary": "A FIBA game has four quarters of 10 minutes of playing time; the clock stops whenever the ball is dead.",
+          "body": "There are short intervals between quarters and a longer half-time break. If the score is tied at the end of the fourth quarter, the game continues with as many 5-minute overtime periods as needed to break the tie.",
+          "related": ["shot-clock", "timeouts-fiba"] },
+        { "id": "periods-nba", "title": "Four 12-minute quarters", "important": true, "variants": ["nba"],
+          "summary": "An NBA game has four quarters of 12 minutes; ties go to 5-minute overtime periods.",
+          "body": "The longer quarters mean an NBA game has 48 minutes of playing time against FIBA's 40 — one reason NBA box scores show bigger numbers. Overtime periods are repeated until there is a winner.",
+          "related": ["shot-clock", "timeouts-nba"] },
+        { "id": "shot-clock", "title": "The 24-second shot clock", "important": true,
+          "summary": "The team with the ball must attempt a shot that touches the rim (or goes in) within 24 seconds.",
+          "body": "If the shot clock expires, it is a violation and the ball goes to the opponent. After a shot hits the rim and the attacking team rebounds it, the clock resets to 14 seconds rather than 24. A foul or a kicked ball can also reset the clock depending on how much time remains.",
+          "example": "A team works the ball around for 22 seconds, then misses a shot that clips the rim and grabs the rebound: they now have 14 seconds for another attempt.",
+          "related": ["eight-seconds", "periods-fiba", "periods-nba"] },
+        { "id": "timeouts-fiba", "title": "Timeouts in FIBA", "variants": ["fiba"],
+          "summary": "Each team gets two timeouts in the first half, three in the second half and one in each overtime.",
+          "body": "Timeouts last one minute and can only be granted at specific moments, such as when the ball is dead and the game clock is stopped. Unused first-half timeouts do not carry over.",
+          "related": ["periods-fiba"] },
+        { "id": "timeouts-nba", "title": "Timeouts in the NBA", "variants": ["nba"],
+          "summary": "Each team has a limited number of timeouts per game, with extra restrictions late in the fourth quarter and overtime.",
+          "body": "The NBA rulebook also defines mandatory timeouts that are used for television breaks, and allows a timeout after a made basket in the final minutes to advance the ball into the frontcourt — a key tactic in close games.",
+          "related": ["periods-nba"] }
+      ]
+    },
+    {
+      "id": "movement", "title": "Moving with the ball",
+      "summary": "Dribbling, stepping and the violations that come with them.",
+      "rules": [
+        { "id": "travel", "title": "Travelling", "important": true,
+          "summary": "You may not move your feet illegally while holding the ball: after gathering it you get two steps to pass, shoot or stop.",
+          "body": "Once a player has a pivot foot established, lifting it and putting it back down before releasing the ball is travelling. Both FIBA and the NBA allow a 'gather' step as the player collects the ball from a dribble, followed by two steps. The penalty is loss of possession.",
+          "example": "A player catches the ball while running, takes two steps and lays it in: legal. A third step before the shot is travelling.",
+          "related": ["double-dribble"] },
+        { "id": "double-dribble", "title": "Double dribble and carrying", "important": false,
+          "summary": "A dribble ends when you hold the ball with one or both hands; you cannot start a second dribble afterwards.",
+          "body": "Dribbling with both hands at the same time is also a double dribble. Letting the ball come to rest in your hand and then continuing to dribble is called carrying (or palming). All are violations punished by loss of possession.",
+          "related": ["travel"] },
+        { "id": "eight-seconds", "title": "Eight seconds to cross half court", "important": false,
+          "summary": "After gaining possession in its own backcourt, a team must move the ball into the frontcourt within 8 seconds.",
+          "body": "Once in the frontcourt, the team cannot take the ball back into its backcourt (a 'backcourt violation'). Both rules prevent teams stalling and push play towards the basket.",
+          "related": ["shot-clock"] },
+        { "id": "three-seconds", "title": "Three seconds in the lane", "important": false,
+          "summary": "An attacking player may not stay in the restricted area (the painted lane) for more than 3 consecutive seconds while their team has the ball in the frontcourt.",
+          "body": "The count restarts once the player leaves the lane with both feet. The NBA additionally has a defensive three-second rule: a defender may not stay in the lane for more than 3 seconds unless actively guarding an opponent.",
+          "related": ["travel"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Fouls",
+      "summary": "Illegal contact, personal foul limits and free throws.",
+      "rules": [
+        { "id": "personal-foul", "title": "Personal fouls", "important": true,
+          "summary": "Illegal contact with an opponent — holding, pushing, blocking, charging, hacking — is a personal foul.",
+          "body": "If the fouled player was shooting, they receive free throws: two for a missed two-point attempt, three for a missed three-point attempt, and one extra if the shot went in (an 'and-one'). Otherwise the fouled team usually inbounds the ball, unless the fouling team is in the penalty.",
+          "example": "A defender bumps a shooter's arm on a three-point attempt that misses: the shooter gets three free throws.",
+          "related": ["foul-out-fiba", "foul-out-nba", "team-fouls"] },
+        { "id": "foul-out-fiba", "title": "Five fouls and you're out", "important": true, "variants": ["fiba"],
+          "summary": "Under FIBA rules a player who commits 5 fouls must leave the game.",
+          "body": "Personal, technical and unsportsmanlike fouls all count towards the total. The disqualified player may stay on the bench but cannot return.",
+          "related": ["personal-foul"] },
+        { "id": "foul-out-nba", "title": "Six fouls and you're out", "important": true, "variants": ["nba"],
+          "summary": "In the NBA a player is disqualified on their 6th personal foul.",
+          "body": "Technical fouls are tracked separately in the NBA: two technical fouls lead to an ejection.",
+          "related": ["personal-foul"] },
+        { "id": "team-fouls", "title": "Team fouls and the penalty", "important": false,
+          "summary": "Once a team commits a set number of fouls in a quarter, every further defensive foul gives the opponent free throws.",
+          "body": "In FIBA, after a team's 4th team foul in a quarter, each further player foul (other than an offensive foul) sends the opponent to the line for two free throws. In the NBA the penalty starts with the 5th team foul in a quarter, with a separate limit in the last two minutes.",
+          "related": ["personal-foul"] },
+        { "id": "unsportsmanlike", "title": "Unsportsmanlike and flagrant fouls", "important": false,
+          "summary": "Excessive or unnecessary contact is punished more severely: FIBA calls it unsportsmanlike, the NBA calls it flagrant.",
+          "body": "These fouls give the opponent free throws and possession. In FIBA, two unsportsmanlike fouls (or one plus a technical foul) disqualify a player. In the NBA, flagrant fouls are graded 1 or 2, and a flagrant 2 means an immediate ejection.",
+          "related": ["personal-foul"] }
+      ]
+    },
+    {
+      "id": "shooting", "title": "Shooting and the basket",
+      "summary": "What counts as a basket and when you may not touch the ball.",
+      "rules": [
+        { "id": "three-line", "title": "The three-point line", "important": false,
+          "summary": "Shots released from behind the arc are worth 3 points; the line itself counts as inside.",
+          "body": "FIBA's arc is 6.75 m from the centre of the basket. The NBA's is 7.24 m (23 ft 9 in) at the top, shortening to 6.71 m (22 ft) in the corners. If the shooter's foot touches the line, the shot is worth 2.",
+          "related": ["personal-foul"] },
+        { "id": "goaltending", "title": "Goaltending", "important": true,
+          "summary": "You may not touch a shot on its way down towards the basket, or while it is above the rim.",
+          "body": "If a defender goaltends, the basket counts as if it had gone in. If an attacker does it, no points are awarded and the defence gets the ball. Touching the basket or backboard to make the ball move is also illegal (basket interference).",
+          "example": "A shooter's lob is dropping towards the ring when a defender swats it away: goaltending, two points awarded.",
+          "related": ["three-line"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Travelling", "description": "Moving the feet illegally while holding the ball.", "consequence": "Loss of possession", "severity": "MINOR" },
+    { "name": "Shot-clock violation", "description": "Failing to attempt a shot that touches the rim within 24 seconds.", "consequence": "Loss of possession", "severity": "MINOR" },
+    { "name": "Shooting foul", "description": "Illegal contact on a player in the act of shooting.", "consequence": "2 or 3 free throws (1 if the shot scores)", "severity": "MAJOR" },
+    { "name": "Technical foul", "description": "Non-contact misconduct such as disrespecting officials.", "consequence": "Free throw for the opponent; counts towards ejection", "severity": "MAJOR" },
+    { "name": "Unsportsmanlike / flagrant foul", "description": "Excessive, unnecessary or dangerous contact.", "consequence": "Free throws plus possession; possible ejection", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Jump ball", "description": "The referee tosses the ball between two players at centre court to start the game." },
+    { "title": "Possession battles", "description": "Teams alternate attacks, each limited by the 24-second shot clock." },
+    { "title": "Quarter breaks", "description": "Short breaks between quarters and a longer half-time interval." },
+    { "title": "Clutch time", "description": "Timeouts and intentional fouls are used tactically in the final minutes." },
+    { "title": "Overtime", "description": "Tied games continue with 5-minute periods until there is a winner." }
+  ],
+  "positions": [
+    { "name": "Point guard", "role": "Main ball-handler who runs the offence and sets up teammates." },
+    { "name": "Shooting guard", "role": "Perimeter scorer, often the best outside shooter." },
+    { "name": "Small forward", "role": "Versatile wing who scores, defends and rebounds." },
+    { "name": "Power forward", "role": "Physical player near the basket who rebounds and screens." },
+    { "name": "Center", "role": "Usually the tallest player; protects the rim and scores inside." }
+  ],
+  "field": {
+    "name": "Court",
+    "dimensions": "FIBA: 28 m × 15 m · NBA: 94 ft × 50 ft (28.65 m × 15.24 m)",
+    "surface": "Hardwood (indoor)",
+    "notes": ["Basket height: 3.05 m (10 ft)", "Free-throw line: 4.6 m from the backboard plane (15 ft in the NBA)", "Three-point line: 6.75 m (FIBA) / 7.24 m (NBA)"]
+  },
+  "glossary": [
+    { "term": "And-one", "definition": "A made basket while being fouled, followed by one free throw." },
+    { "term": "Shot clock", "definition": "The 24-second countdown a team has to attempt a shot." },
+    { "term": "Goaltending", "definition": "Illegally touching a shot on its downward flight or above the rim." },
+    { "term": "Backcourt violation", "definition": "Returning the ball to your own half after crossing into the frontcourt." },
+    { "term": "Pick and roll", "definition": "A play where a teammate screens the ball-handler's defender, then moves towards the basket." },
+    { "term": "Bonus / penalty", "definition": "The state in which a team's extra fouls give the opponent free throws." }
+  ],
+  "funFacts": [
+    "James Naismith invented basketball in 1891 using peach baskets — someone had to fetch the ball after every score.",
+    "The shot clock was introduced in the NBA in 1954 to stop teams stalling."
+  ]
+}

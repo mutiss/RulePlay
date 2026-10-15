@@ -1,0 +1,92 @@
+{
+  "id": "rowing",
+  "language": "es",
+  "intro": "Las regatas de remo son una prueba de potencia, resistencia y sincronía perfecta. Tripulaciones de uno, dos, cuatro u ocho remeros se sientan de espaldas y compiten en paralelo sobre 2000 metros. En el remo en couple cada remero usa dos remos; en el de punta, uno. Los ocho llevan un timonel que dirige la regata. World Rowing publica el Reglamento de Regatas.",
+  "inThirtySeconds": [
+    "Las regatas estándar son de 2000 m en calles rectas.",
+    "Couple: dos remos por remero. Punta: uno cada uno.",
+    "Gana el primer bote que cruza la meta con la proa.",
+    "Las salidas falsas y salirse de la calle se sancionan."
+  ],
+  "objective": "Cruzar la meta en primer lugar, con la proa del bote por delante de todos los demás.",
+  "facts": {
+    "players": "Tripulaciones de 1, 2, 4 u 8 (los ocho llevan timonel)",
+    "duration": "Unos 5 minutos y medio a 8 minutos para 2000 m",
+    "environment": "Aguas tranquilas: lagos, ríos y canales construidos a propósito",
+    "equipment": ["Bote de competición", "Remos (de couple o de punta)", "Carros deslizantes y apoyapiés"]
+  },
+  "scoring": [
+    { "label": "Puesto", "value": "1.º", "detail": "Orden en que la proa cruza la línea de meta, decidido por foto finish." }
+  ],
+  "bodies": [
+    { "id": "worldrowing", "name": "World Rowing", "acronym": null, "scope": "Federación internacional; publica el Reglamento de Regatas", "url": "https://worldrowing.com/" }
+  ],
+  "rulebooks": [
+    { "id": "wr-rules", "title": "Reglamento de Regatas de World Rowing", "publisher": "worldrowing", "url": "https://worldrowing.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "boats", "title": "Tipos de bote", "summary": "Couple y punta.",
+      "rules": [
+        { "id": "sculling", "title": "Couple y punta", "important": true,
+          "summary": "Los botes de couple (single, doble, cuádruple) dan a cada remero dos remos. Los de punta (dos sin, cuatro sin, ocho) le dan uno.",
+          "body": "Los botes se escriben de forma abreviada: 1x (single), 2x (doble), 4x (cuádruple), 2- (dos sin timonel), 4- (cuatro sin), 8+ (ocho con timonel). Las pruebas de peso ligero añaden límites de peso para los remeros.",
+          "related": ["coxswain"] },
+        { "id": "coxswain", "title": "El timonel", "important": false,
+          "summary": "En los botes con timonel, este dirige el rumbo, marca el ritmo de palada y motiva a la tripulación.",
+          "body": "Los timoneles miran hacia delante y deben alcanzar un peso mínimo; si pesan menos, llevan lastre.",
+          "related": ["sculling"] }
+      ]
+    },
+    {
+      "id": "race", "title": "La regata", "summary": "Salida, calles y llegada.",
+      "rules": [
+        { "id": "start-row", "title": "La salida", "important": true,
+          "summary": "Los botes se sujetan en los pontones de salida; una tripulación que se mueve antes de la señal hace salida falsa.",
+          "body": "Según el reglamento actual, una salida falsa puede suponer la exclusión de la regata. Las salidas se alinean para que todas las proas estén a la misma altura.",
+          "related": ["lanes-row"] },
+        { "id": "lanes-row", "title": "Mantente en tu calle", "important": false,
+          "summary": "Las tripulaciones deben seguir en su calle; salir de ella e interferir con otra tripulación puede suponer la exclusión.",
+          "body": "En los campos internacionales, las calles se marcan con boyas. Un juez sigue cada regata en una lancha.",
+          "related": ["start-row", "finish-row"] },
+        { "id": "finish-row", "title": "La llegada", "important": true,
+          "summary": "Una tripulación termina cuando su proa alcanza la línea de meta; los puestos se deciden por foto finish.",
+          "body": "Una tripulación puede terminar aunque un remero haya perdido un remo o haya «cogido un cangrejo» (el remo se queda atascado en el agua), siempre que la tripulación esté completa.",
+          "related": ["lanes-row"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Salida falsa", "description": "Moverse antes de la señal de salida.", "consequence": "Aviso o exclusión", "severity": "MAJOR" },
+    { "name": "Invasión de calle", "description": "Salir de la calle y estorbar a un rival.", "consequence": "Exclusión", "severity": "MAJOR" },
+    { "name": "Timonel por debajo del peso", "description": "Timonel por debajo del peso mínimo sin lastre.", "consequence": "No puede competir", "severity": "MINOR" }
+  ],
+  "flow": [
+    { "title": "Series", "description": "Las mejores tripulaciones pasan directamente." },
+    { "title": "Repesca", "description": "Una segunda oportunidad para las tripulaciones que no pasaron." },
+    { "title": "Semifinales", "description": "Las tripulaciones luchan por un puesto en las finales." },
+    { "title": "Final A", "description": "Seis tripulaciones compiten por las medallas." }
+  ],
+  "positions": [
+    { "name": "Marca (stroke)", "role": "Marca el ritmo de la tripulación." },
+    { "name": "Proa", "role": "El remero más cercano a la parte delantera del bote." },
+    { "name": "Sala de máquinas", "role": "Los potentes puestos centrales de un cuatro o un ocho." },
+    { "name": "Timonel", "role": "Dirige el rumbo y la regata." }
+  ],
+  "field": {
+    "name": "Campo de regatas",
+    "dimensions": "2000 m en línea recta, normalmente seis calles",
+    "surface": "Aguas tranquilas",
+    "notes": ["Calles balizadas con boyas", "Marcas de distancia cada 250 o 500 m"]
+  },
+  "glossary": [
+    { "term": "Ataque", "definition": "El momento en que la pala entra en el agua." },
+    { "term": "Cangrejo", "definition": "Cuando un remo se queda atrapado en el agua y frena al remero." },
+    { "term": "Ritmo de palada", "definition": "Paladas por minuto." },
+    { "term": "Ergómetro", "definition": "Máquina de remo." }
+  ],
+  "funFacts": [
+    "La regata entre Oxford y Cambridge se disputó por primera vez en 1829.",
+    "En un ocho, el timonel suele ser la única persona que mira hacia la meta."
+  ]
+}

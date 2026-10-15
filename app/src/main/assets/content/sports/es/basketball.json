@@ -1,0 +1,168 @@
+{
+  "id": "basketball",
+  "language": "es",
+  "intro": "Dos equipos de cinco intentan anotar lanzando un balón a través de un aro situado a 3,05 m del suelo. Relojes estrictos mantienen el ritmo: un reloj de posesión obliga a terminar los ataques y una cuenta en campo propio impide perder tiempo. A nivel internacional el juego lo rige la FIBA, mientras que la NBA tiene su propio reglamento: son primos cercanos, pero con diferencias importantes.",
+  "inThirtySeconds": [
+    "Canasta de 2 puntos dentro del arco, de 3 desde fuera y de 1 por cada tiro libre.",
+    "No se puede correr con el balón: hay que botarlo o pasarlo.",
+    "Un equipo tiene 24 segundos para lanzar a canasta y tocar el aro.",
+    "Demasiadas faltas personales y el jugador queda eliminado: 5 en FIBA, 6 en la NBA."
+  ],
+  "objective": "Anotar más puntos que el rival lanzando el balón a través de su canasta antes de que se acabe el tiempo.",
+  "facts": {
+    "players": "5 por equipo en pista; cambios ilimitados",
+    "duration": "FIBA: 4 × 10 min · NBA: 4 × 12 min (+ prórrogas de 5 min)",
+    "environment": "Pista cubierta de parqué",
+    "equipment": ["Balón", "Dos canastas a 3,05 m", "Tableros", "Relojes de posesión"]
+  },
+  "scoring": [
+    { "label": "Tiro de campo", "value": "2", "detail": "Cualquier canasta desde dentro de la línea de tres." },
+    { "label": "Triple", "value": "3", "detail": "Canasta lanzada con ambos pies por detrás de la línea de tres en el momento del tiro." },
+    { "label": "Tiro libre", "value": "1", "detail": "Lanzamiento sin oposición desde la línea de tiros libres, normalmente tras una falta." }
+  ],
+  "variants": [
+    { "id": "fiba", "name": "FIBA", "description": "Reglas internacionales de los Juegos Olímpicos, los Mundiales FIBA y la mayoría de ligas fuera de Norteamérica.", "body": "fiba" },
+    { "id": "nba", "name": "NBA", "description": "Reglamento propio de la National Basketball Association, usado en la NBA y su liga de desarrollo.", "body": "nba" }
+  ],
+  "bodies": [
+    { "id": "fiba", "name": "Federación Internacional de Baloncesto", "acronym": "FIBA", "scope": "Organismo rector mundial; publica las Reglas Oficiales de Baloncesto", "url": "https://about.fiba.basketball/en/services/resource-hub" },
+    { "id": "nba", "name": "National Basketball Association", "acronym": "NBA", "scope": "Liga profesional norteamericana con reglamento propio", "url": "https://official.nba.com/" }
+  ],
+  "rulebooks": [
+    { "id": "fiba-obr", "title": "Reglas Oficiales de Baloncesto FIBA", "publisher": "fiba", "variant": "fiba", "url": "https://about.fiba.basketball/en/services/resource-hub", "checked": "2026-10-14" },
+    { "id": "nba-rules", "title": "Reglamento oficial de la NBA", "publisher": "nba", "variant": "nba", "url": "https://official.nba.com/", "checked": "2026-10-14" }
+  ],
+  "chapters": [
+    {
+      "id": "game", "title": "El partido y el reloj",
+      "summary": "Cuánto dura un partido y qué pasa si hay empate.",
+      "rules": [
+        { "id": "periods-fiba", "title": "Cuatro cuartos de 10 minutos", "important": true, "variants": ["fiba"],
+          "summary": "Un partido FIBA tiene cuatro cuartos de 10 minutos de juego; el reloj se detiene cuando el balón está muerto.",
+          "body": "Hay pausas cortas entre cuartos y un descanso más largo en el medio. Si hay empate al final del cuarto cuarto, se juegan tantas prórrogas de 5 minutos como haga falta para deshacerlo.",
+          "related": ["shot-clock", "timeouts-fiba"] },
+        { "id": "periods-nba", "title": "Cuatro cuartos de 12 minutos", "important": true, "variants": ["nba"],
+          "summary": "Un partido NBA tiene cuatro cuartos de 12 minutos; los empates se resuelven con prórrogas de 5 minutos.",
+          "body": "Los cuartos más largos suponen 48 minutos de juego frente a los 40 de FIBA: una de las razones por las que las estadísticas NBA son más abultadas. Las prórrogas se repiten hasta que haya un ganador.",
+          "related": ["shot-clock", "timeouts-nba"] },
+        { "id": "shot-clock", "title": "El reloj de 24 segundos", "important": true,
+          "summary": "El equipo con el balón debe lanzar a canasta, tocando el aro o anotando, en menos de 24 segundos.",
+          "body": "Si el reloj de posesión llega a cero, es una violación y el balón pasa al rival. Si un tiro toca el aro y el equipo atacante coge el rebote, el reloj se reinicia a 14 segundos en lugar de 24. Una falta o un balón golpeado con el pie también pueden reiniciarlo, según el tiempo que quede.",
+          "example": "Un equipo mueve el balón durante 22 segundos, falla un tiro que roza el aro y coge el rebote: ahora tiene 14 segundos para otro intento.",
+          "related": ["eight-seconds", "periods-fiba", "periods-nba"] },
+        { "id": "timeouts-fiba", "title": "Tiempos muertos en FIBA", "variants": ["fiba"],
+          "summary": "Cada equipo tiene dos tiempos muertos en la primera parte, tres en la segunda y uno en cada prórroga.",
+          "body": "Duran un minuto y solo pueden concederse en momentos concretos, como cuando el balón está muerto y el reloj de partido detenido. Los de la primera parte no utilizados no se acumulan.",
+          "related": ["periods-fiba"] },
+        { "id": "timeouts-nba", "title": "Tiempos muertos en la NBA", "variants": ["nba"],
+          "summary": "Cada equipo tiene un número limitado de tiempos muertos por partido, con restricciones adicionales al final del cuarto periodo y en la prórroga.",
+          "body": "El reglamento NBA también define tiempos muertos obligatorios para las pausas de televisión, y permite que un tiempo muerto tras canasta en los minutos finales adelante el saque a pista delantera: una táctica clave en los finales ajustados.",
+          "related": ["periods-nba"] }
+      ]
+    },
+    {
+      "id": "movement", "title": "Moverse con el balón",
+      "summary": "Bote, pasos y las violaciones asociadas.",
+      "rules": [
+        { "id": "travel", "title": "Pasos", "important": true,
+          "summary": "No se pueden mover los pies de forma ilegal con el balón en las manos: tras cogerlo, tienes dos pasos para pasar, tirar o pararte.",
+          "body": "Una vez establecido el pie de pivote, levantarlo y volver a apoyarlo antes de soltar el balón es pasos. Tanto FIBA como la NBA permiten un paso de recogida al terminar el bote, seguido de dos pasos. La sanción es la pérdida de la posesión.",
+          "example": "Un jugador recibe en carrera, da dos pasos y entra a canasta: legal. Un tercer paso antes del tiro son pasos.",
+          "related": ["double-dribble"] },
+        { "id": "double-dribble", "title": "Dobles y conducción", "important": false,
+          "summary": "El bote termina cuando sujetas el balón con una o dos manos; no puedes empezar un segundo bote después.",
+          "body": "Botar con las dos manos a la vez también son dobles. Dejar que el balón descanse en la mano y seguir botando se llama conducción (o «palming»). Todas son violaciones que se castigan con pérdida de posesión.",
+          "related": ["travel"] },
+        { "id": "eight-seconds", "title": "Ocho segundos para pasar del medio campo", "important": false,
+          "summary": "Tras ganar la posesión en su pista trasera, un equipo debe pasar el balón a pista delantera en 8 segundos.",
+          "body": "Una vez en pista delantera, el equipo no puede devolver el balón a su propia mitad (campo atrás). Ambas reglas impiden perder tiempo y empujan el juego hacia la canasta.",
+          "related": ["shot-clock"] },
+        { "id": "three-seconds", "title": "Tres segundos en la zona", "important": false,
+          "summary": "Un atacante no puede permanecer en la zona restringida (la pintura) más de 3 segundos seguidos mientras su equipo tiene el balón en pista delantera.",
+          "body": "La cuenta se reinicia cuando el jugador sale de la zona con ambos pies. La NBA tiene además la regla de tres segundos defensivos: un defensor no puede quedarse en la zona más de 3 segundos salvo que esté marcando activamente a un rival.",
+          "related": ["travel"] }
+      ]
+    },
+    {
+      "id": "fouls", "title": "Faltas",
+      "summary": "Contacto ilegal, límites de faltas personales y tiros libres.",
+      "rules": [
+        { "id": "personal-foul", "title": "Faltas personales", "important": true,
+          "summary": "El contacto ilegal con un rival —agarrar, empujar, bloquear, cargar, golpear— es falta personal.",
+          "body": "Si el jugador objeto de la falta estaba tirando, recibe tiros libres: dos por un tiro de dos fallado, tres por un triple fallado y uno adicional si la canasta entró («2+1»). Si no, el equipo suele sacar de banda, salvo que el infractor esté en bonus.",
+          "example": "Un defensor toca el brazo de un tirador en un triple fallado: el tirador lanza tres tiros libres.",
+          "related": ["foul-out-fiba", "foul-out-nba", "team-fouls"] },
+        { "id": "foul-out-fiba", "title": "Cinco faltas y eliminado", "important": true, "variants": ["fiba"],
+          "summary": "Con reglas FIBA, el jugador que comete 5 faltas debe abandonar el partido.",
+          "body": "Cuentan las personales, técnicas y antideportivas. El jugador eliminado puede seguir en el banquillo, pero no volver a pista.",
+          "related": ["personal-foul"] },
+        { "id": "foul-out-nba", "title": "Seis faltas y eliminado", "important": true, "variants": ["nba"],
+          "summary": "En la NBA, un jugador queda eliminado al cometer su 6.ª falta personal.",
+          "body": "En la NBA las técnicas se cuentan aparte: dos técnicas suponen la expulsión.",
+          "related": ["personal-foul"] },
+        { "id": "team-fouls", "title": "Faltas de equipo y bonus", "important": false,
+          "summary": "Cuando un equipo alcanza cierto número de faltas en un cuarto, cada nueva falta defensiva da tiros libres al rival.",
+          "body": "En FIBA, a partir de la 4.ª falta de equipo en un cuarto, cada nueva falta de jugador (salvo las ofensivas) supone dos tiros libres para el rival. En la NBA el bonus empieza con la 5.ª falta de equipo del cuarto, con un límite aparte en los dos últimos minutos.",
+          "related": ["personal-foul"] },
+        { "id": "unsportsmanlike", "title": "Faltas antideportivas y flagrantes", "important": false,
+          "summary": "El contacto excesivo o innecesario se castiga con más dureza: la FIBA la llama antideportiva; la NBA, flagrante.",
+          "body": "Estas faltas dan tiros libres y posesión al rival. En FIBA, dos antideportivas (o una antideportiva y una técnica) descalifican al jugador. En la NBA, las flagrantes se gradúan en 1 o 2, y una flagrante 2 supone la expulsión inmediata.",
+          "related": ["personal-foul"] }
+      ]
+    },
+    {
+      "id": "shooting", "title": "El tiro y la canasta",
+      "summary": "Qué cuenta como canasta y cuándo no se puede tocar el balón.",
+      "rules": [
+        { "id": "three-line", "title": "La línea de tres", "important": false,
+          "summary": "Los tiros lanzados desde detrás del arco valen 3 puntos; la propia línea cuenta como dentro.",
+          "body": "El arco FIBA está a 6,75 m del centro de la canasta. El de la NBA, a 7,24 m en la parte frontal, y se acorta a 6,71 m en las esquinas. Si el pie del tirador pisa la línea, el tiro vale 2.",
+          "related": ["personal-foul"] },
+        { "id": "goaltending", "title": "Interferencia (tapón ilegal)", "important": true,
+          "summary": "No se puede tocar un tiro mientras baja hacia la canasta, ni cuando está por encima del aro.",
+          "body": "Si lo hace un defensor, la canasta sube al marcador como si hubiera entrado. Si lo hace un atacante, no hay puntos y el balón es para la defensa. Tocar el aro o el tablero para mover el balón también es ilegal.",
+          "example": "La bandeja de un tirador va cayendo hacia el aro cuando un defensor la aparta de un manotazo: interferencia, dos puntos concedidos.",
+          "related": ["three-line"] }
+      ]
+    }
+  ],
+  "fouls": [
+    { "name": "Pasos", "description": "Mover los pies ilegalmente con el balón en las manos.", "consequence": "Pérdida de posesión", "severity": "MINOR" },
+    { "name": "Violación de 24 segundos", "description": "No lanzar tocando el aro en 24 segundos.", "consequence": "Pérdida de posesión", "severity": "MINOR" },
+    { "name": "Falta en el tiro", "description": "Contacto ilegal sobre un jugador que está lanzando.", "consequence": "2 o 3 tiros libres (1 si la canasta entra)", "severity": "MAJOR" },
+    { "name": "Falta técnica", "description": "Conducta sin contacto, como faltar al respeto a los árbitros.", "consequence": "Tiro libre para el rival; cuenta para la expulsión", "severity": "MAJOR" },
+    { "name": "Falta antideportiva / flagrante", "description": "Contacto excesivo, innecesario o peligroso.", "consequence": "Tiros libres y posesión; posible expulsión", "severity": "SEVERE" }
+  ],
+  "flow": [
+    { "title": "Salto inicial", "description": "El árbitro lanza el balón entre dos jugadores en el círculo central para empezar." },
+    { "title": "Posesiones", "description": "Los equipos alternan ataques, cada uno limitado por el reloj de 24 segundos." },
+    { "title": "Pausas entre cuartos", "description": "Pausas cortas entre cuartos y un descanso más largo." },
+    { "title": "Final ajustado", "description": "En los últimos minutos se usan tiempos muertos y faltas intencionadas de forma táctica." },
+    { "title": "Prórroga", "description": "Los empates continúan con periodos de 5 minutos hasta que haya ganador." }
+  ],
+  "positions": [
+    { "name": "Base", "role": "Principal manejador del balón; dirige el ataque y asiste a sus compañeros." },
+    { "name": "Escolta", "role": "Anotador exterior, a menudo el mejor tirador de larga distancia." },
+    { "name": "Alero", "role": "Jugador versátil que anota, defiende y rebotea." },
+    { "name": "Ala-pívot", "role": "Jugador físico cerca del aro que rebotea y pone bloqueos." },
+    { "name": "Pívot", "role": "Normalmente el más alto; protege el aro y anota cerca de canasta." }
+  ],
+  "field": {
+    "name": "Pista",
+    "dimensions": "FIBA: 28 m × 15 m · NBA: 94 × 50 pies (28,65 m × 15,24 m)",
+    "surface": "Parqué (pista cubierta)",
+    "notes": ["Altura del aro: 3,05 m (10 pies)", "Línea de tiros libres: a 4,6 m del plano del tablero (15 pies en la NBA)", "Línea de tres: 6,75 m (FIBA) / 7,24 m (NBA)"]
+  },
+  "glossary": [
+    { "term": "2+1", "definition": "Canasta anotada recibiendo falta, seguida de un tiro libre adicional." },
+    { "term": "Reloj de posesión", "definition": "La cuenta atrás de 24 segundos que tiene un equipo para lanzar." },
+    { "term": "Interferencia", "definition": "Tocar ilegalmente un tiro en su trayectoria descendente o por encima del aro." },
+    { "term": "Campo atrás", "definition": "Devolver el balón a la propia mitad tras haber pasado a pista delantera." },
+    { "term": "Pick and roll", "definition": "Jugada en la que un compañero bloquea al defensor del manejador y luego continúa hacia la canasta." },
+    { "term": "Bonus", "definition": "Situación en la que las faltas de un equipo dan tiros libres al rival." }
+  ],
+  "funFacts": [
+    "James Naismith inventó el baloncesto en 1891 con cestas de melocotones: alguien tenía que ir a buscar el balón tras cada canasta.",
+    "El reloj de posesión llegó a la NBA en 1954 para impedir que los equipos congelaran el juego."
+  ]
+}
