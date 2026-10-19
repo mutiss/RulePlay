@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.RowScope
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.WindowInsets
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.navigationBarsPadding
@@ -42,6 +43,7 @@ import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.semantics.Role
 import androidx.compose.ui.semantics.contentDescription
+import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.selected
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.text.style.TextOverflow
@@ -82,7 +84,7 @@ fun RulePlayTopBar(
             Modifier
                 .windowInsetsPadding(WindowInsets.statusBars)
                 .fillMaxWidth()
-                .height(64.dp)
+                .defaultMinSize(minHeight = 64.dp)
                 .padding(horizontal = Spacing.s),
             verticalAlignment = Alignment.CenterVertically,
         ) {
@@ -100,7 +102,7 @@ fun RulePlayTopBar(
                 title,
                 style = type.title,
                 color = colors.textPrimary,
-                maxLines = 1,
+                maxLines = titleMaxLines(),
                 overflow = TextOverflow.Ellipsis,
                 modifier = Modifier
                     .weight(1f)
@@ -180,7 +182,7 @@ private fun BottomBarItem(item: NavItem, selected: Boolean, onClick: () -> Unit)
                 contentDescription = item.label
             }
             .pressable(onClick = onClick, role = Role.Tab, pressedScale = 0.92f)
-            .height(52.dp)
+            .defaultMinSize(minHeight = 52.dp)
             .padding(horizontal = horizontal),
         verticalAlignment = Alignment.CenterVertically,
     ) {
@@ -208,9 +210,9 @@ private fun BottomBarItem(item: NavItem, selected: Boolean, onClick: () -> Unit)
 fun ScreenTitle(title: String, modifier: Modifier = Modifier, overline: String? = null, subtitle: String? = null) {
     val colors = RulePlayTheme.colors
     val type = RulePlayTheme.type
-    Column(modifier.fillMaxWidth().padding(horizontal = Spacing.gutter).semantics(mergeDescendants = true) {}) {
+    Column(modifier.fillMaxWidth().padding(horizontal = Spacing.gutter).semantics(mergeDescendants = true) { heading() }) {
         if (overline != null) {
-            Text(overline.uppercase(), style = type.overline, color = colors.accentText)
+            Text(overline.uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(overline))
             Spacer(Modifier.height(Spacing.s))
         }
         Text(title.uppercase(), style = type.displayLarge, color = colors.textPrimary)
@@ -250,7 +252,7 @@ fun SegmentedControl(
                     .border(1.dp, if (selected) colors.outline else Color.Transparent, Shapes.pill)
                     .semantics { this.selected = selected }
                     .pressable(onClick = { onSelect(index) }, role = Role.Tab, pressedScale = 0.96f)
-                    .height(44.dp)
+                    .defaultMinSize(minHeight = 48.dp)
                     .padding(horizontal = 12.dp),
                 contentAlignment = Alignment.Center,
             ) {

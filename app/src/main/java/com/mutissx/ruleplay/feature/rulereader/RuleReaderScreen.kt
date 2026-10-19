@@ -1,5 +1,6 @@
 package com.mutissx.ruleplay.feature.rulereader
 
+import androidx.compose.ui.semantics.paneTitle
 import androidx.compose.foundation.background
 import androidx.compose.foundation.border
 import androidx.compose.foundation.layout.Arrangement
@@ -72,6 +73,7 @@ import com.mutissx.ruleplay.core.designsystem.component.SourceStatusBadge
 import com.mutissx.ruleplay.core.designsystem.component.accentColor
 import com.mutissx.ruleplay.core.designsystem.component.pressable
 import com.mutissx.ruleplay.core.designsystem.component.scaled
+import com.mutissx.ruleplay.core.designsystem.component.spokenAs
 import com.mutissx.ruleplay.core.designsystem.theme.RulePlayTheme
 import com.mutissx.ruleplay.core.designsystem.theme.Shapes
 import com.mutissx.ruleplay.core.designsystem.theme.Spacing
@@ -195,8 +197,9 @@ private fun ReaderContent(
         val key = state.initialRuleId?.let { "r-$it" } ?: state.initialChapterId?.let { "c-$it" } ?: return@LaunchedEffect
         indexOfKey[key]?.let { listState.scrollToItem(it) }
     }
+    val screenTitle = stringResource(R.string.reader_title, state.sport.name)
 
-    Box(Modifier.fillMaxSize().background(colors.background)) {
+    Box(Modifier.fillMaxSize().background(colors.background).semantics { paneTitle = screenTitle }) {
         Column(Modifier.fillMaxSize()) {
             ReaderTopBar(
                 title = state.sport.name,
@@ -297,7 +300,7 @@ private fun ReaderIntro(state: ReaderUiState.Content, onSelectVariant: (String) 
     val type = RulePlayTheme.type
     val sport = state.sport
     Column(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl, bottom = Spacing.l)) {
-        Text(stringResource(R.string.reader_overline).uppercase(), style = type.overline, color = colors.accentText)
+        Text(stringResource(R.string.reader_overline).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(R.string.reader_overline)))
         Spacer(Modifier.height(Spacing.s))
         Text(
             stringResource(R.string.reader_title, sport.name).uppercase(),
@@ -340,7 +343,7 @@ private fun ChapterHeader(chapter: RuleChapter, number: Int, textScale: Float) {
             .semantics(mergeDescendants = true) { heading() },
     ) {
         Row(verticalAlignment = Alignment.CenterVertically) {
-            Text(stringResource(R.string.reader_chapter, number).uppercase(), style = type.overline, color = colors.accentText)
+            Text(stringResource(R.string.reader_chapter, number).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(R.string.reader_chapter, number)))
             Spacer(Modifier.width(Spacing.m))
             Box(Modifier.weight(1f).height(1.dp).background(colors.outline))
         }
@@ -406,7 +409,7 @@ private fun SourceLine(label: String, value: String) {
     val colors = RulePlayTheme.colors
     val type = RulePlayTheme.type
     Column(Modifier.padding(bottom = Spacing.m).semantics(mergeDescendants = true) {}) {
-        Text(label.uppercase(), style = type.overline, color = colors.textTertiary)
+        Text(label.uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(label))
         Text(value, style = type.body, color = colors.textPrimary)
     }
 }

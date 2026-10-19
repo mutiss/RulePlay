@@ -17,6 +17,7 @@ import androidx.compose.foundation.layout.FlowRow
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.layout.fillMaxHeight
 import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.height
@@ -87,7 +88,8 @@ fun RuleHighlight(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Icon(icon, null, tint = accent, modifier = Modifier.size(16.dp))
                 Spacer(Modifier.width(6.dp))
-                Text((title ?: defaultTitle).uppercase(), style = type.overline, color = accent)
+                val kicker = title ?: defaultTitle
+                Text(kicker.uppercase(), style = type.overline, color = accent, modifier = Modifier.spokenAs(kicker))
             }
             Spacer(Modifier.height(6.dp))
             Text(text, style = type.body.scaled(textScale), color = colors.textPrimary)
@@ -181,7 +183,8 @@ fun RuleSectionCard(
                 }
                 if (relatedTitles.isNotEmpty()) {
                     Spacer(Modifier.height(Spacing.l))
-                    Text(stringResource(R.string.label_related_rules).uppercase(), style = type.overline, color = colors.textTertiary)
+                    val related = stringResource(R.string.label_related_rules)
+                    Text(related.uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(related))
                     Spacer(Modifier.height(Spacing.s))
                     FlowRow(horizontalArrangement = Arrangement.spacedBy(Spacing.s), verticalArrangement = Arrangement.spacedBy(Spacing.s)) {
                         relatedTitles.forEach { (id, title) ->
@@ -190,7 +193,9 @@ fun RuleSectionCard(
                                     .clip(Shapes.pill)
                                     .border(1.dp, colors.outlineStrong, Shapes.pill)
                                     .pressable(onClick = { onRelatedClick(id) }, onClickLabel = title)
+                                    .defaultMinSize(minHeight = 48.dp)
                                     .padding(horizontal = 14.dp, vertical = 10.dp),
+                                contentAlignment = Alignment.CenterStart,
                             ) {
                                 Text(title, style = type.caption, color = colors.textPrimary)
                             }
@@ -205,7 +210,7 @@ fun RuleSectionCard(
                         onToggle = onToggleSave,
                         contentDescription = stringResource(if (saved) R.string.action_unsave_rule else R.string.action_save_rule),
                         style = SaveStyle.BOOKMARK,
-                        size = 44.dp,
+                        size = 48.dp,
                     )
                 }
             }

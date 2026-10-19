@@ -1,5 +1,7 @@
 package com.mutissx.ruleplay.navigation
 
+import androidx.compose.ui.semantics.paneTitle
+import androidx.compose.ui.semantics.semantics
 import androidx.compose.animation.AnimatedContentScope
 import androidx.compose.animation.AnimatedContentTransitionScope
 import androidx.compose.animation.AnimatedVisibility
@@ -122,10 +124,10 @@ fun RulePlayNavHost(
                     popExitTransition = popExit,
                 ) {
                     composable<Route.Onboarding> {
-                        Scoped { OnboardingRoute(onFinished = navigator::finishOnboarding) }
+                        Scoped(stringResource(R.string.app_name)) { OnboardingRoute(onFinished = navigator::finishOnboarding) }
                     }
                     composable<Route.Discover> {
-                        Scoped { DiscoverRoute(navigator) }
+                        Scoped(stringResource(R.string.nav_discover)) { DiscoverRoute(navigator) }
                     }
                     composable<Route.Explore> {
                         Scoped { ExploreRoute(navigator, categoryId = null, showBack = false) }
@@ -135,10 +137,10 @@ fun RulePlayNavHost(
                         Scoped { ExploreRoute(navigator, categoryId = categoryId, showBack = true) }
                     }
                     composable<Route.Library> {
-                        Scoped { LibraryRoute(navigator) }
+                        Scoped(stringResource(R.string.nav_library)) { LibraryRoute(navigator) }
                     }
                     composable<Route.Settings> {
-                        Scoped { SettingsRoute(navigator) }
+                        Scoped(stringResource(R.string.nav_settings)) { SettingsRoute(navigator) }
                     }
                     composable<Route.SportDetail> {
                         Scoped { SportDetailRoute(navigator) }
@@ -147,10 +149,10 @@ fun RulePlayNavHost(
                         Scoped { RuleReaderRoute(navigator) }
                     }
                     composable<Route.Search> {
-                        Scoped { SearchRoute(navigator) }
+                        Scoped(stringResource(R.string.search_prefix)) { SearchRoute(navigator) }
                     }
                     composable<Route.Sources> {
-                        Scoped { SourcesRoute(navigator) }
+                        Scoped(stringResource(R.string.sources_title)) { SourcesRoute(navigator) }
                     }
                 }
             }
@@ -177,8 +179,14 @@ fun RulePlayNavHost(
     }
 }
 
-/** Exposes the destination's animated scope to shared-element aware components. */
+/**
+ * Exposes the destination's animated scope to shared-element aware components. [paneTitle] makes screen readers
+ * announce the screen on arrival; destinations whose title depends on content set their own and pass null.
+ */
 @Composable
-private fun AnimatedContentScope.Scoped(content: @Composable () -> Unit) {
-    CompositionLocalProvider(LocalNavAnimatedVisibilityScope provides this, content = content)
+private fun AnimatedContentScope.Scoped(paneTitle: String? = null, content: @Composable () -> Unit) {
+    CompositionLocalProvider(LocalNavAnimatedVisibilityScope provides this) {
+        if (paneTitle == null) content()
+        else Box(Modifier.fillMaxSize().semantics { this.paneTitle = paneTitle }) { content() }
+    }
 }

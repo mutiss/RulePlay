@@ -63,6 +63,7 @@ import com.mutissx.ruleplay.core.designsystem.component.ScreenTitle
 import com.mutissx.ruleplay.core.designsystem.component.StatusBarScrim
 import com.mutissx.ruleplay.core.designsystem.component.SegmentedControl
 import com.mutissx.ruleplay.core.designsystem.component.pressable
+import com.mutissx.ruleplay.core.designsystem.component.spokenAs
 import com.mutissx.ruleplay.core.designsystem.theme.Palette
 import com.mutissx.ruleplay.core.designsystem.theme.RulePlayTheme
 import com.mutissx.ruleplay.core.designsystem.theme.Spacing
@@ -203,7 +204,7 @@ fun SettingsScreen(
 private fun Group(title: String, content: @Composable () -> Unit) {
     val colors = RulePlayTheme.colors
     Column(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl)) {
-        Text(title.uppercase(), style = RulePlayTheme.type.overline, color = colors.textTertiary, modifier = Modifier.padding(start = Spacing.xs, bottom = Spacing.s).semantics { heading() })
+        Text(title.uppercase(), style = RulePlayTheme.type.overline, color = colors.textTertiary, modifier = Modifier.padding(start = Spacing.xs, bottom = Spacing.s).spokenAs(title).semantics { heading() })
         Panel { Column { content() } }
     }
 }
@@ -306,7 +307,8 @@ fun SourcesScreen(state: SettingsUiState, onBack: () -> Unit) {
             item(key = "bodies-header") {
                 Text(
                     stringResource(R.string.sources_governing_bodies).uppercase(), style = type.overline, color = colors.accentText,
-                    modifier = Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xxl, bottom = Spacing.s).semantics { heading() },
+                    modifier = Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xxl, bottom = Spacing.s)
+                        .spokenAs(stringResource(R.string.sources_governing_bodies)).semantics { heading() },
                 )
             }
             items(state.sources, key = { it.body.name }) { entry ->
@@ -330,7 +332,8 @@ fun SourcesScreen(state: SettingsUiState, onBack: () -> Unit) {
                 item(key = "photos-header") {
                     Text(
                         stringResource(R.string.sources_photos).uppercase(), style = type.overline, color = colors.accentText,
-                        modifier = Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xxl, bottom = Spacing.s).semantics { heading() },
+                        modifier = Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xxl, bottom = Spacing.s)
+                            .spokenAs(stringResource(R.string.sources_photos)).semantics { heading() },
                     )
                 }
                 items(state.photos, key = { "photo-" + it.sportName }) { entry ->
@@ -339,7 +342,7 @@ fun SourcesScreen(state: SettingsUiState, onBack: () -> Unit) {
             }
             item(key = "ack") {
                 Column(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xxl)) {
-                    Text(stringResource(R.string.sources_acknowledgements).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.semantics { heading() })
+                    Text(stringResource(R.string.sources_acknowledgements).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(R.string.sources_acknowledgements)).semantics { heading() })
                     Spacer(Modifier.height(Spacing.m))
                     Text(stringResource(R.string.sources_fonts), style = type.body, color = colors.textPrimary)
                     Spacer(Modifier.height(Spacing.m))

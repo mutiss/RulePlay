@@ -69,24 +69,29 @@ fun SearchField(
     ) {
         Icon(Icons.Rounded.Search, null, tint = colors.accentText, modifier = Modifier.size(22.dp))
         Spacer(Modifier.width(12.dp))
-        Box(Modifier.weight(1f).padding(vertical = 16.dp)) {
-            if (value.isEmpty()) {
-                Text(placeholder, style = type.body, color = colors.textTertiary, maxLines = 1)
-            }
-            BasicTextField(
-                value = value,
-                onValueChange = onValueChange,
-                singleLine = true,
-                textStyle = type.body.copy(color = colors.textPrimary),
-                cursorBrush = SolidColor(colors.accentText),
-                keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
-                keyboardActions = KeyboardActions(onSearch = { onSubmit() }),
-                modifier = Modifier
-                    .fillMaxWidth()
-                    .focusRequester(focusRequester)
-                    .onFocusChanged { focused = it.isFocused },
-            )
-        }
+        // The vertical padding lives inside the field so the whole pill height is its touch target, and the
+        // placeholder sits in the decoration box so screen readers announce it as the field's label.
+        BasicTextField(
+            value = value,
+            onValueChange = onValueChange,
+            singleLine = true,
+            textStyle = type.body.copy(color = colors.textPrimary),
+            cursorBrush = SolidColor(colors.accentText),
+            keyboardOptions = KeyboardOptions(imeAction = ImeAction.Search),
+            keyboardActions = KeyboardActions(onSearch = { onSubmit() }),
+            modifier = Modifier
+                .weight(1f)
+                .focusRequester(focusRequester)
+                .onFocusChanged { focused = it.isFocused },
+            decorationBox = { innerTextField ->
+                Box(Modifier.padding(vertical = 16.dp)) {
+                    if (value.isEmpty()) {
+                        Text(placeholder, style = type.body, color = colors.textTertiary, maxLines = 1)
+                    }
+                    innerTextField()
+                }
+            },
+        )
         AnimatedVisibility(
             visible = value.isNotEmpty(),
             enter = fadeIn(motion.standard()) + scaleIn(motion.standard()),
@@ -94,7 +99,7 @@ fun SearchField(
         ) {
             Box(
                 Modifier
-                    .size(44.dp)
+                    .size(48.dp)
                     .clip(CircleShape)
                     .pressable(onClick = { onValueChange("") }, onClickLabel = stringResource(R.string.action_clear)),
                 contentAlignment = Alignment.Center,

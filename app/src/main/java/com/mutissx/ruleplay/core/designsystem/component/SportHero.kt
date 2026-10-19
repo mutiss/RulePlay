@@ -96,7 +96,7 @@ fun SportHeroCard(
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(8.dp).clip(CircleShape).background(Palette.Lime))
                 Spacer(Modifier.width(Spacing.s))
-                Text(overline.uppercase(), style = type.overline, color = Palette.Lime)
+                Text(overline.uppercase(), style = type.overline, color = Palette.Lime, modifier = Modifier.spokenAs(overline))
             }
             Spacer(Modifier.height(Spacing.s))
             Text(

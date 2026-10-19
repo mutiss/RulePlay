@@ -1,5 +1,6 @@
 package com.mutissx.ruleplay.feature.catalog
 
+import androidx.compose.ui.semantics.paneTitle
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Arrangement
@@ -127,8 +128,9 @@ fun ExploreScreen(
     val sortOptions = listOf(SortOrder.CURATED, SortOrder.POPULAR, SortOrder.ALPHABETICAL)
     val sortLabels = listOf(stringResource(R.string.sort_curated), stringResource(R.string.sort_popular), stringResource(R.string.sort_az))
     val category = state.selectedCategory
+    val screenTitle = category?.name ?: stringResource(R.string.explore_title)
 
-    Box(Modifier.fillMaxSize().background(colors.background)) {
+    Box(Modifier.fillMaxSize().background(colors.background).semantics { paneTitle = screenTitle }) {
         LazyColumn(
             state = listState,
             modifier = Modifier.fillMaxSize().windowInsetsPadding(WindowInsets.statusBars).padding(top = if (showBack) 64.dp else 0.dp),

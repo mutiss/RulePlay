@@ -77,6 +77,7 @@ import com.mutissx.ruleplay.core.designsystem.component.StatusBarOverArt
 import com.mutissx.ruleplay.core.designsystem.component.StatusBarScrim
 import com.mutissx.ruleplay.core.designsystem.component.FitWordsText
 import com.mutissx.ruleplay.core.designsystem.component.pressable
+import com.mutissx.ruleplay.core.designsystem.component.spokenAs
 import com.mutissx.ruleplay.core.designsystem.theme.Palette
 import com.mutissx.ruleplay.core.designsystem.theme.RulePlayTheme
 import com.mutissx.ruleplay.core.designsystem.theme.Shapes
@@ -449,7 +450,7 @@ private fun SurprisePanel(
             }
             Spacer(Modifier.width(Spacing.m))
             Column(Modifier.weight(1f)) {
-                Text(stringResource(R.string.discover_surprise_overline).uppercase(), style = type.overline, color = colors.accentText)
+                Text(stringResource(R.string.discover_surprise_overline).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(R.string.discover_surprise_overline)))
                 Text(stringResource(R.string.discover_surprise_title), style = type.title, color = colors.textPrimary)
             }
         }

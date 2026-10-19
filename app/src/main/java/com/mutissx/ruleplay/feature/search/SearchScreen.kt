@@ -21,6 +21,7 @@ import androidx.compose.foundation.layout.statusBars
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.layout.windowInsetsBottomHeight
 import androidx.compose.foundation.layout.windowInsetsPadding
+import androidx.compose.foundation.layout.defaultMinSize
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.lazy.items
 import androidx.compose.foundation.shape.CircleShape
@@ -65,6 +66,7 @@ import com.mutissx.ruleplay.core.designsystem.component.accentColor
 import com.mutissx.ruleplay.core.designsystem.component.pressable
 import com.mutissx.ruleplay.core.designsystem.component.rememberHighlighted
 import com.mutissx.ruleplay.core.designsystem.component.sharedBoundsOrNone
+import com.mutissx.ruleplay.core.designsystem.component.spokenAs
 import com.mutissx.ruleplay.core.designsystem.theme.RulePlayTheme
 import com.mutissx.ruleplay.core.designsystem.theme.Shapes
 import com.mutissx.ruleplay.core.designsystem.theme.Spacing
@@ -140,7 +142,7 @@ fun SearchScreen(
                 if (state.recentSearches.isNotEmpty()) {
                     item(key = "recent-header") {
                         Row(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.l), verticalAlignment = Alignment.CenterVertically) {
-                            Text(stringResource(R.string.search_recent).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.weight(1f).semantics { heading() })
+                            Text(stringResource(R.string.search_recent).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.weight(1f).spokenAs(stringResource(R.string.search_recent)).semantics { heading() })
                             Text(
                                 stringResource(R.string.action_clear_all), style = type.label, color = colors.accentText,
                                 modifier = Modifier.clip(Shapes.pill).pressable(onClick = onClearRecent).padding(horizontal = Spacing.m, vertical = Spacing.m),
@@ -169,7 +171,7 @@ fun SearchScreen(
                 }
                 item(key = "try") {
                     Column(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl)) {
-                        Text(stringResource(R.string.search_try).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.semantics { heading() })
+                        Text(stringResource(R.string.search_try).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(stringResource(R.string.search_try)).semantics { heading() })
                         Spacer(Modifier.height(Spacing.m))
                         FlowRow(horizontalArrangement = Arrangement.spacedBy(Spacing.s), verticalArrangement = Arrangement.spacedBy(Spacing.s)) {
                             tryTerms.forEach { term ->
@@ -178,7 +180,9 @@ fun SearchScreen(
                                         .clip(Shapes.pill)
                                         .border(1.dp, colors.outlineStrong, Shapes.pill)
                                         .pressable(onClick = { onQueryChange(term) }, pressedScale = 0.94f)
+                                        .defaultMinSize(minHeight = 48.dp)
                                         .padding(horizontal = 16.dp, vertical = 12.dp),
+                                    contentAlignment = Alignment.CenterStart,
                                 ) {
                                     Text(term, style = type.label, color = colors.textPrimary)
                                 }
@@ -188,7 +192,7 @@ fun SearchScreen(
                 }
                 item(key = "categories") {
                     Column(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl)) {
-                        Text(stringResource(R.string.search_browse_categories).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.semantics { heading() })
+                        Text(stringResource(R.string.search_browse_categories).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(stringResource(R.string.search_browse_categories)).semantics { heading() })
                         Spacer(Modifier.height(Spacing.m))
                         FlowRow(horizontalArrangement = Arrangement.spacedBy(Spacing.s), verticalArrangement = Arrangement.spacedBy(Spacing.s)) {
                             state.categories.forEach { category ->
@@ -199,7 +203,7 @@ fun SearchScreen(
                 }
                 item(key = "suggested") {
                     Column(Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl)) {
-                        Text(stringResource(R.string.search_suggested).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.semantics { heading() })
+                        Text(stringResource(R.string.search_suggested).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(stringResource(R.string.search_suggested)).semantics { heading() })
                         Spacer(Modifier.height(Spacing.s))
                         state.suggestedSports.forEach { sport ->
                             SportRow(sport, state.categoriesById[sport.categoryId], onClick = { onOpenSport(sport.id) }, supporting = sport.hook)
@@ -263,7 +267,7 @@ fun SearchScreen(
 private fun ResultHeader(text: String) {
     Text(
         text.uppercase(), style = RulePlayTheme.type.overline, color = RulePlayTheme.colors.accentText,
-        modifier = Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl, bottom = Spacing.s).semantics { heading() },
+        modifier = Modifier.padding(horizontal = Spacing.gutter).padding(top = Spacing.xl, bottom = Spacing.s).spokenAs(text).semantics { heading() },
     )
 }
 

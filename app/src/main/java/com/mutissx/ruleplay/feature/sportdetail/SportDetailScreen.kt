@@ -1,5 +1,6 @@
 package com.mutissx.ruleplay.feature.sportdetail
 
+import androidx.compose.ui.semantics.paneTitle
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.foundation.ExperimentalFoundationApi
 import androidx.compose.foundation.background
@@ -96,6 +97,7 @@ import com.mutissx.ruleplay.core.designsystem.component.accentColor
 import com.mutissx.ruleplay.core.designsystem.component.PhotoCreditRow
 import com.mutissx.ruleplay.core.designsystem.component.pressable
 import com.mutissx.ruleplay.core.designsystem.component.sharedBoundsOrNone
+import com.mutissx.ruleplay.core.designsystem.component.spokenAs
 import com.mutissx.ruleplay.core.designsystem.theme.Palette
 import com.mutissx.ruleplay.core.designsystem.theme.RulePlayTheme
 import com.mutissx.ruleplay.core.designsystem.theme.Shapes
@@ -249,7 +251,7 @@ private fun DetailContent(
     val sections = remember(sectionIndex) { Section.entries.filter { it in sectionIndex } }
     val heroPx = with(density) { 440.dp.toPx() }
     // Height covered by the top bar plus the pinned section index.
-    val overlayPx = WindowInsets.statusBars.getTop(density) + with(density) { (64.dp + 68.dp).toPx() }
+    val overlayPx = WindowInsets.statusBars.getTop(density) + with(density) { (64.dp + 72.dp).toPx() }
     // Positions are compared against the bottom edge of the top bar, so state flips exactly when content meets it.
     val topBarPx = WindowInsets.statusBars.getTop(density) + with(density) { 64.dp.toPx() }
     val solid by remember(topBarPx) {
@@ -280,11 +282,17 @@ private fun DetailContent(
         }
     }
     val accent = state.category.accentColor()
+    val motion = RulePlayTheme.motion
     val onSelectSection: (Section) -> Unit = { section ->
-        sectionIndex[section]?.let { index -> scope.launch { listState.animateScrollToItem(index, scrollOffset = -overlayPx.toInt()) } }
+        sectionIndex[section]?.let { index ->
+            scope.launch {
+                if (motion.reduced) listState.scrollToItem(index, scrollOffset = -overlayPx.toInt())
+                else listState.animateScrollToItem(index, scrollOffset = -overlayPx.toInt())
+            }
+        }
     }
 
-    Box(Modifier.fillMaxSize().background(colors.background)) {
+    Box(Modifier.fillMaxSize().background(colors.background).semantics { paneTitle = state.sport.name }) {
         LazyColumn(state = listState, modifier = Modifier.fillMaxSize()) {
             item(key = "hero") {
                 DetailHero(
@@ -405,7 +413,7 @@ private fun SectionIndex(sections: List<Section>, current: Section, onSelect: (S
                         .border(1.dp, if (selected) Color.Transparent else colors.outline, Shapes.pill)
                         .semantics { this.selected = selected }
                         .pressable(onClick = { onSelect(section) }, role = Role.Tab, pressedScale = 0.94f)
-                        .heightIn(min = 44.dp)
+                        .heightIn(min = 48.dp)
                         .padding(horizontal = 16.dp, vertical = 11.dp),
                     contentAlignment = Alignment.Center,
                 ) {
@@ -434,7 +442,7 @@ private fun DetailBlock(
     val gutter = Modifier.padding(horizontal = Spacing.gutter)
     when (block) {
         is Block.Header -> Column(gutter.padding(top = Spacing.xxxl, bottom = Spacing.l).semantics(mergeDescendants = true) { heading() }) {
-            Text(stringResource(block.overline).uppercase(), style = type.overline, color = colors.accentText)
+            Text(stringResource(block.overline).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(block.overline)))
             Spacer(Modifier.height(Spacing.xs))
             Text(stringResource(block.title), style = type.headline, color = colors.textPrimary)
         }
@@ -463,7 +471,7 @@ private fun DetailBlock(
         }
 
         Block.Variants -> Column(gutter.padding(top = Spacing.xl)) {
-            Text(stringResource(R.string.detail_rule_set).uppercase(), style = type.overline, color = colors.textTertiary)
+            Text(stringResource(R.string.detail_rule_set).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(stringResource(R.string.detail_rule_set)))
             Spacer(Modifier.height(Spacing.s))
             val ids = sport.variants.map { it.id }
             SegmentedControl(
@@ -481,7 +489,7 @@ private fun DetailBlock(
         is Block.Scoring -> Column(Modifier.padding(top = Spacing.xxl)) {
             Text(
                 stringResource(R.string.detail_scoring).uppercase(), style = type.overline, color = colors.textTertiary,
-                modifier = gutter.semantics { heading() },
+                modifier = gutter.spokenAs(stringResource(R.string.detail_scoring)).semantics { heading() },
             )
             Spacer(Modifier.height(Spacing.m))
             LazyRow(contentPadding = PaddingValues(horizontal = Spacing.gutter), horizontalArrangement = Arrangement.spacedBy(Spacing.m)) {
@@ -524,7 +532,7 @@ private fun DetailBlock(
         is Block.Glossary -> GlossaryPanel(block.terms, gutter.padding(top = Spacing.xxxl))
 
         is Block.FunFacts -> Column(Modifier.padding(top = Spacing.xxl)) {
-            Text(stringResource(R.string.detail_did_you_know).uppercase(), style = type.overline, color = colors.accentText, modifier = gutter)
+            Text(stringResource(R.string.detail_did_you_know).uppercase(), style = type.overline, color = colors.accentText, modifier = gutter.spokenAs(stringResource(R.string.detail_did_you_know)))
             Spacer(Modifier.height(Spacing.m))
             LazyRow(contentPadding = PaddingValues(horizontal = Spacing.gutter), horizontalArrangement = Arrangement.spacedBy(Spacing.m)) {
                 items(block.facts) { fact ->
@@ -545,7 +553,7 @@ private fun DetailBlock(
 
         Block.Related -> Column(Modifier.padding(top = Spacing.xxxl)) {
             Column(gutter.semantics(mergeDescendants = true) { heading() }) {
-                Text(stringResource(R.string.detail_related_overline).uppercase(), style = type.overline, color = colors.accentText)
+                Text(stringResource(R.string.detail_related_overline).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(R.string.detail_related_overline)))
                 Spacer(Modifier.height(Spacing.xs))
                 Text(stringResource(R.string.detail_related, sport.name), style = type.headline, color = colors.textPrimary)
             }
@@ -579,7 +587,7 @@ private fun ThirtySeconds(points: List<String>) {
         Row(verticalAlignment = Alignment.CenterVertically) {
             Icon(Icons.Rounded.Timer, null, tint = Palette.Lime, modifier = Modifier.size(18.dp))
             Spacer(Modifier.width(Spacing.s))
-            Text(stringResource(R.string.detail_thirty_seconds).uppercase(), style = type.overline, color = Palette.Lime, modifier = Modifier.semantics { heading() })
+            Text(stringResource(R.string.detail_thirty_seconds).uppercase(), style = type.overline, color = Palette.Lime, modifier = Modifier.spokenAs(stringResource(R.string.detail_thirty_seconds)).semantics { heading() })
         }
         Spacer(Modifier.height(Spacing.l))
         points.forEachIndexed { i, point ->
@@ -783,7 +791,7 @@ private fun GlossaryPanel(terms: List<Term>, modifier: Modifier) {
     val visible = if (expanded) terms else terms.take(4)
     Column(modifier.fillMaxWidth()) {
         Column(Modifier.semantics(mergeDescendants = true) { heading() }) {
-            Text(stringResource(R.string.detail_glossary_overline).uppercase(), style = type.overline, color = colors.accentText)
+            Text(stringResource(R.string.detail_glossary_overline).uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(stringResource(R.string.detail_glossary_overline)))
             Spacer(Modifier.height(Spacing.xs))
             Text(stringResource(R.string.detail_glossary), style = type.headline, color = colors.textPrimary)
         }
@@ -849,7 +857,7 @@ private fun SourcesPanel(state: SportDetailUiState.Content, modifier: Modifier) 
         }
         if (sport.governingBodies.isNotEmpty()) {
             Spacer(Modifier.height(Spacing.m))
-            Text(stringResource(R.string.detail_governing_bodies).uppercase(), style = type.overline, color = colors.textTertiary)
+            Text(stringResource(R.string.detail_governing_bodies).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(stringResource(R.string.detail_governing_bodies)))
             Spacer(Modifier.height(Spacing.s))
             sport.governingBodies.forEach { body ->
                 Row(
@@ -875,7 +883,7 @@ private fun SourcesPanel(state: SportDetailUiState.Content, modifier: Modifier) 
         }
         sport.summary.photoCredit?.let { credit ->
             Spacer(Modifier.height(Spacing.m))
-            Text(stringResource(R.string.detail_cover_photo).uppercase(), style = type.overline, color = colors.textTertiary)
+            Text(stringResource(R.string.detail_cover_photo).uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(stringResource(R.string.detail_cover_photo)))
             PhotoCreditRow(credit, label = sport.name)
         }
         if (sport.isFallbackLanguage) {
