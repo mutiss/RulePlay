@@ -1,5 +1,7 @@
 package com.mutissx.ruleplay.core.designsystem.component
 
+import androidx.compose.ui.platform.LocalContext
+import android.view.accessibility.AccessibilityManager
 import androidx.compose.animation.AnimatedContent
 import androidx.compose.animation.animateColorAsState
 import androidx.compose.animation.core.animateFloatAsState
@@ -190,7 +192,7 @@ fun SportThumb(
             SportIllustration(sport.art, Modifier.fillMaxSize(), style = ArtStyle.CARD, glyphScale = 1.15f)
         }
         Spacer(Modifier.height(Spacing.s))
-        Text(sport.name, style = type.titleSmall, color = colors.textPrimary, maxLines = 1, overflow = TextOverflow.Ellipsis)
+        Text(sport.name, style = type.titleSmall, color = colors.textPrimary, maxLines = titleMaxLines(), overflow = TextOverflow.Ellipsis)
         Text(
             subtitle ?: category?.name.orEmpty(),
             style = type.caption, color = colors.textSecondary, maxLines = 1, overflow = TextOverflow.Ellipsis,
@@ -223,14 +225,14 @@ fun SportRow(
             SportIllustration(sport.art, Modifier.fillMaxSize(), style = ArtStyle.CARD, glyphScale = 1.2f)
         }
         Spacer(Modifier.width(Spacing.l))
-        Column(Modifier.weight(1f).semantics(mergeDescendants = true) {}) {
+        Column(Modifier.weight(1f)) {
             Row(verticalAlignment = Alignment.CenterVertically) {
                 Box(Modifier.size(6.dp).clip(CircleShape).background(category.accentColor()))
                 Spacer(Modifier.width(6.dp))
                 Text(category?.name.orEmpty(), style = type.caption, color = colors.textSecondary, maxLines = 1, overflow = TextOverflow.Ellipsis)
             }
             Spacer(Modifier.height(2.dp))
-            Text(title, style = type.title, color = colors.textPrimary, maxLines = 1, overflow = TextOverflow.Ellipsis)
+            Text(title, style = type.title, color = colors.textPrimary, maxLines = titleMaxLines(), overflow = TextOverflow.Ellipsis)
             Text(supporting, style = type.caption, color = colors.textSecondary, maxLines = 2, overflow = TextOverflow.Ellipsis)
         }
         if (trailing != null) {
@@ -257,7 +259,7 @@ fun SportCategoryChip(
     val dotScale by animateFloatAsState(if (selected) 0f else 1f, motion.standard(), label = "chipDot")
     Row(
         modifier
-            .defaultMinSize(minHeight = 44.dp)
+            .defaultMinSize(minHeight = 48.dp)
             .clip(Shapes.pill)
             .background(container)
             .border(1.dp, if (selected) Color.Transparent else colors.outline, Shapes.pill)
@@ -286,7 +288,8 @@ fun SportCategoryChip(
 
 /**
  * Entry point to search. It is not an input itself: tapping it opens the dedicated search screen, and
- * the shared-bounds transition morphs it into the real field. The hint rotates through example queries.
+ * the shared-bounds transition morphs it into the real field. The hint cycles once through example queries and
+ * then settles, so the motion doesn't go on forever (WCAG 2.2.2); it stays still with reduced motion or a screen reader.
  */
 @Composable
 fun RuleSearchBar(
@@ -299,9 +302,13 @@ fun RuleSearchBar(
     val type = RulePlayTheme.type
     val motion = RulePlayTheme.motion
     var hintIndex by remember { mutableIntStateOf(0) }
-    if (hints.size > 1 && !motion.reduced) {
+    val context = LocalContext.current
+    val screenReaderOn = remember(context) {
+        context.getSystemService(AccessibilityManager::class.java)?.isTouchExplorationEnabled == true
+    }
+    if (hints.size > 1 && !motion.reduced && !screenReaderOn) {
         LaunchedEffect(hints) {
-            while (true) {
+            repeat(hints.size) {
                 delay(2800)
                 hintIndex = (hintIndex + 1) % hints.size
             }
@@ -369,7 +376,7 @@ fun SportMetadataRow(items: List<MetaItem>, modifier: Modifier = Modifier, accen
                     Icon(item.icon, null, tint = accent, modifier = Modifier.size(18.dp))
                 }
                 Spacer(Modifier.height(Spacing.m))
-                Text(item.label.uppercase(), style = type.overline, color = colors.textTertiary)
+                Text(item.label.uppercase(), style = type.overline, color = colors.textTertiary, modifier = Modifier.spokenAs(item.label))
                 Spacer(Modifier.height(Spacing.xs))
                 Text(item.value, style = type.titleSmall, color = colors.textPrimary)
             }

@@ -29,6 +29,7 @@ import androidx.compose.material3.Icon
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
+import androidx.compose.runtime.ReadOnlyComposable
 import androidx.compose.runtime.getValue
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Alignment
@@ -41,9 +42,12 @@ import androidx.compose.ui.graphics.Path
 import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.drawscope.Stroke
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.platform.LocalDensity
 import androidx.compose.ui.res.stringResource
 import androidx.compose.runtime.mutableStateOf
 import androidx.compose.ui.semantics.Role
+import androidx.compose.ui.semantics.clearAndSetSemantics
+import androidx.compose.ui.semantics.contentDescription
 import androidx.compose.ui.semantics.heading
 import androidx.compose.ui.semantics.semantics
 import kotlinx.coroutines.launch
@@ -56,6 +60,17 @@ import com.mutissx.ruleplay.core.designsystem.theme.Palette
 import com.mutissx.ruleplay.core.designsystem.theme.RulePlayTheme
 import com.mutissx.ruleplay.core.designsystem.theme.Shapes
 import com.mutissx.ruleplay.core.designsystem.theme.Spacing
+
+/**
+ * Makes screen readers speak the natural-case [text] behind an upper-cased label: some voices spell short
+ * all-caps words letter by letter ("NOTE" → "N, O, T, E").
+ */
+fun Modifier.spokenAs(text: String): Modifier = semantics { contentDescription = text }
+
+/** Max lines for a title that is single-line by design: at large font sizes it wraps to two instead of truncating. */
+@Composable
+@ReadOnlyComposable
+fun titleMaxLines(): Int = if (LocalDensity.current.fontScale > 1.3f) 2 else 1
 
 /** The RulePlay mark: a rule bar beside a play triangle, in a lime tile. */
 @Composable
@@ -81,7 +96,7 @@ fun RulePlayWordmark(modifier: Modifier = Modifier, large: Boolean = false, show
     val colors = RulePlayTheme.colors
     val ruleColor = if (onArt) colors.onArt else colors.textPrimary
     val playColor = if (onArt) Palette.Lime else colors.accentText
-    Row(modifier.semantics(mergeDescendants = true) {}, verticalAlignment = Alignment.CenterVertically) {
+    Row(modifier.clearAndSetSemantics { contentDescription = "RulePlay" }, verticalAlignment = Alignment.CenterVertically) {
         if (showMark) {
             RulePlayMark(size = if (large) 52.dp else 30.dp)
             Spacer(Modifier.width(if (large) 14.dp else 10.dp))
@@ -242,7 +257,7 @@ fun SectionHeader(
     ) {
         Column(Modifier.weight(1f).semantics(mergeDescendants = true) { heading() }) {
             if (overline != null) {
-                Text(overline.uppercase(), style = type.overline, color = colors.accentText)
+                Text(overline.uppercase(), style = type.overline, color = colors.accentText, modifier = Modifier.spokenAs(overline))
                 Spacer(Modifier.height(Spacing.xs))
             }
             Text(title, style = type.headline, color = colors.textPrimary)

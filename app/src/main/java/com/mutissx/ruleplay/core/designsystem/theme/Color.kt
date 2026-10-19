@@ -19,14 +19,16 @@ object Palette {
 
     val OffWhite = Color(0xFFF2F0EA)
     val Mist = Color(0xFFA9AEC6)
-    val Slate = Color(0xFF6E7593)
+    /** Tertiary text on dark surfaces; ≥4.5:1 on Midnight through Navy700 (WCAG AA). */
+    val Slate = Color(0xFF8890AE)
 
     val Paper = Color(0xFFF5F3EE)
     val PaperRaised = Color(0xFFFFFFFF)
     val PaperSunken = Color(0xFFEAE7DF)
     val InkText = Color(0xFF0D1226)
     val InkSecondary = Color(0xFF4A5070)
-    val InkTertiary = Color(0xFF7A7F98)
+    /** Tertiary text on light surfaces; ≥4.5:1 on Paper and PaperSunken (WCAG AA). */
+    val InkTertiary = Color(0xFF62677F)
 
     val Coral = Color(0xFFFF6B4A)
     val Danger = Color(0xFFFF5A6E)
